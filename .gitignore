@@ -1,0 +1,14 @@
+builddir
+
+.direnv
+.envrc
+result
+result-*
+
+subprojects/*
+!subprojects/*.wrap
+
+docs/html
+docs/latex
+
+.vscode
