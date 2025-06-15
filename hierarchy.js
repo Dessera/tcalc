@@ -1,0 +1,19 @@
+var hierarchy =
+[
+    [ "std::exception", null, [
+      [ "tcalc::error::Error", "classtcalc_1_1error_1_1Error.html", null ]
+    ] ],
+    [ "std::formatter< tcalc::token::Token, CharT >", "structstd_1_1formatter_3_01tcalc_1_1token_1_1Token_00_01CharT_01_4.html", null ],
+    [ "tcalc::ast::Node", "classtcalc_1_1ast_1_1Node.html", [
+      [ "tcalc::ast::BinaryOpNode", "classtcalc_1_1ast_1_1BinaryOpNode.html", [
+        [ "tcalc::ast::BinaryDivideNode", "classtcalc_1_1ast_1_1BinaryDivideNode.html", null ],
+        [ "tcalc::ast::BinaryMinusNode", "classtcalc_1_1ast_1_1BinaryMinusNode.html", null ],
+        [ "tcalc::ast::BinaryMultiplyNode", "classtcalc_1_1ast_1_1BinaryMultiplyNode.html", null ],
+        [ "tcalc::ast::BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", null ]
+      ] ],
+      [ "tcalc::ast::FunctionNode", "classtcalc_1_1ast_1_1FunctionNode.html", null ],
+      [ "tcalc::ast::VariableNode", "classtcalc_1_1ast_1_1VariableNode.html", null ]
+    ] ],
+    [ "tcalc::token::Token", "structtcalc_1_1token_1_1Token.html", null ],
+    [ "tcalc::token::Tokenizer", "classtcalc_1_1token_1_1Tokenizer.html", null ]
+];
