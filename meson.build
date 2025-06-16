@@ -11,6 +11,9 @@ magic_enum_proj = subproject(
 )
 magic_enum_dep = magic_enum_proj.get_variable('magic_enum_dep')
 
+catch2_proj = subproject('catch2')
+catch2_with_main_dep = catch2_proj.get_variable('catch2_with_main_dep')
+
 subdir('include')
 subdir('src')
 

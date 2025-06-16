@@ -1,39 +1,66 @@
-#include <print>
+#include <catch2/catch_test_macros.hpp>
+#include <memory>
+#include <sstream>
 
-#include "tcalc/error.hpp"
-#include "tcalc/eval.hpp"
 #include "tcalc/parser.hpp"
-#include "tcalc/visitor/eval.hpp"
 #include "tcalc/visitor/print.hpp"
 
-int
-main()
+namespace {
+
+std::string
+parse_ast(std::string_view input)
 {
-  using tcalc::ast::BaseVisitor;
-  using tcalc::ast::EvalVisitor;
   using tcalc::ast::Parser;
   using tcalc::ast::PrintVisitor;
 
-  Parser parser{};
+  auto parser = Parser{};
+  auto res = parser.parse(input);
+  REQUIRE(res.has_value());
 
-  auto ast = parser.parse("1 + 2 * 3 / (4 - 5) + sqrt(9) + pi + e + pow(2, 2)");
+  auto node = res.value();
+  auto ss = std::stringstream{};
+  auto visitor = PrintVisitor{ ss };
 
-  if (!ast.has_value()) {
-    ast.error().log();
-  }
+  REQUIRE(visitor.visit(node).has_value());
 
-  auto node = ast.value();
+  return ss.str();
+}
 
-  PrintVisitor pv{};
+}
 
-  log_err(pv.visit(node));
+TEST_CASE("Test AST Parser", "[ast][parser][success]")
+{
+  using tcalc::ast::Parser;
+  using tcalc::ast::PrintVisitor;
 
-  tcalc::EvalContext ctx{};
-  EvalVisitor ev{ ctx };
+  std::string expected_parsed = ("MINUS:\n"
+                                 "  PLUS:\n"
+                                 "    NUMBER: 2\n"
+                                 "    DIVIDE:\n"
+                                 "      MULTIPLY:\n"
+                                 "        NUMBER: 2\n"
+                                 "        VARREF: pi\n"
+                                 "      FCALL: sqrt\n"
+                                 "        NUMBER: 2\n"
+                                 "  NUMBER: 1\n");
 
-  auto res = ev.visit(node);
+  auto real_parsed = parse_ast("2 + 2 * pi / sqrt(2) - 1");
 
-  log_err(res);
+  REQUIRE(real_parsed == expected_parsed);
+}
 
-  // std::println("result: {}", res.value());
+TEST_CASE("Test AST Parser Errors", "[ast][parser][error]")
+{
+  using tcalc::ast::Parser;
+
+  auto parser = Parser{};
+
+  auto res1 = parser.parse("22aa");
+  REQUIRE_FALSE(res1.has_value());
+
+  auto res2 = parser.parse("2 ++-- 2");
+  REQUIRE_FALSE(res2.has_value());
+
+  auto res3 = parser.parse("2 + 2 * pi / sqrt(2) - 1 +");
+  REQUIRE_FALSE(res3.has_value());
 }

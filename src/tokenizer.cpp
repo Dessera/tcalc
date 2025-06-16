@@ -20,7 +20,7 @@ Tokenizer::next()
     return Token{ .type = TokenType::EOI, .text = "" };
   }
 
-  _skip_with(isspace);
+  _skip_with(_is_skippable_char);
 
   if (std::iscntrl(*_pos)) {
     return error::err(error::Code::SYNTAX_ERROR,
@@ -79,6 +79,12 @@ bool
 Tokenizer::_is_first_variable_char(char c)
 {
   return std::isalpha(c) || c == '_';
+}
+
+bool
+Tokenizer::_is_skippable_char(char c)
+{
+  return std::isspace(c) || c == '\n' || c == '\t';
 }
 
 }

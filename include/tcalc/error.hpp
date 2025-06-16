@@ -63,6 +63,7 @@ enum class Code : uint8_t
   UNDEFINED_VAR,   /**< Undefined variable. */
   UNDEFINED_FUNC,  /**< Undefined function. */
   MISMATCHED_ARGS, /**< Mismatched arguments. */
+  ZERO_DIVISION,   /**< Division by zero. */
 };
 
 /**

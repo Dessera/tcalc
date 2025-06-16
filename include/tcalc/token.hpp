@@ -59,6 +59,18 @@ struct Token
 
 }
 
+constexpr bool
+operator==(const tcalc::token::Token& lhs, const tcalc::token::Token& rhs)
+{
+  return lhs.type == rhs.type && lhs.text == rhs.text;
+}
+
+constexpr bool
+operator!=(const tcalc::token::Token& lhs, const tcalc::token::Token& rhs)
+{
+  return !(lhs == rhs);
+}
+
 template<typename CharT>
 struct std::formatter<tcalc::token::Token, CharT>
 {

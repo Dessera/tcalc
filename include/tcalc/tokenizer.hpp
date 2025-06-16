@@ -113,6 +113,15 @@ private:
    * @return false If the character is not a valid first variable character.
    */
   static bool _is_first_variable_char(char c);
+
+  /**
+   * @brief Check if the character is a valid skippable character.
+   *
+   * @param c The character to check.
+   * @return true If the character is a valid skippable character.
+   * @return false If the character is not a valid skippable character.
+   */
+  static bool _is_skippable_char(char c);
 };
 
 }

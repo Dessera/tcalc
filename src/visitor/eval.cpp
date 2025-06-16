@@ -40,6 +40,9 @@ EvalVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
 {
   auto lval = unwrap_err(visit(node->left()));
   auto rval = unwrap_err(visit(node->right()));
+  if (rval == 0) {
+    return error::err(error::Code::ZERO_DIVISION, "Division by zero");
+  }
   return error::ok<double>(lval / rval);
 }
 
