@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classtcalc_1_1ast_1_1VariableNode.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classtcalc_1_1ast_1_1BaseVisitor.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,19 +95,14 @@ $(document).ready(function(){initNavTree('classtcalc_1_1ast_1_1VariableNode.html
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">tcalc::ast::VariableNode Member List</div></div>
+  <div class="headertitle"><div class="title">tcalc::ast::BaseVisitor&lt; RT &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classtcalc_1_1ast_1_1VariableNode.html">tcalc::ast::VariableNode</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; RT &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html#ab2273d2847b72b6061e779347458d240">name</a>() const noexcept</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html">tcalc::ast::VariableNode</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html#a08cc894221f79dab50febe3ff308139f">name</a>(std::string name) noexcept</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html">tcalc::ast::VariableNode</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1Node.html#a5e7be8f762686ab392ec4352d390c3e1">Node</a>(NodeType type)</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">type</a>() const noexcept</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html#ab5df73f5df64244f79ffec2f22343b0a">VariableNode</a>(std::string name)</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html">tcalc::ast::VariableNode</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Node</b>()=default (defined in <a class="el" href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a>)</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~VariableNode</b>() override=default (defined in <a class="el" href="classtcalc_1_1ast_1_1VariableNode.html">tcalc::ast::VariableNode</a>)</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1VariableNode.html">tcalc::ast::VariableNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a69b945e38889549402ac6018adbf2232">visit</a>(std::shared_ptr&lt; Node &gt; &amp;node)=0</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; RT &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~BaseVisitor</b>()=default (defined in <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; RT &gt;</a>)</td><td class="entry"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; RT &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

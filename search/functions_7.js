@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['name_0',['name',['../classtcalc_1_1ast_1_1FunctionNode.html#aae73db85e73436a658e6074854836e6e',1,'tcalc::ast::FunctionNode::name() const noexcept'],['../classtcalc_1_1ast_1_1FunctionNode.html#ae2f9f4c051cfd0314e883e60f55d0a61',1,'tcalc::ast::FunctionNode::name(std::string name)'],['../classtcalc_1_1ast_1_1VariableNode.html#ab2273d2847b72b6061e779347458d240',1,'tcalc::ast::VariableNode::name() const noexcept'],['../classtcalc_1_1ast_1_1VariableNode.html#a08cc894221f79dab50febe3ff308139f',1,'tcalc::ast::VariableNode::name(std::string name) noexcept']]],
+  ['name_0',['name',['../classtcalc_1_1ast_1_1FcallNode.html#af56710d9a10d9eb0fee36b1261696860',1,'tcalc::ast::FcallNode::name() const noexcept'],['../classtcalc_1_1ast_1_1FcallNode.html#a7a377380dbca47e56854e6857ff05e95',1,'tcalc::ast::FcallNode::name(std::string name)'],['../classtcalc_1_1ast_1_1VarRefNode.html#a972c1467f19e2ee99e19020b8dcfc1bc',1,'tcalc::ast::VarRefNode::name() const noexcept'],['../classtcalc_1_1ast_1_1VarRefNode.html#a5244635b935b4428a6c656b56ff290b8',1,'tcalc::ast::VarRefNode::name(std::string name) noexcept']]],
   ['next_1',['next',['../classtcalc_1_1token_1_1Tokenizer.html#a89034eec1b45a01049d4a248b44a8ad8',1,'tcalc::token::Tokenizer']]],
-  ['node_2',['Node',['../classtcalc_1_1ast_1_1Node.html#a5e7be8f762686ab392ec4352d390c3e1',1,'tcalc::ast::Node']]]
+  ['next_5fexpr_2',['next_expr',['../classtcalc_1_1ast_1_1Parser.html#aaa4a3459e03900594964cd950a0321cd',1,'tcalc::ast::Parser']]],
+  ['next_5ffactor_3',['next_factor',['../classtcalc_1_1ast_1_1Parser.html#a9bdd03f882dbd2d1ee95b84c432f5076',1,'tcalc::ast::Parser']]],
+  ['next_5fidref_4',['next_idref',['../classtcalc_1_1ast_1_1Parser.html#af5a93be6ef6fd6e7f81f2e8952d290a5',1,'tcalc::ast::Parser']]],
+  ['next_5fterm_5',['next_term',['../classtcalc_1_1ast_1_1Parser.html#a88446899b2d954239c9e0e01099a33c4',1,'tcalc::ast::Parser']]],
+  ['node_6',['Node',['../classtcalc_1_1ast_1_1Node.html#a5e7be8f762686ab392ec4352d390c3e1',1,'tcalc::ast::Node']]],
+  ['numbernode_7',['NumberNode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode']]]
 ];

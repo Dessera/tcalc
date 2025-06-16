@@ -104,7 +104,8 @@ $(document).ready(function(){initNavTree('node_8hpp.html',''); initResizable(); 
 
 <p>Base class for AST nodes.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &lt;cctype&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 </div>
 <p><a href="node_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -126,9 +127,9 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca4296876bcffdde6b16a84b13b4766fee">UNARY_PLUS</a>
 , <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b">UNARY_MINUS</a>
 , <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396">NUMBER</a>
-, <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcae61ad9b2553a293b4a3f4d3b4fa5ab31">VARIABLE</a>
+, <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db">VARREF</a>
 , <br />
-&#160;&#160;<a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca6a72a6a776662a244f82d31e9274a07b">FUNCTION</a>
+&#160;&#160;<a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615">FCALL</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ae1437712c0ca34c0a70c4226cfafcddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">AST node type.  <a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">More...</a><br /></td></tr>
@@ -177,9 +178,9 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396" name="ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396"></a>NUMBER&#160;</td><td class="fielddoc"><p>Constant number. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddcae61ad9b2553a293b4a3f4d3b4fa5ab31" name="ae1437712c0ca34c0a70c4226cfafcddcae61ad9b2553a293b4a3f4d3b4fa5ab31"></a>VARIABLE&#160;</td><td class="fielddoc"><p>Variable. </p>
+<tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db" name="ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db"></a>VARREF&#160;</td><td class="fielddoc"><p>Variable reference. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddca6a72a6a776662a244f82d31e9274a07b" name="ae1437712c0ca34c0a70c4226cfafcddca6a72a6a776662a244f82d31e9274a07b"></a>FUNCTION&#160;</td><td class="fielddoc"><p>Function call. </p>
+<tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615" name="ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615"></a>FCALL&#160;</td><td class="fielddoc"><p>Function call. </p>
 </td></tr>
 </table>
 

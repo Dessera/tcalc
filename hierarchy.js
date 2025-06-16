@@ -1,5 +1,10 @@
 var hierarchy =
 [
+    [ "tcalc::ast::BaseVisitor< RT >", "classtcalc_1_1ast_1_1BaseVisitor.html", null ],
+    [ "tcalc::ast::BaseVisitor< RT >", "classtcalc_1_1ast_1_1BaseVisitor_3_01RT_01_4.html", null ],
+    [ "tcalc::ast::BaseVisitor< void >", "classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html", [
+      [ "tcalc::ast::PrintVisitor", "classtcalc_1_1ast_1_1PrintVisitor.html", null ]
+    ] ],
     [ "std::exception", null, [
       [ "tcalc::error::Error", "classtcalc_1_1error_1_1Error.html", null ]
     ] ],
@@ -11,9 +16,12 @@ var hierarchy =
         [ "tcalc::ast::BinaryMultiplyNode", "classtcalc_1_1ast_1_1BinaryMultiplyNode.html", null ],
         [ "tcalc::ast::BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", null ]
       ] ],
-      [ "tcalc::ast::FunctionNode", "classtcalc_1_1ast_1_1FunctionNode.html", null ],
-      [ "tcalc::ast::VariableNode", "classtcalc_1_1ast_1_1VariableNode.html", null ]
+      [ "tcalc::ast::FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", null ],
+      [ "tcalc::ast::NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", null ],
+      [ "tcalc::ast::VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", null ]
     ] ],
+    [ "tcalc::ast::Parser", "classtcalc_1_1ast_1_1Parser.html", null ],
+    [ "tcalc::ast::ParserContext", "classtcalc_1_1ast_1_1ParserContext.html", null ],
     [ "tcalc::token::Token", "structtcalc_1_1token_1_1Token.html", null ],
     [ "tcalc::token::Tokenizer", "classtcalc_1_1token_1_1Tokenizer.html", null ]
 ];

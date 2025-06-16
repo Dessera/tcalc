@@ -9,7 +9,7 @@ var node_8hpp =
       [ "UNARY_PLUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca4296876bcffdde6b16a84b13b4766fee", null ],
       [ "UNARY_MINUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b", null ],
       [ "NUMBER", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396", null ],
-      [ "VARIABLE", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcae61ad9b2553a293b4a3f4d3b4fa5ab31", null ],
-      [ "FUNCTION", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca6a72a6a776662a244f82d31e9274a07b", null ]
+      [ "VARREF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db", null ],
+      [ "FCALL", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615", null ]
     ] ]
 ];
