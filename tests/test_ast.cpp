@@ -58,7 +58,7 @@ TEST_CASE("Test AST Parser Errors", "[ast][parser][error]")
   auto res1 = parser.parse("22aa");
   REQUIRE_FALSE(res1.has_value());
 
-  auto res2 = parser.parse("2 ++-- 2");
+  auto res2 = parser.parse("2 **// 2");
   REQUIRE_FALSE(res2.has_value());
 
   auto res3 = parser.parse("2 + 2 * pi / sqrt(2) - 1 +");

@@ -44,6 +44,10 @@ public:
     std::shared_ptr<BinaryMultiplyNode>& node) override;
   error::Result<double> visit_bin_divide(
     std::shared_ptr<BinaryDivideNode>& node) override;
+  error::Result<double> visit_unary_plus(
+    std::shared_ptr<UnaryPlusNode>& node) override;
+  error::Result<double> visit_unary_minus(
+    std::shared_ptr<UnaryMinusNode>& node) override;
   error::Result<double> visit_number(
     std::shared_ptr<NumberNode>& node) override;
   error::Result<double> visit_varref(

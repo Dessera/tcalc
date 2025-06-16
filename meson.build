@@ -33,6 +33,7 @@ lib = library(
 
 dep_tcalc = declare_dependency(include_directories: lib_inc, link_with: lib)
 
+subdir('bin')
 subdir('tests')
 
 pkg_mod = import('pkgconfig')

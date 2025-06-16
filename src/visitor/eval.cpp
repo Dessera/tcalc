@@ -47,6 +47,18 @@ EvalVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
 }
 
 error::Result<double>
+EvalVisitor::visit_unary_plus(std::shared_ptr<UnaryPlusNode>& node)
+{
+  return visit(node->operand());
+}
+
+error::Result<double>
+EvalVisitor::visit_unary_minus(std::shared_ptr<UnaryMinusNode>& node)
+{
+  return error::ok<double>(-unwrap_err(visit(node->operand())));
+}
+
+error::Result<double>
 EvalVisitor::visit_number(std::shared_ptr<NumberNode>& node)
 {
   return error::ok<double>(node->value());

@@ -64,6 +64,30 @@ PrintVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
 }
 
 error::Result<void>
+PrintVisitor::visit_unary_plus(std::shared_ptr<UnaryPlusNode>& node)
+{
+  std::println(*_os, "{}UNARY_PLUS:", _gen_indent());
+
+  _step_indent();
+  ret_err(visit(node->operand()));
+  _unstep_indent();
+
+  return error::ok<void>();
+}
+
+error::Result<void>
+PrintVisitor::visit_unary_minus(std::shared_ptr<UnaryMinusNode>& node)
+{
+  std::println(*_os, "{}UNARY_MINUS:", _gen_indent());
+
+  _step_indent();
+  ret_err(visit(node->operand()));
+  _unstep_indent();
+
+  return error::ok<void>();
+}
+
+error::Result<void>
 PrintVisitor::visit_number(std::shared_ptr<NumberNode>& node)
 {
   std::println(*_os, "{}NUMBER: {}", _gen_indent(), node->value());

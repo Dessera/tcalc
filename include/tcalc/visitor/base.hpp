@@ -17,6 +17,7 @@
 #include "tcalc/ast/function.hpp"
 #include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
+#include "tcalc/ast/unaryop.hpp"
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/error.hpp"
 
@@ -30,9 +31,6 @@ namespace tcalc::ast {
 template<typename RT>
 class BaseVisitor
 {
-private:
-  using ResultT = error::Result<RT>;
-
 public:
   virtual ~BaseVisitor() = default;
 
@@ -42,7 +40,7 @@ public:
    * @param node Number node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit(std::shared_ptr<Node>& node)
+  virtual error::Result<RT> visit(std::shared_ptr<Node>& node)
   {
     if (auto bin_node = std::dynamic_pointer_cast<BinaryOpNode>(node)) {
       return visit_bin_op(bin_node);
@@ -66,7 +64,7 @@ public:
    * @param node Binary operation node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
+  virtual error::Result<RT> visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
   {
     if (auto bin_plus_node = std::dynamic_pointer_cast<BinaryPlusNode>(node)) {
       return visit_bin_plus(bin_plus_node);
@@ -88,12 +86,32 @@ public:
   }
 
   /**
+   * @brief Visit a unary operation node.
+   *
+   * @param node Unary operation node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
+  {
+    if (auto unary_plus_node = std::dynamic_pointer_cast<UnaryPlusNode>(node)) {
+      return visit_unary_plus(unary_plus_node);
+    }
+    if (auto unary_minus_node =
+          std::dynamic_pointer_cast<UnaryMinusNode>(node)) {
+      return visit_unary_minus(unary_minus_node);
+    }
+
+    return error::ok<RT>();
+  }
+
+  /**
    * @brief Visit a plus node.
    *
    * @param node Plus node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_bin_plus(std::shared_ptr<BinaryPlusNode>& node) = 0;
+  virtual error::Result<RT> visit_bin_plus(
+    std::shared_ptr<BinaryPlusNode>& node) = 0;
 
   /**
    * @brief Visit a minus node.
@@ -101,7 +119,8 @@ public:
    * @param node Minus node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_bin_minus(std::shared_ptr<BinaryMinusNode>& node) = 0;
+  virtual error::Result<RT> visit_bin_minus(
+    std::shared_ptr<BinaryMinusNode>& node) = 0;
 
   /**
    * @brief Visit a multiply node.
@@ -109,7 +128,7 @@ public:
    * @param node Multiply node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_bin_multiply(
+  virtual error::Result<RT> visit_bin_multiply(
     std::shared_ptr<BinaryMultiplyNode>& node) = 0;
 
   /**
@@ -118,7 +137,26 @@ public:
    * @param node Divide node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node) = 0;
+  virtual error::Result<RT> visit_bin_divide(
+    std::shared_ptr<BinaryDivideNode>& node) = 0;
+
+  /**
+   * @brief Visit a unary plus node.
+   *
+   * @param node Unary plus node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_unary_plus(
+    std::shared_ptr<UnaryPlusNode>& node) = 0;
+
+  /**
+   * @brief Visit a unary minus node.
+   *
+   * @param node Unary minus node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_unary_minus(
+    std::shared_ptr<UnaryMinusNode>& node) = 0;
 
   /**
    * @brief Visit a number node.
@@ -126,7 +164,7 @@ public:
    * @param node Number node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_number(std::shared_ptr<NumberNode>& node) = 0;
+  virtual error::Result<RT> visit_number(std::shared_ptr<NumberNode>& node) = 0;
 
   /**
    * @brief Visit a variable reference node.
@@ -134,7 +172,7 @@ public:
    * @param node Variable reference node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_varref(std::shared_ptr<VarRefNode>& node) = 0;
+  virtual error::Result<RT> visit_varref(std::shared_ptr<VarRefNode>& node) = 0;
 
   /**
    * @brief Visit a function call node.
@@ -142,7 +180,7 @@ public:
    * @param node Function call node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual ResultT visit_fcall(std::shared_ptr<FcallNode>& node) = 0;
+  virtual error::Result<RT> visit_fcall(std::shared_ptr<FcallNode>& node) = 0;
 };
 
 }

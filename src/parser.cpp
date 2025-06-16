@@ -6,6 +6,7 @@
 #include "tcalc/ast/function.hpp"
 #include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
+#include "tcalc/ast/unaryop.hpp"
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/parser.hpp"
@@ -105,9 +106,11 @@ Parser::next_term(ParserContext& ctx)
 
 // factor : NUMBER |
 //          idref |
-//          LPAREN expr RPAREN
+//          LPAREN expr RPAREN |
+//          MINUS factor |
+//          PLUS factor
 NodeResult<Node>
-Parser::next_factor(ParserContext& ctx)
+Parser::next_factor(ParserContext& ctx) // NOLINT
 {
   auto current = ctx.current();
   std::shared_ptr<Node> node;
@@ -124,6 +127,14 @@ Parser::next_factor(ParserContext& ctx)
     ret_err(ctx.eat(token::TokenType::LPAREN));
     node = unwrap_err(next_expr(ctx));
     ret_err(ctx.eat(token::TokenType::RPAREN));
+  } else if (current.type == token::TokenType::PLUS) {
+    // is unary plus
+    ret_err(ctx.eat(token::TokenType::PLUS));
+    node = std::make_shared<UnaryPlusNode>(unwrap_err(next_factor(ctx)));
+  } else if (current.type == token::TokenType::MINUS) {
+    // is unary minus
+    ret_err(ctx.eat(token::TokenType::MINUS));
+    node = std::make_shared<UnaryMinusNode>(unwrap_err(next_factor(ctx)));
   } else {
     // syntax error
     return error::err(error::Code::SYNTAX_ERROR,

@@ -3,5 +3,6 @@ lib_src += files(
   'function.cpp',
   'node.cpp',
   'number.cpp',
+  'unaryop.cpp',
   'variable.cpp',
 )
