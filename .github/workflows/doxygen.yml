@@ -17,6 +17,9 @@ jobs:
       - name: Generate Doxygen documentation
         run: doxygen Doxyfile
 
+      - name: Copy logo
+        run: cp -r images docs/html/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
