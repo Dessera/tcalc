@@ -29,13 +29,13 @@ enum class TokenType : int8_t
   MINUS = 0x2d,       /**< - operator. */
   MULTIPLY = 0x2a,    /**< * operator. */
   DIVIDE = 0x2f,      /**< / operator. */
-  LPAREN = 0x28,      /**< bracket start. */
-  RPAREN = 0x29,      /**< bracket end. */
-  COMMA = 0x2c,       /**< comma. */
-  NUMBER = -0x01,     /**< constant number. */
-  IDENTIFIER = -0x02, /**< variable or function name. */
-  EOI = -0x03,        /**< end of input. */
-  INVALID = -0x04,    /**< invalid token placeholder. */
+  LPAREN = 0x28,      /**< Bracket start. */
+  RPAREN = 0x29,      /**< Bracket end. */
+  COMMA = 0x2c,       /**< Comma. */
+  NUMBER = -0x01,     /**< Constant number. */
+  IDENTIFIER = -0x02, /**< Variable or function name. */
+  EOI = -0x03,        /**< End of input. */
+  INVALID = -0x04,    /**< Invalid token placeholder. */
 };
 
 /**

@@ -23,7 +23,7 @@ namespace tcalc::ast {
  * @brief Variable node.
  *
  */
-class TCALC_PUBLIC VariableNode : public Node
+class TCALC_PUBLIC VarRefNode : public Node
 {
 private:
   std::string _name;
@@ -34,9 +34,9 @@ public:
    *
    * @param name Variable name.
    */
-  explicit VariableNode(std::string name);
+  explicit VarRefNode(std::string name);
 
-  ~VariableNode() override = default;
+  ~VarRefNode() override = default;
 
   /**
    * @brief Get variable name.

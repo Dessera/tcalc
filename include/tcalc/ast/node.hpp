@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <cctype>
 #include <cstdint>
 
 #include "tcalc/common.hpp"
@@ -30,8 +31,8 @@ enum class NodeType : uint8_t
   UNARY_PLUS,      /**< Unary plus operator. */
   UNARY_MINUS,     /**< Unary minus operator. */
   NUMBER,          /**< Constant number. */
-  VARIABLE,        /**< Variable. */
-  FUNCTION,        /**< Function call. */
+  VARREF,          /**< Variable reference. */
+  FCALL,           /**< Function call. */
 };
 
 /**

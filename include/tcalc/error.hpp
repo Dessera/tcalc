@@ -20,12 +20,12 @@
 
 #include "tcalc/common.hpp"
 
-#define RETERR(expr)                                                           \
+#define ret_err(expr)                                                          \
   if (auto res = (expr); !res.has_value()) {                                   \
     return std::unexpected(res.error());                                       \
   }
 
-#define UNWRAPERR(expr)                                                        \
+#define unwrap_err(expr)                                                       \
   ({                                                                           \
     auto _ret = (expr);                                                        \
     if (!_ret.has_value()) {                                                   \
@@ -34,7 +34,7 @@
     _ret.value();                                                              \
   })
 
-#define LOGERR(expr)                                                           \
+#define log_err(expr)                                                          \
   {                                                                            \
     auto _ret = (expr);                                                        \
     if (!_ret.has_value()) {                                                   \
@@ -42,7 +42,7 @@
     }                                                                          \
   }
 
-#define LOGERR_EXIT(expr)                                                      \
+#define log_err_exit(expr)                                                     \
   {                                                                            \
     auto _ret = (expr);                                                        \
     if (!_ret.has_value()) {                                                   \

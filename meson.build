@@ -20,7 +20,11 @@ lib = library(
   include_directories: lib_inc,
   dependencies: [magic_enum_dep],
   gnu_symbol_visibility: 'hidden',
-  cpp_args: '-DBUILDING_TCALC',
+  cpp_args: [
+    '-DBUILDING_TCALC',
+    '-Wno-pedantic',
+    '-Werror',
+  ],
   install: true,
 )
 

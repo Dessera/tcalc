@@ -25,7 +25,7 @@ namespace tcalc::ast {
  * @brief Function node.
  *
  */
-class TCALC_PUBLIC FunctionNode : public Node
+class TCALC_PUBLIC FcallNode : public Node
 {
 private:
   std::string _name;
@@ -37,7 +37,7 @@ public:
    *
    * @param name Function name.
    */
-  FunctionNode(std::string name);
+  FcallNode(std::string name);
 
   /**
    * @brief Construct a new Function Node object.
@@ -45,9 +45,9 @@ public:
    * @param name Function name.
    * @param args Function arguments.
    */
-  FunctionNode(std::string name, std::vector<std::shared_ptr<Node>> args);
+  FcallNode(std::string name, std::vector<std::shared_ptr<Node>> args);
 
-  ~FunctionNode() override = default;
+  ~FcallNode() override = default;
 
   /**
    * @brief Get function arguments.
@@ -55,6 +55,13 @@ public:
    * @return const std::vector<std::shared_ptr<Node>>& Function arguments.
    */
   [[nodiscard]] constexpr auto& args() const noexcept { return _args; }
+
+  /**
+   * @brief Get function arguments.
+   *
+   * @return std::vector<std::shared_ptr<Node>>& Function arguments.
+   */
+  [[nodiscard]] constexpr auto& args() noexcept { return _args; }
 
   /**
    * @brief Push a function argument.

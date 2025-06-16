@@ -2,8 +2,8 @@
 
 namespace tcalc::ast {
 
-VariableNode::VariableNode(std::string name)
-  : Node{ NodeType::VARIABLE }
+VarRefNode::VarRefNode(std::string name)
+  : Node{ NodeType::VARREF }
   , _name{ std::move(name) }
 {
 }

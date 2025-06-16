@@ -1,5 +1,4 @@
 #include <cctype>
-#include <utility>
 
 #include "magic_enum/magic_enum.hpp"
 #include "tcalc/error.hpp"
@@ -8,8 +7,8 @@
 
 namespace tcalc::token {
 
-Tokenizer::Tokenizer(std::string input)
-  : _input{ std::move(input) }
+Tokenizer::Tokenizer(std::string_view input)
+  : _input{ input }
   , _pos{ _input.begin() }
 {
 }

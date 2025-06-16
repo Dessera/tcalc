@@ -55,7 +55,8 @@ public:
    *
    * @return std::shared_ptr<Node> Left subnode.
    */
-  [[nodiscard]] constexpr auto left() const noexcept { return _left; }
+  [[nodiscard]] constexpr auto& left() const noexcept { return _left; }
+  [[nodiscard]] constexpr auto& left() noexcept { return _left; }
 
   /**
    * @brief Set the left subnode.
@@ -72,7 +73,8 @@ public:
    *
    * @return std::shared_ptr<Node> Right subnode.
    */
-  [[nodiscard]] constexpr auto right() const noexcept { return _right; }
+  [[nodiscard]] constexpr auto& right() const noexcept { return _right; }
+  [[nodiscard]] constexpr auto& right() noexcept { return _right; }
 
   /**
    * @brief Set the right subnode.

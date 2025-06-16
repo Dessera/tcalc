@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include <string_view>
+
 #include "tcalc/common.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/token.hpp"
@@ -24,8 +26,8 @@ namespace tcalc::token {
 class TCALC_PUBLIC Tokenizer
 {
 private:
-  std::string _input;
-  std::string::const_iterator _pos;
+  std::string_view _input;
+  std::string_view::const_iterator _pos;
 
 public:
   /**
@@ -33,7 +35,7 @@ public:
    *
    * @param input The input string.
    */
-  explicit Tokenizer(std::string input);
+  explicit Tokenizer(std::string_view input);
 
   /**
    * @brief Get the next token.
@@ -41,6 +43,23 @@ public:
    * @return Token The next token.
    */
   error::Result<Token> next();
+
+  /**
+   * @brief Get the current position of the tokenizer.
+   *
+   * @return std::string_view::const_iterator The current position.
+   */
+  [[nodiscard]] constexpr auto pos() const noexcept { return _pos; }
+
+  /**
+   * @brief Get the current position of the tokenizer as an index.
+   *
+   * @return size_t The current position as an index.
+   */
+  [[nodiscard]] constexpr auto spos() const noexcept
+  {
+    return std::distance(_input.begin(), _pos);
+  }
 
 private:
   /**
@@ -52,7 +71,7 @@ private:
    */
   constexpr auto _next_with(TokenType type, auto&& pred)
   {
-    auto start = _pos;
+    const auto* start = _pos;
     while (_pos != _input.end() && pred(*_pos)) {
       ++_pos;
     }

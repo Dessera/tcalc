@@ -1,6 +1,7 @@
 #include <print>
 #include <vector>
 
+#include "tcalc/error.hpp"
 #include "tcalc/token.hpp"
 #include "tcalc/tokenizer.hpp"
 

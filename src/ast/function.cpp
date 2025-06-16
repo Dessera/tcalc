@@ -2,14 +2,13 @@
 
 namespace tcalc::ast {
 
-FunctionNode::FunctionNode(std::string name)
-  : FunctionNode{ std::move(name), {} }
+FcallNode::FcallNode(std::string name)
+  : FcallNode{ std::move(name), {} }
 {
 }
 
-FunctionNode::FunctionNode(std::string name,
-                           std::vector<std::shared_ptr<Node>> args)
-  : Node{ NodeType::FUNCTION }
+FcallNode::FcallNode(std::string name, std::vector<std::shared_ptr<Node>> args)
+  : Node{ NodeType::FCALL }
   , _name{ std::move(name) }
   , _args{ std::move(args) }
 {

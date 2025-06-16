@@ -6,3 +6,4 @@ lib_src = files(
 )
 
 subdir('ast')
+subdir('visitor')
