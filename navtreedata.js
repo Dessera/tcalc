@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "tcalc", "index.html", [
-    [ "tcalc", "md_README.html", null ],
+    [ "README", "md_README.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
