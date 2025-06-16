@@ -18,6 +18,9 @@ var annotated_dup =
         [ "Parser", "classtcalc_1_1ast_1_1Parser.html", "classtcalc_1_1ast_1_1Parser" ],
         [ "ParserContext", "classtcalc_1_1ast_1_1ParserContext.html", "classtcalc_1_1ast_1_1ParserContext" ],
         [ "PrintVisitor", "classtcalc_1_1ast_1_1PrintVisitor.html", "classtcalc_1_1ast_1_1PrintVisitor" ],
+        [ "UnaryMinusNode", "classtcalc_1_1ast_1_1UnaryMinusNode.html", "classtcalc_1_1ast_1_1UnaryMinusNode" ],
+        [ "UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", "classtcalc_1_1ast_1_1UnaryOpNode" ],
+        [ "UnaryPlusNode", "classtcalc_1_1ast_1_1UnaryPlusNode.html", "classtcalc_1_1ast_1_1UnaryPlusNode" ],
         [ "VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", "classtcalc_1_1ast_1_1VarRefNode" ]
       ] ],
       [ "error", null, [

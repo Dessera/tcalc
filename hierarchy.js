@@ -22,6 +22,10 @@ var hierarchy =
       ] ],
       [ "tcalc::ast::FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", null ],
       [ "tcalc::ast::NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", null ],
+      [ "tcalc::ast::UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", [
+        [ "tcalc::ast::UnaryMinusNode", "classtcalc_1_1ast_1_1UnaryMinusNode.html", null ],
+        [ "tcalc::ast::UnaryPlusNode", "classtcalc_1_1ast_1_1UnaryPlusNode.html", null ]
+      ] ],
       [ "tcalc::ast::VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", null ]
     ] ],
     [ "tcalc::ast::Parser", "classtcalc_1_1ast_1_1Parser.html", null ],
