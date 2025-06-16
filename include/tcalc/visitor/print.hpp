@@ -22,6 +22,7 @@
 #include "tcalc/ast/number.hpp"
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/common.hpp"
+#include "tcalc/error.hpp"
 #include "tcalc/visitor/base.hpp"
 
 namespace tcalc::ast {
@@ -51,15 +52,17 @@ public:
 
   ~PrintVisitor() override = default;
 
-  void visit(std::shared_ptr<Node>& node) override;
-  void visit(std::shared_ptr<BinaryOpNode>& node) override;
-  void visit(std::shared_ptr<BinaryPlusNode>& node) override;
-  void visit(std::shared_ptr<BinaryMinusNode>& node) override;
-  void visit(std::shared_ptr<BinaryMultiplyNode>& node) override;
-  void visit(std::shared_ptr<BinaryDivideNode>& node) override;
-  void visit(std::shared_ptr<NumberNode>& node) override;
-  void visit(std::shared_ptr<VarRefNode>& node) override;
-  void visit(std::shared_ptr<FcallNode>& node) override;
+  error::Result<void> visit_bin_plus(
+    std::shared_ptr<BinaryPlusNode>& node) override;
+  error::Result<void> visit_bin_minus(
+    std::shared_ptr<BinaryMinusNode>& node) override;
+  error::Result<void> visit_bin_multiply(
+    std::shared_ptr<BinaryMultiplyNode>& node) override;
+  error::Result<void> visit_bin_divide(
+    std::shared_ptr<BinaryDivideNode>& node) override;
+  error::Result<void> visit_number(std::shared_ptr<NumberNode>& node) override;
+  error::Result<void> visit_varref(std::shared_ptr<VarRefNode>& node) override;
+  error::Result<void> visit_fcall(std::shared_ptr<FcallNode>& node) override;
 
 private:
   /**

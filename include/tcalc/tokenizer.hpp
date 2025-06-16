@@ -89,6 +89,30 @@ private:
       ++_pos;
     }
   }
+
+  /**
+   * @brief Parse the next number.
+   *
+   */
+  error::Result<Token> _parse_number();
+
+  /**
+   * @brief Check if the character is a valid variable character.
+   *
+   * @param c The character to check.
+   * @return true If the character is a valid variable character.
+   * @return false If the character is not a valid variable character.
+   */
+  static bool _is_variable_char(char c);
+
+  /**
+   * @brief Check if the character is a valid first variable character.
+   *
+   * @param c The character to check.
+   * @return true If the character is a valid first variable character.
+   * @return false If the character is not a valid first variable character.
+   */
+  static bool _is_first_variable_char(char c);
 };
 
 }

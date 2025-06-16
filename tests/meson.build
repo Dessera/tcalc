@@ -10,5 +10,12 @@ test_ast = executable(
   dependencies: [dep_tcalc],
 )
 
+test_eval = executable(
+  'test_eval',
+  files('test_eval.cpp'),
+  dependencies: [dep_tcalc],
+)
+
 test('test_tokens', test_tokens)
 test('test_ast', test_ast)
+test('test_eval', test_eval)

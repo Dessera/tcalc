@@ -1,3 +1,14 @@
+/**
+ * @file parser.hpp
+ * @author Dessera (dessera@qq.com)
+ * @brief AST parser.
+ * @version 0.1.0
+ * @date 2025-06-16
+ *
+ * @copyright Copyright (c) 2025 Dessera
+ *
+ */
+
 #pragma once
 
 #include <memory>

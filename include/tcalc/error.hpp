@@ -59,7 +59,10 @@ namespace tcalc::error {
  */
 enum class Code : uint8_t
 {
-  SYNTAX_ERROR, /**< Syntax error in tokenizer and parser. */
+  SYNTAX_ERROR,    /**< Syntax error in tokenizer and parser. */
+  UNDEFINED_VAR,   /**< Undefined variable. */
+  UNDEFINED_FUNC,  /**< Undefined function. */
+  MISMATCHED_ARGS, /**< Mismatched arguments. */
 };
 
 /**

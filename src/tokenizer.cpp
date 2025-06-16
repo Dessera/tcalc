@@ -1,6 +1,6 @@
 #include <cctype>
+#include <magic_enum/magic_enum.hpp>
 
-#include "magic_enum/magic_enum.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/token.hpp"
 #include "tcalc/tokenizer.hpp"
@@ -33,19 +33,52 @@ Tokenizer::next()
     return Token{ .type = res.value(), .text = std::string{ *_pos++ } };
   }
 
-  // TODO: real float parsing
   if (std::isdigit(*_pos)) {
-    return _next_with(TokenType::NUMBER, isdigit);
+    return _parse_number();
   }
 
-  if (std::isalpha(*_pos)) {
-    return _next_with(TokenType::IDENTIFIER, isalnum);
+  if (_is_first_variable_char(*_pos)) {
+    return _next_with(TokenType::IDENTIFIER, _is_variable_char);
   }
 
   return error::err(error::Code::SYNTAX_ERROR,
                     "Unexpected character '{}', index: {}",
                     *_pos,
                     std::distance(_input.cbegin(), _pos));
+}
+
+error::Result<Token>
+Tokenizer::_parse_number()
+{
+  // accept number with dot
+  const auto* start = _pos;
+  _skip_with(isdigit);
+  if (_pos != _input.end() && *_pos == '.') {
+    ++_pos;
+
+    if (_pos != _input.end() && isdigit(*_pos)) {
+      _skip_with(isdigit);
+    } else {
+      return error::err(error::Code::SYNTAX_ERROR,
+                        "Unexpected character '{}', index: {}",
+                        *_pos,
+                        std::distance(_input.cbegin(), _pos));
+    }
+  }
+
+  return Token{ .type = TokenType::NUMBER, .text = std::string{ start, _pos } };
+}
+
+bool
+Tokenizer::_is_variable_char(char c)
+{
+  return std::isalnum(c) || c == '_';
+}
+
+bool
+Tokenizer::_is_first_variable_char(char c)
+{
+  return std::isalpha(c) || c == '_';
 }
 
 }

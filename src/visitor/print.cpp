@@ -1,7 +1,6 @@
 #include <ostream>
 
 #include "tcalc/ast/binaryop.hpp"
-#include "tcalc/visitor/base.hpp"
 #include "tcalc/visitor/print.hpp"
 
 namespace tcalc::ast {
@@ -12,79 +11,84 @@ PrintVisitor::PrintVisitor(std::ostream& os, std::size_t step)
 {
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<Node>& node)
-{
-  BaseVisitor<void>::visit(node);
-}
-
-void
-PrintVisitor::visit(std::shared_ptr<BinaryOpNode>& node)
-{
-  BaseVisitor<void>::visit(node);
-}
-
-void
-PrintVisitor::visit(std::shared_ptr<BinaryPlusNode>& node)
+error::Result<void>
+PrintVisitor::visit_bin_plus(std::shared_ptr<BinaryPlusNode>& node)
 {
   std::println(*_os, "{}PLUS:", _gen_indent());
+
   _step_indent();
-  BaseVisitor<void>::visit(node->left());
-  BaseVisitor<void>::visit(node->right());
+  ret_err(visit(node->left()));
+  ret_err(visit(node->right()));
   _unstep_indent();
+
+  return error::ok<void>();
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<BinaryMinusNode>& node)
+error::Result<void>
+PrintVisitor::visit_bin_minus(std::shared_ptr<BinaryMinusNode>& node)
 {
   std::println(*_os, "{}MINUS:", _gen_indent());
+
   _step_indent();
-  BaseVisitor<void>::visit(node->left());
-  BaseVisitor<void>::visit(node->right());
+  ret_err(visit(node->left()));
+  ret_err(visit(node->right()));
   _unstep_indent();
+
+  return error::ok<void>();
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<BinaryMultiplyNode>& node)
+error::Result<void>
+PrintVisitor::visit_bin_multiply(std::shared_ptr<BinaryMultiplyNode>& node)
 {
   std::println(*_os, "{}MULTIPLY:", _gen_indent());
+
   _step_indent();
-  BaseVisitor<void>::visit(node->left());
-  BaseVisitor<void>::visit(node->right());
+  ret_err(visit(node->left()));
+  ret_err(visit(node->right()));
   _unstep_indent();
+
+  return error::ok<void>();
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<BinaryDivideNode>& node)
+error::Result<void>
+PrintVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
 {
   std::println(*_os, "{}DIVIDE:", _gen_indent());
+
   _step_indent();
-  BaseVisitor<void>::visit(node->left());
-  BaseVisitor<void>::visit(node->right());
+  ret_err(visit(node->left()));
+  ret_err(visit(node->right()));
   _unstep_indent();
+
+  return error::ok<void>();
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<NumberNode>& node)
+error::Result<void>
+PrintVisitor::visit_number(std::shared_ptr<NumberNode>& node)
 {
   std::println(*_os, "{}NUMBER: {}", _gen_indent(), node->value());
+  return error::ok<void>();
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<VarRefNode>& node)
+error::Result<void>
+PrintVisitor::visit_varref(std::shared_ptr<VarRefNode>& node)
 {
   std::println(*_os, "{}VARREF: {}", _gen_indent(), node->name());
+
+  return error::ok<void>();
 }
 
-void
-PrintVisitor::visit(std::shared_ptr<FcallNode>& node)
+error::Result<void>
+PrintVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
 {
   std::println(*_os, "{}FCALL: {}", _gen_indent(), node->name());
   _step_indent();
   for (auto& arg : node->args()) {
-    BaseVisitor<void>::visit(arg);
+    ret_err(visit(arg));
   }
   _unstep_indent();
+
+  return error::ok<void>();
 }
 
 }

@@ -1,11 +1,16 @@
+#include <print>
+
 #include "tcalc/error.hpp"
+#include "tcalc/eval.hpp"
 #include "tcalc/parser.hpp"
+#include "tcalc/visitor/eval.hpp"
 #include "tcalc/visitor/print.hpp"
 
 int
 main()
 {
   using tcalc::ast::BaseVisitor;
+  using tcalc::ast::EvalVisitor;
   using tcalc::ast::Parser;
   using tcalc::ast::PrintVisitor;
 
@@ -21,5 +26,14 @@ main()
 
   PrintVisitor pv{};
 
-  pv.BaseVisitor<void>::visit(node);
+  log_err(pv.visit(node));
+
+  tcalc::EvalContext ctx{};
+  EvalVisitor ev{ ctx };
+
+  auto res = ev.visit(node);
+
+  log_err(res);
+
+  // std::println("result: {}", res.value());
 }
