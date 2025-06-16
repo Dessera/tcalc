@@ -1,10 +1,14 @@
 var hierarchy =
 [
     [ "tcalc::ast::BaseVisitor< RT >", "classtcalc_1_1ast_1_1BaseVisitor.html", null ],
-    [ "tcalc::ast::BaseVisitor< RT >", "classtcalc_1_1ast_1_1BaseVisitor_3_01RT_01_4.html", null ],
-    [ "tcalc::ast::BaseVisitor< void >", "classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html", [
+    [ "tcalc::ast::BaseVisitor< double >", "classtcalc_1_1ast_1_1BaseVisitor.html", [
+      [ "tcalc::ast::EvalVisitor", "classtcalc_1_1ast_1_1EvalVisitor.html", null ]
+    ] ],
+    [ "tcalc::ast::BaseVisitor< void >", "classtcalc_1_1ast_1_1BaseVisitor.html", [
       [ "tcalc::ast::PrintVisitor", "classtcalc_1_1ast_1_1PrintVisitor.html", null ]
     ] ],
+    [ "tcalc::EvalContext", "classtcalc_1_1EvalContext.html", null ],
+    [ "tcalc::Evaluator", "classtcalc_1_1Evaluator.html", null ],
     [ "std::exception", null, [
       [ "tcalc::error::Error", "classtcalc_1_1error_1_1Error.html", null ]
     ] ],

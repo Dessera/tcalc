@@ -146,16 +146,22 @@ $(document).ready(function(){initNavTree('tokenizer_8hpp_source.html',''); initR
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      ++_pos;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  error::Result&lt;Token&gt; _parse_number();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_variable_char(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_first_variable_char(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
 <div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html">tcalc::token::Tokenizer</a></div><div class="ttdoc">Tokenize the input string into tokens.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:27</div></div>
 <div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a4b59b0c76dc6d1fbbcf2457cf7fa576b"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a4b59b0c76dc6d1fbbcf2457cf7fa576b">tcalc::token::Tokenizer::spos</a></div><div class="ttdeci">constexpr auto spos() const noexcept</div><div class="ttdoc">Get the current position of the tokenizer as an index.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:59</div></div>
 <div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a5e3304d5dcf639f0b78a26cdcdd941f5"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a5e3304d5dcf639f0b78a26cdcdd941f5">tcalc::token::Tokenizer::pos</a></div><div class="ttdeci">constexpr auto pos() const noexcept</div><div class="ttdoc">Get the current position of the tokenizer.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:52</div></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div><div class="ttdoc">tcalc error definition.</div></div>
-<div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:121</div></div>
+<div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:124</div></div>
 <div class="ttc" id="atoken_8hpp_html"><div class="ttname"><a href="token_8hpp.html">token.hpp</a></div><div class="ttdoc">Input token definition.</div></div>
 <div class="ttc" id="atoken_8hpp_html_a5f01aa5ee93ef3d2462eae887575ec42"><div class="ttname"><a href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42">tcalc::token::TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">Token type, some values are ASCII code of the corresponding character.</div><div class="ttdef"><b>Definition</b> token.hpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->

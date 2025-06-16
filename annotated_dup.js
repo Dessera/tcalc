@@ -6,13 +6,12 @@ var annotated_dup =
     [ "tcalc", null, [
       [ "ast", null, [
         [ "BaseVisitor", "classtcalc_1_1ast_1_1BaseVisitor.html", "classtcalc_1_1ast_1_1BaseVisitor" ],
-        [ "BaseVisitor< RT >", "classtcalc_1_1ast_1_1BaseVisitor_3_01RT_01_4.html", "classtcalc_1_1ast_1_1BaseVisitor_3_01RT_01_4" ],
-        [ "BaseVisitor< void >", "classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html", "classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4" ],
         [ "BinaryDivideNode", "classtcalc_1_1ast_1_1BinaryDivideNode.html", "classtcalc_1_1ast_1_1BinaryDivideNode" ],
         [ "BinaryMinusNode", "classtcalc_1_1ast_1_1BinaryMinusNode.html", "classtcalc_1_1ast_1_1BinaryMinusNode" ],
         [ "BinaryMultiplyNode", "classtcalc_1_1ast_1_1BinaryMultiplyNode.html", "classtcalc_1_1ast_1_1BinaryMultiplyNode" ],
         [ "BinaryOpNode", "classtcalc_1_1ast_1_1BinaryOpNode.html", "classtcalc_1_1ast_1_1BinaryOpNode" ],
         [ "BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", "classtcalc_1_1ast_1_1BinaryPlusNode" ],
+        [ "EvalVisitor", "classtcalc_1_1ast_1_1EvalVisitor.html", "classtcalc_1_1ast_1_1EvalVisitor" ],
         [ "FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", "classtcalc_1_1ast_1_1FcallNode" ],
         [ "Node", "classtcalc_1_1ast_1_1Node.html", "classtcalc_1_1ast_1_1Node" ],
         [ "NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", "classtcalc_1_1ast_1_1NumberNode" ],
@@ -27,6 +26,8 @@ var annotated_dup =
       [ "token", null, [
         [ "Token", "structtcalc_1_1token_1_1Token.html", null ],
         [ "Tokenizer", "classtcalc_1_1token_1_1Tokenizer.html", "classtcalc_1_1token_1_1Tokenizer" ]
-      ] ]
+      ] ],
+      [ "EvalContext", "classtcalc_1_1EvalContext.html", "classtcalc_1_1EvalContext" ],
+      [ "Evaluator", "classtcalc_1_1Evaluator.html", "classtcalc_1_1Evaluator" ]
     ] ]
 ];

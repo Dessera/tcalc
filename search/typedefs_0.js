@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['result_0',['Result',['../error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9',1,'tcalc::error']]]
+  ['function_0',['Function',['../builtins_8hpp.html#a604dac5019722659ba4ace90adff2086',1,'tcalc::builtins']]]
 ];

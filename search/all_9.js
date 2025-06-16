@@ -8,8 +8,9 @@ var searchData=
   ['next_5fterm_5',['next_term',['../classtcalc_1_1ast_1_1Parser.html#a88446899b2d954239c9e0e01099a33c4',1,'tcalc::ast::Parser']]],
   ['node_6',['node',['../classtcalc_1_1ast_1_1Node.html',1,'tcalc::ast::Node'],['../classtcalc_1_1ast_1_1Node.html#a5e7be8f762686ab392ec4352d390c3e1',1,'tcalc::ast::Node::Node()']]],
   ['node_2ehpp_7',['node.hpp',['../node_8hpp.html',1,'']]],
-  ['nodetype_8',['NodeType',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc',1,'tcalc::ast']]],
-  ['number_9',['number',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::token'],['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::ast']]],
-  ['number_2ehpp_10',['number.hpp',['../number_8hpp.html',1,'']]],
-  ['numbernode_11',['numbernode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode::NumberNode()'],['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast::NumberNode']]]
+  ['noderesult_8',['NodeResult',['../parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a',1,'tcalc::ast']]],
+  ['nodetype_9',['NodeType',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc',1,'tcalc::ast']]],
+  ['number_10',['number',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::token'],['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::ast']]],
+  ['number_2ehpp_11',['number.hpp',['../number_8hpp.html',1,'']]],
+  ['numbernode_12',['numbernode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode::NumberNode()'],['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast::NumberNode']]]
 ];

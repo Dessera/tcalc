@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['indent_5fstep_0',['INDENT_STEP',['../classtcalc_1_1ast_1_1PrintVisitor.html#a479de25d313fba8830c2b76263b85591',1,'tcalc::ast::PrintVisitor']]]
+  ['builtin_5ffunctions_0',['BUILTIN_FUNCTIONS',['../builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07',1,'tcalc::builtins']]],
+  ['builtin_5fvariables_1',['BUILTIN_VARIABLES',['../builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28',1,'tcalc::builtins']]]
 ];

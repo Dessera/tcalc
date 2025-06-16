@@ -113,7 +113,7 @@ Inheritance diagram for tcalc::ast::PrintVisitor:</div>
  <div class="center">
   <img src="classtcalc_1_1ast_1_1PrintVisitor.png" usemap="#tcalc::ast::PrintVisitor_map" alt=""/>
   <map id="tcalc::ast::PrintVisitor_map" name="tcalc::ast::PrintVisitor_map">
-<area href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html" title="Base visitor class without return type." alt="tcalc::ast::BaseVisitor&lt; void &gt;" shape="rect" coords="0,0,179,24"/>
+<area href="classtcalc_1_1ast_1_1BaseVisitor.html" alt="tcalc::ast::BaseVisitor&lt; void &gt;" shape="rect" coords="0,0,179,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -122,33 +122,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af0f462105bee1bf70a50a85b4fdfac14" id="r_af0f462105bee1bf70a50a85b4fdfac14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#af0f462105bee1bf70a50a85b4fdfac14">PrintVisitor</a> (std::ostream &amp;os=std::cout, std::size_t step=<a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a479de25d313fba8830c2b76263b85591">INDENT_STEP</a>)</td></tr>
 <tr class="memdesc:af0f462105bee1bf70a50a85b4fdfac14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Print Visitor object.  <br /></td></tr>
 <tr class="separator:af0f462105bee1bf70a50a85b4fdfac14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52d24d42864fa979148d010bbfe5d0dd" id="r_a52d24d42864fa979148d010bbfe5d0dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a52d24d42864fa979148d010bbfe5d0dd">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a52d24d42864fa979148d010bbfe5d0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a node.  <br /></td></tr>
-<tr class="separator:a52d24d42864fa979148d010bbfe5d0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7348d12b0006ba437fe32a614a75ca9e" id="r_a7348d12b0006ba437fe32a614a75ca9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a7348d12b0006ba437fe32a614a75ca9e">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryOpNode.html">BinaryOpNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a7348d12b0006ba437fe32a614a75ca9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a binary operation node.  <br /></td></tr>
-<tr class="separator:a7348d12b0006ba437fe32a614a75ca9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81e366e752021e02812bf91c0a11930d" id="r_a81e366e752021e02812bf91c0a11930d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a81e366e752021e02812bf91c0a11930d">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryPlusNode.html">BinaryPlusNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a81e366e752021e02812bf91c0a11930d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a plus node.  <br /></td></tr>
-<tr class="separator:a81e366e752021e02812bf91c0a11930d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a881be5f6ee59ae7377477b277dcb2de6" id="r_a881be5f6ee59ae7377477b277dcb2de6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a881be5f6ee59ae7377477b277dcb2de6">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryMinusNode.html">BinaryMinusNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a881be5f6ee59ae7377477b277dcb2de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a minus node.  <br /></td></tr>
-<tr class="separator:a881be5f6ee59ae7377477b277dcb2de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f771bd8567e3103df51e75a7d3b1433" id="r_a9f771bd8567e3103df51e75a7d3b1433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a9f771bd8567e3103df51e75a7d3b1433">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryMultiplyNode.html">BinaryMultiplyNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a9f771bd8567e3103df51e75a7d3b1433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a multiply node.  <br /></td></tr>
-<tr class="separator:a9f771bd8567e3103df51e75a7d3b1433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6697397046440b73f99eac9ef9d6798" id="r_ae6697397046440b73f99eac9ef9d6798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#ae6697397046440b73f99eac9ef9d6798">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryDivideNode.html">BinaryDivideNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:ae6697397046440b73f99eac9ef9d6798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a divide node.  <br /></td></tr>
-<tr class="separator:ae6697397046440b73f99eac9ef9d6798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e03dee3445f87d12c7a3e5630f522db" id="r_a5e03dee3445f87d12c7a3e5630f522db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a5e03dee3445f87d12c7a3e5630f522db">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a5e03dee3445f87d12c7a3e5630f522db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a number node.  <br /></td></tr>
-<tr class="separator:a5e03dee3445f87d12c7a3e5630f522db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ef2de949803fca2920b5fc764f92d79" id="r_a9ef2de949803fca2920b5fc764f92d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a9ef2de949803fca2920b5fc764f92d79">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1VarRefNode.html">VarRefNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a9ef2de949803fca2920b5fc764f92d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a variable reference node.  <br /></td></tr>
-<tr class="separator:a9ef2de949803fca2920b5fc764f92d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d383a0e08efedb5eb27857ecb2c9c86" id="r_a8d383a0e08efedb5eb27857ecb2c9c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a8d383a0e08efedb5eb27857ecb2c9c86">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1FcallNode.html">FcallNode</a> &gt; &amp;node) override</td></tr>
-<tr class="memdesc:a8d383a0e08efedb5eb27857ecb2c9c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a function call node.  <br /></td></tr>
-<tr class="separator:a8d383a0e08efedb5eb27857ecb2c9c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17627cfc21e56a3a733ffffa62575de" id="r_ad17627cfc21e56a3a733ffffa62575de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#ad17627cfc21e56a3a733ffffa62575de">visit_bin_plus</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryPlusNode.html">BinaryPlusNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:ad17627cfc21e56a3a733ffffa62575de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a plus node.  <br /></td></tr>
+<tr class="separator:ad17627cfc21e56a3a733ffffa62575de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c19f8717f4f2aecae218a4d9ebacd4c" id="r_a4c19f8717f4f2aecae218a4d9ebacd4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a4c19f8717f4f2aecae218a4d9ebacd4c">visit_bin_minus</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryMinusNode.html">BinaryMinusNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:a4c19f8717f4f2aecae218a4d9ebacd4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a minus node.  <br /></td></tr>
+<tr class="separator:a4c19f8717f4f2aecae218a4d9ebacd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b27e0a6fbf503d1401240649214ff49" id="r_a0b27e0a6fbf503d1401240649214ff49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a0b27e0a6fbf503d1401240649214ff49">visit_bin_multiply</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryMultiplyNode.html">BinaryMultiplyNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:a0b27e0a6fbf503d1401240649214ff49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a multiply node.  <br /></td></tr>
+<tr class="separator:a0b27e0a6fbf503d1401240649214ff49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b1b9a3011972fee52935397ea66ffae" id="r_a3b1b9a3011972fee52935397ea66ffae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a3b1b9a3011972fee52935397ea66ffae">visit_bin_divide</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryDivideNode.html">BinaryDivideNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:a3b1b9a3011972fee52935397ea66ffae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a divide node.  <br /></td></tr>
+<tr class="separator:a3b1b9a3011972fee52935397ea66ffae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7768dfda5490e79cdca5bcc64029a7ec" id="r_a7768dfda5490e79cdca5bcc64029a7ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#a7768dfda5490e79cdca5bcc64029a7ec">visit_number</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:a7768dfda5490e79cdca5bcc64029a7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a number node.  <br /></td></tr>
+<tr class="separator:a7768dfda5490e79cdca5bcc64029a7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b256dd9890fa6470ddc6223fecc4d1" id="r_ac0b256dd9890fa6470ddc6223fecc4d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#ac0b256dd9890fa6470ddc6223fecc4d1">visit_varref</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1VarRefNode.html">VarRefNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:ac0b256dd9890fa6470ddc6223fecc4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a variable reference node.  <br /></td></tr>
+<tr class="separator:ac0b256dd9890fa6470ddc6223fecc4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab274613df5bdb4fda2734fbf5f6ad1b1" id="r_ab274613df5bdb4fda2734fbf5f6ad1b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#ab274613df5bdb4fda2734fbf5f6ad1b1">visit_fcall</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1FcallNode.html">FcallNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:ab274613df5bdb4fda2734fbf5f6ad1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a function call node.  <br /></td></tr>
+<tr class="separator:ab274613df5bdb4fda2734fbf5f6ad1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtcalc_1_1ast_1_1BaseVisitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; void &gt;</a></td></tr>
+<tr class="memitem:a33924c94c95f46431a319b3354635533 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor" id="r_a33924c94c95f46431a319b3354635533"><td class="memItemLeft" align="right" valign="top">virtual ResultT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a33924c94c95f46431a319b3354635533">visit</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; &amp;node)</td></tr>
+<tr class="memdesc:a33924c94c95f46431a319b3354635533 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a number node.  <br /></td></tr>
+<tr class="separator:a33924c94c95f46431a319b3354635533 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac04f3bb5127ef0c4060d08477bcd859 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor" id="r_aac04f3bb5127ef0c4060d08477bcd859"><td class="memItemLeft" align="right" valign="top">virtual ResultT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#aac04f3bb5127ef0c4060d08477bcd859">visit_bin_op</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryOpNode.html">BinaryOpNode</a> &gt; &amp;node)</td></tr>
+<tr class="memdesc:aac04f3bb5127ef0c4060d08477bcd859 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a binary operation node.  <br /></td></tr>
+<tr class="separator:aac04f3bb5127ef0c4060d08477bcd859 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -196,8 +197,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae6697397046440b73f99eac9ef9d6798" name="ae6697397046440b73f99eac9ef9d6798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6697397046440b73f99eac9ef9d6798">&#9670;&#160;</a></span>visit() <span class="overload">[1/9]</span></h2>
+<a id="a3b1b9a3011972fee52935397ea66ffae" name="a3b1b9a3011972fee52935397ea66ffae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1b9a3011972fee52935397ea66ffae">&#9670;&#160;</a></span>visit_bin_divide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +207,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_bin_divide </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryDivideNode.html">BinaryDivideNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -227,13 +228,14 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#afd1095195d75f66aafcd305ff1e5b8f5">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#af26a6bc204fb72424cbb93691ba3d7dc">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a881be5f6ee59ae7377477b277dcb2de6" name="a881be5f6ee59ae7377477b277dcb2de6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a881be5f6ee59ae7377477b277dcb2de6">&#9670;&#160;</a></span>visit() <span class="overload">[2/9]</span></h2>
+<a id="a4c19f8717f4f2aecae218a4d9ebacd4c" name="a4c19f8717f4f2aecae218a4d9ebacd4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c19f8717f4f2aecae218a4d9ebacd4c">&#9670;&#160;</a></span>visit_bin_minus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +244,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_bin_minus </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryMinusNode.html">BinaryMinusNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -263,13 +265,14 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#a4a3f8f698835c679c3a4284cb9e4fa8b">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a25bfd8930a90a3c27a7319ec140c6aa7">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a9f771bd8567e3103df51e75a7d3b1433" name="a9f771bd8567e3103df51e75a7d3b1433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f771bd8567e3103df51e75a7d3b1433">&#9670;&#160;</a></span>visit() <span class="overload">[3/9]</span></h2>
+<a id="a0b27e0a6fbf503d1401240649214ff49" name="a0b27e0a6fbf503d1401240649214ff49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b27e0a6fbf503d1401240649214ff49">&#9670;&#160;</a></span>visit_bin_multiply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,7 +281,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_bin_multiply </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryMultiplyNode.html">BinaryMultiplyNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -299,13 +302,14 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#a7fc867d03ba83cc4a333e6c3a740bfe5">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a2ba05e8b2e7d5e22433df18375b6d31b">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a7348d12b0006ba437fe32a614a75ca9e" name="a7348d12b0006ba437fe32a614a75ca9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7348d12b0006ba437fe32a614a75ca9e">&#9670;&#160;</a></span>visit() <span class="overload">[4/9]</span></h2>
+<a id="ad17627cfc21e56a3a733ffffa62575de" name="ad17627cfc21e56a3a733ffffa62575de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad17627cfc21e56a3a733ffffa62575de">&#9670;&#160;</a></span>visit_bin_plus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,43 +318,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
-          <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryOpNode.html">BinaryOpNode</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Visit a binary operation node. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td>Binary operation node. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#aef1661f1481f40f671e1565adfb2abd9">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a81e366e752021e02812bf91c0a11930d" name="a81e366e752021e02812bf91c0a11930d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81e366e752021e02812bf91c0a11930d">&#9670;&#160;</a></span>visit() <span class="overload">[5/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_bin_plus </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1BinaryPlusNode.html">BinaryPlusNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -371,13 +339,14 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#acb19c22e9f15786f7340e64305d063de">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a38f33045ebcdb360d58c822f90bae67c">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a8d383a0e08efedb5eb27857ecb2c9c86" name="a8d383a0e08efedb5eb27857ecb2c9c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d383a0e08efedb5eb27857ecb2c9c86">&#9670;&#160;</a></span>visit() <span class="overload">[6/9]</span></h2>
+<a id="ab274613df5bdb4fda2734fbf5f6ad1b1" name="ab274613df5bdb4fda2734fbf5f6ad1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab274613df5bdb4fda2734fbf5f6ad1b1">&#9670;&#160;</a></span>visit_fcall()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,7 +355,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_fcall </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1FcallNode.html">FcallNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -407,13 +376,14 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#af5700a3c24f2b63fb77a09ba2fd20b75">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a40f2b472feb6c6ede355cfc9be04f5d8">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a52d24d42864fa979148d010bbfe5d0dd" name="a52d24d42864fa979148d010bbfe5d0dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52d24d42864fa979148d010bbfe5d0dd">&#9670;&#160;</a></span>visit() <span class="overload">[7/9]</span></h2>
+<a id="a7768dfda5490e79cdca5bcc64029a7ec" name="a7768dfda5490e79cdca5bcc64029a7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7768dfda5490e79cdca5bcc64029a7ec">&#9670;&#160;</a></span>visit_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,43 +392,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
-          <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Visit a node. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td><a class="el" href="classtcalc_1_1ast_1_1Node.html" title="Base class for AST nodes.">Node</a> to visit. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#ac0e84407098c5a096aad225f0c526c63">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a5e03dee3445f87d12c7a3e5630f522db" name="a5e03dee3445f87d12c7a3e5630f522db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e03dee3445f87d12c7a3e5630f522db">&#9670;&#160;</a></span>visit() <span class="overload">[8/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_number </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -479,13 +413,14 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#ab89b382087286d523c1e7db86c5c5c3c">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a21722ba14a7bad11590042c140394a86">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a9ef2de949803fca2920b5fc764f92d79" name="a9ef2de949803fca2920b5fc764f92d79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ef2de949803fca2920b5fc764f92d79">&#9670;&#160;</a></span>visit() <span class="overload">[9/9]</span></h2>
+<a id="ac0b256dd9890fa6470ddc6223fecc4d1" name="ac0b256dd9890fa6470ddc6223fecc4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b256dd9890fa6470ddc6223fecc4d1">&#9670;&#160;</a></span>visit_varref()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,7 +429,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tcalc::ast::PrintVisitor::visit </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; void &gt; tcalc::ast::PrintVisitor::visit_varref </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1VarRefNode.html">VarRefNode</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -515,8 +450,9 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
-<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor_3_01void_01_4.html#a6d8a241929ae826ccf30abb209c7bfc9">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
+<p>Implements <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#add131b959838473a50b9860bd227e087">tcalc::ast::BaseVisitor&lt; void &gt;</a>.</p>
 
 </div>
 </div>
