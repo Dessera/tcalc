@@ -12,6 +12,7 @@ var token_8hpp =
       [ "COMMA", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a4d9b3e9fc12849d060371eb65154c751", null ],
       [ "NUMBER", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396", null ],
       [ "IDENTIFIER", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a", null ],
+      [ "DEF", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a822dd494b3e14a82aa76bd455e6b6f4b", null ],
       [ "EOI", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39", null ],
       [ "INVALID", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42accc0377a8afbf50e7094f5c23a8af223", null ]
     ] ],

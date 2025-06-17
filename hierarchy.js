@@ -21,6 +21,7 @@ var hierarchy =
         [ "tcalc::ast::BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", null ]
       ] ],
       [ "tcalc::ast::FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", null ],
+      [ "tcalc::ast::FdefNode", "classtcalc_1_1ast_1_1FdefNode.html", null ],
       [ "tcalc::ast::NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", null ],
       [ "tcalc::ast::UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", [
         [ "tcalc::ast::UnaryMinusNode", "classtcalc_1_1ast_1_1UnaryMinusNode.html", null ],

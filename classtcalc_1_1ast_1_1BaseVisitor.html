@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2d08974cbe32748eb0d4a5df226e20a7" id="r_a2d08974cbe32748eb0d4a5df226e20a7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; RT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a2d08974cbe32748eb0d4a5df226e20a7">visit_fcall</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1FcallNode.html">FcallNode</a> &gt; &amp;node)=0</td></tr>
 <tr class="memdesc:a2d08974cbe32748eb0d4a5df226e20a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a function call node.  <br /></td></tr>
 <tr class="separator:a2d08974cbe32748eb0d4a5df226e20a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10531c250c5f07220086623c71b8b55b" id="r_a10531c250c5f07220086623c71b8b55b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; RT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a10531c250c5f07220086623c71b8b55b">visit_fdef</a> (std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1FdefNode.html">FdefNode</a> &gt; &amp;node)=0</td></tr>
+<tr class="memdesc:a10531c250c5f07220086623c71b8b55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a function definition node.  <br /></td></tr>
+<tr class="separator:a10531c250c5f07220086623c71b8b55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RT&gt;<br />
@@ -422,6 +425,45 @@ template&lt;typename RT &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
 <p>Implemented in <a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#a03a72c7ad831817cfc65d37d9ed2d398">tcalc::ast::EvalVisitor</a>, and <a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#ab274613df5bdb4fda2734fbf5f6ad1b1">tcalc::ast::PrintVisitor</a>.</p>
+
+</div>
+</div>
+<a id="a10531c250c5f07220086623c71b8b55b" name="a10531c250c5f07220086623c71b8b55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10531c250c5f07220086623c71b8b55b">&#9670;&#160;</a></span>visit_fdef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; RT &gt; <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor</a>&lt; RT &gt;::visit_fdef </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classtcalc_1_1ast_1_1FdefNode.html">FdefNode</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Visit a function definition node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Function definition node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
+
+<p>Implemented in <a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#ad96be94cd88f0d03c362c133689268b8">tcalc::ast::EvalVisitor</a>, and <a class="el" href="classtcalc_1_1ast_1_1PrintVisitor.html#abc51c5ea96f446d408a5be972a0f3435">tcalc::ast::PrintVisitor</a>.</p>
 
 </div>
 </div>

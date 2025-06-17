@@ -120,27 +120,28 @@ $(document).ready(function(){initNavTree('node_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_enumvalue" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396">NUMBER</a>,          </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_enumvalue" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db">VARREF</a>,          </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_enumvalue" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615">FCALL</a>,           </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99">FDEF</a>,            </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1Node.html">   42</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">Node</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_enumeration" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a> _type;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">Node</a>(<a class="code hl_enumeration" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a> type);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">~Node</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">   62</a></span>  [[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">type</a>() const noexcept { <span class="keywordflow">return</span> _type; }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1Node.html">   43</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">Node</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_enumeration" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a> _type;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">Node</a>(<a class="code hl_enumeration" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a> type);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">~Node</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">   63</a></span>  [[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">type</a>() const noexcept { <span class="keywordflow">return</span> _type; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1Node_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></div><div class="ttdoc">Base class for AST nodes.</div><div class="ttdef"><b>Definition</b> node.hpp:43</div></div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1Node_html_a06924b0a3b5fcf21cb9bda915ef24f06"><div class="ttname"><a href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">tcalc::ast::Node::type</a></div><div class="ttdeci">constexpr auto type() const noexcept</div><div class="ttdoc">Get the node type.</div><div class="ttdef"><b>Definition</b> node.hpp:62</div></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1Node_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></div><div class="ttdoc">Base class for AST nodes.</div><div class="ttdef"><b>Definition</b> node.hpp:44</div></div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1Node_html_a06924b0a3b5fcf21cb9bda915ef24f06"><div class="ttname"><a href="classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06">tcalc::ast::Node::type</a></div><div class="ttdeci">constexpr auto type() const noexcept</div><div class="ttdoc">Get the node type.</div><div class="ttdef"><b>Definition</b> node.hpp:63</div></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddc"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">tcalc::ast::NodeType</a></div><div class="ttdeci">NodeType</div><div class="ttdoc">AST node type.</div><div class="ttdef"><b>Definition</b> node.hpp:26</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddca05f013456d5cc100cd33c7c58f41982e"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca05f013456d5cc100cd33c7c58f41982e">tcalc::ast::NodeType::BINARY_DIVIDE</a></div><div class="ttdeci">@ BINARY_DIVIDE</div></div>
@@ -149,6 +150,7 @@ $(document).ready(function(){initNavTree('node_8hpp_source.html',''); initResiza
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddca4b11994afc39512d345e894261a7780e"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca4b11994afc39512d345e894261a7780e">tcalc::ast::NodeType::BINARY_MULTIPLY</a></div><div class="ttdeci">@ BINARY_MULTIPLY</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddca50e6d47e3a606d31b3bb4792afdd1560"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca50e6d47e3a606d31b3bb4792afdd1560">tcalc::ast::NodeType::BINARY_PLUS</a></div><div class="ttdeci">@ BINARY_PLUS</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db">tcalc::ast::NodeType::VARREF</a></div><div class="ttdeci">@ VARREF</div></div>
+<div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99">tcalc::ast::NodeType::FDEF</a></div><div class="ttdeci">@ FDEF</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b">tcalc::ast::NodeType::UNARY_MINUS</a></div><div class="ttdeci">@ UNARY_MINUS</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddcaa9023c7f015d5ba70a0a4db6c664734d"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa9023c7f015d5ba70a0a4db6c664734d">tcalc::ast::NodeType::BINARY_MINUS</a></div><div class="ttdeci">@ BINARY_MINUS</div></div>
 <div class="ttc" id="anode_8hpp_html_ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615"><div class="ttname"><a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615">tcalc::ast::NodeType::FCALL</a></div><div class="ttdeci">@ FCALL</div></div>

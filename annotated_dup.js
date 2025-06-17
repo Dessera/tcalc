@@ -13,6 +13,7 @@ var annotated_dup =
         [ "BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", "classtcalc_1_1ast_1_1BinaryPlusNode" ],
         [ "EvalVisitor", "classtcalc_1_1ast_1_1EvalVisitor.html", "classtcalc_1_1ast_1_1EvalVisitor" ],
         [ "FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", "classtcalc_1_1ast_1_1FcallNode" ],
+        [ "FdefNode", "classtcalc_1_1ast_1_1FdefNode.html", "classtcalc_1_1ast_1_1FdefNode" ],
         [ "Node", "classtcalc_1_1ast_1_1Node.html", "classtcalc_1_1ast_1_1Node" ],
         [ "NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", "classtcalc_1_1ast_1_1NumberNode" ],
         [ "Parser", "classtcalc_1_1ast_1_1Parser.html", "classtcalc_1_1ast_1_1Parser" ],

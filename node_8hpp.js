@@ -10,6 +10,7 @@ var node_8hpp =
       [ "UNARY_MINUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b", null ],
       [ "NUMBER", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396", null ],
       [ "VARREF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db", null ],
-      [ "FCALL", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615", null ]
+      [ "FCALL", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615", null ],
+      [ "FDEF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99", null ]
     ] ]
 ];

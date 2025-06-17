@@ -101,48 +101,55 @@ $(document).ready(function(){initNavTree('visitor_2eval_8hpp_source.html',''); i
 <a href="visitor_2eval_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="eval_8hpp.html">tcalc/eval.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">tcalc/visitor/base.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>tcalc::ast {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1EvalVisitor.html">   24</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1ast_1_1EvalVisitor.html">EvalVisitor</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1BaseVisitor.html">BaseVisitor</a>&lt;double&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>* _ctx;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1EvalVisitor.html">EvalVisitor</a>(<a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1EvalVisitor.html">~EvalVisitor</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_plus(</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::shared_ptr&lt;BinaryPlusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_minus(</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::shared_ptr&lt;BinaryMinusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_multiply(</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::shared_ptr&lt;BinaryMultiplyNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_divide(</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::shared_ptr&lt;BinaryDivideNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_unary_plus(</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::shared_ptr&lt;UnaryPlusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_unary_minus(</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::shared_ptr&lt;UnaryMinusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_number(</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::shared_ptr&lt;NumberNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_varref(</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    std::shared_ptr&lt;VarRefNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_fcall(std::shared_ptr&lt;FcallNode&gt;&amp; node) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="builtins_8hpp.html">tcalc/builtins.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="eval_8hpp.html">tcalc/eval.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="base_8hpp.html">tcalc/visitor/base.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>tcalc::ast {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1EvalVisitor.html">   25</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1ast_1_1EvalVisitor.html">EvalVisitor</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1BaseVisitor.html">BaseVisitor</a>&lt;double&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>* _ctx;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1EvalVisitor.html">EvalVisitor</a>(<a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1EvalVisitor.html">~EvalVisitor</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_plus(</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::shared_ptr&lt;BinaryPlusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_minus(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::shared_ptr&lt;BinaryMinusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_multiply(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::shared_ptr&lt;BinaryMultiplyNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_bin_divide(</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::shared_ptr&lt;BinaryDivideNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_unary_plus(</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::shared_ptr&lt;UnaryPlusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_unary_minus(</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::shared_ptr&lt;UnaryMinusNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_number(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::shared_ptr&lt;NumberNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_varref(</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::shared_ptr&lt;VarRefNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_fcall(std::shared_ptr&lt;FcallNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> visit_fdef(std::shared_ptr&lt;FdefNode&gt;&amp; node) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_typedef" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">builtins::Function</a> _create_function(std::shared_ptr&lt;FdefNode&gt;&amp; node);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 <div class="ttc" id="abase_8hpp_html"><div class="ttname"><a href="base_8hpp.html">base.hpp</a></div><div class="ttdoc">Base visitor class.</div></div>
+<div class="ttc" id="abuiltins_8hpp_html"><div class="ttname"><a href="builtins_8hpp.html">builtins.hpp</a></div><div class="ttdoc">Built-in functions and variables.</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_aa1b2c5686275ca0d11d287b02fa0665b"><div class="ttname"><a href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">tcalc::builtins::Function</a></div><div class="ttdeci">std::function&lt; error::Result&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const EvalContext &amp;)&gt; Function</div><div class="ttdoc">Built-in function type.</div><div class="ttdef"><b>Definition</b> builtins.hpp:34</div></div>
 <div class="ttc" id="aclasstcalc_1_1EvalContext_html"><div class="ttname"><a href="classtcalc_1_1EvalContext.html">tcalc::EvalContext</a></div><div class="ttdoc">Evaluation context which stores variables and built-in functions.</div><div class="ttdef"><b>Definition</b> eval.hpp:30</div></div>
 <div class="ttc" id="aclasstcalc_1_1ast_1_1BaseVisitor_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor</a></div><div class="ttdoc">Base visitor class with default return type.</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1EvalVisitor_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1EvalVisitor.html">tcalc::ast::EvalVisitor</a></div><div class="ttdoc">Visitor for evaluating AST.</div><div class="ttdef"><b>Definition</b> eval.hpp:25</div></div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1EvalVisitor_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1EvalVisitor.html">tcalc::ast::EvalVisitor</a></div><div class="ttdoc">Visitor for evaluating AST.</div><div class="ttdef"><b>Definition</b> eval.hpp:26</div></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:125</div></div>
 <div class="ttc" id="aeval_8hpp_html"><div class="ttname"><a href="eval_8hpp.html">eval.hpp</a></div><div class="ttdoc">Evaluator for tcalc.</div></div>
