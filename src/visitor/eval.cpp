@@ -1,3 +1,4 @@
+#include <limits>
 #include <vector>
 
 #include "tcalc/builtins.hpp"
@@ -41,7 +42,7 @@ EvalVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
 {
   auto lval = unwrap_err(visit(node->left()));
   auto rval = unwrap_err(visit(node->right()));
-  if (rval == 0) {
+  if (std::abs(rval) < std::numeric_limits<double>::epsilon()) {
     return error::err(error::Code::ZERO_DIVISION, "Division by zero");
   }
   return error::ok<double>(lval / rval);
@@ -103,7 +104,8 @@ EvalVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
 error::Result<double>
 EvalVisitor::visit_if(std::shared_ptr<IfNode>& node)
 {
-  if (unwrap_err(visit(node->cond()))) {
+  auto cond = unwrap_err(visit(node->cond()));
+  if (std::abs(cond) > std::numeric_limits<double>::epsilon()) {
     return visit(node->then());
   }
 
