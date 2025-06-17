@@ -20,6 +20,14 @@ FunctionWrapper::operator()(const std::vector<double>& args,
                             const EvalContext& ctx) const
 {
   auto local_ctx = ctx;
+  local_ctx.increment_call_depth();
+
+  if (local_ctx.call_depth() >= EvalContext::MAX_CALL_DEPTH) {
+    return error::err(error::Code::RECURSION_LIMIT,
+                      "Function call `{}' exceeded maximum recursion depth",
+                      _node->name());
+  }
+
   if (args.size() != _node->args().size()) {
     return error::err(error::Code::MISMATCHED_ARGS,
                       "Wrong number of arguments, expected {}, got {}",

@@ -26,8 +26,6 @@ You can recursively call a function in its body:
 def factorial(n) if n then n * factorial(n - 1) else 1
 ```
 
-> It's undefined behavior to call a function that recurses infinitely for now.
-
 ## Function Call
 
 Use `()` to call a function.

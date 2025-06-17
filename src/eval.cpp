@@ -7,9 +7,11 @@ namespace tcalc {
 
 EvalContext::EvalContext(
   std::unordered_map<std::string, double> vars,
-  std::unordered_map<std::string, builtins::Function> funcs)
+  std::unordered_map<std::string, builtins::Function> funcs,
+  std::size_t call_depth)
   : _vars{ std::move(vars) }
   , _funcs{ std::move(funcs) }
+  , _call_depth{ call_depth }
 {
 }
 

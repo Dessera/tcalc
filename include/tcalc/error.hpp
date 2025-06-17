@@ -64,6 +64,7 @@ enum class Code : uint8_t
   UNDEFINED_FUNC,  /**< Undefined function. */
   MISMATCHED_ARGS, /**< Mismatched arguments. */
   ZERO_DIVISION,   /**< Division by zero. */
+  RECURSION_LIMIT, /**< Recursion limit exceeded. */
 };
 
 /**

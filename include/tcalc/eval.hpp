@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <cstddef>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -28,9 +29,14 @@ namespace tcalc {
  */
 class TCALC_PUBLIC EvalContext
 {
+public:
+  constexpr static std::size_t MAX_CALL_DEPTH = 1000;
+
 private:
   std::unordered_map<std::string, double> _vars;
   std::unordered_map<std::string, builtins::Function> _funcs;
+
+  std::size_t _call_depth{ 0 };
 
 public:
   /**
@@ -40,7 +46,8 @@ public:
    * @param funcs Built-in functions map.
    */
   EvalContext(std::unordered_map<std::string, double> vars,
-              std::unordered_map<std::string, builtins::Function> funcs);
+              std::unordered_map<std::string, builtins::Function> funcs,
+              std::size_t call_depth = 0);
 
   EvalContext() = default;
   ~EvalContext() = default;
@@ -50,7 +57,7 @@ public:
    *
    * @return std::unordered_map<std::string, double>& Variables map.
    */
-  constexpr auto& vars() { return _vars; }
+  constexpr auto& vars() noexcept { return _vars; }
 
   /**
    * @brief Get built-in functions.
@@ -58,7 +65,7 @@ public:
    * @return std::unordered_map<std::string, BuiltinFunc>& Built-in functions
    * map.
    */
-  constexpr auto& funcs() { return _funcs; }
+  constexpr auto& funcs() noexcept { return _funcs; }
 
   /**
    * @brief Get a variable.
@@ -74,7 +81,7 @@ public:
    * @param name Variable name.
    * @param value Variable value.
    */
-  constexpr void var(const std::string& name, double value)
+  constexpr void var(const std::string& name, double value) noexcept
   {
     _vars[name] = value;
   }
@@ -93,10 +100,33 @@ public:
    * @param name Function name.
    * @param func Function pointer.
    */
-  constexpr void func(const std::string& name, builtins::Function func)
+  constexpr void func(const std::string& name, builtins::Function func) noexcept
   {
     _funcs[name] = std::move(func);
   }
+
+  /**
+   * @brief Get the call depth.
+   *
+   * @return std::size_t Call depth.
+   */
+  [[nodiscard]] constexpr auto call_depth() const noexcept
+  {
+    return _call_depth;
+  }
+
+  /**
+   * @brief Set the call depth.
+   *
+   * @param depth Call depth.
+   */
+  constexpr void call_depth(std::size_t depth) { _call_depth = depth; }
+
+  /**
+   * @brief Increment the call depth.
+   *
+   */
+  constexpr void increment_call_depth() noexcept { ++_call_depth; }
 };
 
 /**
