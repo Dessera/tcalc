@@ -102,43 +102,63 @@ $(document).ready(function(){initNavTree('builtins_8hpp_source.html',''); initRe
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="error_8hpp.html">tcalc/error.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>tcalc {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="function_8hpp.html">tcalc/ast/function.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="error_8hpp.html">tcalc/error.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>EvalContext;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span>tcalc {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class </span>EvalContext;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span>tcalc::builtins {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">   33</a></span><span class="keyword">using </span><a class="code hl_typedef" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">Function</a> = std::function&lt;error::Result&lt;double&gt;(<span class="keyword">const</span> std::vector&lt;double&gt;&amp;,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                                     <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp;)&gt;;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>TCALC_PUBLIC <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_function" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">sqrt</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; args, <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>TCALC_PUBLIC <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><a class="code hl_function" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">pow</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; args, <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> std::unordered_map&lt;std::string, double&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_variable" href="builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28">BUILTIN_VARIABLES</a>; </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> std::unordered_map&lt;std::string, Function&gt;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_variable" href="builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07">BUILTIN_FUNCTIONS</a>; </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
-<div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:10</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_a97464587d9c2abacdb1a7e8a7fe00e28"><div class="ttname"><a href="builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28">tcalc::builtins::BUILTIN_VARIABLES</a></div><div class="ttdeci">TCALC_PUBLIC const std::unordered_map&lt; std::string, double &gt; BUILTIN_VARIABLES</div><div class="ttdef"><b>Definition</b> builtins.cpp:33</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_aa1b2c5686275ca0d11d287b02fa0665b"><div class="ttname"><a href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">tcalc::builtins::Function</a></div><div class="ttdeci">std::function&lt; error::Result&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const EvalContext &amp;)&gt; Function</div><div class="ttdoc">Built-in function type.</div><div class="ttdef"><b>Definition</b> builtins.hpp:34</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_ac37ed0215d5ade84cd52c0157a7dbb07"><div class="ttname"><a href="builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07">tcalc::builtins::BUILTIN_FUNCTIONS</a></div><div class="ttdeci">TCALC_PUBLIC const std::unordered_map&lt; std::string, Function &gt; BUILTIN_FUNCTIONS</div><div class="ttdef"><b>Definition</b> builtins.cpp:38</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:22</div></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span>tcalc::builtins {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">   35</a></span><span class="keyword">using </span><a class="code hl_typedef" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">Function</a> = std::function&lt;error::Result&lt;double&gt;(<span class="keyword">const</span> std::vector&lt;double&gt;&amp;,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                                                     <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp;)&gt;;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classtcalc_1_1builtins_1_1FunctionWrapper.html">   42</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1builtins_1_1FunctionWrapper.html">FunctionWrapper</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  std::shared_ptr&lt;ast::FdefNode&gt; _node;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="classtcalc_1_1builtins_1_1FunctionWrapper.html">FunctionWrapper</a>(std::shared_ptr&lt;ast::FdefNode&gt; node);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_class" href="classtcalc_1_1builtins_1_1FunctionWrapper.html">~FunctionWrapper</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> operator()(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; args,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                                   <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>TCALC_PUBLIC <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><a class="code hl_function" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">sqrt</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; args, <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>TCALC_PUBLIC <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><a class="code hl_function" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">pow</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; args, <span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> std::unordered_map&lt;std::string, double&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_variable" href="builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28">BUILTIN_VARIABLES</a>; </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> std::unordered_map&lt;std::string, Function&gt;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_variable" href="builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07">BUILTIN_FUNCTIONS</a>; </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:38</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a97464587d9c2abacdb1a7e8a7fe00e28"><div class="ttname"><a href="builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28">tcalc::builtins::BUILTIN_VARIABLES</a></div><div class="ttdeci">TCALC_PUBLIC const std::unordered_map&lt; std::string, double &gt; BUILTIN_VARIABLES</div><div class="ttdef"><b>Definition</b> builtins.cpp:61</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_aa1b2c5686275ca0d11d287b02fa0665b"><div class="ttname"><a href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">tcalc::builtins::Function</a></div><div class="ttdeci">std::function&lt; error::Result&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const EvalContext &amp;)&gt; Function</div><div class="ttdoc">Built-in function type.</div><div class="ttdef"><b>Definition</b> builtins.hpp:36</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_ac37ed0215d5ade84cd52c0157a7dbb07"><div class="ttname"><a href="builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07">tcalc::builtins::BUILTIN_FUNCTIONS</a></div><div class="ttdeci">TCALC_PUBLIC const std::unordered_map&lt; std::string, Function &gt; BUILTIN_FUNCTIONS</div><div class="ttdef"><b>Definition</b> builtins.cpp:66</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:50</div></div>
 <div class="ttc" id="aclasstcalc_1_1EvalContext_html"><div class="ttname"><a href="classtcalc_1_1EvalContext.html">tcalc::EvalContext</a></div><div class="ttdoc">Evaluation context which stores variables and built-in functions.</div><div class="ttdef"><b>Definition</b> eval.hpp:30</div></div>
+<div class="ttc" id="aclasstcalc_1_1builtins_1_1FunctionWrapper_html"><div class="ttname"><a href="classtcalc_1_1builtins_1_1FunctionWrapper.html">tcalc::builtins::FunctionWrapper</a></div><div class="ttdoc">Wrapper for User-defined functions.</div><div class="ttdef"><b>Definition</b> builtins.hpp:43</div></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div><div class="ttdoc">tcalc error definition.</div></div>
 <div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:125</div></div>
+<div class="ttc" id="afunction_8hpp_html"><div class="ttname"><a href="function_8hpp.html">function.hpp</a></div><div class="ttdoc">Function node.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

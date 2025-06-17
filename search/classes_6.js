@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['unaryminusnode_0',['UnaryMinusNode',['../classtcalc_1_1ast_1_1UnaryMinusNode.html',1,'tcalc::ast']]],
-  ['unaryopnode_1',['UnaryOpNode',['../classtcalc_1_1ast_1_1UnaryOpNode.html',1,'tcalc::ast']]],
-  ['unaryplusnode_2',['UnaryPlusNode',['../classtcalc_1_1ast_1_1UnaryPlusNode.html',1,'tcalc::ast']]]
+  ['token_0',['Token',['../structtcalc_1_1token_1_1Token.html',1,'tcalc::token']]],
+  ['tokenizer_1',['Tokenizer',['../classtcalc_1_1token_1_1Tokenizer.html',1,'tcalc::token']]]
 ];

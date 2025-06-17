@@ -8,9 +8,11 @@ var classtcalc_1_1ast_1_1BaseVisitor =
     [ "visit_bin_plus", "classtcalc_1_1ast_1_1BaseVisitor.html#a058c997c0e95dd812ef92a798a143d2b", null ],
     [ "visit_fcall", "classtcalc_1_1ast_1_1BaseVisitor.html#a2d08974cbe32748eb0d4a5df226e20a7", null ],
     [ "visit_fdef", "classtcalc_1_1ast_1_1BaseVisitor.html#a10531c250c5f07220086623c71b8b55b", null ],
+    [ "visit_if", "classtcalc_1_1ast_1_1BaseVisitor.html#aab57db995049f192f37ecfd74e39fe84", null ],
     [ "visit_number", "classtcalc_1_1ast_1_1BaseVisitor.html#a58944f03b0ba3870d217a59ff0bc6ed2", null ],
     [ "visit_unary_minus", "classtcalc_1_1ast_1_1BaseVisitor.html#add1abb93d258d27cabedf2df4a3c35c7", null ],
     [ "visit_unary_op", "classtcalc_1_1ast_1_1BaseVisitor.html#af9c1e2748ebb19bd3f80f001e6c82513", null ],
     [ "visit_unary_plus", "classtcalc_1_1ast_1_1BaseVisitor.html#ab4cb08873b1702922dcc3f0cae90556a", null ],
+    [ "visit_varassign", "classtcalc_1_1ast_1_1BaseVisitor.html#a51fc4d76ee946ceca36b32a9e930ff8e", null ],
     [ "visit_varref", "classtcalc_1_1ast_1_1BaseVisitor.html#aac4fd81267a2e13a527ca0fc692dc6b0", null ]
 ];

@@ -131,12 +131,17 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a45bf4f3d35a115aaa2df577ba7861286">LPAREN</a> = 0x28
 , <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42afccedc90f87593a3b31536bd658808b1">RPAREN</a> = 0x29
 , <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a4d9b3e9fc12849d060371eb65154c751">COMMA</a> = 0x2c
-, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396">NUMBER</a> = -0x01
+, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42affd6976a2b4f6934eb075d0013316ff1">ASSIGN</a> = 0x3d
 , <br />
-&#160;&#160;<a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a">IDENTIFIER</a> = -0x02
+&#160;&#160;<a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396">NUMBER</a> = -0x01
+, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a">IDENTIFIER</a> = -0x02
 , <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a822dd494b3e14a82aa76bd455e6b6f4b">DEF</a> = -0x03
-, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39">EOI</a> = -0x04
-, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42accc0377a8afbf50e7094f5c23a8af223">INVALID</a> = -0x05
+, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42ada02466f9a4224e477bd63afbcf573c5">LET</a> = -0x04
+, <br />
+&#160;&#160;<a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42ade6ee2b5d856295add4d5e3631fbfb93">IF</a> = -0x05
+, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a907ec71a28d71811a0e37f08b15c2109">THEN</a> = -0x06
+, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a778537b0acce06229cb78d5f72c907ab">ELSE</a> = -0x07
+, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39">EOI</a> = -0x08
 <br />
  }</td></tr>
 <tr class="memdesc:a5f01aa5ee93ef3d2462eae887575ec42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token type, some values are ASCII code of the corresponding character.  <a href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42">More...</a><br /></td></tr>
@@ -203,15 +208,23 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=<
 </td></tr>
 <tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42a4d9b3e9fc12849d060371eb65154c751" name="a5f01aa5ee93ef3d2462eae887575ec42a4d9b3e9fc12849d060371eb65154c751"></a>COMMA&#160;</td><td class="fielddoc"><p>Comma. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42affd6976a2b4f6934eb075d0013316ff1" name="a5f01aa5ee93ef3d2462eae887575ec42affd6976a2b4f6934eb075d0013316ff1"></a>ASSIGN&#160;</td><td class="fielddoc"><p>Assignment. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396" name="a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396"></a>NUMBER&#160;</td><td class="fielddoc"><p>Constant number. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a" name="a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a"></a>IDENTIFIER&#160;</td><td class="fielddoc"><p>Variable or function name. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42a822dd494b3e14a82aa76bd455e6b6f4b" name="a5f01aa5ee93ef3d2462eae887575ec42a822dd494b3e14a82aa76bd455e6b6f4b"></a>DEF&#160;</td><td class="fielddoc"><p>Function definition. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39" name="a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39"></a>EOI&#160;</td><td class="fielddoc"><p>End of input. </p>
+<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42ada02466f9a4224e477bd63afbcf573c5" name="a5f01aa5ee93ef3d2462eae887575ec42ada02466f9a4224e477bd63afbcf573c5"></a>LET&#160;</td><td class="fielddoc"><p>Variable definition. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42accc0377a8afbf50e7094f5c23a8af223" name="a5f01aa5ee93ef3d2462eae887575ec42accc0377a8afbf50e7094f5c23a8af223"></a>INVALID&#160;</td><td class="fielddoc"><p>Invalid token placeholder. </p>
+<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42ade6ee2b5d856295add4d5e3631fbfb93" name="a5f01aa5ee93ef3d2462eae887575ec42ade6ee2b5d856295add4d5e3631fbfb93"></a>IF&#160;</td><td class="fielddoc"><p>If statement. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42a907ec71a28d71811a0e37f08b15c2109" name="a5f01aa5ee93ef3d2462eae887575ec42a907ec71a28d71811a0e37f08b15c2109"></a>THEN&#160;</td><td class="fielddoc"><p>Then keyword. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42a778537b0acce06229cb78d5f72c907ab" name="a5f01aa5ee93ef3d2462eae887575ec42a778537b0acce06229cb78d5f72c907ab"></a>ELSE&#160;</td><td class="fielddoc"><p>Else keyword. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39" name="a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39"></a>EOI&#160;</td><td class="fielddoc"><p>End of input. </p>
 </td></tr>
 </table>
 

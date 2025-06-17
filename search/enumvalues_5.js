@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['identifier_0',['IDENTIFIER',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a',1,'tcalc::token']]],
-  ['invalid_1',['INVALID',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42accc0377a8afbf50e7094f5c23a8af223',1,'tcalc::token']]]
+  ['fcall_0',['FCALL',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615',1,'tcalc::ast']]],
+  ['fdef_1',['FDEF',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99',1,'tcalc::ast']]]
 ];

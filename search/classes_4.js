@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parser_0',['Parser',['../classtcalc_1_1ast_1_1Parser.html',1,'tcalc::ast']]],
-  ['parsercontext_1',['ParserContext',['../classtcalc_1_1ast_1_1ParserContext.html',1,'tcalc::ast']]],
-  ['printvisitor_2',['PrintVisitor',['../classtcalc_1_1ast_1_1PrintVisitor.html',1,'tcalc::ast']]]
+  ['node_0',['Node',['../classtcalc_1_1ast_1_1Node.html',1,'tcalc::ast']]],
+  ['numbernode_1',['NumberNode',['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast']]]
 ];

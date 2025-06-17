@@ -14,6 +14,7 @@ var annotated_dup =
         [ "EvalVisitor", "classtcalc_1_1ast_1_1EvalVisitor.html", "classtcalc_1_1ast_1_1EvalVisitor" ],
         [ "FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", "classtcalc_1_1ast_1_1FcallNode" ],
         [ "FdefNode", "classtcalc_1_1ast_1_1FdefNode.html", "classtcalc_1_1ast_1_1FdefNode" ],
+        [ "IfNode", "classtcalc_1_1ast_1_1IfNode.html", "classtcalc_1_1ast_1_1IfNode" ],
         [ "Node", "classtcalc_1_1ast_1_1Node.html", "classtcalc_1_1ast_1_1Node" ],
         [ "NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", "classtcalc_1_1ast_1_1NumberNode" ],
         [ "Parser", "classtcalc_1_1ast_1_1Parser.html", "classtcalc_1_1ast_1_1Parser" ],
@@ -22,7 +23,11 @@ var annotated_dup =
         [ "UnaryMinusNode", "classtcalc_1_1ast_1_1UnaryMinusNode.html", "classtcalc_1_1ast_1_1UnaryMinusNode" ],
         [ "UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", "classtcalc_1_1ast_1_1UnaryOpNode" ],
         [ "UnaryPlusNode", "classtcalc_1_1ast_1_1UnaryPlusNode.html", "classtcalc_1_1ast_1_1UnaryPlusNode" ],
+        [ "VarAssignNode", "classtcalc_1_1ast_1_1VarAssignNode.html", "classtcalc_1_1ast_1_1VarAssignNode" ],
         [ "VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", "classtcalc_1_1ast_1_1VarRefNode" ]
+      ] ],
+      [ "builtins", null, [
+        [ "FunctionWrapper", "classtcalc_1_1builtins_1_1FunctionWrapper.html", "classtcalc_1_1builtins_1_1FunctionWrapper" ]
       ] ],
       [ "error", null, [
         [ "Error", "classtcalc_1_1error_1_1Error.html", "classtcalc_1_1error_1_1Error" ]

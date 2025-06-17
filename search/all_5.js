@@ -8,5 +8,6 @@ var searchData=
   ['func_5',['func',['../classtcalc_1_1EvalContext.html#a010a7f913ae8c3987831df2132747b70',1,'tcalc::EvalContext::func(const std::string &amp;name) const'],['../classtcalc_1_1EvalContext.html#ac92695bf4b00f72c7f21d2460f70c82a',1,'tcalc::EvalContext::func(const std::string &amp;name, builtins::Function func)']]],
   ['funcs_6',['funcs',['../classtcalc_1_1EvalContext.html#a96d6442dacfe90063303c34f0d76fae8',1,'tcalc::EvalContext']]],
   ['function_7',['Function',['../builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b',1,'tcalc::builtins']]],
-  ['function_2ehpp_8',['function.hpp',['../function_8hpp.html',1,'']]]
+  ['function_2ehpp_8',['function.hpp',['../function_8hpp.html',1,'']]],
+  ['functionwrapper_9',['functionwrapper',['../classtcalc_1_1builtins_1_1FunctionWrapper.html',1,'tcalc::builtins::FunctionWrapper'],['../classtcalc_1_1builtins_1_1FunctionWrapper.html#a55d749b856f888a0d40ed107105e5b26',1,'tcalc::builtins::FunctionWrapper::FunctionWrapper()']]]
 ];
