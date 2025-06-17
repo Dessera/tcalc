@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('classtcalc_1_1token_1_1Tokenizer.html'
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classtcalc_1_1token_1_1Tokenizer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">tcalc::token::Tokenizer Class Reference</div></div>
 </div><!--header-->
@@ -121,6 +122,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b59b0c76dc6d1fbbcf2457cf7fa576b" id="r_a4b59b0c76dc6d1fbbcf2457cf7fa576b"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a4b59b0c76dc6d1fbbcf2457cf7fa576b">spos</a> () const noexcept</td></tr>
 <tr class="memdesc:a4b59b0c76dc6d1fbbcf2457cf7fa576b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the tokenizer as an index.  <br /></td></tr>
 <tr class="separator:a4b59b0c76dc6d1fbbcf2457cf7fa576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a6cb643582622c93f5815701ae5755b24" id="r_a6cb643582622c93f5815701ae5755b24"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; std::string, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42">TokenType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a6cb643582622c93f5815701ae5755b24">KEYWORDS</a></td></tr>
+<tr class="separator:a6cb643582622c93f5815701ae5755b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tokenize the input string into tokens. </p>
@@ -233,6 +239,38 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the current position of the tokenizer as an index. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t The current position as an index. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6cb643582622c93f5815701ae5755b24" name="a6cb643582622c93f5815701ae5755b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb643582622c93f5815701ae5755b24">&#9670;&#160;</a></span>KEYWORDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt;std::string, <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42">TokenType</a>&gt; tcalc::token::Tokenizer::KEYWORDS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    { <span class="stringliteral">&quot;def&quot;</span>, TokenType::DEF },         { <span class="stringliteral">&quot;let&quot;</span>, TokenType::LET },</div>
+<div class="line">    { <span class="stringliteral">&quot;if&quot;</span>, TokenType::IF },           { <span class="stringliteral">&quot;then&quot;</span>, TokenType::THEN },</div>
+<div class="line">    { <span class="stringliteral">&quot;else&quot;</span>, TokenType::ELSE },       { <span class="stringliteral">&quot;==&quot;</span>, TokenType::EQUAL },</div>
+<div class="line">    { <span class="stringliteral">&quot;!=&quot;</span>, TokenType::NOTEQUAL },     { <span class="stringliteral">&quot;&gt;&quot;</span>, TokenType::GREATER },</div>
+<div class="line">    { <span class="stringliteral">&quot;&gt;=&quot;</span>, TokenType::GREATEREQUAL }, { <span class="stringliteral">&quot;&lt;&quot;</span>, TokenType::LESS },</div>
+<div class="line">    { <span class="stringliteral">&quot;&lt;=&quot;</span>, TokenType::LESSEQUAL },</div>
+<div class="line">  }</div>
+</div><!-- fragment --><p>Tcalc keywords. </p>
 
 </div>
 </div>

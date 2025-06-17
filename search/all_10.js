@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['unary_5fminus_0',['UNARY_MINUS',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b',1,'tcalc::ast']]],
-  ['unary_5fplus_1',['UNARY_PLUS',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca4296876bcffdde6b16a84b13b4766fee',1,'tcalc::ast']]],
-  ['unaryminusnode_2',['unaryminusnode',['../classtcalc_1_1ast_1_1UnaryMinusNode.html',1,'tcalc::ast::UnaryMinusNode'],['../classtcalc_1_1ast_1_1UnaryMinusNode.html#a7d3c8953a7202a5ca32e65e7c470d913',1,'tcalc::ast::UnaryMinusNode::UnaryMinusNode()'],['../classtcalc_1_1ast_1_1UnaryMinusNode.html#a82b1ad4457e3daa7940170d7bcf3e832',1,'tcalc::ast::UnaryMinusNode::UnaryMinusNode(std::shared_ptr&lt; Node &gt; operand)']]],
-  ['unaryop_2ehpp_3',['unaryop.hpp',['../unaryop_8hpp.html',1,'']]],
-  ['unaryopnode_4',['unaryopnode',['../classtcalc_1_1ast_1_1UnaryOpNode.html',1,'tcalc::ast::UnaryOpNode'],['../classtcalc_1_1ast_1_1UnaryOpNode.html#ab14d5afb35385135d95b8157c4473f77',1,'tcalc::ast::UnaryOpNode::UnaryOpNode(NodeType type)'],['../classtcalc_1_1ast_1_1UnaryOpNode.html#ae6cbf8008534022102573f132d2aa5ba',1,'tcalc::ast::UnaryOpNode::UnaryOpNode(NodeType type, std::shared_ptr&lt; Node &gt; operand)']]],
-  ['unaryplusnode_5',['unaryplusnode',['../classtcalc_1_1ast_1_1UnaryPlusNode.html',1,'tcalc::ast::UnaryPlusNode'],['../classtcalc_1_1ast_1_1UnaryPlusNode.html#ad7ddfdf075afa7308678c599a6eeab09',1,'tcalc::ast::UnaryPlusNode::UnaryPlusNode()'],['../classtcalc_1_1ast_1_1UnaryPlusNode.html#a9c804d31e387aaec285c0058689bbde9',1,'tcalc::ast::UnaryPlusNode::UnaryPlusNode(std::shared_ptr&lt; Node &gt; operand)']]],
-  ['undefined_5ffunc_6',['UNDEFINED_FUNC',['../error_8hpp.html#a962518b30ba32968a1c1726465276ca2ae0e746b6576822f2169ce25400d7986b',1,'tcalc::error']]],
-  ['undefined_5fvar_7',['UNDEFINED_VAR',['../error_8hpp.html#a962518b30ba32968a1c1726465276ca2abaf0f508c8439ead0b67ff5541adb8fa',1,'tcalc::error']]],
-  ['usage_8',['Usage',['../md_README.html#autotoc_md11',1,'']]]
+  ['tcalc_20syntax_20reference_0',['Tcalc Syntax Reference',['../md_docs_2SYNTAX.html',1,'']]],
+  ['the_20project_1',['About The Project',['../md_README.html#autotoc_md6',1,'']]],
+  ['then_2',['then',['../classtcalc_1_1ast_1_1IfNode.html#a5a4bbf3bfcaaf524f56747f7a8ddc420',1,'tcalc::ast::IfNode::then() const noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a0dad3fdebb3c08a6dd0b046fb46fa317',1,'tcalc::ast::IfNode::then() noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#aa65d0a5862791e98f13f9bd4ea81d4fc',1,'tcalc::ast::IfNode::then(std::shared_ptr&lt; Node &gt; then) noexcept'],['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a907ec71a28d71811a0e37f08b15c2109',1,'THENtcalc::token']]],
+  ['token_3',['Token',['../structtcalc_1_1token_1_1Token.html',1,'tcalc::token']]],
+  ['token_2ehpp_4',['token.hpp',['../token_8hpp.html',1,'']]],
+  ['token_5ftype_5fto_5fstring_5',['token_type_to_string',['../token_8hpp.html#a4d0e84ea2537b7f5f14f74716dcb9f88',1,'tcalc::token']]],
+  ['tokenizer_6',['tokenizer',['../classtcalc_1_1token_1_1Tokenizer.html',1,'tcalc::token::Tokenizer'],['../classtcalc_1_1ast_1_1ParserContext.html#a66f5a15d41ac9218d0afff0aff72cc25',1,'tcalc::ast::ParserContext::tokenizer()'],['../classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14',1,'tcalc::token::Tokenizer::Tokenizer()']]],
+  ['tokenizer_2ehpp_7',['tokenizer.hpp',['../tokenizer_8hpp.html',1,'']]],
+  ['tokentype_8',['TokenType',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42',1,'tcalc::token']]],
+  ['type_9',['type',['../classtcalc_1_1ast_1_1Node.html#a06924b0a3b5fcf21cb9bda915ef24f06',1,'tcalc::ast::Node']]]
 ];

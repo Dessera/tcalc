@@ -6,17 +6,7 @@ var annotated_dup =
     [ "tcalc", null, [
       [ "ast", null, [
         [ "BaseVisitor", "classtcalc_1_1ast_1_1BaseVisitor.html", "classtcalc_1_1ast_1_1BaseVisitor" ],
-        [ "BinaryDivideNode", "classtcalc_1_1ast_1_1BinaryDivideNode.html", "classtcalc_1_1ast_1_1BinaryDivideNode" ],
-        [ "BinaryEqualNode", "classtcalc_1_1ast_1_1BinaryEqualNode.html", "classtcalc_1_1ast_1_1BinaryEqualNode" ],
-        [ "BinaryGreaterEqualNode", "classtcalc_1_1ast_1_1BinaryGreaterEqualNode.html", "classtcalc_1_1ast_1_1BinaryGreaterEqualNode" ],
-        [ "BinaryGreaterNode", "classtcalc_1_1ast_1_1BinaryGreaterNode.html", "classtcalc_1_1ast_1_1BinaryGreaterNode" ],
-        [ "BinaryLessEqualNode", "classtcalc_1_1ast_1_1BinaryLessEqualNode.html", "classtcalc_1_1ast_1_1BinaryLessEqualNode" ],
-        [ "BinaryLessNode", "classtcalc_1_1ast_1_1BinaryLessNode.html", "classtcalc_1_1ast_1_1BinaryLessNode" ],
-        [ "BinaryMinusNode", "classtcalc_1_1ast_1_1BinaryMinusNode.html", "classtcalc_1_1ast_1_1BinaryMinusNode" ],
-        [ "BinaryMultiplyNode", "classtcalc_1_1ast_1_1BinaryMultiplyNode.html", "classtcalc_1_1ast_1_1BinaryMultiplyNode" ],
-        [ "BinaryNotEqualNode", "classtcalc_1_1ast_1_1BinaryNotEqualNode.html", "classtcalc_1_1ast_1_1BinaryNotEqualNode" ],
         [ "BinaryOpNode", "classtcalc_1_1ast_1_1BinaryOpNode.html", "classtcalc_1_1ast_1_1BinaryOpNode" ],
-        [ "BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", "classtcalc_1_1ast_1_1BinaryPlusNode" ],
         [ "EvalVisitor", "classtcalc_1_1ast_1_1EvalVisitor.html", "classtcalc_1_1ast_1_1EvalVisitor" ],
         [ "FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", "classtcalc_1_1ast_1_1FcallNode" ],
         [ "FdefNode", "classtcalc_1_1ast_1_1FdefNode.html", "classtcalc_1_1ast_1_1FdefNode" ],
@@ -26,9 +16,7 @@ var annotated_dup =
         [ "Parser", "classtcalc_1_1ast_1_1Parser.html", "classtcalc_1_1ast_1_1Parser" ],
         [ "ParserContext", "classtcalc_1_1ast_1_1ParserContext.html", "classtcalc_1_1ast_1_1ParserContext" ],
         [ "PrintVisitor", "classtcalc_1_1ast_1_1PrintVisitor.html", "classtcalc_1_1ast_1_1PrintVisitor" ],
-        [ "UnaryMinusNode", "classtcalc_1_1ast_1_1UnaryMinusNode.html", "classtcalc_1_1ast_1_1UnaryMinusNode" ],
         [ "UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", "classtcalc_1_1ast_1_1UnaryOpNode" ],
-        [ "UnaryPlusNode", "classtcalc_1_1ast_1_1UnaryPlusNode.html", "classtcalc_1_1ast_1_1UnaryPlusNode" ],
         [ "VarAssignNode", "classtcalc_1_1ast_1_1VarAssignNode.html", "classtcalc_1_1ast_1_1VarAssignNode" ],
         [ "VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", "classtcalc_1_1ast_1_1VarRefNode" ]
       ] ],

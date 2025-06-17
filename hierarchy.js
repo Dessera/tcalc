@@ -15,26 +15,12 @@ var hierarchy =
     [ "std::formatter< tcalc::token::Token, CharT >", "structstd_1_1formatter_3_01tcalc_1_1token_1_1Token_00_01CharT_01_4.html", null ],
     [ "tcalc::builtins::FunctionWrapper", "classtcalc_1_1builtins_1_1FunctionWrapper.html", null ],
     [ "tcalc::ast::Node", "classtcalc_1_1ast_1_1Node.html", [
-      [ "tcalc::ast::BinaryOpNode", "classtcalc_1_1ast_1_1BinaryOpNode.html", [
-        [ "tcalc::ast::BinaryDivideNode", "classtcalc_1_1ast_1_1BinaryDivideNode.html", null ],
-        [ "tcalc::ast::BinaryEqualNode", "classtcalc_1_1ast_1_1BinaryEqualNode.html", null ],
-        [ "tcalc::ast::BinaryGreaterEqualNode", "classtcalc_1_1ast_1_1BinaryGreaterEqualNode.html", null ],
-        [ "tcalc::ast::BinaryGreaterNode", "classtcalc_1_1ast_1_1BinaryGreaterNode.html", null ],
-        [ "tcalc::ast::BinaryLessEqualNode", "classtcalc_1_1ast_1_1BinaryLessEqualNode.html", null ],
-        [ "tcalc::ast::BinaryLessNode", "classtcalc_1_1ast_1_1BinaryLessNode.html", null ],
-        [ "tcalc::ast::BinaryMinusNode", "classtcalc_1_1ast_1_1BinaryMinusNode.html", null ],
-        [ "tcalc::ast::BinaryMultiplyNode", "classtcalc_1_1ast_1_1BinaryMultiplyNode.html", null ],
-        [ "tcalc::ast::BinaryNotEqualNode", "classtcalc_1_1ast_1_1BinaryNotEqualNode.html", null ],
-        [ "tcalc::ast::BinaryPlusNode", "classtcalc_1_1ast_1_1BinaryPlusNode.html", null ]
-      ] ],
+      [ "tcalc::ast::BinaryOpNode", "classtcalc_1_1ast_1_1BinaryOpNode.html", null ],
       [ "tcalc::ast::FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", null ],
       [ "tcalc::ast::FdefNode", "classtcalc_1_1ast_1_1FdefNode.html", null ],
       [ "tcalc::ast::IfNode", "classtcalc_1_1ast_1_1IfNode.html", null ],
       [ "tcalc::ast::NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", null ],
-      [ "tcalc::ast::UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", [
-        [ "tcalc::ast::UnaryMinusNode", "classtcalc_1_1ast_1_1UnaryMinusNode.html", null ],
-        [ "tcalc::ast::UnaryPlusNode", "classtcalc_1_1ast_1_1UnaryPlusNode.html", null ]
-      ] ],
+      [ "tcalc::ast::UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", null ],
       [ "tcalc::ast::VarAssignNode", "classtcalc_1_1ast_1_1VarAssignNode.html", null ],
       [ "tcalc::ast::VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", null ]
     ] ],

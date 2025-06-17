@@ -137,6 +137,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad97b087dc968e1c27e89be438d84e4f7" id="r_ad97b087dc968e1c27e89be438d84e4f7"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:ad97b087dc968e1c27e89be438d84e4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in pow function.  <br /></td></tr>
 <tr class="separator:ad97b087dc968e1c27e89be438d84e4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36733716fee02f3084bcd6175177d9e3" id="r_a36733716fee02f3084bcd6175177d9e3"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a36733716fee02f3084bcd6175177d9e3">tcalc::builtins::log</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a36733716fee02f3084bcd6175177d9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in log function.  <br /></td></tr>
+<tr class="separator:a36733716fee02f3084bcd6175177d9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -152,6 +155,44 @@ Variables</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>2025-06-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Dessera </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a36733716fee02f3084bcd6175177d9e3" name="a36733716fee02f3084bcd6175177d9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36733716fee02f3084bcd6175177d9e3">&#9670;&#160;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">error::Result&lt; double &gt; tcalc::builtins::log </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Built-in log function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Function arguments. </td></tr>
+    <tr><td class="paramname">ctx</td><td>Evaluation context. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>error::Result&lt;double&gt; Result. </dd></dl>
+
+</div>
+</div>
 <a id="ad97b087dc968e1c27e89be438d84e4f7" name="ad97b087dc968e1c27e89be438d84e4f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad97b087dc968e1c27e89be438d84e4f7">&#9670;&#160;</a></span>pow()</h2>
 
@@ -241,6 +282,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">  { <span class="stringliteral">&quot;sqrt&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">sqrt</a> },</div>
 <div class="line">  { <span class="stringliteral">&quot;pow&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">pow</a> },</div>
+<div class="line">  { <span class="stringliteral">&quot;log&quot;</span>, log },</div>
 <div class="line">}</div>
 <div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:46</div></div>
 <div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:58</div></div>

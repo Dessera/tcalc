@@ -7,6 +7,7 @@ var dir_56c92165492be2cb326f559a53e83d91 =
     [ "error.hpp", "error_8hpp.html", "error_8hpp" ],
     [ "eval.hpp", "eval_8hpp.html", "eval_8hpp" ],
     [ "parser.hpp", "parser_8hpp.html", "parser_8hpp" ],
+    [ "priority.hpp", "priority_8hpp.html", "priority_8hpp" ],
     [ "token.hpp", "token_8hpp.html", "token_8hpp" ],
     [ "tokenizer.hpp", "tokenizer_8hpp.html", "tokenizer_8hpp" ]
 ];
