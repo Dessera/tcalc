@@ -1,14 +1,14 @@
 var searchData=
 [
   ['value_0',['value',['../classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1',1,'tcalc::ast::NumberNode::value() const noexcept'],['../classtcalc_1_1ast_1_1NumberNode.html#a74f92464949184a944103e68e35e351e',1,'tcalc::ast::NumberNode::value(double value) noexcept']]],
-  ['var_1',['var',['../classtcalc_1_1EvalContext.html#a2a5c6ad36c8bbcf59b6d3306c0c20e41',1,'tcalc::EvalContext::var(const std::string &amp;name) const'],['../classtcalc_1_1EvalContext.html#a9624c5fd67bc64e6f42f020d8617a32d',1,'tcalc::EvalContext::var(const std::string &amp;name, double value)']]],
+  ['var_1',['var',['../classtcalc_1_1EvalContext.html#a2a5c6ad36c8bbcf59b6d3306c0c20e41',1,'tcalc::EvalContext::var(const std::string &amp;name) const'],['../classtcalc_1_1EvalContext.html#a8c03f11e3dc185d6a7d5d0e5518f1714',1,'tcalc::EvalContext::var(const std::string &amp;name, double value) noexcept']]],
   ['varassign_2',['VARASSIGN',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca6d613bd3ca767a2a6fa90fd92d419a0b',1,'tcalc::ast']]],
   ['varassignnode_3',['varassignnode',['../classtcalc_1_1ast_1_1VarAssignNode.html',1,'tcalc::ast::VarAssignNode'],['../classtcalc_1_1ast_1_1VarAssignNode.html#a519f4b94918ceb273b4d75dcd309090c',1,'tcalc::ast::VarAssignNode::VarAssignNode(std::string name)'],['../classtcalc_1_1ast_1_1VarAssignNode.html#a99e85f704d7e63730aa56d049bf327bf',1,'tcalc::ast::VarAssignNode::VarAssignNode(std::string name, std::shared_ptr&lt; Node &gt; body)']]],
   ['variable_20assignment_4',['Variable Assignment',['../md_docs_2SYNTAX.html#autotoc_md1',1,'']]],
   ['variable_2ehpp_5',['variable.hpp',['../variable_8hpp.html',1,'']]],
   ['varref_6',['VARREF',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db',1,'tcalc::ast']]],
   ['varrefnode_7',['varrefnode',['../classtcalc_1_1ast_1_1VarRefNode.html',1,'tcalc::ast::VarRefNode'],['../classtcalc_1_1ast_1_1VarRefNode.html#aea1403b3842d33ca839ae732a8cc1f9c',1,'tcalc::ast::VarRefNode::VarRefNode()']]],
-  ['vars_8',['vars',['../classtcalc_1_1EvalContext.html#ad9f5c3dd88ca7fa4be5816ecf460287a',1,'tcalc::EvalContext']]],
+  ['vars_8',['vars',['../classtcalc_1_1EvalContext.html#ad5f4fa650a9d36740dc67288513d26ee',1,'tcalc::EvalContext']]],
   ['visit_9',['visit',['../classtcalc_1_1ast_1_1BaseVisitor.html#abaf64616388f5642354e94bc0737fdca',1,'tcalc::ast::BaseVisitor']]],
   ['visit_5fbin_5fdivide_10',['visit_bin_divide',['../classtcalc_1_1ast_1_1EvalVisitor.html#a754db945bb79e4a5c30852efdf343c8d',1,'tcalc::ast::EvalVisitor::visit_bin_divide()'],['../classtcalc_1_1ast_1_1BaseVisitor.html#a8cc6e36aae71e6114b94f24759e03abc',1,'tcalc::ast::BaseVisitor::visit_bin_divide()'],['../classtcalc_1_1ast_1_1PrintVisitor.html#a3b1b9a3011972fee52935397ea66ffae',1,'tcalc::ast::PrintVisitor::visit_bin_divide(std::shared_ptr&lt; BinaryDivideNode &gt; &amp;node) override']]],
   ['visit_5fbin_5fminus_11',['visit_bin_minus',['../classtcalc_1_1ast_1_1PrintVisitor.html#a4c19f8717f4f2aecae218a4d9ebacd4c',1,'tcalc::ast::PrintVisitor::visit_bin_minus()'],['../classtcalc_1_1ast_1_1BaseVisitor.html#a2b8c0cd4d75ece64272810b79e9f75d0',1,'tcalc::ast::BaseVisitor::visit_bin_minus()'],['../classtcalc_1_1ast_1_1EvalVisitor.html#aa9f756cecb928bb40084760c7b8b498b',1,'tcalc::ast::EvalVisitor::visit_bin_minus()']]],
