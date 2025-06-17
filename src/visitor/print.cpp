@@ -103,6 +103,18 @@ PrintVisitor::visit_varref(std::shared_ptr<VarRefNode>& node)
 }
 
 error::Result<void>
+PrintVisitor::visit_varassign(std::shared_ptr<VarAssignNode>& node)
+{
+  std::println(*_os, "{}VARASSIGN: {}", _gen_indent(), node->name());
+
+  _step_indent();
+  ret_err(visit(node->body()));
+  _unstep_indent();
+
+  return error::ok<void>();
+}
+
+error::Result<void>
 PrintVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
 {
   std::println(*_os, "{}FCALL: {}", _gen_indent(), node->name());
@@ -127,6 +139,20 @@ PrintVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
 
   _step_indent();
   ret_err(visit(node->body()));
+  _unstep_indent();
+
+  return error::ok<void>();
+}
+
+error::Result<void>
+PrintVisitor::visit_if(std::shared_ptr<IfNode>& node)
+{
+  std::println(*_os, "{}IF:", _gen_indent());
+
+  _step_indent();
+  ret_err(visit(node->cond()));
+  ret_err(visit(node->then()));
+  ret_err(visit(node->else_()));
   _unstep_indent();
 
   return error::ok<void>();

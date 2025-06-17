@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "tcalc/ast/binaryop.hpp"
+#include "tcalc/ast/control_flow.hpp"
 #include "tcalc/ast/function.hpp"
 #include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
@@ -62,7 +63,7 @@ Parser::parse(std::string_view input)
   return error::ok<std::shared_ptr<Node>>(res);
 }
 
-// program : expr | fdef
+// program : expr | fdef | assign
 NodeResult<Node>
 Parser::next_program(ParserContext& ctx)
 {
@@ -70,13 +71,23 @@ Parser::next_program(ParserContext& ctx)
     return next_fdef(ctx);
   }
 
+  if (ctx.current().type == token::TokenType::LET) {
+    return next_assign(ctx);
+  }
+
   return next_expr(ctx);
 }
 
-// expr : term ((PLUS | MINUS) term)*
+// expr : term ((PLUS | MINUS) term)* |
+//        if
 NodeResult<Node>
 Parser::next_expr(ParserContext& ctx)
 {
+
+  if (ctx.current().type == token::TokenType::IF) {
+    return next_if(ctx);
+  }
+
   auto node = unwrap_err(next_term(ctx));
 
   while (ctx.current().type == token::TokenType::PLUS ||
@@ -90,6 +101,40 @@ Parser::next_expr(ParserContext& ctx)
         std::make_shared<BinaryMinusNode>(node, unwrap_err(next_term(ctx)));
     }
   }
+
+  return error::ok<std::shared_ptr<Node>>(node);
+}
+
+// if : IF expr THEN expr ELSE expr
+NodeResult<Node>
+Parser::next_if(ParserContext& ctx)
+{
+  ret_err(ctx.eat(token::TokenType::IF));
+
+  auto node = std::make_shared<IfNode>();
+
+  node->cond(unwrap_err(next_expr(ctx)));
+  ret_err(ctx.eat(token::TokenType::THEN));
+
+  node->then(unwrap_err(next_expr(ctx)));
+  ret_err(ctx.eat(token::TokenType::ELSE));
+
+  node->else_(unwrap_err(next_expr(ctx)));
+
+  return error::ok<std::shared_ptr<Node>>(node);
+}
+
+// assign : LET IDENTIFIER ASSIGN expr
+NodeResult<Node>
+Parser::next_assign(ParserContext& ctx)
+{
+  ret_err(ctx.eat(token::TokenType::LET));
+
+  auto node = std::make_shared<VarAssignNode>(ctx.current().text);
+
+  ret_err(ctx.eat(token::TokenType::IDENTIFIER));
+  ret_err(ctx.eat(token::TokenType::ASSIGN));
+  node->body(unwrap_err(next_expr(ctx)));
 
   return error::ok<std::shared_ptr<Node>>(node);
 }

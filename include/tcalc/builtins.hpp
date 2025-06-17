@@ -12,9 +12,11 @@
 #pragma once
 
 #include <functional>
+#include <memory>
 #include <unordered_map>
 #include <vector>
 
+#include "tcalc/ast/function.hpp"
 #include "tcalc/common.hpp"
 #include "tcalc/error.hpp"
 
@@ -32,6 +34,36 @@ namespace tcalc::builtins {
  */
 using Function = std::function<error::Result<double>(const std::vector<double>&,
                                                      const EvalContext&)>;
+
+/**
+ * @brief Wrapper for User-defined functions.
+ *
+ */
+class TCALC_PUBLIC FunctionWrapper
+{
+private:
+  std::shared_ptr<ast::FdefNode> _node;
+
+public:
+  /**
+   * @brief Construct a new Function Wrapper object.
+   *
+   * @param node Function definition node.
+   */
+  FunctionWrapper(std::shared_ptr<ast::FdefNode> node);
+
+  ~FunctionWrapper() = default;
+
+  /**
+   * @brief Evaluate the function.
+   *
+   * @param args Function arguments.
+   * @param ctx Evaluation context.
+   * @return error::Result<double> Evaluation result.
+   */
+  error::Result<double> operator()(const std::vector<double>& args,
+                                   const EvalContext& ctx) const;
+};
 
 /**
  * @brief Built-in sqrt function.

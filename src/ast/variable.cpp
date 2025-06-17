@@ -8,4 +8,16 @@ VarRefNode::VarRefNode(std::string name)
 {
 }
 
+VarAssignNode::VarAssignNode(std::string name)
+  : VarAssignNode{ std::move(name), nullptr }
+{
+}
+
+VarAssignNode::VarAssignNode(std::string name, std::shared_ptr<Node> body)
+  : Node{ NodeType::VARASSIGN }
+  , _name{ std::move(name) }
+  , _body{ std::move(body) }
+{
+}
+
 }

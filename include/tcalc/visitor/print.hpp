@@ -66,8 +66,11 @@ public:
     std::shared_ptr<UnaryMinusNode>& node) override;
   error::Result<void> visit_number(std::shared_ptr<NumberNode>& node) override;
   error::Result<void> visit_varref(std::shared_ptr<VarRefNode>& node) override;
+  error::Result<void> visit_varassign(
+    std::shared_ptr<VarAssignNode>& node) override;
   error::Result<void> visit_fcall(std::shared_ptr<FcallNode>& node) override;
   error::Result<void> visit_fdef(std::shared_ptr<FdefNode>& node) override;
+  error::Result<void> visit_if(std::shared_ptr<IfNode>& node) override;
 
 private:
   /**

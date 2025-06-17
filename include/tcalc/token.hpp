@@ -32,11 +32,15 @@ enum class TokenType : int8_t
   LPAREN = 0x28,      /**< Bracket start. */
   RPAREN = 0x29,      /**< Bracket end. */
   COMMA = 0x2c,       /**< Comma. */
+  ASSIGN = 0x3d,      /**< Assignment. */
   NUMBER = -0x01,     /**< Constant number. */
   IDENTIFIER = -0x02, /**< Variable or function name. */
   DEF = -0x03,        /**< Function definition. */
-  EOI = -0x04,        /**< End of input. */
-  INVALID = -0x05,    /**< Invalid token placeholder. */
+  LET = -0x04,        /**< Variable definition. */
+  IF = -0x05,         /**< If statement. */
+  THEN = -0x06,       /**< Then keyword. */
+  ELSE = -0x07,       /**< Else keyword. */
+  EOI = -0x08,        /**< End of input. */
 };
 
 /**

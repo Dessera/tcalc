@@ -14,6 +14,7 @@
 #include <memory>
 
 #include "tcalc/ast/binaryop.hpp"
+#include "tcalc/ast/control_flow.hpp"
 #include "tcalc/ast/function.hpp"
 #include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
@@ -54,11 +55,17 @@ public:
     if (auto var_node = std::dynamic_pointer_cast<VarRefNode>(node)) {
       return visit_varref(var_node);
     }
+    if (auto varassign_node = std::dynamic_pointer_cast<VarAssignNode>(node)) {
+      return visit_varassign(varassign_node);
+    }
     if (auto fcall_node = std::dynamic_pointer_cast<FcallNode>(node)) {
       return visit_fcall(fcall_node);
     }
     if (auto fdef_node = std::dynamic_pointer_cast<FdefNode>(node)) {
       return visit_fdef(fdef_node);
+    }
+    if (auto if_node = std::dynamic_pointer_cast<IfNode>(node)) {
+      return visit_if(if_node);
     }
 
     return error::ok<RT>();
@@ -181,6 +188,15 @@ public:
   virtual error::Result<RT> visit_varref(std::shared_ptr<VarRefNode>& node) = 0;
 
   /**
+   * @brief Visit a variable assignment node.
+   *
+   * @param node Variable assignment node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_varassign(
+    std::shared_ptr<VarAssignNode>& node) = 0;
+
+  /**
    * @brief Visit a function call node.
    *
    * @param node Function call node.
@@ -195,6 +211,14 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_fdef(std::shared_ptr<FdefNode>& node) = 0;
+
+  /**
+   * @brief Visit an if node.
+   *
+   * @param node If node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_if(std::shared_ptr<IfNode>& node) = 0;
 };
 
 }

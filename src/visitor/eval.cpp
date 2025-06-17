@@ -1,6 +1,6 @@
-#include <cstddef>
 #include <vector>
 
+#include "tcalc/builtins.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/eval.hpp"
 #include "tcalc/visitor/eval.hpp"
@@ -72,6 +72,14 @@ EvalVisitor::visit_varref(std::shared_ptr<VarRefNode>& node)
 }
 
 error::Result<double>
+EvalVisitor::visit_varassign(std::shared_ptr<VarAssignNode>& node)
+{
+  _ctx->var(node->name(), unwrap_err(visit(node->body())));
+
+  return error::ok<double>(unwrap_err(_ctx->var(node->name())));
+}
+
+error::Result<double>
 EvalVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
 {
   auto func = unwrap_err(_ctx->func(node->name()));
@@ -87,31 +95,19 @@ EvalVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
 error::Result<double>
 EvalVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
 {
-  _ctx->func(node->name(), _create_function(node));
+  _ctx->func(node->name(), builtins::FunctionWrapper(node));
 
   return error::ok<double>(0);
 }
 
-// TODO: Class to handle this
-builtins::Function
-EvalVisitor::_create_function(std::shared_ptr<FdefNode>& node)
+error::Result<double>
+EvalVisitor::visit_if(std::shared_ptr<IfNode>& node)
 {
-  return [node](const std::vector<double>& args,
-                const EvalContext& ctx) -> error::Result<double> {
-    auto local_ctx = EvalContext{ ctx };
-    if (args.size() != node->args().size()) {
-      return error::err(error::Code::MISMATCHED_ARGS,
-                        "Wrong number of arguments, expected {}, got {}",
-                        node->args().size(),
-                        args.size());
-    }
-    for (std::size_t i = 0; i < args.size(); ++i) {
-      local_ctx.var(node->args()[i], args[i]);
-    }
+  if (unwrap_err(visit(node->cond()))) {
+    return visit(node->then());
+  }
 
-    auto local_visitor = EvalVisitor{ local_ctx };
-    return local_visitor.visit(node->body());
-  };
+  return visit(node->else_());
 }
 
 }

@@ -37,15 +37,33 @@ Tokenizer::next()
     return _parse_number();
   }
 
-  // is `def`
-  if (_pos + 2 < _input.end() && *_pos == 'd' && *(_pos + 1) == 'e' &&
-      *(_pos + 2) == 'f') {
+  if (_is_keyword("def")) {
     _pos += 3;
     return Token{ .type = TokenType::DEF, .text = "def" };
   }
 
-  if (_is_first_variable_char(*_pos)) {
-    return _next_with(TokenType::IDENTIFIER, _is_variable_char);
+  if (_is_keyword("let")) {
+    _pos += 3;
+    return Token{ .type = TokenType::LET, .text = "let" };
+  }
+
+  if (_is_keyword("if")) {
+    _pos += 2;
+    return Token{ .type = TokenType::IF, .text = "if" };
+  }
+
+  if (_is_keyword("then")) {
+    _pos += 4;
+    return Token{ .type = TokenType::THEN, .text = "then" };
+  }
+
+  if (_is_keyword("else")) {
+    _pos += 4;
+    return Token{ .type = TokenType::ELSE, .text = "else" };
+  }
+
+  if (_is_first_identifier_char(*_pos)) {
+    return _next_with(TokenType::IDENTIFIER, _is_identifier_char);
   }
 
   return error::err(error::Code::SYNTAX_ERROR,
@@ -77,13 +95,27 @@ Tokenizer::_parse_number()
 }
 
 bool
-Tokenizer::_is_variable_char(char c)
+Tokenizer::_is_keyword(std::string_view keyword)
+{
+  if (_pos + keyword.size() > _input.end()) {
+    return false;
+  }
+
+  if (std::string_view{ _pos, keyword.size() } == keyword) {
+    return true;
+  }
+
+  return false;
+}
+
+bool
+Tokenizer::_is_identifier_char(char c)
 {
   return std::isalnum(c) || c == '_';
 }
 
 bool
-Tokenizer::_is_first_variable_char(char c)
+Tokenizer::_is_first_identifier_char(char c)
 {
   return std::isalpha(c) || c == '_';
 }

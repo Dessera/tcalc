@@ -32,8 +32,10 @@ enum class NodeType : uint8_t
   UNARY_MINUS,     /**< Unary minus operator. */
   NUMBER,          /**< Constant number. */
   VARREF,          /**< Variable reference. */
+  VARASSIGN,       /**< Variable assignment. */
   FCALL,           /**< Function call. */
   FDEF,            /**< Function definition. */
+  IF,              /**< If statement. */
 };
 
 /**

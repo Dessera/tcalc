@@ -53,11 +53,11 @@ public:
     std::shared_ptr<NumberNode>& node) override;
   error::Result<double> visit_varref(
     std::shared_ptr<VarRefNode>& node) override;
+  error::Result<double> visit_varassign(
+    std::shared_ptr<VarAssignNode>& node) override;
   error::Result<double> visit_fcall(std::shared_ptr<FcallNode>& node) override;
   error::Result<double> visit_fdef(std::shared_ptr<FdefNode>& node) override;
-
-private:
-  builtins::Function _create_function(std::shared_ptr<FdefNode>& node);
+  error::Result<double> visit_if(std::shared_ptr<IfNode>& node) override;
 };
 
 }

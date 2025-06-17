@@ -122,6 +122,22 @@ public:
   NodeResult<Node> next_expr(ParserContext& ctx);
 
   /**
+   * @brief Get the next if node.
+   *
+   * @param ctx The parser context.
+   * @return NodeResult<Node> The if node result.
+   */
+  NodeResult<Node> next_if(ParserContext& ctx);
+
+  /**
+   * @brief Get the next assignment node.
+   *
+   * @param ctx The parser context.
+   * @return NodeResult<Node> The assignment node result.
+   */
+  NodeResult<Node> next_assign(ParserContext& ctx);
+
+  /**
    * @brief Get the next term node.
    *
    * @param ctx The parser context.
