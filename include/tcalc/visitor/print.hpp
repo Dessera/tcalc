@@ -67,6 +67,7 @@ public:
   error::Result<void> visit_number(std::shared_ptr<NumberNode>& node) override;
   error::Result<void> visit_varref(std::shared_ptr<VarRefNode>& node) override;
   error::Result<void> visit_fcall(std::shared_ptr<FcallNode>& node) override;
+  error::Result<void> visit_fdef(std::shared_ptr<FdefNode>& node) override;
 
 private:
   /**

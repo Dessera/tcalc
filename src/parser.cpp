@@ -29,9 +29,10 @@ ParserContext::eat(token::TokenType type)
 {
   if (_current.type != type) {
     return error::err(error::Code::SYNTAX_ERROR,
-                      "Unexpected token {} at position {}",
-                      magic_enum::enum_name(type),
-                      _tokenizer.spos() - 1);
+                      "Unexpected token {} at position {}, expected {}",
+                      magic_enum::enum_name(_current.type),
+                      _tokenizer.spos() - 1,
+                      magic_enum::enum_name(type));
   }
 
   _current = unwrap_err(_tokenizer.next());
@@ -49,7 +50,7 @@ NodeResult<Node>
 Parser::parse(std::string_view input)
 {
   auto ctx = unwrap_err(ParserContext::create(input));
-  auto res = unwrap_err(next_expr(ctx));
+  auto res = unwrap_err(next_program(ctx));
 
   if (ctx.current().type != token::TokenType::EOI) {
     return error::err(error::Code::SYNTAX_ERROR,
@@ -59,6 +60,17 @@ Parser::parse(std::string_view input)
   }
 
   return error::ok<std::shared_ptr<Node>>(res);
+}
+
+// program : expr | fdef
+NodeResult<Node>
+Parser::next_program(ParserContext& ctx)
+{
+  if (ctx.current().type == token::TokenType::DEF) {
+    return next_fdef(ctx);
+  }
+
+  return next_expr(ctx);
 }
 
 // expr : term ((PLUS | MINUS) term)*
@@ -169,6 +181,33 @@ Parser::next_idref(ParserContext& ctx)
   }
 
   ret_err(ctx.eat(token::TokenType::RPAREN));
+
+  return error::ok<std::shared_ptr<Node>>(fnode);
+}
+
+// fdef : DEF IDENTIFIER LPAREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN factor
+NodeResult<Node>
+Parser::next_fdef(ParserContext& ctx)
+{
+  ret_err(ctx.eat(token::TokenType::DEF));
+
+  auto id = ctx.current().text;
+  ret_err(ctx.eat(token::TokenType::IDENTIFIER));
+
+  ret_err(ctx.eat(token::TokenType::LPAREN));
+
+  auto fnode = std::make_shared<FdefNode>(id);
+  while (ctx.current().type != token::TokenType::RPAREN) {
+    fnode->push_arg(ctx.current().text);
+    ret_err(ctx.eat(token::TokenType::IDENTIFIER));
+    if (ctx.current().type != token::TokenType::RPAREN) {
+      ret_err(ctx.eat(token::TokenType::COMMA));
+    }
+  }
+
+  ret_err(ctx.eat(token::TokenType::RPAREN));
+
+  fnode->body(unwrap_err(next_factor(ctx)));
 
   return error::ok<std::shared_ptr<Node>>(fnode);
 }

@@ -14,4 +14,19 @@ FcallNode::FcallNode(std::string name, std::vector<std::shared_ptr<Node>> args)
 {
 }
 
+FdefNode::FdefNode(std::string name)
+  : FdefNode{ std::move(name), {}, nullptr }
+{
+}
+
+FdefNode::FdefNode(std::string name,
+                   std::vector<std::string> args,
+                   std::shared_ptr<Node> body)
+  : Node{ NodeType::FDEF }
+  , _name{ std::move(name) }
+  , _args{ std::move(args) }
+  , _body{ std::move(body) }
+{
+}
+
 }

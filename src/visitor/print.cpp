@@ -115,4 +115,21 @@ PrintVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
   return error::ok<void>();
 }
 
+error::Result<void>
+PrintVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
+{
+  std::print(*_os, "{}FDEF: {}:", _gen_indent(), node->name());
+  for (auto& arg : node->args()) {
+    std::print(*_os, " {}", arg);
+  }
+
+  std::println(*_os, "");
+
+  _step_indent();
+  ret_err(visit(node->body()));
+  _unstep_indent();
+
+  return error::ok<void>();
+}
+
 }

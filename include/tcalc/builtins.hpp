@@ -18,14 +18,20 @@
 #include "tcalc/common.hpp"
 #include "tcalc/error.hpp"
 
+namespace tcalc {
+
+class EvalContext;
+
+}
+
 namespace tcalc::builtins {
 
 /**
  * @brief Built-in function type.
  *
  */
-using Function =
-  std::function<error::Result<double>(const std::vector<double>&)>;
+using Function = std::function<error::Result<double>(const std::vector<double>&,
+                                                     const EvalContext&)>;
 
 /**
  * @brief Built-in sqrt function.
@@ -34,7 +40,7 @@ using Function =
  * @return error::Result<double> Result.
  */
 TCALC_PUBLIC error::Result<double>
-sqrt(const std::vector<double>& args);
+sqrt(const std::vector<double>& args, const EvalContext& ctx);
 
 /**
  * @brief Built-in pow function.
@@ -43,7 +49,7 @@ sqrt(const std::vector<double>& args);
  * @return error::Result<double> Result.
  */
 TCALC_PUBLIC error::Result<double>
-pow(const std::vector<double>& args);
+pow(const std::vector<double>& args, const EvalContext& ctx);
 
 extern TCALC_PUBLIC const std::unordered_map<std::string, double>
   BUILTIN_VARIABLES; /**< Built-in variables. */

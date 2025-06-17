@@ -106,6 +106,14 @@ public:
   NodeResult<Node> parse(std::string_view input);
 
   /**
+   * @brief Get the next program node.
+   *
+   * @param ctx The parser context.
+   * @return NodeResult<Node> The program node result.
+   */
+  NodeResult<Node> next_program(ParserContext& ctx);
+
+  /**
    * @brief Get the next expression node.
    *
    * @param ctx The parser context.
@@ -136,6 +144,14 @@ public:
    * @return NodeResult<Node> The identifier reference node result.
    */
   NodeResult<Node> next_idref(ParserContext& ctx);
+
+  /**
+   * @brief Get the next function definition node.
+   *
+   * @param ctx The parser context.
+   * @return NodeResult<Node> The function definition node result.
+   */
+  NodeResult<Node> next_fdef(ParserContext& ctx);
 };
 
 }

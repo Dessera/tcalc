@@ -16,11 +16,11 @@ Tokenizer::Tokenizer(std::string_view input)
 error::Result<Token>
 Tokenizer::next()
 {
+  _skip_with(_is_skippable_char);
+
   if (_pos >= _input.end()) {
     return Token{ .type = TokenType::EOI, .text = "" };
   }
-
-  _skip_with(_is_skippable_char);
 
   if (std::iscntrl(*_pos)) {
     return error::err(error::Code::SYNTAX_ERROR,
@@ -35,6 +35,13 @@ Tokenizer::next()
 
   if (std::isdigit(*_pos)) {
     return _parse_number();
+  }
+
+  // is `def`
+  if (_pos + 2 < _input.end() && *_pos == 'd' && *(_pos + 1) == 'e' &&
+      *(_pos + 2) == 'f') {
+    _pos += 3;
+    return Token{ .type = TokenType::DEF, .text = "def" };
   }
 
   if (_is_first_variable_char(*_pos)) {

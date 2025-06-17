@@ -45,6 +45,9 @@ public:
     if (auto bin_node = std::dynamic_pointer_cast<BinaryOpNode>(node)) {
       return visit_bin_op(bin_node);
     }
+    if (auto unary_node = std::dynamic_pointer_cast<UnaryOpNode>(node)) {
+      return visit_unary_op(unary_node);
+    }
     if (auto num_node = std::dynamic_pointer_cast<NumberNode>(node)) {
       return visit_number(num_node);
     }
@@ -53,6 +56,9 @@ public:
     }
     if (auto fcall_node = std::dynamic_pointer_cast<FcallNode>(node)) {
       return visit_fcall(fcall_node);
+    }
+    if (auto fdef_node = std::dynamic_pointer_cast<FdefNode>(node)) {
+      return visit_fdef(fdef_node);
     }
 
     return error::ok<RT>();
@@ -181,6 +187,14 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_fcall(std::shared_ptr<FcallNode>& node) = 0;
+
+  /**
+   * @brief Visit a function definition node.
+   *
+   * @param node Function definition node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_fdef(std::shared_ptr<FdefNode>& node) = 0;
 };
 
 }

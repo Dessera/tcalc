@@ -34,8 +34,9 @@ enum class TokenType : int8_t
   COMMA = 0x2c,       /**< Comma. */
   NUMBER = -0x01,     /**< Constant number. */
   IDENTIFIER = -0x02, /**< Variable or function name. */
-  EOI = -0x03,        /**< End of input. */
-  INVALID = -0x04,    /**< Invalid token placeholder. */
+  DEF = -0x03,        /**< Function definition. */
+  EOI = -0x04,        /**< End of input. */
+  INVALID = -0x05,    /**< Invalid token placeholder. */
 };
 
 /**

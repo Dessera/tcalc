@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include "tcalc/builtins.hpp"
 #include "tcalc/common.hpp"
 #include "tcalc/eval.hpp"
 #include "tcalc/visitor/base.hpp"
@@ -53,6 +54,10 @@ public:
   error::Result<double> visit_varref(
     std::shared_ptr<VarRefNode>& node) override;
   error::Result<double> visit_fcall(std::shared_ptr<FcallNode>& node) override;
+  error::Result<double> visit_fdef(std::shared_ptr<FdefNode>& node) override;
+
+private:
+  builtins::Function _create_function(std::shared_ptr<FdefNode>& node);
 };
 
 }

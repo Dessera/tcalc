@@ -33,6 +33,7 @@ enum class NodeType : uint8_t
   NUMBER,          /**< Constant number. */
   VARREF,          /**< Variable reference. */
   FCALL,           /**< Function call. */
+  FDEF,            /**< Function definition. */
 };
 
 /**

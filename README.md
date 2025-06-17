@@ -51,7 +51,7 @@
 
 ## About The Project
 
-TCALC is a simple interpreter for calculators, which can only perform basic arithmetic operations with limited built-in functions, written in C++ and GNU++26.
+TCALC is a simple interpreter for calculators, which can perform basic arithmetic operations with functions (builtin and user-defined), written in C++ and GNU++26.
 
 ### Built With
 
@@ -98,7 +98,7 @@ For APIs, read the [docs](https://dessera.github.io/tcalc) for more information.
 
 - [ ] More built-in functions
 - [ ] GUI application
-- [ ] User-defined functions
+- [x] User-defined functions (don't support recursion because no control flow statements)
 
 ## Contributing
 

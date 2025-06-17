@@ -7,7 +7,7 @@
 namespace tcalc::builtins {
 
 error::Result<double>
-sqrt(const std::vector<double>& args)
+sqrt(const std::vector<double>& args, const EvalContext& /*ctx*/)
 {
   if (args.size() != 1) {
     return error::err(error::Code::MISMATCHED_ARGS,
@@ -19,7 +19,7 @@ sqrt(const std::vector<double>& args)
 }
 
 error::Result<double>
-pow(const std::vector<double>& args)
+pow(const std::vector<double>& args, const EvalContext& /*ctx*/)
 {
   if (args.size() != 2) {
     return error::err(error::Code::MISMATCHED_ARGS,
