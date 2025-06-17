@@ -22,6 +22,17 @@
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/error.hpp"
 
+#define __check_node_type(node, type, entry)                                   \
+  if (auto node_type = std::dynamic_pointer_cast<type>(node)) {                \
+    return entry(node_type);                                                   \
+  }
+
+#define VISIT_DEFAULT(node)                                                    \
+  {                                                                            \
+    (void)node;                                                                \
+    return error::ok<RT>();                                                    \
+  }
+
 namespace tcalc::ast {
 
 /**
@@ -43,30 +54,14 @@ public:
    */
   virtual error::Result<RT> visit(std::shared_ptr<Node>& node)
   {
-    if (auto bin_node = std::dynamic_pointer_cast<BinaryOpNode>(node)) {
-      return visit_bin_op(bin_node);
-    }
-    if (auto unary_node = std::dynamic_pointer_cast<UnaryOpNode>(node)) {
-      return visit_unary_op(unary_node);
-    }
-    if (auto num_node = std::dynamic_pointer_cast<NumberNode>(node)) {
-      return visit_number(num_node);
-    }
-    if (auto var_node = std::dynamic_pointer_cast<VarRefNode>(node)) {
-      return visit_varref(var_node);
-    }
-    if (auto varassign_node = std::dynamic_pointer_cast<VarAssignNode>(node)) {
-      return visit_varassign(varassign_node);
-    }
-    if (auto fcall_node = std::dynamic_pointer_cast<FcallNode>(node)) {
-      return visit_fcall(fcall_node);
-    }
-    if (auto fdef_node = std::dynamic_pointer_cast<FdefNode>(node)) {
-      return visit_fdef(fdef_node);
-    }
-    if (auto if_node = std::dynamic_pointer_cast<IfNode>(node)) {
-      return visit_if(if_node);
-    }
+    __check_node_type(node, BinaryOpNode, visit_bin_op);
+    __check_node_type(node, UnaryOpNode, visit_unary_op);
+    __check_node_type(node, NumberNode, visit_number);
+    __check_node_type(node, VarRefNode, visit_varref);
+    __check_node_type(node, VarAssignNode, visit_varassign);
+    __check_node_type(node, FcallNode, visit_fcall);
+    __check_node_type(node, FdefNode, visit_fdef);
+    __check_node_type(node, IfNode, visit_if);
 
     return error::ok<RT>();
   }
@@ -79,21 +74,16 @@ public:
    */
   virtual error::Result<RT> visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
   {
-    if (auto bin_plus_node = std::dynamic_pointer_cast<BinaryPlusNode>(node)) {
-      return visit_bin_plus(bin_plus_node);
-    }
-    if (auto bin_minus_node =
-          std::dynamic_pointer_cast<BinaryMinusNode>(node)) {
-      return visit_bin_minus(bin_minus_node);
-    }
-    if (auto bin_multiply_node =
-          std::dynamic_pointer_cast<BinaryMultiplyNode>(node)) {
-      return visit_bin_multiply(bin_multiply_node);
-    }
-    if (auto bin_divide_node =
-          std::dynamic_pointer_cast<BinaryDivideNode>(node)) {
-      return visit_bin_divide(bin_divide_node);
-    }
+    __check_node_type(node, BinaryPlusNode, visit_bin_plus);
+    __check_node_type(node, BinaryMinusNode, visit_bin_minus);
+    __check_node_type(node, BinaryMultiplyNode, visit_bin_multiply);
+    __check_node_type(node, BinaryDivideNode, visit_bin_divide);
+    __check_node_type(node, BinaryEqualNode, visit_bin_equal);
+    __check_node_type(node, BinaryNotEqualNode, visit_bin_notequal);
+    __check_node_type(node, BinaryGreaterNode, visit_bin_greater);
+    __check_node_type(node, BinaryGreaterEqualNode, visit_bin_greaterequal);
+    __check_node_type(node, BinaryLessNode, visit_bin_less);
+    __check_node_type(node, BinaryLessEqualNode, visit_bin_lessequal);
 
     return error::ok<RT>();
   }
@@ -106,13 +96,8 @@ public:
    */
   virtual error::Result<RT> visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
   {
-    if (auto unary_plus_node = std::dynamic_pointer_cast<UnaryPlusNode>(node)) {
-      return visit_unary_plus(unary_plus_node);
-    }
-    if (auto unary_minus_node =
-          std::dynamic_pointer_cast<UnaryMinusNode>(node)) {
-      return visit_unary_minus(unary_minus_node);
-    }
+    __check_node_type(node, UnaryPlusNode, visit_unary_plus);
+    __check_node_type(node, UnaryMinusNode, visit_unary_minus);
 
     return error::ok<RT>();
   }
@@ -124,7 +109,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_bin_plus(
-    std::shared_ptr<BinaryPlusNode>& node) = 0;
+    std::shared_ptr<BinaryPlusNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a minus node.
@@ -133,7 +118,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_bin_minus(
-    std::shared_ptr<BinaryMinusNode>& node) = 0;
+    std::shared_ptr<BinaryMinusNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a multiply node.
@@ -142,7 +127,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_bin_multiply(
-    std::shared_ptr<BinaryMultiplyNode>& node) = 0;
+    std::shared_ptr<BinaryMultiplyNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a divide node.
@@ -151,7 +136,61 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_bin_divide(
-    std::shared_ptr<BinaryDivideNode>& node) = 0;
+    std::shared_ptr<BinaryDivideNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a equal node.
+   *
+   * @param node Equal node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_bin_equal(
+    std::shared_ptr<BinaryEqualNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a not equal node.
+   *
+   * @param node Not equal node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_bin_notequal(
+    std::shared_ptr<BinaryNotEqualNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a greater node.
+   *
+   * @param node Greater node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_bin_greater(
+    std::shared_ptr<BinaryGreaterNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a greater equal node.
+   *
+   * @param node Greater equal node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_bin_greaterequal(
+    std::shared_ptr<BinaryGreaterEqualNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a less node.
+   *
+   * @param node Less node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_bin_less(
+    std::shared_ptr<BinaryLessNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a less equal node.
+   *
+   * @param node Less equal node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_bin_lessequal(
+    std::shared_ptr<BinaryLessEqualNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a unary plus node.
@@ -160,7 +199,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_unary_plus(
-    std::shared_ptr<UnaryPlusNode>& node) = 0;
+    std::shared_ptr<UnaryPlusNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a unary minus node.
@@ -169,7 +208,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_unary_minus(
-    std::shared_ptr<UnaryMinusNode>& node) = 0;
+    std::shared_ptr<UnaryMinusNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a number node.
@@ -177,7 +216,8 @@ public:
    * @param node Number node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_number(std::shared_ptr<NumberNode>& node) = 0;
+  virtual error::Result<RT> visit_number(std::shared_ptr<NumberNode>& node)
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a variable reference node.
@@ -185,7 +225,8 @@ public:
    * @param node Variable reference node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_varref(std::shared_ptr<VarRefNode>& node) = 0;
+  virtual error::Result<RT> visit_varref(std::shared_ptr<VarRefNode>& node)
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a variable assignment node.
@@ -194,7 +235,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_varassign(
-    std::shared_ptr<VarAssignNode>& node) = 0;
+    std::shared_ptr<VarAssignNode>& node) VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a function call node.
@@ -202,7 +243,8 @@ public:
    * @param node Function call node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_fcall(std::shared_ptr<FcallNode>& node) = 0;
+  virtual error::Result<RT> visit_fcall(std::shared_ptr<FcallNode>& node)
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a function definition node.
@@ -210,7 +252,8 @@ public:
    * @param node Function definition node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_fdef(std::shared_ptr<FdefNode>& node) = 0;
+  virtual error::Result<RT> visit_fdef(std::shared_ptr<FdefNode>& node)
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit an if node.
@@ -218,7 +261,8 @@ public:
    * @param node If node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_if(std::shared_ptr<IfNode>& node) = 0;
+  virtual error::Result<RT> visit_if(std::shared_ptr<IfNode>& node)
+    VISIT_DEFAULT(node);
 };
 
 }

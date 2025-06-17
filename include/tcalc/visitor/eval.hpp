@@ -45,6 +45,18 @@ public:
     std::shared_ptr<BinaryMultiplyNode>& node) override;
   error::Result<double> visit_bin_divide(
     std::shared_ptr<BinaryDivideNode>& node) override;
+  error::Result<double> visit_bin_equal(
+    std::shared_ptr<BinaryEqualNode>& node) override;
+  error::Result<double> visit_bin_notequal(
+    std::shared_ptr<BinaryNotEqualNode>& node) override;
+  error::Result<double> visit_bin_greater(
+    std::shared_ptr<BinaryGreaterNode>& node) override;
+  error::Result<double> visit_bin_greaterequal(
+    std::shared_ptr<BinaryGreaterEqualNode>& node) override;
+  error::Result<double> visit_bin_less(
+    std::shared_ptr<BinaryLessNode>& node) override;
+  error::Result<double> visit_bin_lessequal(
+    std::shared_ptr<BinaryLessEqualNode>& node) override;
   error::Result<double> visit_unary_plus(
     std::shared_ptr<UnaryPlusNode>& node) override;
   error::Result<double> visit_unary_minus(

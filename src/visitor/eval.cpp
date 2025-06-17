@@ -49,6 +49,55 @@ EvalVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
 }
 
 error::Result<double>
+EvalVisitor::visit_bin_equal(std::shared_ptr<BinaryEqualNode>& node)
+{
+  auto lval = unwrap_err(visit(node->left()));
+  auto rval = unwrap_err(visit(node->right()));
+
+  return error::ok<double>(std::abs(lval - rval) <
+                           std::numeric_limits<double>::epsilon());
+}
+
+error::Result<double>
+EvalVisitor::visit_bin_notequal(std::shared_ptr<BinaryNotEqualNode>& node)
+{
+  auto lval = unwrap_err(visit(node->left()));
+  auto rval = unwrap_err(visit(node->right()));
+
+  return error::ok<double>(std::abs(lval - rval) >
+                           std::numeric_limits<double>::epsilon());
+}
+
+error::Result<double>
+EvalVisitor::visit_bin_greater(std::shared_ptr<BinaryGreaterNode>& node)
+{
+  return error::ok<double>(unwrap_err(visit(node->left())) >
+                           unwrap_err(visit(node->right())));
+}
+
+error::Result<double>
+EvalVisitor::visit_bin_greaterequal(
+  std::shared_ptr<BinaryGreaterEqualNode>& node)
+{
+  return error::ok<double>(unwrap_err(visit(node->left())) >=
+                           unwrap_err(visit(node->right())));
+}
+
+error::Result<double>
+EvalVisitor::visit_bin_less(std::shared_ptr<BinaryLessNode>& node)
+{
+  return error::ok<double>(unwrap_err(visit(node->left())) <
+                           unwrap_err(visit(node->right())));
+}
+
+error::Result<double>
+EvalVisitor::visit_bin_lessequal(std::shared_ptr<BinaryLessEqualNode>& node)
+{
+  return error::ok<double>(unwrap_err(visit(node->left())) <=
+                           unwrap_err(visit(node->right())));
+}
+
+error::Result<double>
 EvalVisitor::visit_unary_plus(std::shared_ptr<UnaryPlusNode>& node)
 {
   return visit(node->operand());

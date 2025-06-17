@@ -25,22 +25,28 @@ namespace tcalc::token {
  */
 enum class TokenType : int8_t
 {
-  PLUS = 0x2b,        /**< + operator. */
-  MINUS = 0x2d,       /**< - operator. */
-  MULTIPLY = 0x2a,    /**< * operator. */
-  DIVIDE = 0x2f,      /**< / operator. */
-  LPAREN = 0x28,      /**< Bracket start. */
-  RPAREN = 0x29,      /**< Bracket end. */
-  COMMA = 0x2c,       /**< Comma. */
-  ASSIGN = 0x3d,      /**< Assignment. */
-  NUMBER = -0x01,     /**< Constant number. */
-  IDENTIFIER = -0x02, /**< Variable or function name. */
-  DEF = -0x03,        /**< Function definition. */
-  LET = -0x04,        /**< Variable definition. */
-  IF = -0x05,         /**< If statement. */
-  THEN = -0x06,       /**< Then keyword. */
-  ELSE = -0x07,       /**< Else keyword. */
-  EOI = -0x08,        /**< End of input. */
+  PLUS = 0x2b,          /**< + operator. */
+  MINUS = 0x2d,         /**< - operator. */
+  MULTIPLY = 0x2a,      /**< * operator. */
+  DIVIDE = 0x2f,        /**< / operator. */
+  LPAREN = 0x28,        /**< Bracket start. */
+  RPAREN = 0x29,        /**< Bracket end. */
+  COMMA = 0x2c,         /**< Comma. */
+  ASSIGN = 0x3d,        /**< Assignment. */
+  GREATER = 0x3e,       /**< > operator. */
+  LESS = 0x3c,          /**< < operator. */
+  NUMBER = -0x01,       /**< Constant number. */
+  IDENTIFIER = -0x02,   /**< Variable or function name. */
+  DEF = -0x03,          /**< Function definition. */
+  LET = -0x04,          /**< Variable definition. */
+  IF = -0x05,           /**< If statement. */
+  THEN = -0x06,         /**< Then keyword. */
+  ELSE = -0x07,         /**< Else keyword. */
+  EQUAL = -0x08,        /**< == operator. */
+  NOTEQUAL = -0x09,     /**< != operator. */
+  GREATEREQUAL = -0x0a, /**< >= operator. */
+  LESSEQUAL = -0x0b,    /**< <= operator. */
+  EOI = -0x0c,          /**< End of input. */
 };
 
 /**

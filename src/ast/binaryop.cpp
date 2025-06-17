@@ -60,4 +60,76 @@ BinaryDivideNode::BinaryDivideNode(std::shared_ptr<Node> left,
 {
 }
 
+BinaryEqualNode::BinaryEqualNode()
+  : BinaryOpNode{ NodeType::BINARY_EQUAL }
+{
+}
+
+BinaryEqualNode::BinaryEqualNode(std::shared_ptr<Node> left,
+                                 std::shared_ptr<Node> right)
+  : BinaryOpNode{ NodeType::BINARY_EQUAL, std::move(left), std::move(right) }
+{
+}
+
+BinaryNotEqualNode::BinaryNotEqualNode()
+  : BinaryOpNode{ NodeType::BINARY_NOT_EQUAL }
+{
+}
+
+BinaryNotEqualNode::BinaryNotEqualNode(std::shared_ptr<Node> left,
+                                       std::shared_ptr<Node> right)
+  : BinaryOpNode{ NodeType::BINARY_NOT_EQUAL,
+                  std::move(left),
+                  std::move(right) }
+{
+}
+
+BinaryGreaterNode::BinaryGreaterNode()
+  : BinaryOpNode{ NodeType::BINARY_GREATER }
+{
+}
+
+BinaryGreaterNode::BinaryGreaterNode(std::shared_ptr<Node> left,
+                                     std::shared_ptr<Node> right)
+  : BinaryOpNode{ NodeType::BINARY_GREATER, std::move(left), std::move(right) }
+{
+}
+
+BinaryGreaterEqualNode::BinaryGreaterEqualNode()
+  : BinaryOpNode{ NodeType::BINARY_GREATER_EQUAL }
+{
+}
+
+BinaryGreaterEqualNode::BinaryGreaterEqualNode(std::shared_ptr<Node> left,
+                                               std::shared_ptr<Node> right)
+  : BinaryOpNode{ NodeType::BINARY_GREATER_EQUAL,
+                  std::move(left),
+                  std::move(right) }
+{
+}
+
+BinaryLessNode::BinaryLessNode()
+  : BinaryOpNode{ NodeType::BINARY_LESS }
+{
+}
+
+BinaryLessNode::BinaryLessNode(std::shared_ptr<Node> left,
+                               std::shared_ptr<Node> right)
+  : BinaryOpNode{ NodeType::BINARY_LESS, std::move(left), std::move(right) }
+{
+}
+
+BinaryLessEqualNode::BinaryLessEqualNode()
+  : BinaryOpNode{ NodeType::BINARY_LESS_EQUAL }
+{
+}
+
+BinaryLessEqualNode::BinaryLessEqualNode(std::shared_ptr<Node> left,
+                                         std::shared_ptr<Node> right)
+  : BinaryOpNode{ NodeType::BINARY_LESS_EQUAL,
+                  std::move(left),
+                  std::move(right) }
+{
+}
+
 }

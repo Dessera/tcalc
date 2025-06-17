@@ -183,4 +183,125 @@ public:
   ~BinaryDivideNode() override = default;
 };
 
+class TCALC_PUBLIC BinaryEqualNode : public BinaryOpNode
+{
+public:
+  /**
+   * @brief Construct a new Binary Equal Node object with no subnodes.
+   *
+   */
+  BinaryEqualNode();
+
+  /**
+   * @brief Construct a new Binary Equal Node object with subnodes.
+   *
+   * @param left Left subnode.
+   * @param right Right subnode.
+   */
+  BinaryEqualNode(std::shared_ptr<Node> left, std::shared_ptr<Node> right);
+
+  ~BinaryEqualNode() override = default;
+};
+
+class TCALC_PUBLIC BinaryNotEqualNode : public BinaryOpNode
+{
+public:
+  /**
+   * @brief Construct a new Binary Not Equal Node object with no subnodes.
+   *
+   */
+  BinaryNotEqualNode();
+
+  /**
+   * @brief Construct a new Binary Not Equal Node object with subnodes.
+   *
+   * @param left Left subnode.
+   * @param right Right subnode.
+   */
+  BinaryNotEqualNode(std::shared_ptr<Node> left, std::shared_ptr<Node> right);
+
+  ~BinaryNotEqualNode() override = default;
+};
+
+class TCALC_PUBLIC BinaryGreaterNode : public BinaryOpNode
+{
+public:
+  /**
+   * @brief Construct a new Binary Greater Node object with no subnodes.
+   *
+   */
+  BinaryGreaterNode();
+
+  /**
+   * @brief Construct a new Binary Greater Node object with subnodes.
+   *
+   * @param left Left subnode.
+   * @param right Right subnode.
+   */
+  BinaryGreaterNode(std::shared_ptr<Node> left, std::shared_ptr<Node> right);
+
+  ~BinaryGreaterNode() override = default;
+};
+
+class TCALC_PUBLIC BinaryGreaterEqualNode : public BinaryOpNode
+{
+public:
+  /**
+   * @brief Construct a new Binary Greater Equal Node object with no subnodes.
+   *
+   */
+  BinaryGreaterEqualNode();
+
+  /**
+   * @brief Construct a new Binary Greater Equal Node object with subnodes.
+   *
+   * @param left Left subnode.
+   * @param right Right subnode.
+   */
+  BinaryGreaterEqualNode(std::shared_ptr<Node> left,
+                         std::shared_ptr<Node> right);
+
+  ~BinaryGreaterEqualNode() override = default;
+};
+
+class TCALC_PUBLIC BinaryLessNode : public BinaryOpNode
+{
+public:
+  /**
+   * @brief Construct a new Binary Less Node object with no subnodes.
+   *
+   */
+  BinaryLessNode();
+
+  /**
+   * @brief Construct a new Binary Less Node object with subnodes.
+   *
+   * @param left Left subnode.
+   * @param right Right subnode.
+   */
+  BinaryLessNode(std::shared_ptr<Node> left, std::shared_ptr<Node> right);
+
+  ~BinaryLessNode() override = default;
+};
+
+class TCALC_PUBLIC BinaryLessEqualNode : public BinaryOpNode
+{
+public:
+  /**
+   * @brief Construct a new Binary Less Equal Node object with no subnodes.
+   *
+   */
+  BinaryLessEqualNode();
+
+  /**
+   * @brief Construct a new Binary Less Equal Node object with subnodes.
+   *
+   * @param left Left subnode.
+   * @param right Right subnode.
+   */
+  BinaryLessEqualNode(std::shared_ptr<Node> left, std::shared_ptr<Node> right);
+
+  ~BinaryLessEqualNode() override = default;
+};
+
 }

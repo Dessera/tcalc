@@ -1,3 +1,4 @@
+#include <magic_enum/magic_enum.hpp>
 #include <ostream>
 
 #include "tcalc/ast/binaryop.hpp"
@@ -12,9 +13,10 @@ PrintVisitor::PrintVisitor(std::ostream& os, std::size_t step)
 }
 
 error::Result<void>
-PrintVisitor::visit_bin_plus(std::shared_ptr<BinaryPlusNode>& node)
+PrintVisitor::visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
 {
-  std::println(*_os, "{}PLUS:", _gen_indent());
+  std::println(
+    *_os, "{}{}:", _gen_indent(), magic_enum::enum_name(node->type()));
 
   _step_indent();
   ret_err(visit(node->left()));
@@ -25,60 +27,10 @@ PrintVisitor::visit_bin_plus(std::shared_ptr<BinaryPlusNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_bin_minus(std::shared_ptr<BinaryMinusNode>& node)
+PrintVisitor::visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
 {
-  std::println(*_os, "{}MINUS:", _gen_indent());
-
-  _step_indent();
-  ret_err(visit(node->left()));
-  ret_err(visit(node->right()));
-  _unstep_indent();
-
-  return error::ok<void>();
-}
-
-error::Result<void>
-PrintVisitor::visit_bin_multiply(std::shared_ptr<BinaryMultiplyNode>& node)
-{
-  std::println(*_os, "{}MULTIPLY:", _gen_indent());
-
-  _step_indent();
-  ret_err(visit(node->left()));
-  ret_err(visit(node->right()));
-  _unstep_indent();
-
-  return error::ok<void>();
-}
-
-error::Result<void>
-PrintVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
-{
-  std::println(*_os, "{}DIVIDE:", _gen_indent());
-
-  _step_indent();
-  ret_err(visit(node->left()));
-  ret_err(visit(node->right()));
-  _unstep_indent();
-
-  return error::ok<void>();
-}
-
-error::Result<void>
-PrintVisitor::visit_unary_plus(std::shared_ptr<UnaryPlusNode>& node)
-{
-  std::println(*_os, "{}UNARY_PLUS:", _gen_indent());
-
-  _step_indent();
-  ret_err(visit(node->operand()));
-  _unstep_indent();
-
-  return error::ok<void>();
-}
-
-error::Result<void>
-PrintVisitor::visit_unary_minus(std::shared_ptr<UnaryMinusNode>& node)
-{
-  std::println(*_os, "{}UNARY_MINUS:", _gen_indent());
+  std::println(
+    *_os, "{}{}:", _gen_indent(), magic_enum::enum_name(node->type()));
 
   _step_indent();
   ret_err(visit(node->operand()));

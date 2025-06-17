@@ -52,18 +52,10 @@ public:
 
   ~PrintVisitor() override = default;
 
-  error::Result<void> visit_bin_plus(
-    std::shared_ptr<BinaryPlusNode>& node) override;
-  error::Result<void> visit_bin_minus(
-    std::shared_ptr<BinaryMinusNode>& node) override;
-  error::Result<void> visit_bin_multiply(
-    std::shared_ptr<BinaryMultiplyNode>& node) override;
-  error::Result<void> visit_bin_divide(
-    std::shared_ptr<BinaryDivideNode>& node) override;
-  error::Result<void> visit_unary_plus(
-    std::shared_ptr<UnaryPlusNode>& node) override;
-  error::Result<void> visit_unary_minus(
-    std::shared_ptr<UnaryMinusNode>& node) override;
+  error::Result<void> visit_bin_op(
+    std::shared_ptr<BinaryOpNode>& node) override;
+  error::Result<void> visit_unary_op(
+    std::shared_ptr<UnaryOpNode>& node) override;
   error::Result<void> visit_number(std::shared_ptr<NumberNode>& node) override;
   error::Result<void> visit_varref(std::shared_ptr<VarRefNode>& node) override;
   error::Result<void> visit_varassign(

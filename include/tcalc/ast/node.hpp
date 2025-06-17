@@ -24,18 +24,24 @@ namespace tcalc::ast {
  */
 enum class NodeType : uint8_t
 {
-  BINARY_PLUS,     /**< Binary plus operator. */
-  BINARY_MINUS,    /**< Binary minus operator. */
-  BINARY_MULTIPLY, /**< Binary multiply operator. */
-  BINARY_DIVIDE,   /**< Binary divide operator. */
-  UNARY_PLUS,      /**< Unary plus operator. */
-  UNARY_MINUS,     /**< Unary minus operator. */
-  NUMBER,          /**< Constant number. */
-  VARREF,          /**< Variable reference. */
-  VARASSIGN,       /**< Variable assignment. */
-  FCALL,           /**< Function call. */
-  FDEF,            /**< Function definition. */
-  IF,              /**< If statement. */
+  BINARY_PLUS,          /**< Binary plus operator. */
+  BINARY_MINUS,         /**< Binary minus operator. */
+  BINARY_MULTIPLY,      /**< Binary multiply operator. */
+  BINARY_DIVIDE,        /**< Binary divide operator. */
+  BINARY_EQUAL,         /**< Binary equal operator. */
+  BINARY_NOT_EQUAL,     /**< Binary not equal operator. */
+  BINARY_GREATER,       /**< Binary greater operator. */
+  BINARY_GREATER_EQUAL, /**< Binary greater equal operator. */
+  BINARY_LESS,          /**< Binary less operator. */
+  BINARY_LESS_EQUAL,    /**< Binary less equal operator. */
+  UNARY_PLUS,           /**< Unary plus operator. */
+  UNARY_MINUS,          /**< Unary minus operator. */
+  NUMBER,               /**< Constant number. */
+  VARREF,               /**< Variable reference. */
+  VARASSIGN,            /**< Variable assignment. */
+  FCALL,                /**< Function call. */
+  FDEF,                 /**< Function definition. */
+  IF,                   /**< If statement. */
 };
 
 /**

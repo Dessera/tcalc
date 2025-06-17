@@ -29,14 +29,7 @@ Tokenizer::next()
                       std::distance(_input.cbegin(), _pos));
   }
 
-  if (auto res = magic_enum::enum_cast<TokenType>(*_pos); res.has_value()) {
-    return Token{ .type = res.value(), .text = std::string{ *_pos++ } };
-  }
-
-  if (std::isdigit(*_pos)) {
-    return _parse_number();
-  }
-
+  // TODO: loop to handle these cases
   if (_is_keyword("def")) {
     _pos += 3;
     return Token{ .type = TokenType::DEF, .text = "def" };
@@ -60,6 +53,34 @@ Tokenizer::next()
   if (_is_keyword("else")) {
     _pos += 4;
     return Token{ .type = TokenType::ELSE, .text = "else" };
+  }
+
+  if (_is_keyword("==")) {
+    _pos += 2;
+    return Token{ .type = TokenType::EQUAL, .text = "==" };
+  }
+
+  if (_is_keyword("!=")) {
+    _pos += 2;
+    return Token{ .type = TokenType::NOTEQUAL, .text = "!=" };
+  }
+
+  if (_is_keyword("<=")) {
+    _pos += 2;
+    return Token{ .type = TokenType::LESSEQUAL, .text = "<=" };
+  }
+
+  if (_is_keyword(">=")) {
+    _pos += 2;
+    return Token{ .type = TokenType::GREATEREQUAL, .text = ">=" };
+  }
+
+  if (auto res = magic_enum::enum_cast<TokenType>(*_pos); res.has_value()) {
+    return Token{ .type = res.value(), .text = std::string{ *_pos++ } };
+  }
+
+  if (std::isdigit(*_pos)) {
+    return _parse_number();
   }
 
   if (_is_first_identifier_char(*_pos)) {
@@ -125,5 +146,4 @@ Tokenizer::_is_skippable_char(char c)
 {
   return std::isspace(c) || c == '\n' || c == '\t';
 }
-
 }

@@ -78,10 +78,10 @@ Parser::next_program(ParserContext& ctx)
   return next_expr(ctx);
 }
 
-// expr : term ((PLUS | MINUS) term)* |
-//        if
+// expr : term ((PLUS | MINUS | EQUAL | NOT_EQUAL | LESS | LESS_EQUAL | GREATER
+// | GREATER_EQUAL) term)* | if
 NodeResult<Node>
-Parser::next_expr(ParserContext& ctx)
+Parser::next_expr(ParserContext& ctx) // NOLINT
 {
 
   if (ctx.current().type == token::TokenType::IF) {
@@ -90,8 +90,15 @@ Parser::next_expr(ParserContext& ctx)
 
   auto node = unwrap_err(next_term(ctx));
 
+  // TODO: shit
   while (ctx.current().type == token::TokenType::PLUS ||
-         ctx.current().type == token::TokenType::MINUS) {
+         ctx.current().type == token::TokenType::MINUS ||
+         ctx.current().type == token::TokenType::EQUAL ||
+         ctx.current().type == token::TokenType::NOTEQUAL ||
+         ctx.current().type == token::TokenType::GREATER ||
+         ctx.current().type == token::TokenType::GREATEREQUAL ||
+         ctx.current().type == token::TokenType::LESS ||
+         ctx.current().type == token::TokenType::LESSEQUAL) {
     if (ctx.current().type == token::TokenType::PLUS) {
       ret_err(ctx.eat(token::TokenType::PLUS));
       node = std::make_shared<BinaryPlusNode>(node, unwrap_err(next_term(ctx)));
@@ -99,6 +106,29 @@ Parser::next_expr(ParserContext& ctx)
       ret_err(ctx.eat(token::TokenType::MINUS));
       node =
         std::make_shared<BinaryMinusNode>(node, unwrap_err(next_term(ctx)));
+    } else if (ctx.current().type == token::TokenType::EQUAL) {
+      ret_err(ctx.eat(token::TokenType::EQUAL));
+      node =
+        std::make_shared<BinaryEqualNode>(node, unwrap_err(next_term(ctx)));
+    } else if (ctx.current().type == token::TokenType::NOTEQUAL) {
+      ret_err(ctx.eat(token::TokenType::NOTEQUAL));
+      node =
+        std::make_shared<BinaryNotEqualNode>(node, unwrap_err(next_term(ctx)));
+    } else if (ctx.current().type == token::TokenType::GREATER) {
+      ret_err(ctx.eat(token::TokenType::GREATER));
+      node =
+        std::make_shared<BinaryGreaterNode>(node, unwrap_err(next_term(ctx)));
+    } else if (ctx.current().type == token::TokenType::GREATEREQUAL) {
+      ret_err(ctx.eat(token::TokenType::GREATEREQUAL));
+      node = std::make_shared<BinaryGreaterEqualNode>(
+        node, unwrap_err(next_term(ctx)));
+    } else if (ctx.current().type == token::TokenType::LESS) {
+      ret_err(ctx.eat(token::TokenType::LESS));
+      node = std::make_shared<BinaryLessNode>(node, unwrap_err(next_term(ctx)));
+    } else if (ctx.current().type == token::TokenType::LESSEQUAL) {
+      ret_err(ctx.eat(token::TokenType::LESSEQUAL));
+      node =
+        std::make_shared<BinaryLessEqualNode>(node, unwrap_err(next_term(ctx)));
     }
   }
 
