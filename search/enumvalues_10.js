@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zero_5fdivision_0',['ZERO_DIVISION',['../error_8hpp.html#a962518b30ba32968a1c1726465276ca2a705754baee4269a87f23fa32b7ed0e95',1,'tcalc::error']]]
+  ['varassign_0',['VARASSIGN',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca6d613bd3ca767a2a6fa90fd92d419a0b',1,'tcalc::ast']]],
+  ['varref_1',['VARREF',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db',1,'tcalc::ast']]]
 ];

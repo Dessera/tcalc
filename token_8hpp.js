@@ -11,6 +11,8 @@ var token_8hpp =
       [ "RPAREN", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42afccedc90f87593a3b31536bd658808b1", null ],
       [ "COMMA", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a4d9b3e9fc12849d060371eb65154c751", null ],
       [ "ASSIGN", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42affd6976a2b4f6934eb075d0013316ff1", null ],
+      [ "GREATER", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42ae7e72355289e404b762d4cf88824d23b", null ],
+      [ "LESS", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a1798e8c3621ca53d9e3a80d257306000", null ],
       [ "NUMBER", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396", null ],
       [ "IDENTIFIER", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a6fcc416051346daca31c571646af127a", null ],
       [ "DEF", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a822dd494b3e14a82aa76bd455e6b6f4b", null ],
@@ -18,6 +20,10 @@ var token_8hpp =
       [ "IF", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42ade6ee2b5d856295add4d5e3631fbfb93", null ],
       [ "THEN", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a907ec71a28d71811a0e37f08b15c2109", null ],
       [ "ELSE", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a778537b0acce06229cb78d5f72c907ab", null ],
+      [ "EQUAL", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a969f331a87d8c958473c32b4d0e61a44", null ],
+      [ "NOTEQUAL", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a94fbd04a26dff1689ee02634be6aaf1f", null ],
+      [ "GREATEREQUAL", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a23831efb2e7266bf376e6694ac13f094", null ],
+      [ "LESSEQUAL", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a0ebd26208a4f97a2cab0b8ebda1c897e", null ],
       [ "EOI", "token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39", null ]
     ] ],
     [ "token_type_to_string", "token_8hpp.html#a4d0e84ea2537b7f5f14f74716dcb9f88", null ]

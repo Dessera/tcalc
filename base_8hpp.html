@@ -96,7 +96,8 @@ $(document).ready(function(){initNavTree('base_8hpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">base.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -120,6 +121,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; RT &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base visitor class with default return type.  <a href="classtcalc_1_1ast_1_1BaseVisitor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a63ac7b210357b7941aa94c6c14cd1b32" id="r_a63ac7b210357b7941aa94c6c14cd1b32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#a63ac7b210357b7941aa94c6c14cd1b32">__check_node_type</a>(node,  type,  entry)</td></tr>
+<tr class="separator:a63ac7b210357b7941aa94c6c14cd1b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96b352f1be7fb9bc748011cffd776ad" id="r_af96b352f1be7fb9bc748011cffd776ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base_8hpp.html#af96b352f1be7fb9bc748011cffd776ad">VISIT_DEFAULT</a>(node)</td></tr>
+<tr class="separator:af96b352f1be7fb9bc748011cffd776ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base visitor class. </p>
@@ -127,7 +135,67 @@ Classes</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-06-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Dessera </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a63ac7b210357b7941aa94c6c14cd1b32" name="a63ac7b210357b7941aa94c6c14cd1b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ac7b210357b7941aa94c6c14cd1b32">&#9670;&#160;</a></span>__check_node_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __check_node_type</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">node, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">entry&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">if</span> (<span class="keyword">auto</span> node_type = std::dynamic_pointer_cast&lt;type&gt;(node)) {                \</div>
+<div class="line">    <span class="keywordflow">return</span> entry(node_type);                                                   \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af96b352f1be7fb9bc748011cffd776ad" name="af96b352f1be7fb9bc748011cffd776ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96b352f1be7fb9bc748011cffd776ad">&#9670;&#160;</a></span>VISIT_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VISIT_DEFAULT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">node</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  {                                                                            \</div>
+<div class="line">    (void)node;                                                                \</div>
+<div class="line">    <span class="keywordflow">return</span> error::ok&lt;RT&gt;();                                                    \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

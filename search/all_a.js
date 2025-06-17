@@ -14,7 +14,8 @@ var searchData=
   ['node_2ehpp_11',['node.hpp',['../node_8hpp.html',1,'']]],
   ['noderesult_12',['NodeResult',['../parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a',1,'tcalc::ast']]],
   ['nodetype_13',['NodeType',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc',1,'tcalc::ast']]],
-  ['number_14',['number',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::ast'],['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::token']]],
-  ['number_2ehpp_15',['number.hpp',['../number_8hpp.html',1,'']]],
-  ['numbernode_16',['numbernode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode::NumberNode()'],['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast::NumberNode']]]
+  ['notequal_14',['NOTEQUAL',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a94fbd04a26dff1689ee02634be6aaf1f',1,'tcalc::token']]],
+  ['number_15',['number',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::ast'],['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::token']]],
+  ['number_2ehpp_16',['number.hpp',['../number_8hpp.html',1,'']]],
+  ['numbernode_17',['numbernode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode::NumberNode()'],['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast::NumberNode']]]
 ];
