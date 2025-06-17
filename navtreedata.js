@@ -25,6 +25,14 @@
 var NAVTREE =
 [
   [ "tcalc", "index.html", [
+    [ "Tcalc Syntax Reference", "md_docs_2SYNTAX.html", [
+      [ "Variable Assignment", "md_docs_2SYNTAX.html#autotoc_md1", null ],
+      [ "Function Declaration", "md_docs_2SYNTAX.html#autotoc_md2", null ],
+      [ "Function Call", "md_docs_2SYNTAX.html#autotoc_md3", null ],
+      [ "Control Flow", "md_docs_2SYNTAX.html#autotoc_md4", [
+        [ "If", "md_docs_2SYNTAX.html#autotoc_md5", null ]
+      ] ]
+    ] ],
     [ "README", "md_README.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -45,7 +53,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42acf4b2d0f78964523b93231a1c8d93c39"
+"token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a4d9b3e9fc12849d060371eb65154c751"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

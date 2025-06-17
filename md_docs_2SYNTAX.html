@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>tcalc: Related Pages</title>
+<title>tcalc: Tcalc Syntax Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_docs_2SYNTAX.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,17 +94,43 @@ $(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Related Pages</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Tcalc Syntax Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md_docs_2SYNTAX.html" target="_self">Tcalc Syntax Reference</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md_README.html" target="_self">README</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Variable Assignment</h1>
+<p>Use keyword <code>let</code> to declare and assign a value to it.</p>
+<div class="fragment"><div class="line">let x = 5</div>
+</div><!-- fragment --><p>Note that you can reassign a variable later, which will overwrite its previous value.</p>
+<blockquote class="doxtable">
+<p>&zwj;Actually, there is no <code>declaration</code> in tcalc, keyword <code>let</code> is just a helper for ast parser. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Function Declaration</h1>
+<p>Use keyword <code>def</code> to declare a function.</p>
+<div class="fragment"><div class="line">def add(a, b) a + b</div>
+</div><!-- fragment --><p>You can recursively call a function in its body:</p>
+<div class="fragment"><div class="line">def factorial(n) if n then n * factorial(n - 1) else 1</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>&zwj;It's undefined behavior to call a function that recurses infinitely for now. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Function Call</h1>
+<p>Use <code>()</code> to call a function.</p>
+<div class="fragment"><div class="line">add(1, 2)</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Control Flow</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+If</h2>
+<p>Use <code>if</code> to make a decision.</p>
+<div class="fragment"><div class="line">if a then a else b</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>&zwj;There is no boolean expression for now. </p>
+</blockquote>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
