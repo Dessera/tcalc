@@ -15,6 +15,10 @@ main()
       break;
     }
 
+    if (line == "exit") {
+      break;
+    }
+
     auto res = evaluator.eval(line);
     if (!res.has_value()) {
       res.error().log();

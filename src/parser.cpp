@@ -185,7 +185,7 @@ Parser::next_idref(ParserContext& ctx)
   return error::ok<std::shared_ptr<Node>>(fnode);
 }
 
-// fdef : DEF IDENTIFIER LPAREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN factor
+// fdef : DEF IDENTIFIER LPAREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN expr
 NodeResult<Node>
 Parser::next_fdef(ParserContext& ctx)
 {
@@ -207,7 +207,7 @@ Parser::next_fdef(ParserContext& ctx)
 
   ret_err(ctx.eat(token::TokenType::RPAREN));
 
-  fnode->body(unwrap_err(next_factor(ctx)));
+  fnode->body(unwrap_err(next_expr(ctx)));
 
   return error::ok<std::shared_ptr<Node>>(fnode);
 }
