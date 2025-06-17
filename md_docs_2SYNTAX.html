@@ -112,7 +112,7 @@ Function Declaration</h1>
 <p>Use keyword <code>def</code> to declare a function.</p>
 <div class="fragment"><div class="line">def add(a, b) a + b</div>
 </div><!-- fragment --><p>You can recursively call a function in its body:</p>
-<div class="fragment"><div class="line">def factorial(n) if n then n * factorial(n - 1) else 1</div>
+<div class="fragment"><div class="line">def factorial(n) if n &lt; 2 then 1 else n * factorial(n - 1)</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Function Call</h1>
 <p>Use <code>()</code> to call a function.</p>
@@ -122,10 +122,33 @@ Control Flow</h1>
 <h2><a class="anchor" id="autotoc_md5"></a>
 If</h2>
 <p>Use <code>if</code> to make a decision.</p>
-<div class="fragment"><div class="line">if a then a else b</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>&zwj;There is no boolean expression for now. </p>
-</blockquote>
+<div class="fragment"><div class="line">if a &lt; 5 then a else 5</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+Operator</h1>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Arithmetic</h2>
+<ul>
+<li><code>+</code> add</li>
+<li><code>-</code> subtract</li>
+<li><code>*</code> multiply</li>
+<li><code>/</code> divide</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Comparison</h2>
+<ul>
+<li><code>==</code> equal</li>
+<li><code>!=</code> not equal</li>
+<li><code>&lt;</code> less than</li>
+<li><code>&gt;</code> greater than</li>
+<li><code>&lt;=</code> less than or equal to</li>
+<li><code>&gt;=</code> greater than or equal to</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Unary</h2>
+<ul>
+<li><code>+</code> positive</li>
+<li><code>-</code> negative </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

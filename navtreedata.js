@@ -31,6 +31,11 @@ var NAVTREE =
       [ "Function Call", "md_docs_2SYNTAX.html#autotoc_md3", null ],
       [ "Control Flow", "md_docs_2SYNTAX.html#autotoc_md4", [
         [ "If", "md_docs_2SYNTAX.html#autotoc_md5", null ]
+      ] ],
+      [ "Operator", "md_docs_2SYNTAX.html#autotoc_md6", [
+        [ "Arithmetic", "md_docs_2SYNTAX.html#autotoc_md7", null ],
+        [ "Comparison", "md_docs_2SYNTAX.html#autotoc_md8", null ],
+        [ "Unary", "md_docs_2SYNTAX.html#autotoc_md9", null ]
       ] ]
     ] ],
     [ "README", "md_README.html", null ],
@@ -53,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42affc0d9b54a1fe677c4c9e6b050e67c81"
+"token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42ada02466f9a4224e477bd63afbcf573c5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
