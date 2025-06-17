@@ -1,5 +1,5 @@
 {
-  description = "Parser and evaluator for calculator.";
+  description = "Simple computational programming language.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";

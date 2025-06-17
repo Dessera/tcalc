@@ -41,7 +41,7 @@ pkg_mod = import('pkgconfig')
 pkg_mod.generate(
   name: 'tcalc',
   filebase: 'tcalc',
-  description: 'Parser and evaluator for calculator.',
+  description: 'Simple computational programming language.',
   libraries: [lib],
   version: '0.1.0',
 )

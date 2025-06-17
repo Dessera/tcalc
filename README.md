@@ -13,7 +13,7 @@
   <h3 align="center">TCALC</h3>
 
   <p align="center">
-    Parser and evaluator for calculator.
+    Simple computational programming language.
     <br />
     <a href="https://dessera.github.io/tcalc"><strong>Explore the docs »</strong></a>
     <br />
