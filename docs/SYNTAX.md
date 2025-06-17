@@ -23,7 +23,7 @@ def add(a, b) a + b
 You can recursively call a function in its body:
 
 ```plaintext
-def factorial(n) if n then n * factorial(n - 1) else 1
+def factorial(n) if n < 2 then 1 else n * factorial(n - 1)
 ```
 
 ## Function Call
@@ -41,7 +41,28 @@ add(1, 2)
 Use `if` to make a decision.
 
 ```plaintext
-if a then a else b
+if a < 5 then a else 5
 ```
 
-> There is no boolean expression for now.
+## Operator
+
+### Arithmetic
+
+- `+` add
+- `-` subtract
+- `*` multiply
+- `/` divide
+
+### Comparison
+
+- `==` equal
+- `!=` not equal
+- `<` less than
+- `>` greater than
+- `<=` less than or equal to
+- `>=` greater than or equal to
+
+### Unary
+
+- `+` positive
+- `-` negative
