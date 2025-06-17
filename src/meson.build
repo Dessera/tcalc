@@ -3,6 +3,7 @@ lib_src = files(
   'error.cpp',
   'eval.cpp',
   'parser.cpp',
+  'priority.cpp',
   'token.cpp',
   'tokenizer.cpp',
 )

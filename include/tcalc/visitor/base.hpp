@@ -73,20 +73,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
-  {
-    __check_node_type(node, BinaryPlusNode, visit_bin_plus);
-    __check_node_type(node, BinaryMinusNode, visit_bin_minus);
-    __check_node_type(node, BinaryMultiplyNode, visit_bin_multiply);
-    __check_node_type(node, BinaryDivideNode, visit_bin_divide);
-    __check_node_type(node, BinaryEqualNode, visit_bin_equal);
-    __check_node_type(node, BinaryNotEqualNode, visit_bin_notequal);
-    __check_node_type(node, BinaryGreaterNode, visit_bin_greater);
-    __check_node_type(node, BinaryGreaterEqualNode, visit_bin_greaterequal);
-    __check_node_type(node, BinaryLessNode, visit_bin_less);
-    __check_node_type(node, BinaryLessEqualNode, visit_bin_lessequal);
-
-    return error::ok<RT>();
-  }
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a unary operation node.
@@ -95,120 +82,7 @@ public:
    * @return error::Result<RT> Result of the visit.
    */
   virtual error::Result<RT> visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
-  {
-    __check_node_type(node, UnaryPlusNode, visit_unary_plus);
-    __check_node_type(node, UnaryMinusNode, visit_unary_minus);
-
-    return error::ok<RT>();
-  }
-
-  /**
-   * @brief Visit a plus node.
-   *
-   * @param node Plus node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_plus(
-    std::shared_ptr<BinaryPlusNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a minus node.
-   *
-   * @param node Minus node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_minus(
-    std::shared_ptr<BinaryMinusNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a multiply node.
-   *
-   * @param node Multiply node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_multiply(
-    std::shared_ptr<BinaryMultiplyNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a divide node.
-   *
-   * @param node Divide node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_divide(
-    std::shared_ptr<BinaryDivideNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a equal node.
-   *
-   * @param node Equal node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_equal(
-    std::shared_ptr<BinaryEqualNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a not equal node.
-   *
-   * @param node Not equal node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_notequal(
-    std::shared_ptr<BinaryNotEqualNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a greater node.
-   *
-   * @param node Greater node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_greater(
-    std::shared_ptr<BinaryGreaterNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a greater equal node.
-   *
-   * @param node Greater equal node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_greaterequal(
-    std::shared_ptr<BinaryGreaterEqualNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a less node.
-   *
-   * @param node Less node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_less(
-    std::shared_ptr<BinaryLessNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a less equal node.
-   *
-   * @param node Less equal node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_bin_lessequal(
-    std::shared_ptr<BinaryLessEqualNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a unary plus node.
-   *
-   * @param node Unary plus node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_unary_plus(
-    std::shared_ptr<UnaryPlusNode>& node) VISIT_DEFAULT(node);
-
-  /**
-   * @brief Visit a unary minus node.
-   *
-   * @param node Unary minus node.
-   * @return error::Result<RT> Result of the visit.
-   */
-  virtual error::Result<RT> visit_unary_minus(
-    std::shared_ptr<UnaryMinusNode>& node) VISIT_DEFAULT(node);
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a number node.

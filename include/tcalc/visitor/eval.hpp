@@ -11,6 +11,11 @@
 
 #pragma once
 
+#include <functional>
+#include <unordered_map>
+
+#include "tcalc/ast/binaryop.hpp"
+#include "tcalc/ast/node.hpp"
 #include "tcalc/builtins.hpp"
 #include "tcalc/common.hpp"
 #include "tcalc/eval.hpp"
@@ -24,6 +29,77 @@ namespace tcalc::ast {
  */
 class TCALC_PUBLIC EvalVisitor : public BaseVisitor<double>
 {
+  // avoid undefined reference
+private:
+  /**
+   * @brief Evaluate equality between two double.
+   *
+   * @param a Left hand side.
+   * @param b Right hand side.
+   * @return double 1 if equal, 0 if not (a real zero).
+   */
+  static double _double_eq(double a, double b);
+
+  /**
+   * @brief Evaluate equality between two double.
+   *
+   * @param a Left hand side.
+   * @param b Right hand side.
+   * @return true if equal
+   * @return false if not equal
+   */
+  static bool _double_eq_bool(double a, double b);
+
+  /**
+   * @brief Evaluate inequality between two double.
+   *
+   * @param a Left hand side.
+   * @param b Right hand side.
+   * @return double 1 if not equal, 0 if equal (a real zero).
+   */
+  static double _double_noeq(double a, double b);
+
+  /**
+   * @brief Evaluate inequality between two double.
+   *
+   * @param a Left hand side.
+   * @param b Right hand side.
+   * @return true if not equal
+   * @return false if equal
+   */
+  static bool _double_noeq_bool(double a, double b);
+
+  /**
+   * @brief Forward a double.
+   *
+   * @param a Double to forward.
+   * @return double Forwarded double.
+   */
+  static double _double_forward(double a);
+
+public:
+  inline static const std::unordered_map<NodeType,
+                                         std::function<double(double, double)>>
+    BINOP_MAP = {
+      { NodeType::BINARY_PLUS, std::plus<>() },
+      { NodeType::BINARY_MINUS, std::minus<>() },
+      { NodeType::BINARY_MULTIPLY, std::multiplies<>() },
+      { NodeType::BINARY_DIVIDE, std::divides<>() },
+      { NodeType::BINARY_EQUAL, _double_eq },
+      { NodeType::BINARY_NOT_EQUAL, _double_noeq },
+      { NodeType::BINARY_GREATER, std::greater<>() },
+      { NodeType::BINARY_GREATER_EQUAL, std::greater_equal<>() },
+      { NodeType::BINARY_LESS, std::less<>() },
+      { NodeType::BINARY_LESS_EQUAL, std::less_equal<>() }
+    }; /**< Map of binary operator to function. */
+
+  inline static const std::unordered_map<NodeType,
+                                         std::function<double(double)>>
+    UNARYOP_MAP = {
+      { NodeType::UNARY_PLUS, _double_forward },
+      { NodeType::UNARY_MINUS, std::negate<>() },
+    }; /**< Map of unary operator to function. */
+
 private:
   EvalContext* _ctx;
 
@@ -37,30 +113,10 @@ public:
 
   ~EvalVisitor() override = default;
 
-  error::Result<double> visit_bin_plus(
-    std::shared_ptr<BinaryPlusNode>& node) override;
-  error::Result<double> visit_bin_minus(
-    std::shared_ptr<BinaryMinusNode>& node) override;
-  error::Result<double> visit_bin_multiply(
-    std::shared_ptr<BinaryMultiplyNode>& node) override;
-  error::Result<double> visit_bin_divide(
-    std::shared_ptr<BinaryDivideNode>& node) override;
-  error::Result<double> visit_bin_equal(
-    std::shared_ptr<BinaryEqualNode>& node) override;
-  error::Result<double> visit_bin_notequal(
-    std::shared_ptr<BinaryNotEqualNode>& node) override;
-  error::Result<double> visit_bin_greater(
-    std::shared_ptr<BinaryGreaterNode>& node) override;
-  error::Result<double> visit_bin_greaterequal(
-    std::shared_ptr<BinaryGreaterEqualNode>& node) override;
-  error::Result<double> visit_bin_less(
-    std::shared_ptr<BinaryLessNode>& node) override;
-  error::Result<double> visit_bin_lessequal(
-    std::shared_ptr<BinaryLessEqualNode>& node) override;
-  error::Result<double> visit_unary_plus(
-    std::shared_ptr<UnaryPlusNode>& node) override;
-  error::Result<double> visit_unary_minus(
-    std::shared_ptr<UnaryMinusNode>& node) override;
+  error::Result<double> visit_bin_op(
+    std::shared_ptr<BinaryOpNode>& node) override;
+  error::Result<double> visit_unary_op(
+    std::shared_ptr<UnaryOpNode>& node) override;
   error::Result<double> visit_number(
     std::shared_ptr<NumberNode>& node) override;
   error::Result<double> visit_varref(

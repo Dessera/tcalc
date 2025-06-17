@@ -29,50 +29,11 @@ Tokenizer::next()
                       std::distance(_input.cbegin(), _pos));
   }
 
-  // TODO: loop to handle these cases
-  if (_is_keyword("def")) {
-    _pos += 3;
-    return Token{ .type = TokenType::DEF, .text = "def" };
-  }
-
-  if (_is_keyword("let")) {
-    _pos += 3;
-    return Token{ .type = TokenType::LET, .text = "let" };
-  }
-
-  if (_is_keyword("if")) {
-    _pos += 2;
-    return Token{ .type = TokenType::IF, .text = "if" };
-  }
-
-  if (_is_keyword("then")) {
-    _pos += 4;
-    return Token{ .type = TokenType::THEN, .text = "then" };
-  }
-
-  if (_is_keyword("else")) {
-    _pos += 4;
-    return Token{ .type = TokenType::ELSE, .text = "else" };
-  }
-
-  if (_is_keyword("==")) {
-    _pos += 2;
-    return Token{ .type = TokenType::EQUAL, .text = "==" };
-  }
-
-  if (_is_keyword("!=")) {
-    _pos += 2;
-    return Token{ .type = TokenType::NOTEQUAL, .text = "!=" };
-  }
-
-  if (_is_keyword("<=")) {
-    _pos += 2;
-    return Token{ .type = TokenType::LESSEQUAL, .text = "<=" };
-  }
-
-  if (_is_keyword(">=")) {
-    _pos += 2;
-    return Token{ .type = TokenType::GREATEREQUAL, .text = ">=" };
+  for (const auto& [key, value] : KEYWORDS) {
+    if (_is_keyword(key)) {
+      _pos += key.size();
+      return Token{ .type = value, .text = key };
+    }
   }
 
   if (auto res = magic_enum::enum_cast<TokenType>(*_pos); res.has_value()) {

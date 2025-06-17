@@ -11,7 +11,9 @@
 
 #pragma once
 
+#include <string>
 #include <string_view>
+#include <unordered_map>
 
 #include "tcalc/common.hpp"
 #include "tcalc/error.hpp"
@@ -25,6 +27,16 @@ namespace tcalc::token {
  */
 class TCALC_PUBLIC Tokenizer
 {
+public:
+  inline static const std::unordered_map<std::string, TokenType> KEYWORDS = {
+    { "def", TokenType::DEF },         { "let", TokenType::LET },
+    { "if", TokenType::IF },           { "then", TokenType::THEN },
+    { "else", TokenType::ELSE },       { "==", TokenType::EQUAL },
+    { "!=", TokenType::NOTEQUAL },     { ">", TokenType::GREATER },
+    { ">=", TokenType::GREATEREQUAL }, { "<", TokenType::LESS },
+    { "<=", TokenType::LESSEQUAL },
+  }; /**< Tcalc keywords. */
+
 private:
   std::string_view _input;
   std::string_view::const_iterator _pos;

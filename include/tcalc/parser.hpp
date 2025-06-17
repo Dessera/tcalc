@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <cstddef>
 #include <memory>
 #include <string_view>
 
@@ -122,6 +123,15 @@ public:
   NodeResult<Node> next_expr(ParserContext& ctx);
 
   /**
+   * @brief Get the next term node with the given priority.
+   *
+   * @param ctx The parser context.
+   * @param prio The priority of the term.
+   * @return NodeResult<Node> The term node result.
+   */
+  NodeResult<Node> next_prio_term(ParserContext& ctx, std::size_t prio);
+
+  /**
    * @brief Get the next if node.
    *
    * @param ctx The parser context.
@@ -136,14 +146,6 @@ public:
    * @return NodeResult<Node> The assignment node result.
    */
   NodeResult<Node> next_assign(ParserContext& ctx);
-
-  /**
-   * @brief Get the next term node.
-   *
-   * @param ctx The parser context.
-   * @return NodeResult<Node> The term node result.
-   */
-  NodeResult<Node> next_term(ParserContext& ctx);
 
   /**
    * @brief Get the next factor node.

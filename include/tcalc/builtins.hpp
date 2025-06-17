@@ -83,6 +83,16 @@ sqrt(const std::vector<double>& args, const EvalContext& ctx);
 TCALC_PUBLIC error::Result<double>
 pow(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in log function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
+TCALC_PUBLIC error::Result<double>
+log(const std::vector<double>& args, const EvalContext& ctx);
+
 extern TCALC_PUBLIC const std::unordered_map<std::string, double>
   BUILTIN_VARIABLES; /**< Built-in variables. */
 

@@ -1,4 +1,5 @@
 #include <cassert>
+#include <cstddef>
 #include <magic_enum/magic_enum.hpp>
 #include <memory>
 
@@ -11,6 +12,7 @@
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/parser.hpp"
+#include "tcalc/priority.hpp"
 #include "tcalc/token.hpp"
 #include "tcalc/tokenizer.hpp"
 
@@ -78,8 +80,7 @@ Parser::next_program(ParserContext& ctx)
   return next_expr(ctx);
 }
 
-// expr : term ((PLUS | MINUS | EQUAL | NOT_EQUAL | LESS | LESS_EQUAL | GREATER
-// | GREATER_EQUAL) term)* | if
+// expr : if | prio_term
 NodeResult<Node>
 Parser::next_expr(ParserContext& ctx) // NOLINT
 {
@@ -88,48 +89,26 @@ Parser::next_expr(ParserContext& ctx) // NOLINT
     return next_if(ctx);
   }
 
-  auto node = unwrap_err(next_term(ctx));
+  return next_prio_term(ctx, 0);
+}
 
-  // TODO: shit
-  while (ctx.current().type == token::TokenType::PLUS ||
-         ctx.current().type == token::TokenType::MINUS ||
-         ctx.current().type == token::TokenType::EQUAL ||
-         ctx.current().type == token::TokenType::NOTEQUAL ||
-         ctx.current().type == token::TokenType::GREATER ||
-         ctx.current().type == token::TokenType::GREATEREQUAL ||
-         ctx.current().type == token::TokenType::LESS ||
-         ctx.current().type == token::TokenType::LESSEQUAL) {
-    if (ctx.current().type == token::TokenType::PLUS) {
-      ret_err(ctx.eat(token::TokenType::PLUS));
-      node = std::make_shared<BinaryPlusNode>(node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::MINUS) {
-      ret_err(ctx.eat(token::TokenType::MINUS));
-      node =
-        std::make_shared<BinaryMinusNode>(node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::EQUAL) {
-      ret_err(ctx.eat(token::TokenType::EQUAL));
-      node =
-        std::make_shared<BinaryEqualNode>(node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::NOTEQUAL) {
-      ret_err(ctx.eat(token::TokenType::NOTEQUAL));
-      node =
-        std::make_shared<BinaryNotEqualNode>(node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::GREATER) {
-      ret_err(ctx.eat(token::TokenType::GREATER));
-      node =
-        std::make_shared<BinaryGreaterNode>(node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::GREATEREQUAL) {
-      ret_err(ctx.eat(token::TokenType::GREATEREQUAL));
-      node = std::make_shared<BinaryGreaterEqualNode>(
-        node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::LESS) {
-      ret_err(ctx.eat(token::TokenType::LESS));
-      node = std::make_shared<BinaryLessNode>(node, unwrap_err(next_term(ctx)));
-    } else if (ctx.current().type == token::TokenType::LESSEQUAL) {
-      ret_err(ctx.eat(token::TokenType::LESSEQUAL));
-      node =
-        std::make_shared<BinaryLessEqualNode>(node, unwrap_err(next_term(ctx)));
-    }
+NodeResult<Node>
+Parser::next_prio_term(ParserContext& ctx, std::size_t prio)
+{
+  if (prio >= BINOP_PRIORITY.size()) {
+    return next_factor(ctx);
+  }
+
+  auto node = unwrap_err(next_prio_term(ctx, prio + 1));
+
+  while (BINOP_PRIORITY[prio].contains(ctx.current().type)) {
+    auto type = ctx.current().type;
+    ret_err(ctx.eat(ctx.current().type));
+
+    node =
+      std::make_shared<BinaryOpNode>(BINOP_PRIORITY[prio].at(type),
+                                     node,
+                                     unwrap_err(next_prio_term(ctx, prio + 1)));
   }
 
   return error::ok<std::shared_ptr<Node>>(node);
@@ -169,28 +148,6 @@ Parser::next_assign(ParserContext& ctx)
   return error::ok<std::shared_ptr<Node>>(node);
 }
 
-// term : factor ((MUL | DIV) factor)*
-NodeResult<Node>
-Parser::next_term(ParserContext& ctx)
-{
-  auto node = unwrap_err(next_factor(ctx));
-
-  while (ctx.current().type == token::TokenType::MULTIPLY ||
-         ctx.current().type == token::TokenType::DIVIDE) {
-    if (ctx.current().type == token::TokenType::MULTIPLY) {
-      ret_err(ctx.eat(token::TokenType::MULTIPLY));
-      node = std::make_shared<BinaryMultiplyNode>(node,
-                                                  unwrap_err(next_factor(ctx)));
-    } else if (ctx.current().type == token::TokenType::DIVIDE) {
-      ret_err(ctx.eat(token::TokenType::DIVIDE));
-      node =
-        std::make_shared<BinaryDivideNode>(node, unwrap_err(next_factor(ctx)));
-    }
-  }
-
-  return error::ok<std::shared_ptr<Node>>(node);
-}
-
 // factor : NUMBER |
 //          idref |
 //          LPAREN expr RPAREN |
@@ -214,14 +171,12 @@ Parser::next_factor(ParserContext& ctx) // NOLINT
     ret_err(ctx.eat(token::TokenType::LPAREN));
     node = unwrap_err(next_expr(ctx));
     ret_err(ctx.eat(token::TokenType::RPAREN));
-  } else if (current.type == token::TokenType::PLUS) {
-    // is unary plus
-    ret_err(ctx.eat(token::TokenType::PLUS));
-    node = std::make_shared<UnaryPlusNode>(unwrap_err(next_factor(ctx)));
-  } else if (current.type == token::TokenType::MINUS) {
-    // is unary minus
-    ret_err(ctx.eat(token::TokenType::MINUS));
-    node = std::make_shared<UnaryMinusNode>(unwrap_err(next_factor(ctx)));
+  } else if (current.type == token::TokenType::PLUS ||
+             current.type == token::TokenType::MINUS) {
+    auto type = current.type;
+    ret_err(ctx.eat(type));
+    node = std::make_shared<UnaryOpNode>(UNARYOP_PRIORITY[0].at(type),
+                                         unwrap_err(next_factor(ctx)));
   } else {
     // syntax error
     return error::err(error::Code::SYNTAX_ERROR,

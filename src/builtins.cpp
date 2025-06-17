@@ -66,6 +66,18 @@ pow(const std::vector<double>& args, const EvalContext& /*ctx*/)
   return error::ok<double>(std::pow(args[0], args[1]));
 }
 
+error::Result<double>
+log(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 2) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in log, expected 2, got {}",
+                      args.size());
+  }
+
+  return error::ok<double>(std::log(args[1]) / std::log(args[0]));
+}
+
 const std::unordered_map<std::string, double> BUILTIN_VARIABLES = {
   { "pi", M_PI },
   { "e", M_E },
@@ -74,6 +86,7 @@ const std::unordered_map<std::string, double> BUILTIN_VARIABLES = {
 const std::unordered_map<std::string, Function> BUILTIN_FUNCTIONS = {
   { "sqrt", sqrt },
   { "pow", pow },
+  { "log", log },
 };
 
 }

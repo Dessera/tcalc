@@ -14,99 +14,20 @@ EvalVisitor::EvalVisitor(EvalContext& ctx)
 }
 
 error::Result<double>
-EvalVisitor::visit_bin_plus(std::shared_ptr<BinaryPlusNode>& node)
-{
-  auto lval = unwrap_err(visit(node->left()));
-  auto rval = unwrap_err(visit(node->right()));
-  return error::ok<double>(lval + rval);
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_minus(std::shared_ptr<BinaryMinusNode>& node)
-{
-  auto lval = unwrap_err(visit(node->left()));
-  auto rval = unwrap_err(visit(node->right()));
-  return error::ok<double>(lval - rval);
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_multiply(std::shared_ptr<BinaryMultiplyNode>& node)
-{
-  auto lval = unwrap_err(visit(node->left()));
-  auto rval = unwrap_err(visit(node->right()));
-  return error::ok<double>(lval * rval);
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_divide(std::shared_ptr<BinaryDivideNode>& node)
-{
-  auto lval = unwrap_err(visit(node->left()));
-  auto rval = unwrap_err(visit(node->right()));
-  if (std::abs(rval) < std::numeric_limits<double>::epsilon()) {
-    return error::err(error::Code::ZERO_DIVISION, "Division by zero");
-  }
-  return error::ok<double>(lval / rval);
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_equal(std::shared_ptr<BinaryEqualNode>& node)
+EvalVisitor::visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
 {
   auto lval = unwrap_err(visit(node->left()));
   auto rval = unwrap_err(visit(node->right()));
 
-  return error::ok<double>(std::abs(lval - rval) <
-                           std::numeric_limits<double>::epsilon());
+  return error::ok<double>(BINOP_MAP.at(node->type())(lval, rval));
 }
 
 error::Result<double>
-EvalVisitor::visit_bin_notequal(std::shared_ptr<BinaryNotEqualNode>& node)
+EvalVisitor::visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
 {
-  auto lval = unwrap_err(visit(node->left()));
-  auto rval = unwrap_err(visit(node->right()));
+  auto val = unwrap_err(visit(node->operand()));
 
-  return error::ok<double>(std::abs(lval - rval) >
-                           std::numeric_limits<double>::epsilon());
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_greater(std::shared_ptr<BinaryGreaterNode>& node)
-{
-  return error::ok<double>(unwrap_err(visit(node->left())) >
-                           unwrap_err(visit(node->right())));
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_greaterequal(
-  std::shared_ptr<BinaryGreaterEqualNode>& node)
-{
-  return error::ok<double>(unwrap_err(visit(node->left())) >=
-                           unwrap_err(visit(node->right())));
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_less(std::shared_ptr<BinaryLessNode>& node)
-{
-  return error::ok<double>(unwrap_err(visit(node->left())) <
-                           unwrap_err(visit(node->right())));
-}
-
-error::Result<double>
-EvalVisitor::visit_bin_lessequal(std::shared_ptr<BinaryLessEqualNode>& node)
-{
-  return error::ok<double>(unwrap_err(visit(node->left())) <=
-                           unwrap_err(visit(node->right())));
-}
-
-error::Result<double>
-EvalVisitor::visit_unary_plus(std::shared_ptr<UnaryPlusNode>& node)
-{
-  return visit(node->operand());
-}
-
-error::Result<double>
-EvalVisitor::visit_unary_minus(std::shared_ptr<UnaryMinusNode>& node)
-{
-  return error::ok<double>(-unwrap_err(visit(node->operand())));
+  return error::ok<double>(UNARYOP_MAP.at(node->type())(val));
 }
 
 error::Result<double>
@@ -154,11 +75,41 @@ error::Result<double>
 EvalVisitor::visit_if(std::shared_ptr<IfNode>& node)
 {
   auto cond = unwrap_err(visit(node->cond()));
-  if (std::abs(cond) > std::numeric_limits<double>::epsilon()) {
+  if (_double_noeq_bool(cond, 0)) {
     return visit(node->then());
   }
 
   return visit(node->else_());
+}
+
+double
+EvalVisitor::_double_eq(double a, double b)
+{
+  return _double_eq_bool(a, b);
+}
+
+bool
+EvalVisitor::_double_eq_bool(double a, double b)
+{
+  return std::abs(a - b) < std::numeric_limits<double>::epsilon();
+}
+
+double
+EvalVisitor::_double_noeq(double a, double b)
+{
+  return _double_noeq_bool(a, b);
+}
+
+bool
+EvalVisitor::_double_noeq_bool(double a, double b)
+{
+  return std::abs(a - b) > std::numeric_limits<double>::epsilon();
+}
+
+double
+EvalVisitor::_double_forward(double a)
+{
+  return a;
 }
 
 }
