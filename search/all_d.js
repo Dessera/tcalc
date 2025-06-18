@@ -5,7 +5,7 @@ var searchData=
   ['parser_2ehpp_2',['parser.hpp',['../parser_8hpp.html',1,'']]],
   ['parsercontext_3',['ParserContext',['../classtcalc_1_1ast_1_1ParserContext.html',1,'tcalc::ast']]],
   ['path_4',['path',['../classtcalc_1_1ast_1_1ProgramImportNode.html#ade1a745eb15e6a144bbecddff36d80dd',1,'tcalc::ast::ProgramImportNode::path(std::string path) noexcept'],['../classtcalc_1_1ast_1_1ProgramImportNode.html#ac9d25bddf8255818b5abcc4af33d3464',1,'tcalc::ast::ProgramImportNode::path() noexcept'],['../classtcalc_1_1ast_1_1ProgramImportNode.html#ae265fbe32a7035ea3deb91e781ad633f',1,'tcalc::ast::ProgramImportNode::path() const noexcept']]],
-  ['plus_5',['PLUS',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42a883acd43c77567e1c3baced84ccf6ed7',1,'tcalc::token']]],
+  ['plus_5',['PLUS',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a883acd43c77567e1c3baced84ccf6ed7',1,'tcalc::token']]],
   ['pos_6',['pos',['../classtcalc_1_1token_1_1Tokenizer.html#a5e3304d5dcf639f0b78a26cdcdd941f5',1,'tcalc::token::Tokenizer']]],
   ['pow_7',['pow',['../builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7',1,'tcalc::builtins']]],
   ['prerequisites_8',['Prerequisites',['../md_README.html#autotoc_md14',1,'']]],

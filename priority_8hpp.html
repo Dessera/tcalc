@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('priority_8hpp.html',''); initResizable
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a14f28993aec5ddbf15e96cfd5168ee03" id="r_a14f28993aec5ddbf15e96cfd5168ee03"><td class="memItemLeft" align="right" valign="top"><a id="a14f28993aec5ddbf15e96cfd5168ee03" name="a14f28993aec5ddbf15e96cfd5168ee03"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>tcalc::ast::PriorityTable</b> = std::vector&lt; std::unordered_map&lt; <a class="el" href="token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42">token::TokenType</a>, <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a> &gt; &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>tcalc::ast::PriorityTable</b> = std::vector&lt; std::unordered_map&lt; <a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">token::TokenType</a>, <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a14f28993aec5ddbf15e96cfd5168ee03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator priority table type. <br /></td></tr>
 <tr class="separator:a14f28993aec5ddbf15e96cfd5168ee03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -147,6 +147,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  {</div>
+<div class="line">    { TokenType::AND, NodeType::BINARY_AND },</div>
+<div class="line">    { TokenType::OR, NodeType::BINARY_OR },</div>
+<div class="line">  },</div>
 <div class="line">  {</div>
 <div class="line">    { TokenType::EQUAL, NodeType::BINARY_EQUAL },</div>
 <div class="line">    { TokenType::NOTEQUAL, NodeType::BINARY_NOT_EQUAL },</div>
@@ -183,6 +187,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= { {</div>
 <div class="line">  { TokenType::PLUS, NodeType::UNARY_PLUS },</div>
 <div class="line">  { TokenType::MINUS, NodeType::UNARY_MINUS },</div>
+<div class="line">  { TokenType::NOT, NodeType::UNARY_NOT },</div>
 <div class="line">} }</div>
 </div><!-- fragment -->
 <p>Unary operator priority table. </p>

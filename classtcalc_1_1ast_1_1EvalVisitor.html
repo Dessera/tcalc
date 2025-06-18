@@ -557,7 +557,9 @@ Static Public Attributes</h2></td></tr>
 <div class="line">      { NodeType::BINARY_GREATER, std::greater&lt;&gt;() },</div>
 <div class="line">      { NodeType::BINARY_GREATER_EQUAL, std::greater_equal&lt;&gt;() },</div>
 <div class="line">      { NodeType::BINARY_LESS, std::less&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_LESS_EQUAL, std::less_equal&lt;&gt;() }</div>
+<div class="line">      { NodeType::BINARY_LESS_EQUAL, std::less_equal&lt;&gt;() },</div>
+<div class="line">      { NodeType::BINARY_AND, std::logical_and&lt;&gt;() },</div>
+<div class="line">      { NodeType::BINARY_OR, std::logical_or&lt;&gt;() }</div>
 <div class="line">    }</div>
 </div><!-- fragment --><p>Map of binary operator to function. </p>
 
@@ -585,6 +587,7 @@ Static Public Attributes</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">      { NodeType::UNARY_PLUS, _double_forward },</div>
 <div class="line">      { NodeType::UNARY_MINUS, std::negate&lt;&gt;() },</div>
+<div class="line">      { NodeType::UNARY_NOT, std::logical_not&lt;&gt;() }</div>
 <div class="line">    }</div>
 </div><!-- fragment --><p>Map of unary operator to function. </p>
 

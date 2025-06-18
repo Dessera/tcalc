@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['semicolon_0',['SEMICOLON',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42abaaceccc27b1d4e0968c999583f97de5',1,'tcalc::token']]],
-  ['syntax_5ferror_1',['SYNTAX_ERROR',['../error_8hpp.html#a962518b30ba32968a1c1726465276ca2a756ec3dd26d1a73363eb3e68b6e820df',1,'tcalc::error']]]
+  ['recursion_5flimit_0',['RECURSION_LIMIT',['../error_8hpp.html#a962518b30ba32968a1c1726465276ca2a31ab2cf82154702877dd87cc7a49b610',1,'tcalc::error']]],
+  ['rparen_1',['RPAREN',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126afccedc90f87593a3b31536bd658808b1',1,'tcalc::token']]]
 ];

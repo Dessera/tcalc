@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['semicolon_0',['SEMICOLON',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42abaaceccc27b1d4e0968c999583f97de5',1,'tcalc::token']]],
+  ['semicolon_0',['SEMICOLON',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126abaaceccc27b1d4e0968c999583f97de5',1,'tcalc::token']]],
   ['spos_1',['spos',['../classtcalc_1_1token_1_1Tokenizer.html#a4b59b0c76dc6d1fbbcf2457cf7fa576b',1,'tcalc::token::Tokenizer']]],
   ['sqrt_2',['sqrt',['../builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f',1,'tcalc::builtins']]],
   ['started_3',['Getting Started',['../md_README.html#autotoc_md13',1,'']]],

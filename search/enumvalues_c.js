@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['recursion_5flimit_0',['RECURSION_LIMIT',['../error_8hpp.html#a962518b30ba32968a1c1726465276ca2a31ab2cf82154702877dd87cc7a49b610',1,'tcalc::error']]],
-  ['rparen_1',['RPAREN',['../token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42afccedc90f87593a3b31536bd658808b1',1,'tcalc::token']]]
+  ['plus_0',['PLUS',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a883acd43c77567e1c3baced84ccf6ed7',1,'tcalc::token']]],
+  ['program_1',['PROGRAM',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31',1,'tcalc::ast']]]
 ];
