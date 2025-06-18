@@ -13,7 +13,7 @@ VarAssignNode::VarAssignNode(std::string name)
 {
 }
 
-VarAssignNode::VarAssignNode(std::string name, std::shared_ptr<Node> body)
+VarAssignNode::VarAssignNode(std::string name, NodePtr<> body)
   : Node{ NodeType::VARASSIGN }
   , _name{ std::move(name) }
   , _body{ std::move(body) }

@@ -18,6 +18,7 @@
 #include "tcalc/ast/function.hpp"
 #include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
+#include "tcalc/ast/program.hpp"
 #include "tcalc/ast/unaryop.hpp"
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/error.hpp"
@@ -52,7 +53,7 @@ public:
    * @param node Number node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit(std::shared_ptr<Node>& node)
+  virtual error::Result<RT> visit(NodePtr<>& node)
   {
     __check_node_type(node, BinaryOpNode, visit_bin_op);
     __check_node_type(node, UnaryOpNode, visit_unary_op);
@@ -62,6 +63,8 @@ public:
     __check_node_type(node, FcallNode, visit_fcall);
     __check_node_type(node, FdefNode, visit_fdef);
     __check_node_type(node, IfNode, visit_if);
+    __check_node_type(node, ProgramNode, visit_program);
+    __check_node_type(node, ProgramImportNode, visit_import);
 
     return error::ok<RT>();
   }
@@ -72,7 +75,7 @@ public:
    * @param node Binary operation node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
+  virtual error::Result<RT> visit_bin_op(NodePtr<BinaryOpNode>& node)
     VISIT_DEFAULT(node);
 
   /**
@@ -81,7 +84,7 @@ public:
    * @param node Unary operation node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
+  virtual error::Result<RT> visit_unary_op(NodePtr<UnaryOpNode>& node)
     VISIT_DEFAULT(node);
 
   /**
@@ -90,7 +93,7 @@ public:
    * @param node Number node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_number(std::shared_ptr<NumberNode>& node)
+  virtual error::Result<RT> visit_number(NodePtr<NumberNode>& node)
     VISIT_DEFAULT(node);
 
   /**
@@ -99,7 +102,7 @@ public:
    * @param node Variable reference node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_varref(std::shared_ptr<VarRefNode>& node)
+  virtual error::Result<RT> visit_varref(NodePtr<VarRefNode>& node)
     VISIT_DEFAULT(node);
 
   /**
@@ -108,8 +111,8 @@ public:
    * @param node Variable assignment node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_varassign(
-    std::shared_ptr<VarAssignNode>& node) VISIT_DEFAULT(node);
+  virtual error::Result<RT> visit_varassign(NodePtr<VarAssignNode>& node)
+    VISIT_DEFAULT(node);
 
   /**
    * @brief Visit a function call node.
@@ -117,7 +120,7 @@ public:
    * @param node Function call node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_fcall(std::shared_ptr<FcallNode>& node)
+  virtual error::Result<RT> visit_fcall(NodePtr<FcallNode>& node)
     VISIT_DEFAULT(node);
 
   /**
@@ -126,7 +129,7 @@ public:
    * @param node Function definition node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_fdef(std::shared_ptr<FdefNode>& node)
+  virtual error::Result<RT> visit_fdef(NodePtr<FdefNode>& node)
     VISIT_DEFAULT(node);
 
   /**
@@ -135,7 +138,24 @@ public:
    * @param node If node.
    * @return error::Result<RT> Result of the visit.
    */
-  virtual error::Result<RT> visit_if(std::shared_ptr<IfNode>& node)
+  virtual error::Result<RT> visit_if(NodePtr<IfNode>& node) VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a program node.
+   *
+   * @param node Program node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_program(NodePtr<ProgramNode>& node)
+    VISIT_DEFAULT(node);
+
+  /**
+   * @brief Visit a program import node.
+   *
+   * @param node Program import node.
+   * @return error::Result<RT> Result of the visit.
+   */
+  virtual error::Result<RT> visit_import(NodePtr<ProgramImportNode>& node)
     VISIT_DEFAULT(node);
 };
 

@@ -13,6 +13,7 @@
 
 #include <functional>
 #include <unordered_map>
+#include <vector>
 
 #include "tcalc/ast/binaryop.hpp"
 #include "tcalc/ast/node.hpp"
@@ -113,19 +114,38 @@ public:
 
   ~EvalVisitor() override = default;
 
-  error::Result<double> visit_bin_op(
-    std::shared_ptr<BinaryOpNode>& node) override;
-  error::Result<double> visit_unary_op(
-    std::shared_ptr<UnaryOpNode>& node) override;
-  error::Result<double> visit_number(
-    std::shared_ptr<NumberNode>& node) override;
-  error::Result<double> visit_varref(
-    std::shared_ptr<VarRefNode>& node) override;
-  error::Result<double> visit_varassign(
-    std::shared_ptr<VarAssignNode>& node) override;
-  error::Result<double> visit_fcall(std::shared_ptr<FcallNode>& node) override;
-  error::Result<double> visit_fdef(std::shared_ptr<FdefNode>& node) override;
-  error::Result<double> visit_if(std::shared_ptr<IfNode>& node) override;
+  error::Result<double> visit_bin_op(NodePtr<BinaryOpNode>& node) override;
+  error::Result<double> visit_unary_op(NodePtr<UnaryOpNode>& node) override;
+  error::Result<double> visit_number(NodePtr<NumberNode>& node) override;
+  error::Result<double> visit_varref(NodePtr<VarRefNode>& node) override;
+  error::Result<double> visit_varassign(NodePtr<VarAssignNode>& node) override;
+  error::Result<double> visit_fcall(NodePtr<FcallNode>& node) override;
+  error::Result<double> visit_fdef(NodePtr<FdefNode>& node) override;
+  error::Result<double> visit_if(NodePtr<IfNode>& node) override;
+  error::Result<double> visit_import(NodePtr<ProgramImportNode>& node) override;
+};
+
+/**
+ * @brief Visitor for evaluating Program AST.
+ *
+ */
+class TCALC_PUBLIC ProgramEvalVisitor : public BaseVisitor<std::vector<double>>
+{
+private:
+  EvalContext* _ctx;
+
+public:
+  /**
+   * @brief Construct a new Program Eval Visitor object.
+   *
+   * @param ctx Evaluation context.
+   */
+  ProgramEvalVisitor(EvalContext& ctx);
+
+  ~ProgramEvalVisitor() override = default;
+
+  error::Result<std::vector<double>> visit_program(
+    NodePtr<ProgramNode>& node) override;
 };
 
 }

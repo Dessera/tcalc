@@ -36,12 +36,12 @@ Tokenizer::next()
     }
   }
 
-  if (auto res = magic_enum::enum_cast<TokenType>(*_pos); res.has_value()) {
-    return Token{ .type = res.value(), .text = std::string{ *_pos++ } };
-  }
-
   if (std::isdigit(*_pos)) {
     return _parse_number();
+  }
+
+  if (*_pos == QUOTE) {
+    return _parse_quoted_identifier();
   }
 
   if (_is_first_identifier_char(*_pos)) {
@@ -74,6 +74,37 @@ Tokenizer::_parse_number()
   }
 
   return Token{ .type = TokenType::NUMBER, .text = std::string{ start, _pos } };
+}
+
+error::Result<Token>
+Tokenizer::_parse_quoted_identifier()
+{
+  auto text = std::string{};
+
+  ++_pos;
+
+  while (_pos < _input.end() && *_pos != QUOTE) {
+    if (*_pos == '\\') {
+      ++_pos;
+      if (_pos == _input.end()) {
+        return error::err(error::Code::SYNTAX_ERROR,
+                          "Unexpected end of input, index: {}",
+                          std::distance(_input.cbegin(), _pos));
+      }
+    }
+
+    text += *_pos;
+    ++_pos;
+  }
+  if (_pos == _input.end()) {
+    return error::err(error::Code::SYNTAX_ERROR,
+                      "Unexpected end of input, index: {}",
+                      std::distance(_input.cbegin(), _pos));
+  }
+
+  ++_pos;
+
+  return Token{ .type = TokenType::IDENTIFIER, .text = text };
 }
 
 bool

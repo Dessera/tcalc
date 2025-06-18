@@ -2,6 +2,7 @@
 #include <ostream>
 
 #include "tcalc/ast/binaryop.hpp"
+#include "tcalc/ast/program.hpp"
 #include "tcalc/visitor/print.hpp"
 
 namespace tcalc::ast {
@@ -13,7 +14,7 @@ PrintVisitor::PrintVisitor(std::ostream& os, std::size_t step)
 }
 
 error::Result<void>
-PrintVisitor::visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
+PrintVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 {
   std::println(
     *_os, "{}{}:", _gen_indent(), magic_enum::enum_name(node->type()));
@@ -27,7 +28,7 @@ PrintVisitor::visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
+PrintVisitor::visit_unary_op(NodePtr<UnaryOpNode>& node)
 {
   std::println(
     *_os, "{}{}:", _gen_indent(), magic_enum::enum_name(node->type()));
@@ -40,14 +41,14 @@ PrintVisitor::visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_number(std::shared_ptr<NumberNode>& node)
+PrintVisitor::visit_number(NodePtr<NumberNode>& node)
 {
   std::println(*_os, "{}NUMBER: {}", _gen_indent(), node->value());
   return error::ok<void>();
 }
 
 error::Result<void>
-PrintVisitor::visit_varref(std::shared_ptr<VarRefNode>& node)
+PrintVisitor::visit_varref(NodePtr<VarRefNode>& node)
 {
   std::println(*_os, "{}VARREF: {}", _gen_indent(), node->name());
 
@@ -55,7 +56,7 @@ PrintVisitor::visit_varref(std::shared_ptr<VarRefNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_varassign(std::shared_ptr<VarAssignNode>& node)
+PrintVisitor::visit_varassign(NodePtr<VarAssignNode>& node)
 {
   std::println(*_os, "{}VARASSIGN: {}", _gen_indent(), node->name());
 
@@ -67,7 +68,7 @@ PrintVisitor::visit_varassign(std::shared_ptr<VarAssignNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
+PrintVisitor::visit_fcall(NodePtr<FcallNode>& node)
 {
   std::println(*_os, "{}FCALL: {}", _gen_indent(), node->name());
   _step_indent();
@@ -80,7 +81,7 @@ PrintVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
+PrintVisitor::visit_fdef(NodePtr<FdefNode>& node)
 {
   std::print(*_os, "{}FDEF: {}:", _gen_indent(), node->name());
   for (auto& arg : node->args()) {
@@ -97,7 +98,7 @@ PrintVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
 }
 
 error::Result<void>
-PrintVisitor::visit_if(std::shared_ptr<IfNode>& node)
+PrintVisitor::visit_if(NodePtr<IfNode>& node)
 {
   std::println(*_os, "{}IF:", _gen_indent());
 
@@ -107,6 +108,27 @@ PrintVisitor::visit_if(std::shared_ptr<IfNode>& node)
   ret_err(visit(node->else_()));
   _unstep_indent();
 
+  return error::ok<void>();
+}
+
+error::Result<void>
+PrintVisitor::visit_program(NodePtr<ProgramNode>& node)
+{
+  std::println(*_os, "{}PROGRAM:", _gen_indent());
+
+  _step_indent();
+  for (auto& stmt : node->statements()) {
+    ret_err(visit(stmt));
+  }
+  _unstep_indent();
+
+  return error::ok<void>();
+}
+
+error::Result<void>
+PrintVisitor::visit_import(NodePtr<ProgramImportNode>& node)
+{
+  std::println(*_os, "{}IMPORT: {}", _gen_indent(), node->path());
   return error::ok<void>();
 }
 

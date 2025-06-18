@@ -34,6 +34,20 @@ Use `()` to call a function.
 add(1, 2)
 ```
 
+## Import
+
+Use keyword `import` to import a module.
+
+```plaintext
+import math
+```
+
+or use complex identifiers:
+
+```plaintext
+import 'math.tc'
+```
+
 ## Control Flow
 
 ### If

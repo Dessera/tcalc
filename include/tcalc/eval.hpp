@@ -15,6 +15,7 @@
 #include <string>
 #include <unordered_map>
 #include <utility>
+#include <vector>
 
 #include "tcalc/builtins.hpp"
 #include "tcalc/common.hpp"
@@ -57,7 +58,7 @@ public:
    *
    * @return std::unordered_map<std::string, double>& Variables map.
    */
-  constexpr auto& vars() noexcept { return _vars; }
+  [[nodiscard]] constexpr auto& vars() noexcept { return _vars; }
 
   /**
    * @brief Get built-in functions.
@@ -65,7 +66,7 @@ public:
    * @return std::unordered_map<std::string, BuiltinFunc>& Built-in functions
    * map.
    */
-  constexpr auto& funcs() noexcept { return _funcs; }
+  [[nodiscard]] constexpr auto& funcs() noexcept { return _funcs; }
 
   /**
    * @brief Get a variable.
@@ -127,6 +128,13 @@ public:
    *
    */
   constexpr void increment_call_depth() noexcept { ++_call_depth; }
+
+  /**
+   * @brief Update the context with another context.
+   *
+   * @param ctx Other context.
+   */
+  void update_with(const EvalContext& ctx);
 };
 
 /**
@@ -156,12 +164,27 @@ public:
   ~Evaluator() = default;
 
   /**
+   * @brief Get the evaluation context.
+   *
+   * @return const EvalContext& Evaluation context.
+   */
+  [[nodiscard]] constexpr auto& ctx() const noexcept { return _ctx; }
+
+  /**
    * @brief Evaluate an expression.
    *
    * @param input Expression string.
    * @return error::Result<double> Evaluation result.
    */
   error::Result<double> eval(std::string_view input);
+
+  /**
+   * @brief Evaluate a program.
+   *
+   * @param input Program string.
+   * @return error::Result<std::vector<double>> Evaluation result.
+   */
+  error::Result<std::vector<double>> eval_prog(std::string_view input);
 };
 
 }

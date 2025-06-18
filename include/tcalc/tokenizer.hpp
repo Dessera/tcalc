@@ -29,13 +29,20 @@ class TCALC_PUBLIC Tokenizer
 {
 public:
   inline static const std::unordered_map<std::string, TokenType> KEYWORDS = {
-    { "def", TokenType::DEF },         { "let", TokenType::LET },
-    { "if", TokenType::IF },           { "then", TokenType::THEN },
-    { "else", TokenType::ELSE },       { "==", TokenType::EQUAL },
-    { "!=", TokenType::NOTEQUAL },     { ">", TokenType::GREATER },
-    { ">=", TokenType::GREATEREQUAL }, { "<", TokenType::LESS },
+    { "+", TokenType::PLUS },        { "-", TokenType::MINUS },
+    { "*", TokenType::MULTIPLY },    { "/", TokenType::DIVIDE },
+    { "(", TokenType::LPAREN },      { ")", TokenType::RPAREN },
+    { ",", TokenType::COMMA },       { ";", TokenType::SEMICOLON },
+    { "=", TokenType::ASSIGN },      { ">", TokenType::GREATER },
+    { "<", TokenType::LESS },        { "def", TokenType::DEF },
+    { "let", TokenType::LET },       { "if", TokenType::IF },
+    { "then", TokenType::THEN },     { "else", TokenType::ELSE },
+    { "import", TokenType::IMPORT }, { "==", TokenType::EQUAL },
+    { "!=", TokenType::NOTEQUAL },   { ">=", TokenType::GREATEREQUAL },
     { "<=", TokenType::LESSEQUAL },
   }; /**< Tcalc keywords. */
+
+  constexpr static char QUOTE = '\''; /**< The quote character. */
 
 private:
   std::string_view _input;
@@ -107,6 +114,13 @@ private:
    *
    */
   error::Result<Token> _parse_number();
+
+  /**
+   * @brief Parse the next quoted identifier.
+   *
+   * @return error::Result<Token> The parsed token.
+   */
+  error::Result<Token> _parse_quoted_identifier();
 
   /**
    * @brief Check if the string is a keyword.

@@ -13,6 +13,7 @@
 
 #include <cctype>
 #include <cstdint>
+#include <memory>
 
 #include "tcalc/common.hpp"
 
@@ -42,6 +43,8 @@ enum class NodeType : uint8_t
   FCALL,                /**< Function call. */
   FDEF,                 /**< Function definition. */
   IF,                   /**< If statement. */
+  PROGRAM,              /**< Program. */
+  IMPORT,               /**< Import statement. */
 };
 
 /**
@@ -70,5 +73,14 @@ public:
    */
   [[nodiscard]] constexpr auto type() const noexcept { return _type; }
 };
+
+/**
+ * @brief Shared pointer to a node.
+ *
+ * @tparam NT Node type.
+ */
+template<typename NT = Node>
+  requires std::derived_from<NT, Node>
+using NodePtr = std::shared_ptr<NT>;
 
 }

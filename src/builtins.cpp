@@ -1,8 +1,11 @@
 #include <cmath>
+#include <fstream>
+#include <sstream>
 #include <utility>
 #include <vector>
 
 #include "tcalc/ast/function.hpp"
+#include "tcalc/ast/program.hpp"
 #include "tcalc/builtins.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/eval.hpp"
@@ -10,7 +13,7 @@
 
 namespace tcalc::builtins {
 
-FunctionWrapper::FunctionWrapper(std::shared_ptr<ast::FdefNode> node)
+FunctionWrapper::FunctionWrapper(ast::NodePtr<ast::FdefNode> node)
   : _node{ std::move(node) }
 {
 }
@@ -40,6 +43,31 @@ FunctionWrapper::operator()(const std::vector<double>& args,
 
   auto local_visitor = ast::EvalVisitor{ local_ctx };
   return local_visitor.visit(_node->body());
+}
+
+ImportWrapper::ImportWrapper(ast::NodePtr<ast::ProgramImportNode> node)
+  : _node{ std::move(node) }
+{
+}
+
+error::Result<void>
+ImportWrapper::import(EvalContext& ctx) const
+{
+  auto file = std::ifstream{ _node->path() };
+  if (!file.is_open()) {
+    return error::err(
+      error::Code::FILE_NOT_FOUND, "File `{}` not found", _node->path());
+  }
+
+  auto iss = std::stringstream{};
+  iss << file.rdbuf();
+
+  auto evaluator = Evaluator{};
+  ret_err(evaluator.eval_prog(iss.str()));
+
+  ctx.update_with(evaluator.ctx());
+
+  return error::ok<void>();
 }
 
 error::Result<double>

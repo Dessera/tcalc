@@ -19,12 +19,15 @@ main()
       break;
     }
 
-    auto res = evaluator.eval(line);
+    auto res = evaluator.eval_prog(line);
     if (!res.has_value()) {
       res.error().log();
       continue;
     }
 
-    std::println("{}", res.value());
+    auto res_value = res.value();
+    for (auto v : res_value) {
+      std::println("{}", v);
+    }
   }
 }

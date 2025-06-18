@@ -11,7 +11,6 @@
 
 #pragma once
 
-#include <memory>
 #include <utility>
 
 #include "tcalc/ast/node.hpp"
@@ -26,9 +25,9 @@ namespace tcalc::ast {
 class TCALC_PUBLIC IfNode : public Node
 {
 private:
-  std::shared_ptr<Node> _cond;
-  std::shared_ptr<Node> _then;
-  std::shared_ptr<Node> _else;
+  NodePtr<> _cond;
+  NodePtr<> _then;
+  NodePtr<> _else;
 
 public:
   /**
@@ -44,23 +43,21 @@ public:
    * @param then Then node.
    * @param else_ Else node.
    */
-  IfNode(std::shared_ptr<Node> cond,
-         std::shared_ptr<Node> then,
-         std::shared_ptr<Node> else_);
+  IfNode(NodePtr<> cond, NodePtr<> then, NodePtr<> else_);
 
   ~IfNode() override = default;
 
   /**
    * @brief Get the condition node.
    *
-   * @return const std::shared_ptr<Node>& Condition node.
+   * @return const NodePtr<>& Condition node.
    */
   [[nodiscard]] constexpr auto& cond() const noexcept { return _cond; }
 
   /**
    * @brief Get the condition node.
    *
-   * @return std::shared_ptr<Node>& Condition node.
+   * @return NodePtr<>& Condition node.
    */
   [[nodiscard]] constexpr auto& cond() noexcept { return _cond; }
 
@@ -69,22 +66,19 @@ public:
    *
    * @param cond Condition node.
    */
-  constexpr void cond(std::shared_ptr<Node> cond) noexcept
-  {
-    _cond = std::move(cond);
-  }
+  constexpr void cond(NodePtr<> cond) noexcept { _cond = std::move(cond); }
 
   /**
    * @brief Get the then node.
    *
-   * @return const std::shared_ptr<Node>& Then node.
+   * @return const NodePtr<>& Then node.
    */
   [[nodiscard]] constexpr auto& then() const noexcept { return _then; }
 
   /**
    * @brief Get the then node.
    *
-   * @return std::shared_ptr<Node>& Then node.
+   * @return NodePtr<>& Then node.
    */
   [[nodiscard]] constexpr auto& then() noexcept { return _then; }
 
@@ -93,22 +87,19 @@ public:
    *
    * @param then Then node.
    */
-  constexpr void then(std::shared_ptr<Node> then) noexcept
-  {
-    _then = std::move(then);
-  }
+  constexpr void then(NodePtr<> then) noexcept { _then = std::move(then); }
 
   /**
    * @brief Get the else node.
    *
-   * @return const std::shared_ptr<Node>& Else node.
+   * @return const NodePtr<>& Else node.
    */
   [[nodiscard]] constexpr auto& else_() const noexcept { return _else; }
 
   /**
    * @brief Get the else node.
    *
-   * @return std::shared_ptr<Node>& Else node.
+   * @return NodePtr<>& Else node.
    */
   [[nodiscard]] constexpr auto& else_() noexcept { return _else; }
 
@@ -117,10 +108,7 @@ public:
    *
    * @param else_ Else node.
    */
-  constexpr void else_(std::shared_ptr<Node> else_) noexcept
-  {
-    _else = std::move(else_);
-  }
+  constexpr void else_(NodePtr<> else_) noexcept { _else = std::move(else_); }
 };
 
 }

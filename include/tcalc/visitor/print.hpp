@@ -13,12 +13,12 @@
 
 #include <cstddef>
 #include <iostream>
-#include <memory>
 #include <ostream>
 #include <string>
 
 #include "tcalc/ast/binaryop.hpp"
 #include "tcalc/ast/function.hpp"
+#include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/common.hpp"
@@ -52,17 +52,16 @@ public:
 
   ~PrintVisitor() override = default;
 
-  error::Result<void> visit_bin_op(
-    std::shared_ptr<BinaryOpNode>& node) override;
-  error::Result<void> visit_unary_op(
-    std::shared_ptr<UnaryOpNode>& node) override;
-  error::Result<void> visit_number(std::shared_ptr<NumberNode>& node) override;
-  error::Result<void> visit_varref(std::shared_ptr<VarRefNode>& node) override;
-  error::Result<void> visit_varassign(
-    std::shared_ptr<VarAssignNode>& node) override;
-  error::Result<void> visit_fcall(std::shared_ptr<FcallNode>& node) override;
-  error::Result<void> visit_fdef(std::shared_ptr<FdefNode>& node) override;
-  error::Result<void> visit_if(std::shared_ptr<IfNode>& node) override;
+  error::Result<void> visit_bin_op(NodePtr<BinaryOpNode>& node) override;
+  error::Result<void> visit_unary_op(NodePtr<UnaryOpNode>& node) override;
+  error::Result<void> visit_number(NodePtr<NumberNode>& node) override;
+  error::Result<void> visit_varref(NodePtr<VarRefNode>& node) override;
+  error::Result<void> visit_varassign(NodePtr<VarAssignNode>& node) override;
+  error::Result<void> visit_fcall(NodePtr<FcallNode>& node) override;
+  error::Result<void> visit_fdef(NodePtr<FdefNode>& node) override;
+  error::Result<void> visit_if(NodePtr<IfNode>& node) override;
+  error::Result<void> visit_program(NodePtr<ProgramNode>& node) override;
+  error::Result<void> visit_import(NodePtr<ProgramImportNode>& node) override;
 
 private:
   /**

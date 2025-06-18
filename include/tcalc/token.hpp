@@ -32,6 +32,7 @@ enum class TokenType : int8_t
   LPAREN = 0x28,        /**< Bracket start. */
   RPAREN = 0x29,        /**< Bracket end. */
   COMMA = 0x2c,         /**< Comma. */
+  SEMICOLON = 0x3b,     /**< Semicolon. */
   ASSIGN = 0x3d,        /**< Assignment. */
   GREATER = 0x3e,       /**< > operator. */
   LESS = 0x3c,          /**< < operator. */
@@ -42,11 +43,12 @@ enum class TokenType : int8_t
   IF = -0x05,           /**< If statement. */
   THEN = -0x06,         /**< Then keyword. */
   ELSE = -0x07,         /**< Else keyword. */
-  EQUAL = -0x08,        /**< == operator. */
-  NOTEQUAL = -0x09,     /**< != operator. */
-  GREATEREQUAL = -0x0a, /**< >= operator. */
-  LESSEQUAL = -0x0b,    /**< <= operator. */
-  EOI = -0x0c,          /**< End of input. */
+  IMPORT = -0x08,       /**< Import statement. */
+  EQUAL = -0x09,        /**< == operator. */
+  NOTEQUAL = -0x0a,     /**< != operator. */
+  GREATEREQUAL = -0x0b, /**< >= operator. */
+  LESSEQUAL = -0x0c,    /**< <= operator. */
+  EOI = -0x0d,          /**< End of input. */
 };
 
 /**

@@ -8,6 +8,7 @@
 #include "tcalc/ast/function.hpp"
 #include "tcalc/ast/node.hpp"
 #include "tcalc/ast/number.hpp"
+#include "tcalc/ast/program.hpp"
 #include "tcalc/ast/unaryop.hpp"
 #include "tcalc/ast/variable.hpp"
 #include "tcalc/error.hpp"
@@ -43,31 +44,44 @@ ParserContext::eat(token::TokenType type)
   return error::ok<void>();
 }
 
+error::Result<void>
+ParserContext::eat()
+{
+  _current = unwrap_err(_tokenizer.next());
+
+  return error::ok<void>();
+}
+
 ParserContext::ParserContext(token::Tokenizer tokenizer, token::Token current)
   : _tokenizer{ tokenizer }
   , _current{ std::move(current) }
 {
 }
 
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::parse(std::string_view input)
 {
   auto ctx = unwrap_err(ParserContext::create(input));
-  auto res = unwrap_err(next_program(ctx));
 
-  if (ctx.current().type != token::TokenType::EOI) {
-    return error::err(error::Code::SYNTAX_ERROR,
-                      "Unexpected token {} at position {}",
-                      magic_enum::enum_name(ctx.current().type),
-                      ctx.tokenizer().spos() - 1);
+  return error::ok<NodePtr<>>(unwrap_err(next_program(ctx)));
+}
+
+// program : (statement)*
+error::Result<NodePtr<>>
+Parser::next_program(ParserContext& ctx)
+{
+  auto node = std::make_shared<ProgramNode>();
+
+  while (ctx.current().type != token::TokenType::EOI) {
+    node->statements().push_back(unwrap_err(next_statement(ctx)));
   }
 
-  return error::ok<std::shared_ptr<Node>>(res);
+  return error::ok<NodePtr<>>(node);
 }
 
 // program : expr | fdef | assign
-NodeResult<Node>
-Parser::next_program(ParserContext& ctx)
+error::Result<NodePtr<>>
+Parser::next_statement(ParserContext& ctx)
 {
   if (ctx.current().type == token::TokenType::DEF) {
     return next_fdef(ctx);
@@ -77,14 +91,17 @@ Parser::next_program(ParserContext& ctx)
     return next_assign(ctx);
   }
 
+  if (ctx.current().type == token::TokenType::IMPORT) {
+    return next_import(ctx);
+  }
+
   return next_expr(ctx);
 }
 
 // expr : if | prio_term
-NodeResult<Node>
-Parser::next_expr(ParserContext& ctx) // NOLINT
+error::Result<NodePtr<>>
+Parser::next_expr(ParserContext& ctx)
 {
-
   if (ctx.current().type == token::TokenType::IF) {
     return next_if(ctx);
   }
@@ -92,7 +109,7 @@ Parser::next_expr(ParserContext& ctx) // NOLINT
   return next_prio_term(ctx, 0);
 }
 
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::next_prio_term(ParserContext& ctx, std::size_t prio)
 {
   if (prio >= BINOP_PRIORITY.size()) {
@@ -103,19 +120,30 @@ Parser::next_prio_term(ParserContext& ctx, std::size_t prio)
 
   while (BINOP_PRIORITY[prio].contains(ctx.current().type)) {
     auto type = ctx.current().type;
-    ret_err(ctx.eat(ctx.current().type));
+    ret_err(ctx.eat());
 
     node =
       std::make_shared<BinaryOpNode>(BINOP_PRIORITY[prio].at(type),
                                      node,
                                      unwrap_err(next_prio_term(ctx, prio + 1)));
+
+    if (ctx.current().type == token::TokenType::SEMICOLON) {
+      if (prio == 0) {
+        ret_err(ctx.eat(token::TokenType::SEMICOLON));
+      }
+      return error::ok<NodePtr<>>(node);
+    }
   }
 
-  return error::ok<std::shared_ptr<Node>>(node);
+  if (ctx.current().type == token::TokenType::SEMICOLON && prio == 0) {
+    ret_err(ctx.eat(token::TokenType::SEMICOLON));
+  }
+
+  return error::ok<NodePtr<>>(node);
 }
 
 // if : IF expr THEN expr ELSE expr
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::next_if(ParserContext& ctx)
 {
   ret_err(ctx.eat(token::TokenType::IF));
@@ -130,11 +158,11 @@ Parser::next_if(ParserContext& ctx)
 
   node->else_(unwrap_err(next_expr(ctx)));
 
-  return error::ok<std::shared_ptr<Node>>(node);
+  return error::ok<NodePtr<>>(node);
 }
 
 // assign : LET IDENTIFIER ASSIGN expr
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::next_assign(ParserContext& ctx)
 {
   ret_err(ctx.eat(token::TokenType::LET));
@@ -145,7 +173,7 @@ Parser::next_assign(ParserContext& ctx)
   ret_err(ctx.eat(token::TokenType::ASSIGN));
   node->body(unwrap_err(next_expr(ctx)));
 
-  return error::ok<std::shared_ptr<Node>>(node);
+  return error::ok<NodePtr<>>(node);
 }
 
 // factor : NUMBER |
@@ -153,11 +181,11 @@ Parser::next_assign(ParserContext& ctx)
 //          LPAREN expr RPAREN |
 //          MINUS factor |
 //          PLUS factor
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::next_factor(ParserContext& ctx) // NOLINT
 {
   auto current = ctx.current();
-  std::shared_ptr<Node> node;
+  NodePtr<> node;
 
   if (current.type == token::TokenType::NUMBER) {
     // is number
@@ -185,11 +213,11 @@ Parser::next_factor(ParserContext& ctx) // NOLINT
                       ctx.tokenizer().spos() - 1);
   }
 
-  return error::ok<std::shared_ptr<Node>>(node);
+  return error::ok<NodePtr<>>(node);
 }
 
 // idref : VARREF | FCALL
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::next_idref(ParserContext& ctx)
 {
   auto id = ctx.current().text;
@@ -197,7 +225,7 @@ Parser::next_idref(ParserContext& ctx)
   ret_err(ctx.eat(token::TokenType::IDENTIFIER));
 
   if (ctx.current().type != token::TokenType::LPAREN) {
-    return error::ok<std::shared_ptr<Node>>(std::make_shared<VarRefNode>(id));
+    return error::ok<NodePtr<>>(std::make_shared<VarRefNode>(id));
   }
 
   ret_err(ctx.eat(token::TokenType::LPAREN));
@@ -212,11 +240,11 @@ Parser::next_idref(ParserContext& ctx)
 
   ret_err(ctx.eat(token::TokenType::RPAREN));
 
-  return error::ok<std::shared_ptr<Node>>(fnode);
+  return error::ok<NodePtr<>>(fnode);
 }
 
 // fdef : DEF IDENTIFIER LPAREN (IDENTIFIER (COMMA IDENTIFIER)*)? RPAREN expr
-NodeResult<Node>
+error::Result<NodePtr<>>
 Parser::next_fdef(ParserContext& ctx)
 {
   ret_err(ctx.eat(token::TokenType::DEF));
@@ -239,7 +267,18 @@ Parser::next_fdef(ParserContext& ctx)
 
   fnode->body(unwrap_err(next_expr(ctx)));
 
-  return error::ok<std::shared_ptr<Node>>(fnode);
+  return error::ok<NodePtr<>>(fnode);
+}
+
+error::Result<NodePtr<>>
+Parser::next_import(ParserContext& ctx)
+{
+  ret_err(ctx.eat(token::TokenType::IMPORT));
+
+  auto node = std::make_shared<ProgramImportNode>(ctx.current().text);
+  ret_err(ctx.eat(token::TokenType::IDENTIFIER));
+
+  return error::ok<NodePtr<>>(node);
 }
 
 }

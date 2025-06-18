@@ -12,11 +12,12 @@
 #pragma once
 
 #include <functional>
-#include <memory>
 #include <unordered_map>
 #include <vector>
 
 #include "tcalc/ast/function.hpp"
+#include "tcalc/ast/node.hpp"
+#include "tcalc/ast/program.hpp"
 #include "tcalc/common.hpp"
 #include "tcalc/error.hpp"
 
@@ -42,7 +43,7 @@ using Function = std::function<error::Result<double>(const std::vector<double>&,
 class TCALC_PUBLIC FunctionWrapper
 {
 private:
-  std::shared_ptr<ast::FdefNode> _node;
+  ast::NodePtr<ast::FdefNode> _node;
 
 public:
   /**
@@ -50,7 +51,7 @@ public:
    *
    * @param node Function definition node.
    */
-  FunctionWrapper(std::shared_ptr<ast::FdefNode> node);
+  FunctionWrapper(ast::NodePtr<ast::FdefNode> node);
 
   ~FunctionWrapper() = default;
 
@@ -63,6 +64,34 @@ public:
    */
   error::Result<double> operator()(const std::vector<double>& args,
                                    const EvalContext& ctx) const;
+};
+
+/**
+ * @brief Wrapper for ProgramImportNode.
+ *
+ */
+class TCALC_PUBLIC ImportWrapper
+{
+private:
+  ast::NodePtr<ast::ProgramImportNode> _node;
+
+public:
+  /**
+   * @brief Construct a new Import Wrapper object.
+   *
+   * @param node ProgramImportNode.
+   */
+  ImportWrapper(ast::NodePtr<ast::ProgramImportNode> node);
+
+  ~ImportWrapper() = default;
+
+  /**
+   * @brief Import the program.
+   *
+   * @param ctx Evaluation context.
+   * @return error::Result<void> Result.
+   */
+  error::Result<void> import(EvalContext& ctx) const;
 };
 
 /**

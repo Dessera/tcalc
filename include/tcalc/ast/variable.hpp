@@ -11,7 +11,6 @@
 
 #pragma once
 
-#include <memory>
 #include <string>
 #include <utility>
 
@@ -62,7 +61,7 @@ class TCALC_PUBLIC VarAssignNode : public Node
 {
 private:
   std::string _name;
-  std::shared_ptr<Node> _body;
+  NodePtr<> _body;
 
 public:
   /**
@@ -78,7 +77,7 @@ public:
    * @param name Variable name.
    * @param body Variable body.
    */
-  VarAssignNode(std::string name, std::shared_ptr<Node> body);
+  VarAssignNode(std::string name, NodePtr<> body);
 
   ~VarAssignNode() override = default;
 
@@ -99,14 +98,14 @@ public:
   /**
    * @brief Get variable body.
    *
-   * @return const std::shared_ptr<Node>& Variable body.
+   * @return const NodePtr<>& Variable body.
    */
   [[nodiscard]] constexpr auto& body() const noexcept { return _body; }
 
   /**
    * @brief Get variable body.
    *
-   * @return std::shared_ptr<Node>& Variable body.
+   * @return NodePtr<>& Variable body.
    */
   [[nodiscard]] constexpr auto& body() noexcept { return _body; }
 
@@ -115,10 +114,7 @@ public:
    *
    * @param body Variable body.
    */
-  constexpr void body(std::shared_ptr<Node> body) noexcept
-  {
-    _body = std::move(body);
-  }
+  constexpr void body(NodePtr<> body) noexcept { _body = std::move(body); }
 };
 
 }

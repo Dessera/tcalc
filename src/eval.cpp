@@ -36,6 +36,13 @@ EvalContext::func(const std::string& name) const
     error::Code::UNDEFINED_FUNC, "Undefined function: {}", name);
 }
 
+void
+EvalContext::update_with(const EvalContext& ctx)
+{
+  _vars.insert(ctx._vars.begin(), ctx._vars.end());
+  _funcs.insert(ctx._funcs.begin(), ctx._funcs.end());
+}
+
 Evaluator::Evaluator(const EvalContext& ctx)
   : _ctx{ ctx }
 {
@@ -57,6 +64,21 @@ Evaluator::eval(std::string_view input)
   auto res = unwrap_err(visitor.visit(node));
 
   _ctx.var("ans", res);
+
+  return res;
+}
+
+error::Result<std::vector<double>>
+Evaluator::eval_prog(std::string_view input)
+{
+  auto nodes = unwrap_err(_parser.parse(input));
+  auto visitor = ast::ProgramEvalVisitor{ _ctx };
+
+  auto res = unwrap_err(visitor.visit(nodes));
+
+  if (res.size() > 0) {
+    _ctx.var("ans", res.back());
+  }
 
   return res;
 }

@@ -9,9 +9,7 @@ IfNode::IfNode()
 {
 }
 
-IfNode::IfNode(std::shared_ptr<Node> cond,
-               std::shared_ptr<Node> then,
-               std::shared_ptr<Node> else_)
+IfNode::IfNode(NodePtr<> cond, NodePtr<> then, NodePtr<> else_)
   : Node{ NodeType::IF }
   , _cond{ std::move(cond) }
   , _then{ std::move(then) }

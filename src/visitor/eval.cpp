@@ -1,6 +1,7 @@
 #include <limits>
 #include <vector>
 
+#include "tcalc/ast/program.hpp"
 #include "tcalc/builtins.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/eval.hpp"
@@ -14,7 +15,7 @@ EvalVisitor::EvalVisitor(EvalContext& ctx)
 }
 
 error::Result<double>
-EvalVisitor::visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
+EvalVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 {
   auto lval = unwrap_err(visit(node->left()));
   auto rval = unwrap_err(visit(node->right()));
@@ -23,7 +24,7 @@ EvalVisitor::visit_bin_op(std::shared_ptr<BinaryOpNode>& node)
 }
 
 error::Result<double>
-EvalVisitor::visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
+EvalVisitor::visit_unary_op(NodePtr<UnaryOpNode>& node)
 {
   auto val = unwrap_err(visit(node->operand()));
 
@@ -31,19 +32,19 @@ EvalVisitor::visit_unary_op(std::shared_ptr<UnaryOpNode>& node)
 }
 
 error::Result<double>
-EvalVisitor::visit_number(std::shared_ptr<NumberNode>& node)
+EvalVisitor::visit_number(NodePtr<NumberNode>& node)
 {
   return error::ok<double>(node->value());
 }
 
 error::Result<double>
-EvalVisitor::visit_varref(std::shared_ptr<VarRefNode>& node)
+EvalVisitor::visit_varref(NodePtr<VarRefNode>& node)
 {
   return error::ok<double>(unwrap_err(_ctx->var(node->name())));
 }
 
 error::Result<double>
-EvalVisitor::visit_varassign(std::shared_ptr<VarAssignNode>& node)
+EvalVisitor::visit_varassign(NodePtr<VarAssignNode>& node)
 {
   _ctx->var(node->name(), unwrap_err(visit(node->body())));
 
@@ -51,7 +52,7 @@ EvalVisitor::visit_varassign(std::shared_ptr<VarAssignNode>& node)
 }
 
 error::Result<double>
-EvalVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
+EvalVisitor::visit_fcall(NodePtr<FcallNode>& node)
 {
   auto func = unwrap_err(_ctx->func(node->name()));
 
@@ -64,7 +65,7 @@ EvalVisitor::visit_fcall(std::shared_ptr<FcallNode>& node)
 }
 
 error::Result<double>
-EvalVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
+EvalVisitor::visit_fdef(NodePtr<FdefNode>& node)
 {
   _ctx->func(node->name(), builtins::FunctionWrapper(node));
 
@@ -72,7 +73,7 @@ EvalVisitor::visit_fdef(std::shared_ptr<FdefNode>& node)
 }
 
 error::Result<double>
-EvalVisitor::visit_if(std::shared_ptr<IfNode>& node)
+EvalVisitor::visit_if(NodePtr<IfNode>& node)
 {
   auto cond = unwrap_err(visit(node->cond()));
   if (_double_noeq_bool(cond, 0)) {
@@ -80,6 +81,15 @@ EvalVisitor::visit_if(std::shared_ptr<IfNode>& node)
   }
 
   return visit(node->else_());
+}
+
+error::Result<double>
+EvalVisitor::visit_import(NodePtr<ProgramImportNode>& node)
+{
+  auto wrapper = builtins::ImportWrapper{ node };
+  ret_err(wrapper.import(*_ctx));
+
+  return error::ok<double>(0);
 }
 
 double
@@ -110,6 +120,24 @@ double
 EvalVisitor::_double_forward(double a)
 {
   return a;
+}
+
+ProgramEvalVisitor::ProgramEvalVisitor(EvalContext& ctx)
+  : _ctx{ &ctx }
+{
+}
+
+error::Result<std::vector<double>>
+ProgramEvalVisitor::visit_program(NodePtr<ProgramNode>& node)
+{
+  std::vector<double> results{};
+
+  for (auto& stmt : node->statements()) {
+    auto visitor = EvalVisitor(*_ctx);
+    results.push_back(unwrap_err(visitor.visit(stmt)));
+  }
+
+  return error::ok<std::vector<double>>(results);
 }
 
 }

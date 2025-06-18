@@ -11,7 +11,6 @@
 
 #pragma once
 
-#include <memory>
 #include <utility>
 
 #include "tcalc/ast/node.hpp"
@@ -26,8 +25,8 @@ namespace tcalc::ast {
 class TCALC_PUBLIC BinaryOpNode : public Node
 {
 private:
-  std::shared_ptr<Node> _left;
-  std::shared_ptr<Node> _right;
+  NodePtr<> _left;
+  NodePtr<> _right;
 
 public:
   /**
@@ -44,18 +43,22 @@ public:
    * @param left Left subnode.
    * @param right Right subnode.
    */
-  BinaryOpNode(NodeType type,
-               std::shared_ptr<Node> left,
-               std::shared_ptr<Node> right);
+  BinaryOpNode(NodeType type, NodePtr<> left, NodePtr<> right);
 
   ~BinaryOpNode() override = default;
 
   /**
    * @brief Get the left subnode.
    *
-   * @return std::shared_ptr<Node> Left subnode.
+   * @return const NodePtr<> Left subnode.
    */
   [[nodiscard]] constexpr auto& left() const noexcept { return _left; }
+
+  /**
+   * @brief Get the left subnode.
+   *
+   * @return NodePtr<> Left subnode.
+   */
   [[nodiscard]] constexpr auto& left() noexcept { return _left; }
 
   /**
@@ -63,17 +66,20 @@ public:
    *
    * @param left Left subnode.
    */
-  constexpr void left(std::shared_ptr<Node> left) noexcept
-  {
-    _left = std::move(left);
-  }
+  constexpr void left(NodePtr<> left) noexcept { _left = std::move(left); }
 
   /**
    * @brief Get the right subnode.
    *
-   * @return std::shared_ptr<Node> Right subnode.
+   * @return const NodePtr<> Right subnode.
    */
   [[nodiscard]] constexpr auto& right() const noexcept { return _right; }
+
+  /**
+   * @brief Get the right subnode.
+   *
+   * @return NodePtr<> Right subnode.
+   */
   [[nodiscard]] constexpr auto& right() noexcept { return _right; }
 
   /**
@@ -81,10 +87,7 @@ public:
    *
    * @param right Right subnode.
    */
-  constexpr void right(std::shared_ptr<Node> right) noexcept
-  {
-    _right = std::move(right);
-  }
+  constexpr void right(NodePtr<> right) noexcept { _right = std::move(right); }
 };
 
 }

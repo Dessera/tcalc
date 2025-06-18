@@ -9,7 +9,7 @@ UnaryOpNode::UnaryOpNode(NodeType type)
 {
 }
 
-UnaryOpNode::UnaryOpNode(NodeType type, std::shared_ptr<Node> operand)
+UnaryOpNode::UnaryOpNode(NodeType type, NodePtr<> operand)
   : Node{ type }
   , _operand{ std::move(operand) }
 {

@@ -7,9 +7,7 @@ BinaryOpNode::BinaryOpNode(NodeType type)
 {
 }
 
-BinaryOpNode::BinaryOpNode(NodeType type,
-                           std::shared_ptr<Node> left,
-                           std::shared_ptr<Node> right)
+BinaryOpNode::BinaryOpNode(NodeType type, NodePtr<> left, NodePtr<> right)
   : Node{ type }
   , _left{ std::move(left) }
   , _right{ std::move(right) }

@@ -11,7 +11,6 @@
 
 #pragma once
 
-#include <memory>
 #include <utility>
 
 #include "tcalc/ast/node.hpp"
@@ -25,7 +24,7 @@ namespace tcalc::ast {
 class UnaryOpNode : public Node
 {
 private:
-  std::shared_ptr<Node> _operand;
+  NodePtr<> _operand;
 
 public:
   /**
@@ -41,21 +40,21 @@ public:
    * @param type Node type.
    * @param operand Operand node.
    */
-  UnaryOpNode(NodeType type, std::shared_ptr<Node> operand);
+  UnaryOpNode(NodeType type, NodePtr<> operand);
 
   ~UnaryOpNode() override = default;
 
   /**
    * @brief Get operand.
    *
-   * @return const std::shared_ptr<Node>& Operand node.
+   * @return const NodePtr<>& Operand node.
    */
   [[nodiscard]] constexpr auto& operand() const noexcept { return _operand; }
 
   /**
    * @brief Get operand.
    *
-   * @return std::shared_ptr<Node>& Operand node.
+   * @return NodePtr<>& Operand node.
    */
   [[nodiscard]] constexpr auto& operand() noexcept { return _operand; }
 
@@ -64,7 +63,7 @@ public:
    *
    * @param operand Operand node.
    */
-  constexpr void operand(std::shared_ptr<Node> operand) noexcept
+  constexpr void operand(NodePtr<> operand) noexcept
   {
     _operand = std::move(operand);
   }

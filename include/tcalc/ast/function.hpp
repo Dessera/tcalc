@@ -11,7 +11,6 @@
 
 #pragma once
 
-#include <memory>
 #include <string>
 #include <utility>
 #include <vector>
@@ -29,7 +28,7 @@ class TCALC_PUBLIC FcallNode : public Node
 {
 private:
   std::string _name;
-  std::vector<std::shared_ptr<Node>> _args;
+  std::vector<NodePtr<>> _args;
 
 public:
   /**
@@ -45,21 +44,21 @@ public:
    * @param name Function name.
    * @param args Function arguments.
    */
-  FcallNode(std::string name, std::vector<std::shared_ptr<Node>> args);
+  FcallNode(std::string name, std::vector<NodePtr<>> args);
 
   ~FcallNode() override = default;
 
   /**
    * @brief Get function arguments.
    *
-   * @return const std::vector<std::shared_ptr<Node>>& Function arguments.
+   * @return const std::vector<NodePtr<>>& Function arguments.
    */
   [[nodiscard]] constexpr auto& args() const noexcept { return _args; }
 
   /**
    * @brief Get function arguments.
    *
-   * @return std::vector<std::shared_ptr<Node>>& Function arguments.
+   * @return std::vector<NodePtr<>>& Function arguments.
    */
   [[nodiscard]] constexpr auto& args() noexcept { return _args; }
 
@@ -68,10 +67,7 @@ public:
    *
    * @param arg Argument to push.
    */
-  constexpr void push_arg(const std::shared_ptr<Node>& arg)
-  {
-    _args.push_back(arg);
-  }
+  constexpr void push_arg(const NodePtr<>& arg) { _args.push_back(arg); }
 
   /**
    * @brief Get function name.
@@ -97,7 +93,7 @@ class TCALC_PUBLIC FdefNode : public Node
 private:
   std::string _name;
   std::vector<std::string> _args;
-  std::shared_ptr<Node> _body;
+  NodePtr<> _body;
 
 public:
   /**
@@ -114,9 +110,7 @@ public:
    * @param args Function arguments.
    * @param body Function body.
    */
-  FdefNode(std::string name,
-           std::vector<std::string> args,
-           std::shared_ptr<Node> body);
+  FdefNode(std::string name, std::vector<std::string> args, NodePtr<> body);
 
   ~FdefNode() override = default;
 
@@ -144,14 +138,14 @@ public:
   /**
    * @brief Get function body.
    *
-   * @return const std::shared_ptr<Node>& Function body.
+   * @return const NodePtr<>& Function body.
    */
   [[nodiscard]] constexpr auto& body() const noexcept { return _body; }
 
   /**
    * @brief Get function body.
    *
-   * @return std::shared_ptr<Node>& Function body.
+   * @return NodePtr<>& Function body.
    */
   [[nodiscard]] constexpr auto& body() noexcept { return _body; }
 
@@ -160,7 +154,7 @@ public:
    *
    * @param body Function body.
    */
-  constexpr void body(std::shared_ptr<Node> body) { _body = std::move(body); }
+  constexpr void body(NodePtr<> body) { _body = std::move(body); }
 
   /**
    * @brief Get function name.
