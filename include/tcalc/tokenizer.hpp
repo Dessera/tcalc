@@ -11,9 +11,10 @@
 
 #pragma once
 
+#include <functional>
+#include <map>
 #include <string>
 #include <string_view>
-#include <unordered_map>
 
 #include "tcalc/common.hpp"
 #include "tcalc/error.hpp"
@@ -28,20 +29,24 @@ namespace tcalc::token {
 class TCALC_PUBLIC Tokenizer
 {
 public:
-  inline static const std::unordered_map<std::string, TokenType> KEYWORDS = {
-    { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
-    { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
-    { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
-    { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
-    { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
-    { "<", TokenType::LESS },          { "!", TokenType::NOT },
-    { "def", TokenType::DEF },         { "let", TokenType::LET },
-    { "if", TokenType::IF },           { "then", TokenType::THEN },
-    { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
-    { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
-    { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
-    { "&&", TokenType::AND },          { "||", TokenType::OR },
-  }; /**< Tcalc keywords. */
+  using KeywordComparator =
+    std::greater<std::string_view>; /**< Comparator for keywords. */
+
+  inline static const std::map<std::string_view, TokenType, KeywordComparator>
+    KEYWORDS = {
+      { "def", TokenType::DEF },         { "let", TokenType::LET },
+      { "if", TokenType::IF },           { "then", TokenType::THEN },
+      { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
+      { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
+      { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
+      { "&&", TokenType::AND },          { "||", TokenType::OR },
+      { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
+      { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
+      { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
+      { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
+      { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
+      { "<", TokenType::LESS },          { "!", TokenType::NOT },
+    }; /**< Tcalc keywords, must be ordered by length. */
 
   constexpr static char QUOTE = '\''; /**< The quote character. */
 

@@ -32,7 +32,7 @@ Tokenizer::next()
   for (const auto& [key, value] : KEYWORDS) {
     if (_is_keyword(key)) {
       _pos += key.size();
-      return Token{ .type = value, .text = key };
+      return Token{ .type = value, .text = std::string{ key } };
     }
   }
 
