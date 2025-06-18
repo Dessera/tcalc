@@ -107,10 +107,11 @@ $(document).ready(function(){initNavTree('builtins_8hpp.html',''); initResizable
 <p>Built-in functions and variables.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="function_8hpp_source.html">tcalc/ast/function.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="node_8hpp_source.html">tcalc/ast/node.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="program_8hpp_source.html">tcalc/ast/program.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="error_8hpp_source.html">tcalc/error.hpp</a>&quot;</code><br />
 </div>
@@ -120,6 +121,9 @@ $(document).ready(function(){initNavTree('builtins_8hpp.html',''); initResizable
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1builtins_1_1FunctionWrapper.html">tcalc::builtins::FunctionWrapper</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for User-defined functions.  <a href="classtcalc_1_1builtins_1_1FunctionWrapper.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1builtins_1_1ImportWrapper.html">tcalc::builtins::ImportWrapper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for ProgramImportNode.  <a href="classtcalc_1_1builtins_1_1ImportWrapper.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -284,8 +288,8 @@ Variables</h2></td></tr>
 <div class="line">  { <span class="stringliteral">&quot;pow&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">pow</a> },</div>
 <div class="line">  { <span class="stringliteral">&quot;log&quot;</span>, log },</div>
 <div class="line">}</div>
-<div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:46</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:58</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:74</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:86</div></div>
 </div><!-- fragment --><p>Built-in functions. </p>
 
 </div>

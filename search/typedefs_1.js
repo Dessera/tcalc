@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noderesult_0',['NodeResult',['../parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a',1,'tcalc::ast']]]
+  ['nodeptr_0',['NodePtr',['../node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3',1,'tcalc::ast']]]
 ];

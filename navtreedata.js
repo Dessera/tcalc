@@ -29,13 +29,14 @@ var NAVTREE =
       [ "Variable Assignment", "md_docs_2SYNTAX.html#autotoc_md1", null ],
       [ "Function Declaration", "md_docs_2SYNTAX.html#autotoc_md2", null ],
       [ "Function Call", "md_docs_2SYNTAX.html#autotoc_md3", null ],
-      [ "Control Flow", "md_docs_2SYNTAX.html#autotoc_md4", [
-        [ "If", "md_docs_2SYNTAX.html#autotoc_md5", null ]
+      [ "Import", "md_docs_2SYNTAX.html#autotoc_md4", null ],
+      [ "Control Flow", "md_docs_2SYNTAX.html#autotoc_md5", [
+        [ "If", "md_docs_2SYNTAX.html#autotoc_md6", null ]
       ] ],
-      [ "Operator", "md_docs_2SYNTAX.html#autotoc_md6", [
-        [ "Arithmetic", "md_docs_2SYNTAX.html#autotoc_md7", null ],
-        [ "Comparison", "md_docs_2SYNTAX.html#autotoc_md8", null ],
-        [ "Unary", "md_docs_2SYNTAX.html#autotoc_md9", null ]
+      [ "Operator", "md_docs_2SYNTAX.html#autotoc_md7", [
+        [ "Arithmetic", "md_docs_2SYNTAX.html#autotoc_md8", null ],
+        [ "Comparison", "md_docs_2SYNTAX.html#autotoc_md9", null ],
+        [ "Unary", "md_docs_2SYNTAX.html#autotoc_md10", null ]
       ] ]
     ] ],
     [ "README", "md_README.html", null ],
@@ -58,7 +59,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"token_8hpp.html#a5f01aa5ee93ef3d2462eae887575ec42ada02466f9a4224e477bd63afbcf573c5"
+"node_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

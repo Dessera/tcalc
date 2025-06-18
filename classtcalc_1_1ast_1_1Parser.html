@@ -109,45 +109,51 @@ $(document).ready(function(){initNavTree('classtcalc_1_1ast_1_1Parser.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e2f6667796f10ca9c68c39f8c937a4b" id="r_a9e2f6667796f10ca9c68c39f8c937a4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a9e2f6667796f10ca9c68c39f8c937a4b">parse</a> (std::string_view input)</td></tr>
-<tr class="memdesc:a9e2f6667796f10ca9c68c39f8c937a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the input string.  <br /></td></tr>
-<tr class="separator:a9e2f6667796f10ca9c68c39f8c937a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02c8b36795fbe3bedacad03bf6941ee5" id="r_a02c8b36795fbe3bedacad03bf6941ee5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a02c8b36795fbe3bedacad03bf6941ee5">next_program</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:a02c8b36795fbe3bedacad03bf6941ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next program node.  <br /></td></tr>
-<tr class="separator:a02c8b36795fbe3bedacad03bf6941ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa4a3459e03900594964cd950a0321cd" id="r_aaa4a3459e03900594964cd950a0321cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#aaa4a3459e03900594964cd950a0321cd">next_expr</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:aaa4a3459e03900594964cd950a0321cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next expression node.  <br /></td></tr>
-<tr class="separator:aaa4a3459e03900594964cd950a0321cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af17d36fdc8c0e04eae9614e1c57c3994" id="r_af17d36fdc8c0e04eae9614e1c57c3994"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#af17d36fdc8c0e04eae9614e1c57c3994">next_prio_term</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx, std::size_t prio)</td></tr>
-<tr class="memdesc:af17d36fdc8c0e04eae9614e1c57c3994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next term node with the given priority.  <br /></td></tr>
-<tr class="separator:af17d36fdc8c0e04eae9614e1c57c3994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03b5d01cf3d4df6ca2e3469179e1900" id="r_aa03b5d01cf3d4df6ca2e3469179e1900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#aa03b5d01cf3d4df6ca2e3469179e1900">next_if</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:aa03b5d01cf3d4df6ca2e3469179e1900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next if node.  <br /></td></tr>
-<tr class="separator:aa03b5d01cf3d4df6ca2e3469179e1900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a81cfc355a6d0f94b94d87689efb118" id="r_a6a81cfc355a6d0f94b94d87689efb118"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a6a81cfc355a6d0f94b94d87689efb118">next_assign</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:a6a81cfc355a6d0f94b94d87689efb118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next assignment node.  <br /></td></tr>
-<tr class="separator:a6a81cfc355a6d0f94b94d87689efb118"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bdd03f882dbd2d1ee95b84c432f5076" id="r_a9bdd03f882dbd2d1ee95b84c432f5076"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a9bdd03f882dbd2d1ee95b84c432f5076">next_factor</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:a9bdd03f882dbd2d1ee95b84c432f5076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next factor node.  <br /></td></tr>
-<tr class="separator:a9bdd03f882dbd2d1ee95b84c432f5076"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5a93be6ef6fd6e7f81f2e8952d290a5" id="r_af5a93be6ef6fd6e7f81f2e8952d290a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#af5a93be6ef6fd6e7f81f2e8952d290a5">next_idref</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:af5a93be6ef6fd6e7f81f2e8952d290a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next identifier reference node (function or variable).  <br /></td></tr>
-<tr class="separator:af5a93be6ef6fd6e7f81f2e8952d290a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b078b6a1a7f610187ce4bb9f24d6358" id="r_a0b078b6a1a7f610187ce4bb9f24d6358"><td class="memItemLeft" align="right" valign="top"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a0b078b6a1a7f610187ce4bb9f24d6358">next_fdef</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:a0b078b6a1a7f610187ce4bb9f24d6358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next function definition node.  <br /></td></tr>
-<tr class="separator:a0b078b6a1a7f610187ce4bb9f24d6358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b81695454e6a78f263569ea0371f4d" id="r_a73b81695454e6a78f263569ea0371f4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a73b81695454e6a78f263569ea0371f4d">parse</a> (std::string_view input)</td></tr>
+<tr class="memdesc:a73b81695454e6a78f263569ea0371f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the input string.  <br /></td></tr>
+<tr class="separator:a73b81695454e6a78f263569ea0371f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80fb32855d5b072943c0057e0729bf05" id="r_a80fb32855d5b072943c0057e0729bf05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a80fb32855d5b072943c0057e0729bf05">next_program</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a80fb32855d5b072943c0057e0729bf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next program node.  <br /></td></tr>
+<tr class="separator:a80fb32855d5b072943c0057e0729bf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6107f18f356c4ca1085be22a1d0536d" id="r_ae6107f18f356c4ca1085be22a1d0536d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#ae6107f18f356c4ca1085be22a1d0536d">next_statement</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:ae6107f18f356c4ca1085be22a1d0536d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next statement node.  <br /></td></tr>
+<tr class="separator:ae6107f18f356c4ca1085be22a1d0536d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa97f8fe5e2c274b9bdc68e475418884" id="r_aaa97f8fe5e2c274b9bdc68e475418884"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#aaa97f8fe5e2c274b9bdc68e475418884">next_expr</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:aaa97f8fe5e2c274b9bdc68e475418884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next expression node.  <br /></td></tr>
+<tr class="separator:aaa97f8fe5e2c274b9bdc68e475418884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938385e915a657710d96403423b3634a" id="r_a938385e915a657710d96403423b3634a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a938385e915a657710d96403423b3634a">next_prio_term</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx, std::size_t prio)</td></tr>
+<tr class="memdesc:a938385e915a657710d96403423b3634a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next term node with the given priority.  <br /></td></tr>
+<tr class="separator:a938385e915a657710d96403423b3634a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b00cd47e064f21d40ea7a00bcc344e1" id="r_a3b00cd47e064f21d40ea7a00bcc344e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a3b00cd47e064f21d40ea7a00bcc344e1">next_if</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a3b00cd47e064f21d40ea7a00bcc344e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next if node.  <br /></td></tr>
+<tr class="separator:a3b00cd47e064f21d40ea7a00bcc344e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc79d42dd1ebcc374a84193b3df10811" id="r_adc79d42dd1ebcc374a84193b3df10811"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#adc79d42dd1ebcc374a84193b3df10811">next_assign</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:adc79d42dd1ebcc374a84193b3df10811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next assignment node.  <br /></td></tr>
+<tr class="separator:adc79d42dd1ebcc374a84193b3df10811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a488944e1ea2189d0c394a722303e3" id="r_ab9a488944e1ea2189d0c394a722303e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#ab9a488944e1ea2189d0c394a722303e3">next_factor</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:ab9a488944e1ea2189d0c394a722303e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next factor node.  <br /></td></tr>
+<tr class="separator:ab9a488944e1ea2189d0c394a722303e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e98bed688a368436e5a2eb33b5c1e5b" id="r_a3e98bed688a368436e5a2eb33b5c1e5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a3e98bed688a368436e5a2eb33b5c1e5b">next_idref</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a3e98bed688a368436e5a2eb33b5c1e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next identifier reference node (function or variable).  <br /></td></tr>
+<tr class="separator:a3e98bed688a368436e5a2eb33b5c1e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e940c93ba4ec7613616c9f4d00de763" id="r_a2e940c93ba4ec7613616c9f4d00de763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#a2e940c93ba4ec7613616c9f4d00de763">next_fdef</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a2e940c93ba4ec7613616c9f4d00de763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next function definition node.  <br /></td></tr>
+<tr class="separator:a2e940c93ba4ec7613616c9f4d00de763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f98546f963804814444557af62dabc" id="r_ab0f98546f963804814444557af62dabc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html#ab0f98546f963804814444557af62dabc">next_import</a> (<a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:ab0f98546f963804814444557af62dabc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next import node.  <br /></td></tr>
+<tr class="separator:ab0f98546f963804814444557af62dabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>AST parser. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6a81cfc355a6d0f94b94d87689efb118" name="a6a81cfc355a6d0f94b94d87689efb118"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a81cfc355a6d0f94b94d87689efb118">&#9670;&#160;</a></span>next_assign()</h2>
+<a id="adc79d42dd1ebcc374a84193b3df10811" name="adc79d42dd1ebcc374a84193b3df10811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc79d42dd1ebcc374a84193b3df10811">&#9670;&#160;</a></span>next_assign()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_assign </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_assign </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -163,18 +169,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The assignment node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The assignment node result. </dd></dl>
 
 </div>
 </div>
-<a id="aaa4a3459e03900594964cd950a0321cd" name="aaa4a3459e03900594964cd950a0321cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa4a3459e03900594964cd950a0321cd">&#9670;&#160;</a></span>next_expr()</h2>
+<a id="aaa97f8fe5e2c274b9bdc68e475418884" name="aaa97f8fe5e2c274b9bdc68e475418884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa97f8fe5e2c274b9bdc68e475418884">&#9670;&#160;</a></span>next_expr()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_expr </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_expr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -190,18 +196,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The expression node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The expression node result. </dd></dl>
 
 </div>
 </div>
-<a id="a9bdd03f882dbd2d1ee95b84c432f5076" name="a9bdd03f882dbd2d1ee95b84c432f5076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bdd03f882dbd2d1ee95b84c432f5076">&#9670;&#160;</a></span>next_factor()</h2>
+<a id="ab9a488944e1ea2189d0c394a722303e3" name="ab9a488944e1ea2189d0c394a722303e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a488944e1ea2189d0c394a722303e3">&#9670;&#160;</a></span>next_factor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_factor </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_factor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -217,18 +223,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The factor node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The factor node result. </dd></dl>
 
 </div>
 </div>
-<a id="a0b078b6a1a7f610187ce4bb9f24d6358" name="a0b078b6a1a7f610187ce4bb9f24d6358"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b078b6a1a7f610187ce4bb9f24d6358">&#9670;&#160;</a></span>next_fdef()</h2>
+<a id="a2e940c93ba4ec7613616c9f4d00de763" name="a2e940c93ba4ec7613616c9f4d00de763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e940c93ba4ec7613616c9f4d00de763">&#9670;&#160;</a></span>next_fdef()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_fdef </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_fdef </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -244,18 +250,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The function definition node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The function definition node result. </dd></dl>
 
 </div>
 </div>
-<a id="af5a93be6ef6fd6e7f81f2e8952d290a5" name="af5a93be6ef6fd6e7f81f2e8952d290a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5a93be6ef6fd6e7f81f2e8952d290a5">&#9670;&#160;</a></span>next_idref()</h2>
+<a id="a3e98bed688a368436e5a2eb33b5c1e5b" name="a3e98bed688a368436e5a2eb33b5c1e5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e98bed688a368436e5a2eb33b5c1e5b">&#9670;&#160;</a></span>next_idref()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_idref </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_idref </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -271,18 +277,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The identifier reference node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The identifier reference node result. </dd></dl>
 
 </div>
 </div>
-<a id="aa03b5d01cf3d4df6ca2e3469179e1900" name="aa03b5d01cf3d4df6ca2e3469179e1900"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa03b5d01cf3d4df6ca2e3469179e1900">&#9670;&#160;</a></span>next_if()</h2>
+<a id="a3b00cd47e064f21d40ea7a00bcc344e1" name="a3b00cd47e064f21d40ea7a00bcc344e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b00cd47e064f21d40ea7a00bcc344e1">&#9670;&#160;</a></span>next_if()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_if </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_if </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -298,18 +304,45 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The if node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The if node result. </dd></dl>
 
 </div>
 </div>
-<a id="af17d36fdc8c0e04eae9614e1c57c3994" name="af17d36fdc8c0e04eae9614e1c57c3994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af17d36fdc8c0e04eae9614e1c57c3994">&#9670;&#160;</a></span>next_prio_term()</h2>
+<a id="ab0f98546f963804814444557af62dabc" name="ab0f98546f963804814444557af62dabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f98546f963804814444557af62dabc">&#9670;&#160;</a></span>next_import()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_prio_term </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_import </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the next import node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The parser context. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The import node result. </dd></dl>
+
+</div>
+</div>
+<a id="a938385e915a657710d96403423b3634a" name="a938385e915a657710d96403423b3634a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938385e915a657710d96403423b3634a">&#9670;&#160;</a></span>next_prio_term()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_prio_term </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em>, </td>
@@ -336,18 +369,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The term node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The term node result. </dd></dl>
 
 </div>
 </div>
-<a id="a02c8b36795fbe3bedacad03bf6941ee5" name="a02c8b36795fbe3bedacad03bf6941ee5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02c8b36795fbe3bedacad03bf6941ee5">&#9670;&#160;</a></span>next_program()</h2>
+<a id="a80fb32855d5b072943c0057e0729bf05" name="a80fb32855d5b072943c0057e0729bf05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fb32855d5b072943c0057e0729bf05">&#9670;&#160;</a></span>next_program()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::next_program </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_program </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -363,18 +396,45 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The program node result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The program node result. </dd></dl>
 
 </div>
 </div>
-<a id="a9e2f6667796f10ca9c68c39f8c937a4b" name="a9e2f6667796f10ca9c68c39f8c937a4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e2f6667796f10ca9c68c39f8c937a4b">&#9670;&#160;</a></span>parse()</h2>
+<a id="ae6107f18f356c4ca1085be22a1d0536d" name="ae6107f18f356c4ca1085be22a1d0536d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6107f18f356c4ca1085be22a1d0536d">&#9670;&#160;</a></span>next_statement()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">NodeResult</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1Node.html">Node</a> &gt; tcalc::ast::Parser::parse </td>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::next_statement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtcalc_1_1ast_1_1ParserContext.html">ParserContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the next statement node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>The parser context. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The statement node result. </dd></dl>
+
+</div>
+</div>
+<a id="a73b81695454e6a78f263569ea0371f4d" name="a73b81695454e6a78f263569ea0371f4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b81695454e6a78f263569ea0371f4d">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &gt; tcalc::ast::Parser::parse </td>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
@@ -390,7 +450,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NodeResult&lt;Node&gt; The root node of the AST. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;NodePtr&lt;&gt;&gt;</a> The root node of the AST. </dd></dl>
 
 </div>
 </div>

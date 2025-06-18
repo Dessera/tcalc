@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unaryop_5fmap_0',['UNARYOP_MAP',['../classtcalc_1_1ast_1_1EvalVisitor.html#a83a27feedf72da552c7b34656c9653ba',1,'tcalc::ast::EvalVisitor']]],
-  ['unaryop_5fpriority_1',['UNARYOP_PRIORITY',['../priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e',1,'tcalc::ast']]]
+  ['quote_0',['QUOTE',['../classtcalc_1_1token_1_1Tokenizer.html#a9ca231b069ebddaf99c82be03e274565',1,'tcalc::token::Tokenizer']]]
 ];

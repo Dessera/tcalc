@@ -1,6 +1,7 @@
 var node_8hpp =
 [
     [ "tcalc::ast::Node", "classtcalc_1_1ast_1_1Node.html", "classtcalc_1_1ast_1_1Node" ],
+    [ "NodePtr", "node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3", null ],
     [ "NodeType", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc", [
       [ "BINARY_PLUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca50e6d47e3a606d31b3bb4792afdd1560", null ],
       [ "BINARY_MINUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa9023c7f015d5ba70a0a4db6c664734d", null ],
@@ -19,6 +20,8 @@ var node_8hpp =
       [ "VARASSIGN", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca6d613bd3ca767a2a6fa90fd92d419a0b", null ],
       [ "FCALL", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615", null ],
       [ "FDEF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99", null ],
-      [ "IF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcade6ee2b5d856295add4d5e3631fbfb93", null ]
+      [ "IF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcade6ee2b5d856295add4d5e3631fbfb93", null ],
+      [ "PROGRAM", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31", null ],
+      [ "IMPORT", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919", null ]
     ] ]
 ];

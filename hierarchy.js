@@ -4,6 +4,9 @@ var hierarchy =
     [ "tcalc::ast::BaseVisitor< double >", "classtcalc_1_1ast_1_1BaseVisitor.html", [
       [ "tcalc::ast::EvalVisitor", "classtcalc_1_1ast_1_1EvalVisitor.html", null ]
     ] ],
+    [ "tcalc::ast::BaseVisitor< std::vector< double > >", "classtcalc_1_1ast_1_1BaseVisitor.html", [
+      [ "tcalc::ast::ProgramEvalVisitor", "classtcalc_1_1ast_1_1ProgramEvalVisitor.html", null ]
+    ] ],
     [ "tcalc::ast::BaseVisitor< void >", "classtcalc_1_1ast_1_1BaseVisitor.html", [
       [ "tcalc::ast::PrintVisitor", "classtcalc_1_1ast_1_1PrintVisitor.html", null ]
     ] ],
@@ -14,12 +17,15 @@ var hierarchy =
     ] ],
     [ "std::formatter< tcalc::token::Token, CharT >", "structstd_1_1formatter_3_01tcalc_1_1token_1_1Token_00_01CharT_01_4.html", null ],
     [ "tcalc::builtins::FunctionWrapper", "classtcalc_1_1builtins_1_1FunctionWrapper.html", null ],
+    [ "tcalc::builtins::ImportWrapper", "classtcalc_1_1builtins_1_1ImportWrapper.html", null ],
     [ "tcalc::ast::Node", "classtcalc_1_1ast_1_1Node.html", [
       [ "tcalc::ast::BinaryOpNode", "classtcalc_1_1ast_1_1BinaryOpNode.html", null ],
       [ "tcalc::ast::FcallNode", "classtcalc_1_1ast_1_1FcallNode.html", null ],
       [ "tcalc::ast::FdefNode", "classtcalc_1_1ast_1_1FdefNode.html", null ],
       [ "tcalc::ast::IfNode", "classtcalc_1_1ast_1_1IfNode.html", null ],
       [ "tcalc::ast::NumberNode", "classtcalc_1_1ast_1_1NumberNode.html", null ],
+      [ "tcalc::ast::ProgramImportNode", "classtcalc_1_1ast_1_1ProgramImportNode.html", null ],
+      [ "tcalc::ast::ProgramNode", "classtcalc_1_1ast_1_1ProgramNode.html", null ],
       [ "tcalc::ast::UnaryOpNode", "classtcalc_1_1ast_1_1UnaryOpNode.html", null ],
       [ "tcalc::ast::VarAssignNode", "classtcalc_1_1ast_1_1VarAssignNode.html", null ],
       [ "tcalc::ast::VarRefNode", "classtcalc_1_1ast_1_1VarRefNode.html", null ]

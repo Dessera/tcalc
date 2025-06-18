@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('node_8hpp.html',''); initResizable(); 
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">node.hpp File Reference</div></div>
 </div><!--header-->
@@ -106,6 +107,7 @@ $(document).ready(function(){initNavTree('node_8hpp.html',''); initResizable(); 
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 </div>
 <p><a href="node_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -115,6 +117,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for AST nodes.  <a href="classtcalc_1_1ast_1_1Node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0d7f8261033c3234d8eb74efc10f5ca3" id="r_a0d7f8261033c3234d8eb74efc10f5ca3"><td class="memTemplParams" colspan="2">template&lt;typename NT  = Node&gt; </td></tr>
+<tr class="memitem:a0d7f8261033c3234d8eb74efc10f5ca3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">tcalc::ast::NodePtr</a> = std::shared_ptr&lt; NT &gt;</td></tr>
+<tr class="memdesc:a0d7f8261033c3234d8eb74efc10f5ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a node.  <br /></td></tr>
+<tr class="separator:a0d7f8261033c3234d8eb74efc10f5ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -141,6 +150,8 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99">FDEF</a>
 , <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcade6ee2b5d856295add4d5e3631fbfb93">IF</a>
+, <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31">PROGRAM</a>
+, <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919">IMPORT</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ae1437712c0ca34c0a70c4226cfafcddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">AST node type.  <a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">More...</a><br /></td></tr>
@@ -152,7 +163,32 @@ Enumerations</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-06-15</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Dessera </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0d7f8261033c3234d8eb74efc10f5ca3" name="a0d7f8261033c3234d8eb74efc10f5ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7f8261033c3234d8eb74efc10f5ca3">&#9670;&#160;</a></span>NodePtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename NT  = Node&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">tcalc::ast::NodePtr</a> = typedef std::shared_ptr&lt;NT&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shared pointer to a node. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">NT</td><td>Node type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ae1437712c0ca34c0a70c4226cfafcddc" name="ae1437712c0ca34c0a70c4226cfafcddc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1437712c0ca34c0a70c4226cfafcddc">&#9670;&#160;</a></span>NodeType</h2>
 
@@ -210,6 +246,10 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99" name="ae1437712c0ca34c0a70c4226cfafcddca7204c18097c1b85900fc487c61b9cc99"></a>FDEF&#160;</td><td class="fielddoc"><p>Function definition. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddcade6ee2b5d856295add4d5e3631fbfb93" name="ae1437712c0ca34c0a70c4226cfafcddcade6ee2b5d856295add4d5e3631fbfb93"></a>IF&#160;</td><td class="fielddoc"><p>If statement. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31" name="ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31"></a>PROGRAM&#160;</td><td class="fielddoc"><p>Program. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919" name="ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919"></a>IMPORT&#160;</td><td class="fielddoc"><p>Import statement. </p>
 </td></tr>
 </table>
 

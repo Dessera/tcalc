@@ -96,8 +96,7 @@ $(document).ready(function(){initNavTree('parser_8hpp.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">parser.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -105,7 +104,6 @@ $(document).ready(function(){initNavTree('parser_8hpp.html',''); initResizable()
 <p>AST parser.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
 <code>#include &quot;<a class="el" href="node_8hpp_source.html">tcalc/ast/node.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
@@ -123,13 +121,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1Parser.html">tcalc::ast::Parser</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">AST parser.  <a href="classtcalc_1_1ast_1_1Parser.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:aa8130062ef970e832e8a23684fa59c2a" id="r_aa8130062ef970e832e8a23684fa59c2a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa8130062ef970e832e8a23684fa59c2a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">tcalc::ast::NodeResult</a> = <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; std::shared_ptr&lt; T &gt; &gt;</td></tr>
-<tr class="memdesc:aa8130062ef970e832e8a23684fa59c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result wrapper for AST nodes.  <br /></td></tr>
-<tr class="separator:aa8130062ef970e832e8a23684fa59c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>AST parser. </p>
@@ -137,32 +128,7 @@ Typedefs</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-06-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Dessera </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="aa8130062ef970e832e8a23684fa59c2a" name="aa8130062ef970e832e8a23684fa59c2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8130062ef970e832e8a23684fa59c2a">&#9670;&#160;</a></span>NodeResult</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="parser_8hpp.html#aa8130062ef970e832e8a23684fa59c2a">tcalc::ast::NodeResult</a> = typedef error::Result&lt;std::shared_ptr&lt;T&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Result wrapper for AST nodes. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>Node type. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

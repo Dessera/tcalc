@@ -8,7 +8,8 @@ var error_8hpp =
       [ "UNDEFINED_FUNC", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2ae0e746b6576822f2169ce25400d7986b", null ],
       [ "MISMATCHED_ARGS", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2af275d01a147c94ab151fce3ddddd89ad", null ],
       [ "ZERO_DIVISION", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2a705754baee4269a87f23fa32b7ed0e95", null ],
-      [ "RECURSION_LIMIT", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2a31ab2cf82154702877dd87cc7a49b610", null ]
+      [ "RECURSION_LIMIT", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2a31ab2cf82154702877dd87cc7a49b610", null ],
+      [ "FILE_NOT_FOUND", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2acd54d99c8efb3c2db794197045f5b83c", null ]
     ] ],
     [ "err", "error_8hpp.html#a59bd6bf2d198c2fca9b915d1eb3e26ea", null ],
     [ "err", "error_8hpp.html#afd178be891a24c841a34ad40c8863e12", null ],
