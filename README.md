@@ -98,8 +98,8 @@ For APIs, read the [docs](https://dessera.github.io/tcalc) for more information.
 
 - [ ] More built-in functions
 - [ ] GUI application
-- [ ] `import` statements
-- [ ] Logic operations
+- [x] `import` statements
+- [x] Logic operations
 - [x] User-defined functions (don't support recursion because no control flow statements)
 - [x] Variables (only support double numbers)
 - [x] Operator priority
