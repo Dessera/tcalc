@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prioritytable_0',['PriorityTable',['../priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03',1,'tcalc::ast']]]
+  ['nodeptr_0',['NodePtr',['../node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3',1,'tcalc::ast']]]
 ];

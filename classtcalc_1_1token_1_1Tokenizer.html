@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('classtcalc_1_1token_1_1Tokenizer.html'
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classtcalc_1_1token_1_1Tokenizer-members.html">List of all members</a>  </div>
@@ -108,6 +109,11 @@ $(document).ready(function(){initNavTree('classtcalc_1_1token_1_1Tokenizer.html'
 
 <p><code>#include &lt;<a class="el" href="tokenizer_8hpp_source.html">tokenizer.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a364a13c8994fd6cf3159328a05c1ddb1" id="r_a364a13c8994fd6cf3159328a05c1ddb1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">KeywordComparator</a> = std::greater&lt; std::string_view &gt;</td></tr>
+<tr class="separator:a364a13c8994fd6cf3159328a05c1ddb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac296bbcbb6f53f88ff9f0970c5cdae14" id="r_ac296bbcbb6f53f88ff9f0970c5cdae14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14">Tokenizer</a> (std::string_view input)</td></tr>
@@ -125,14 +131,30 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a6cb643582622c93f5815701ae5755b24" id="r_a6cb643582622c93f5815701ae5755b24"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; std::string, <a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a6cb643582622c93f5815701ae5755b24">KEYWORDS</a></td></tr>
-<tr class="separator:a6cb643582622c93f5815701ae5755b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3294ab3fe22292228cdcc36d29779140" id="r_a3294ab3fe22292228cdcc36d29779140"><td class="memItemLeft" align="right" valign="top">static const std::map&lt; std::string_view, <a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a>, <a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">KeywordComparator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a3294ab3fe22292228cdcc36d29779140">KEYWORDS</a></td></tr>
+<tr class="separator:a3294ab3fe22292228cdcc36d29779140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ca231b069ebddaf99c82be03e274565" id="r_a9ca231b069ebddaf99c82be03e274565"><td class="memItemLeft" align="right" valign="top">static constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a9ca231b069ebddaf99c82be03e274565">QUOTE</a> = '\''</td></tr>
 <tr class="separator:a9ca231b069ebddaf99c82be03e274565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tokenize the input string into tokens. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a364a13c8994fd6cf3159328a05c1ddb1" name="a364a13c8994fd6cf3159328a05c1ddb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364a13c8994fd6cf3159328a05c1ddb1">&#9670;&#160;</a></span>KeywordComparator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">tcalc::token::Tokenizer::KeywordComparator</a> =  std::greater&lt;std::string_view&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Comparator for keywords. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac296bbcbb6f53f88ff9f0970c5cdae14" name="ac296bbcbb6f53f88ff9f0970c5cdae14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac296bbcbb6f53f88ff9f0970c5cdae14">&#9670;&#160;</a></span>Tokenizer()</h2>
 
@@ -245,8 +267,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6cb643582622c93f5815701ae5755b24" name="a6cb643582622c93f5815701ae5755b24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb643582622c93f5815701ae5755b24">&#9670;&#160;</a></span>KEYWORDS</h2>
+<a id="a3294ab3fe22292228cdcc36d29779140" name="a3294ab3fe22292228cdcc36d29779140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3294ab3fe22292228cdcc36d29779140">&#9670;&#160;</a></span>KEYWORDS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +277,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::unordered_map&lt;std::string, <a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a>&gt; tcalc::token::Tokenizer::KEYWORDS</td>
+          <td class="memname">const std::map&lt;std::string_view, <a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a>, <a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">KeywordComparator</a>&gt; tcalc::token::Tokenizer::KEYWORDS</td>
         </tr>
       </table>
   </td>
@@ -265,20 +287,20 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    { <span class="stringliteral">&quot;+&quot;</span>, TokenType::PLUS },          { <span class="stringliteral">&quot;-&quot;</span>, TokenType::MINUS },</div>
-<div class="line">    { <span class="stringliteral">&quot;*&quot;</span>, TokenType::MULTIPLY },      { <span class="stringliteral">&quot;/&quot;</span>, TokenType::DIVIDE },</div>
-<div class="line">    { <span class="stringliteral">&quot;(&quot;</span>, TokenType::LPAREN },        { <span class="stringliteral">&quot;)&quot;</span>, TokenType::RPAREN },</div>
-<div class="line">    { <span class="stringliteral">&quot;,&quot;</span>, TokenType::COMMA },         { <span class="stringliteral">&quot;;&quot;</span>, TokenType::SEMICOLON },</div>
-<div class="line">    { <span class="stringliteral">&quot;=&quot;</span>, TokenType::ASSIGN },        { <span class="stringliteral">&quot;&gt;&quot;</span>, TokenType::GREATER },</div>
-<div class="line">    { <span class="stringliteral">&quot;&lt;&quot;</span>, TokenType::LESS },          { <span class="stringliteral">&quot;!&quot;</span>, TokenType::NOT },</div>
-<div class="line">    { <span class="stringliteral">&quot;def&quot;</span>, TokenType::DEF },         { <span class="stringliteral">&quot;let&quot;</span>, TokenType::LET },</div>
-<div class="line">    { <span class="stringliteral">&quot;if&quot;</span>, TokenType::IF },           { <span class="stringliteral">&quot;then&quot;</span>, TokenType::THEN },</div>
-<div class="line">    { <span class="stringliteral">&quot;else&quot;</span>, TokenType::ELSE },       { <span class="stringliteral">&quot;import&quot;</span>, TokenType::IMPORT },</div>
-<div class="line">    { <span class="stringliteral">&quot;==&quot;</span>, TokenType::EQUAL },        { <span class="stringliteral">&quot;!=&quot;</span>, TokenType::NOTEQUAL },</div>
-<div class="line">    { <span class="stringliteral">&quot;&gt;=&quot;</span>, TokenType::GREATEREQUAL }, { <span class="stringliteral">&quot;&lt;=&quot;</span>, TokenType::LESSEQUAL },</div>
-<div class="line">    { <span class="stringliteral">&quot;&amp;&amp;&quot;</span>, TokenType::AND },          { <span class="stringliteral">&quot;||&quot;</span>, TokenType::OR },</div>
-<div class="line">  }</div>
-</div><!-- fragment --><p>Tcalc keywords. </p>
+<div class="line">      { <span class="stringliteral">&quot;def&quot;</span>, TokenType::DEF },         { <span class="stringliteral">&quot;let&quot;</span>, TokenType::LET },</div>
+<div class="line">      { <span class="stringliteral">&quot;if&quot;</span>, TokenType::IF },           { <span class="stringliteral">&quot;then&quot;</span>, TokenType::THEN },</div>
+<div class="line">      { <span class="stringliteral">&quot;else&quot;</span>, TokenType::ELSE },       { <span class="stringliteral">&quot;import&quot;</span>, TokenType::IMPORT },</div>
+<div class="line">      { <span class="stringliteral">&quot;==&quot;</span>, TokenType::EQUAL },        { <span class="stringliteral">&quot;!=&quot;</span>, TokenType::NOTEQUAL },</div>
+<div class="line">      { <span class="stringliteral">&quot;&gt;=&quot;</span>, TokenType::GREATEREQUAL }, { <span class="stringliteral">&quot;&lt;=&quot;</span>, TokenType::LESSEQUAL },</div>
+<div class="line">      { <span class="stringliteral">&quot;&amp;&amp;&quot;</span>, TokenType::AND },          { <span class="stringliteral">&quot;||&quot;</span>, TokenType::OR },</div>
+<div class="line">      { <span class="stringliteral">&quot;+&quot;</span>, TokenType::PLUS },          { <span class="stringliteral">&quot;-&quot;</span>, TokenType::MINUS },</div>
+<div class="line">      { <span class="stringliteral">&quot;*&quot;</span>, TokenType::MULTIPLY },      { <span class="stringliteral">&quot;/&quot;</span>, TokenType::DIVIDE },</div>
+<div class="line">      { <span class="stringliteral">&quot;(&quot;</span>, TokenType::LPAREN },        { <span class="stringliteral">&quot;)&quot;</span>, TokenType::RPAREN },</div>
+<div class="line">      { <span class="stringliteral">&quot;,&quot;</span>, TokenType::COMMA },         { <span class="stringliteral">&quot;;&quot;</span>, TokenType::SEMICOLON },</div>
+<div class="line">      { <span class="stringliteral">&quot;=&quot;</span>, TokenType::ASSIGN },        { <span class="stringliteral">&quot;&gt;&quot;</span>, TokenType::GREATER },</div>
+<div class="line">      { <span class="stringliteral">&quot;&lt;&quot;</span>, TokenType::LESS },          { <span class="stringliteral">&quot;!&quot;</span>, TokenType::NOT },</div>
+<div class="line">    }</div>
+</div><!-- fragment --><p>Tcalc keywords, must be ordered by length. </p>
 
 </div>
 </div>

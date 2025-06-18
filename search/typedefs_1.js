@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nodeptr_0',['NodePtr',['../node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3',1,'tcalc::ast']]]
+  ['keywordcomparator_0',['KeywordComparator',['../classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1',1,'tcalc::token::Tokenizer']]]
 ];

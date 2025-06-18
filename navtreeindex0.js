@@ -176,10 +176,11 @@ var NAVTREEINDEX0 =
 "classtcalc_1_1error_1_1Error.html#a90c606997cef16e76d5a896d025df8b2":[2,0,1,2,0,2],
 "classtcalc_1_1error_1_1Error.html#a96a78cfc4f72e1fd4d4348a322209cf0":[2,0,1,2,0,4],
 "classtcalc_1_1token_1_1Tokenizer.html":[2,0,1,3,1],
-"classtcalc_1_1token_1_1Tokenizer.html#a4b59b0c76dc6d1fbbcf2457cf7fa576b":[2,0,1,3,1,3],
-"classtcalc_1_1token_1_1Tokenizer.html#a5e3304d5dcf639f0b78a26cdcdd941f5":[2,0,1,3,1,2],
-"classtcalc_1_1token_1_1Tokenizer.html#a89034eec1b45a01049d4a248b44a8ad8":[2,0,1,3,1,1],
-"classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14":[2,0,1,3,1,0],
+"classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1":[2,0,1,3,1,0],
+"classtcalc_1_1token_1_1Tokenizer.html#a4b59b0c76dc6d1fbbcf2457cf7fa576b":[2,0,1,3,1,4],
+"classtcalc_1_1token_1_1Tokenizer.html#a5e3304d5dcf639f0b78a26cdcdd941f5":[2,0,1,3,1,3],
+"classtcalc_1_1token_1_1Tokenizer.html#a89034eec1b45a01049d4a248b44a8ad8":[2,0,1,3,1,2],
+"classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14":[2,0,1,3,1,1],
 "common_8hpp.html":[3,0,0,0,3],
 "common_8hpp_source.html":[3,0,0,0,3],
 "control__flow_8hpp.html":[3,0,0,0,0,1],
@@ -212,6 +213,7 @@ var NAVTREEINDEX0 =
 "function_8hpp_source.html":[3,0,0,0,0,2],
 "functions.html":[2,3,0],
 "functions_func.html":[2,3,1],
+"functions_type.html":[2,3,3],
 "functions_vars.html":[2,3,2],
 "hierarchy.html":[2,2],
 "index.html":[],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa8cddfe9bd17bba8cc25d51329b94d8b":[3,0,0,0,0,3,2,13],
 "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa9023c7f015d5ba70a0a4db6c664734d":[3,0,0,0,0,3,2,1],
 "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615":[3,0,0,0,0,3,2,18],
-"node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31":[3,0,0,0,0,3,2,21],
-"node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcace0b81cd8d740e0cd600d3c3dab3d040":[3,0,0,0,0,3,2,7],
-"node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919":[3,0,0,0,0,3,2,22]
+"node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31":[3,0,0,0,0,3,2,21]
 };
