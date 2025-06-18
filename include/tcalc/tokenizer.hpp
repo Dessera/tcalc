@@ -29,17 +29,18 @@ class TCALC_PUBLIC Tokenizer
 {
 public:
   inline static const std::unordered_map<std::string, TokenType> KEYWORDS = {
-    { "+", TokenType::PLUS },        { "-", TokenType::MINUS },
-    { "*", TokenType::MULTIPLY },    { "/", TokenType::DIVIDE },
-    { "(", TokenType::LPAREN },      { ")", TokenType::RPAREN },
-    { ",", TokenType::COMMA },       { ";", TokenType::SEMICOLON },
-    { "=", TokenType::ASSIGN },      { ">", TokenType::GREATER },
-    { "<", TokenType::LESS },        { "def", TokenType::DEF },
-    { "let", TokenType::LET },       { "if", TokenType::IF },
-    { "then", TokenType::THEN },     { "else", TokenType::ELSE },
-    { "import", TokenType::IMPORT }, { "==", TokenType::EQUAL },
-    { "!=", TokenType::NOTEQUAL },   { ">=", TokenType::GREATEREQUAL },
-    { "<=", TokenType::LESSEQUAL },
+    { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
+    { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
+    { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
+    { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
+    { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
+    { "<", TokenType::LESS },          { "!", TokenType::NOT },
+    { "def", TokenType::DEF },         { "let", TokenType::LET },
+    { "if", TokenType::IF },           { "then", TokenType::THEN },
+    { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
+    { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
+    { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
+    { "&&", TokenType::AND },          { "||", TokenType::OR },
   }; /**< Tcalc keywords. */
 
   constexpr static char QUOTE = '\''; /**< The quote character. */

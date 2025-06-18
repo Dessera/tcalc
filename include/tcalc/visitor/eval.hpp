@@ -91,7 +91,9 @@ public:
       { NodeType::BINARY_GREATER, std::greater<>() },
       { NodeType::BINARY_GREATER_EQUAL, std::greater_equal<>() },
       { NodeType::BINARY_LESS, std::less<>() },
-      { NodeType::BINARY_LESS_EQUAL, std::less_equal<>() }
+      { NodeType::BINARY_LESS_EQUAL, std::less_equal<>() },
+      { NodeType::BINARY_AND, std::logical_and<>() },
+      { NodeType::BINARY_OR, std::logical_or<>() }
     }; /**< Map of binary operator to function. */
 
   inline static const std::unordered_map<NodeType,
@@ -99,6 +101,7 @@ public:
     UNARYOP_MAP = {
       { NodeType::UNARY_PLUS, _double_forward },
       { NodeType::UNARY_MINUS, std::negate<>() },
+      { NodeType::UNARY_NOT, std::logical_not<>() }
     }; /**< Map of unary operator to function. */
 
 private:

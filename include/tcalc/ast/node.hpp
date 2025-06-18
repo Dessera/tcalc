@@ -35,8 +35,11 @@ enum class NodeType : uint8_t
   BINARY_GREATER_EQUAL, /**< Binary greater equal operator. */
   BINARY_LESS,          /**< Binary less operator. */
   BINARY_LESS_EQUAL,    /**< Binary less equal operator. */
+  BINARY_AND,           /**< Binary and operator. */
+  BINARY_OR,            /**< Binary or operator. */
   UNARY_PLUS,           /**< Unary plus operator. */
   UNARY_MINUS,          /**< Unary minus operator. */
+  UNARY_NOT,            /**< Unary not operator. */
   NUMBER,               /**< Constant number. */
   VARREF,               /**< Variable reference. */
   VARASSIGN,            /**< Variable assignment. */

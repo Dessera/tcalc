@@ -23,32 +23,35 @@ namespace tcalc::token {
  * @brief Token type, some values are ASCII code of the corresponding character.
  *
  */
-enum class TokenType : int8_t
+enum class TokenType : uint8_t
 {
-  PLUS = 0x2b,          /**< + operator. */
-  MINUS = 0x2d,         /**< - operator. */
-  MULTIPLY = 0x2a,      /**< * operator. */
-  DIVIDE = 0x2f,        /**< / operator. */
-  LPAREN = 0x28,        /**< Bracket start. */
-  RPAREN = 0x29,        /**< Bracket end. */
-  COMMA = 0x2c,         /**< Comma. */
-  SEMICOLON = 0x3b,     /**< Semicolon. */
-  ASSIGN = 0x3d,        /**< Assignment. */
-  GREATER = 0x3e,       /**< > operator. */
-  LESS = 0x3c,          /**< < operator. */
-  NUMBER = -0x01,       /**< Constant number. */
-  IDENTIFIER = -0x02,   /**< Variable or function name. */
-  DEF = -0x03,          /**< Function definition. */
-  LET = -0x04,          /**< Variable definition. */
-  IF = -0x05,           /**< If statement. */
-  THEN = -0x06,         /**< Then keyword. */
-  ELSE = -0x07,         /**< Else keyword. */
-  IMPORT = -0x08,       /**< Import statement. */
-  EQUAL = -0x09,        /**< == operator. */
-  NOTEQUAL = -0x0a,     /**< != operator. */
-  GREATEREQUAL = -0x0b, /**< >= operator. */
-  LESSEQUAL = -0x0c,    /**< <= operator. */
-  EOI = -0x0d,          /**< End of input. */
+  PLUS,         /**< + operator. */
+  MINUS,        /**< - operator. */
+  MULTIPLY,     /**< * operator. */
+  DIVIDE,       /**< / operator. */
+  LPAREN,       /**< Bracket start. */
+  RPAREN,       /**< Bracket end. */
+  COMMA,        /**< Comma. */
+  SEMICOLON,    /**< Semicolon. */
+  ASSIGN,       /**< Assignment. */
+  GREATER,      /**< > operator. */
+  LESS,         /**< < operator. */
+  NOT,          /**< ! operator. */
+  NUMBER,       /**< Constant number. */
+  IDENTIFIER,   /**< Variable or function name. */
+  DEF,          /**< Function definition. */
+  LET,          /**< Variable definition. */
+  IF,           /**< If statement. */
+  THEN,         /**< Then keyword. */
+  ELSE,         /**< Else keyword. */
+  IMPORT,       /**< Import statement. */
+  EQUAL,        /**< == operator. */
+  NOTEQUAL,     /**< != operator. */
+  GREATEREQUAL, /**< >= operator. */
+  LESSEQUAL,    /**< <= operator. */
+  AND,          /**< && operator. */
+  OR,           /**< || operator. */
+  EOI,          /**< End of input. */
 };
 
 /**

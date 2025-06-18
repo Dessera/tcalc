@@ -199,8 +199,7 @@ Parser::next_factor(ParserContext& ctx) // NOLINT
     ret_err(ctx.eat(token::TokenType::LPAREN));
     node = unwrap_err(next_expr(ctx));
     ret_err(ctx.eat(token::TokenType::RPAREN));
-  } else if (current.type == token::TokenType::PLUS ||
-             current.type == token::TokenType::MINUS) {
+  } else if (UNARYOP_PRIORITY[0].contains(current.type)) {
     auto type = current.type;
     ret_err(ctx.eat(type));
     node = std::make_shared<UnaryOpNode>(UNARYOP_PRIORITY[0].at(type),

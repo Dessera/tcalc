@@ -13,6 +13,10 @@ namespace tcalc::ast {
 
 const PriorityTable BINOP_PRIORITY = {
   {
+    { TokenType::AND, NodeType::BINARY_AND },
+    { TokenType::OR, NodeType::BINARY_OR },
+  },
+  {
     { TokenType::EQUAL, NodeType::BINARY_EQUAL },
     { TokenType::NOTEQUAL, NodeType::BINARY_NOT_EQUAL },
     { TokenType::GREATER, NodeType::BINARY_GREATER },
@@ -33,6 +37,7 @@ const PriorityTable BINOP_PRIORITY = {
 const PriorityTable UNARYOP_PRIORITY = { {
   { TokenType::PLUS, NodeType::UNARY_PLUS },
   { TokenType::MINUS, NodeType::UNARY_MINUS },
+  { TokenType::NOT, NodeType::UNARY_NOT },
 } };
 
 }
