@@ -52,42 +52,45 @@ public:
    *
    * @return const NodePtr<> Left subnode.
    */
-  [[nodiscard]] constexpr auto& left() const noexcept { return _left; }
+  [[nodiscard]] TCALC_INLINE auto& left() const noexcept { return _left; }
 
   /**
    * @brief Get the left subnode.
    *
    * @return NodePtr<> Left subnode.
    */
-  [[nodiscard]] constexpr auto& left() noexcept { return _left; }
+  TCALC_INLINE auto& left() noexcept { return _left; }
 
   /**
    * @brief Set the left subnode.
    *
    * @param left Left subnode.
    */
-  constexpr void left(NodePtr<> left) noexcept { _left = std::move(left); }
+  TCALC_INLINE void left(NodePtr<> left) noexcept { _left = std::move(left); }
 
   /**
    * @brief Get the right subnode.
    *
    * @return const NodePtr<> Right subnode.
    */
-  [[nodiscard]] constexpr auto& right() const noexcept { return _right; }
+  [[nodiscard]] TCALC_INLINE auto& right() const noexcept { return _right; }
 
   /**
    * @brief Get the right subnode.
    *
    * @return NodePtr<> Right subnode.
    */
-  [[nodiscard]] constexpr auto& right() noexcept { return _right; }
+  TCALC_INLINE auto& right() noexcept { return _right; }
 
   /**
    * @brief Set the right subnode.
    *
    * @param right Right subnode.
    */
-  constexpr void right(NodePtr<> right) noexcept { _right = std::move(right); }
+  TCALC_INLINE void right(NodePtr<> right) noexcept
+  {
+    _right = std::move(right);
+  }
 };
 
 }

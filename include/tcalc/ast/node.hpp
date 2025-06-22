@@ -74,7 +74,7 @@ public:
    *
    * @return NodeType Node type.
    */
-  [[nodiscard]] constexpr auto type() const noexcept { return _type; }
+  [[nodiscard]] TCALC_INLINE auto type() const noexcept { return _type; }
 };
 
 /**

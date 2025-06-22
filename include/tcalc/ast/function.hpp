@@ -53,35 +53,35 @@ public:
    *
    * @return const std::vector<NodePtr<>>& Function arguments.
    */
-  [[nodiscard]] constexpr auto& args() const noexcept { return _args; }
+  [[nodiscard]] TCALC_INLINE auto& args() const noexcept { return _args; }
 
   /**
    * @brief Get function arguments.
    *
    * @return std::vector<NodePtr<>>& Function arguments.
    */
-  [[nodiscard]] constexpr auto& args() noexcept { return _args; }
+  TCALC_INLINE auto& args() noexcept { return _args; }
 
   /**
    * @brief Push a function argument.
    *
    * @param arg Argument to push.
    */
-  constexpr void push_arg(const NodePtr<>& arg) { _args.push_back(arg); }
+  TCALC_INLINE void push_arg(const NodePtr<>& arg) { _args.push_back(arg); }
 
   /**
    * @brief Get function name.
    *
    * @return const std::string& Function name.
    */
-  [[nodiscard]] constexpr auto& name() const noexcept { return _name; }
+  [[nodiscard]] TCALC_INLINE auto& name() const noexcept { return _name; }
 
   /**
    * @brief Set function name.
    *
    * @param name Function name.
    */
-  constexpr void name(std::string name) { _name = std::move(name); }
+  TCALC_INLINE void name(std::string name) { _name = std::move(name); }
 };
 
 /**
@@ -119,56 +119,56 @@ public:
    *
    * @return const std::vector<std::string>& Function arguments.
    */
-  [[nodiscard]] constexpr auto& args() const noexcept { return _args; }
+  [[nodiscard]] TCALC_INLINE auto& args() const noexcept { return _args; }
 
   /**
    * @brief Get function arguments.
    *
    * @return std::vector<std::string>& Function arguments.
    */
-  [[nodiscard]] constexpr auto& args() noexcept { return _args; }
+  TCALC_INLINE auto& args() noexcept { return _args; }
 
   /**
    * @brief Push a function argument.
    *
    * @param arg Argument to push.
    */
-  constexpr void push_arg(const std::string& arg) { _args.push_back(arg); }
+  TCALC_INLINE void push_arg(const std::string& arg) { _args.push_back(arg); }
 
   /**
    * @brief Get function body.
    *
    * @return const NodePtr<>& Function body.
    */
-  [[nodiscard]] constexpr auto& body() const noexcept { return _body; }
+  [[nodiscard]] TCALC_INLINE auto& body() const noexcept { return _body; }
 
   /**
    * @brief Get function body.
    *
    * @return NodePtr<>& Function body.
    */
-  [[nodiscard]] constexpr auto& body() noexcept { return _body; }
+  TCALC_INLINE auto& body() noexcept { return _body; }
 
   /**
    * @brief Set function body.
    *
    * @param body Function body.
    */
-  constexpr void body(NodePtr<> body) { _body = std::move(body); }
+  TCALC_INLINE void body(NodePtr<> body) { _body = std::move(body); }
 
   /**
    * @brief Get function name.
    *
    * @return const std::string& Function name.
    */
-  [[nodiscard]] constexpr auto& name() const noexcept { return _name; }
+  [[nodiscard]] TCALC_INLINE auto& name() const noexcept { return _name; }
 
   /**
    * @brief Set function name.
    *
    * @param name Function name.
    */
-  constexpr void name(std::string name) { _name = std::move(name); }
+  TCALC_INLINE void name(std::string name) { _name = std::move(name); }
 };
 
 }

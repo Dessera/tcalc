@@ -48,7 +48,7 @@ public:
    *
    * @return const token::Tokenizer& The tokenizer.
    */
-  [[nodiscard]] constexpr auto& tokenizer() const noexcept
+  [[nodiscard]] TCALC_INLINE auto& tokenizer() const noexcept
   {
     return _tokenizer;
   }
@@ -58,7 +58,7 @@ public:
    *
    * @return const token::Token& The current token.
    */
-  [[nodiscard]] constexpr auto& current() const noexcept { return _current; }
+  [[nodiscard]] TCALC_INLINE auto& current() const noexcept { return _current; }
 
   /**
    * @brief Eat the current token and get the next one.

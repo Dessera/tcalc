@@ -92,14 +92,14 @@ public:
    *
    * @return Error code.
    */
-  [[nodiscard]] constexpr auto code() const noexcept { return _code; }
+  [[nodiscard]] TCALC_INLINE auto code() const noexcept { return _code; }
 
   /**
    * @brief Get error message.
    *
    * @return Error message.
    */
-  [[nodiscard]] constexpr const auto& msg() const noexcept { return _msg; }
+  [[nodiscard]] TCALC_INLINE const auto& msg() const noexcept { return _msg; }
 
   /**
    * @brief Log error message to stderr (should be noexcept in semantic).
@@ -133,7 +133,7 @@ using Result = std::expected<T, Error>;
  * @param message Error message.
  * @return Result<T> Error.
  */
-constexpr auto
+TCALC_INLINE auto
 err(Code code, const std::string& message) noexcept
 {
   return std::unexpected(Error(code, message));
@@ -145,7 +145,7 @@ err(Code code, const std::string& message) noexcept
  * @param code Error code.
  * @return Error Raw error.
  */
-constexpr auto
+TCALC_INLINE auto
 raw_err(Code code) noexcept
 {
   auto errno_copy = errno;
@@ -159,7 +159,7 @@ raw_err(Code code) noexcept
  * @param code Error code.
  * @return Result<T> Error.
  */
-constexpr auto
+TCALC_INLINE auto
 err(Code code) noexcept
 {
   return std::unexpected(raw_err(code));
@@ -175,7 +175,7 @@ err(Code code) noexcept
  * @return Result<T> Error.
  */
 template<typename... Args>
-constexpr auto
+TCALC_INLINE auto
 err(Code code, std::format_string<Args...> fmt, Args&&... args) noexcept
 {
   return std::unexpected(
@@ -191,7 +191,7 @@ err(Code code, std::format_string<Args...> fmt, Args&&... args) noexcept
  * @return Result<T> Result.
  */
 template<typename T, typename... Args>
-constexpr auto
+TCALC_INLINE auto
 ok(Args&&... args) noexcept
 {
   return std::expected<T, Error>(T(std::forward<Args>(args)...));
@@ -203,7 +203,7 @@ ok(Args&&... args) noexcept
  * @return Result<void> Result.
  */
 template<>
-constexpr auto
+TCALC_INLINE auto
 ok<void>() noexcept
 {
   return std::expected<void, Error>();

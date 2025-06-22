@@ -58,7 +58,7 @@ public:
    *
    * @return std::unordered_map<std::string, double>& Variables map.
    */
-  [[nodiscard]] constexpr auto& vars() noexcept { return _vars; }
+  [[nodiscard]] TCALC_INLINE auto& vars() noexcept { return _vars; }
 
   /**
    * @brief Get built-in functions.
@@ -66,7 +66,7 @@ public:
    * @return std::unordered_map<std::string, BuiltinFunc>& Built-in functions
    * map.
    */
-  [[nodiscard]] constexpr auto& funcs() noexcept { return _funcs; }
+  [[nodiscard]] TCALC_INLINE auto& funcs() noexcept { return _funcs; }
 
   /**
    * @brief Get a variable.
@@ -82,7 +82,7 @@ public:
    * @param name Variable name.
    * @param value Variable value.
    */
-  constexpr void var(const std::string& name, double value) noexcept
+  TCALC_INLINE void var(const std::string& name, double value) noexcept
   {
     _vars[name] = value;
   }
@@ -101,7 +101,8 @@ public:
    * @param name Function name.
    * @param func Function pointer.
    */
-  constexpr void func(const std::string& name, builtins::Function func) noexcept
+  TCALC_INLINE void func(const std::string& name,
+                         builtins::Function func) noexcept
   {
     _funcs[name] = std::move(func);
   }
@@ -111,7 +112,7 @@ public:
    *
    * @return std::size_t Call depth.
    */
-  [[nodiscard]] constexpr auto call_depth() const noexcept
+  [[nodiscard]] TCALC_INLINE auto call_depth() const noexcept
   {
     return _call_depth;
   }
@@ -121,13 +122,13 @@ public:
    *
    * @param depth Call depth.
    */
-  constexpr void call_depth(std::size_t depth) { _call_depth = depth; }
+  TCALC_INLINE void call_depth(std::size_t depth) { _call_depth = depth; }
 
   /**
    * @brief Increment the call depth.
    *
    */
-  constexpr void increment_call_depth() noexcept { ++_call_depth; }
+  TCALC_INLINE void increment_call_depth() noexcept { ++_call_depth; }
 
   /**
    * @brief Update the context with another context.
@@ -168,7 +169,7 @@ public:
    *
    * @return const EvalContext& Evaluation context.
    */
-  [[nodiscard]] constexpr auto& ctx() const noexcept { return _ctx; }
+  [[nodiscard]] TCALC_INLINE auto& ctx() const noexcept { return _ctx; }
 
   /**
    * @brief Evaluate an expression.

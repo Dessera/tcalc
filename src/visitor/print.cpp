@@ -16,8 +16,7 @@ PrintVisitor::PrintVisitor(std::ostream& os, std::size_t step)
 error::Result<void>
 PrintVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 {
-  std::println(
-    *_os, "{}{}:", _gen_indent(), magic_enum::enum_name(node->type()));
+  *_os << _gen_indent() << magic_enum::enum_name(node->type()) << ":\n";
 
   _step_indent();
   ret_err(visit(node->left()));
@@ -30,8 +29,7 @@ PrintVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 error::Result<void>
 PrintVisitor::visit_unary_op(NodePtr<UnaryOpNode>& node)
 {
-  std::println(
-    *_os, "{}{}:", _gen_indent(), magic_enum::enum_name(node->type()));
+  *_os << _gen_indent() << magic_enum::enum_name(node->type()) << ":\n";
 
   _step_indent();
   ret_err(visit(node->operand()));
@@ -43,14 +41,14 @@ PrintVisitor::visit_unary_op(NodePtr<UnaryOpNode>& node)
 error::Result<void>
 PrintVisitor::visit_number(NodePtr<NumberNode>& node)
 {
-  std::println(*_os, "{}NUMBER: {}", _gen_indent(), node->value());
+  *_os << _gen_indent() << "NUMBER: " << node->value() << ":\n";
   return error::ok<void>();
 }
 
 error::Result<void>
 PrintVisitor::visit_varref(NodePtr<VarRefNode>& node)
 {
-  std::println(*_os, "{}VARREF: {}", _gen_indent(), node->name());
+  *_os << _gen_indent() << "VARREF: " << node->name() << ":";
 
   return error::ok<void>();
 }
@@ -58,7 +56,7 @@ PrintVisitor::visit_varref(NodePtr<VarRefNode>& node)
 error::Result<void>
 PrintVisitor::visit_varassign(NodePtr<VarAssignNode>& node)
 {
-  std::println(*_os, "{}VARASSIGN: {}", _gen_indent(), node->name());
+  *_os << _gen_indent() << "VARASSIGN: " << node->name() << ":\n";
 
   _step_indent();
   ret_err(visit(node->body()));
@@ -70,7 +68,7 @@ PrintVisitor::visit_varassign(NodePtr<VarAssignNode>& node)
 error::Result<void>
 PrintVisitor::visit_fcall(NodePtr<FcallNode>& node)
 {
-  std::println(*_os, "{}FCALL: {}", _gen_indent(), node->name());
+  *_os << _gen_indent() << "FCALL: " << node->name() << ":\n";
   _step_indent();
   for (auto& arg : node->args()) {
     ret_err(visit(arg));
@@ -83,12 +81,12 @@ PrintVisitor::visit_fcall(NodePtr<FcallNode>& node)
 error::Result<void>
 PrintVisitor::visit_fdef(NodePtr<FdefNode>& node)
 {
-  std::print(*_os, "{}FDEF: {}:", _gen_indent(), node->name());
+  *_os << _gen_indent() << "FDEF: " << node->name() << ":";
   for (auto& arg : node->args()) {
-    std::print(*_os, " {}", arg);
+    *_os << " " << arg;
   }
 
-  std::println(*_os, "");
+  *_os << "\n";
 
   _step_indent();
   ret_err(visit(node->body()));
@@ -100,7 +98,7 @@ PrintVisitor::visit_fdef(NodePtr<FdefNode>& node)
 error::Result<void>
 PrintVisitor::visit_if(NodePtr<IfNode>& node)
 {
-  std::println(*_os, "{}IF:", _gen_indent());
+  *_os << _gen_indent() << "IF:\n";
 
   _step_indent();
   ret_err(visit(node->cond()));
@@ -114,7 +112,7 @@ PrintVisitor::visit_if(NodePtr<IfNode>& node)
 error::Result<void>
 PrintVisitor::visit_program(NodePtr<ProgramNode>& node)
 {
-  std::println(*_os, "{}PROGRAM:", _gen_indent());
+  *_os << _gen_indent() << "PROGRAM:\n";
 
   _step_indent();
   for (auto& stmt : node->statements()) {
@@ -128,7 +126,7 @@ PrintVisitor::visit_program(NodePtr<ProgramNode>& node)
 error::Result<void>
 PrintVisitor::visit_import(NodePtr<ProgramImportNode>& node)
 {
-  std::println(*_os, "{}IMPORT: {}", _gen_indent(), node->path());
+  *_os << _gen_indent() << "IMPORT: " << node->path() << ":\n";
   return error::ok<void>();
 }
 

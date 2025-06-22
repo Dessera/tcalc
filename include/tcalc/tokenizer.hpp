@@ -74,14 +74,14 @@ public:
    *
    * @return std::string_view::const_iterator The current position.
    */
-  [[nodiscard]] constexpr auto pos() const noexcept { return _pos; }
+  [[nodiscard]] TCALC_INLINE auto pos() const noexcept { return _pos; }
 
   /**
    * @brief Get the current position of the tokenizer as an index.
    *
    * @return size_t The current position as an index.
    */
-  [[nodiscard]] constexpr auto spos() const noexcept
+  [[nodiscard]] TCALC_INLINE auto spos() const noexcept
   {
     return std::distance(_input.begin(), _pos);
   }
@@ -94,7 +94,7 @@ private:
    * @param pred The predicate to check if the current character is valid.
    * @return Token The token.
    */
-  constexpr auto _next_with(TokenType type, auto&& pred)
+  auto _next_with(TokenType type, auto&& pred)
   {
     const auto* start = _pos;
     while (_pos != _input.end() && pred(*_pos)) {
@@ -108,7 +108,7 @@ private:
    *
    * @param pred The predicate to check if the current character is valid.
    */
-  constexpr void _skip_with(auto&& pred)
+  void _skip_with(auto&& pred)
   {
     while (_pos != _input.end() && pred(*_pos)) {
       ++_pos;

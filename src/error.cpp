@@ -1,5 +1,4 @@
 #include <iostream>
-#include <print>
 #include <utility>
 
 #include "magic_enum/magic_enum.hpp"
@@ -16,10 +15,8 @@ Error::Error(Code code, std::string msg) noexcept
 void
 Error::log() const noexcept
 {
-  std::println(std::cerr,
-               "Exception occurred: {} [{}]",
-               _msg,
-               magic_enum::enum_name(_code));
+  std::cerr << "Exception occurred: " << _msg << " ["
+            << magic_enum::enum_name(_code) << "]\n";
 }
 
 }

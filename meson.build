@@ -2,7 +2,7 @@ project(
   'tcalc',
   'cpp',
   version: '0.1.0',
-  default_options: ['warning_level=3', 'cpp_std=gnu++26'],
+  default_options: ['warning_level=3', 'cpp_std=gnu++23'],
 )
 
 magic_enum_proj = subproject(

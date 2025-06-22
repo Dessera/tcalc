@@ -48,7 +48,7 @@ public:
    *
    * @return const std::vector<NodePtr<>>& Statements.
    */
-  [[nodiscard]] constexpr auto& statements() const noexcept
+  [[nodiscard]] TCALC_INLINE auto& statements() const noexcept
   {
     return _statements;
   }
@@ -58,14 +58,14 @@ public:
    *
    * @return std::vector<NodePtr<>>& Statements.
    */
-  [[nodiscard]] constexpr auto& statements() noexcept { return _statements; }
+  TCALC_INLINE auto& statements() noexcept { return _statements; }
 
   /**
    * @brief Push a statement.
    *
    * @param statement Statement.
    */
-  constexpr void push_statement(NodePtr<> statement)
+  TCALC_INLINE void push_statement(NodePtr<> statement)
   {
     _statements.push_back(std::move(statement));
   }
@@ -95,21 +95,21 @@ public:
    *
    * @return const std::string& Path.
    */
-  [[nodiscard]] constexpr auto& path() const noexcept { return _path; }
+  [[nodiscard]] TCALC_INLINE auto& path() const noexcept { return _path; }
 
   /**
    * @brief Get path.
    *
    * @return std::string& Path.
    */
-  [[nodiscard]] constexpr auto& path() noexcept { return _path; }
+  TCALC_INLINE auto& path() noexcept { return _path; }
 
   /**
    * @brief Set path.
    *
    * @param path Path.
    */
-  constexpr void path(std::string path) noexcept { _path = std::move(path); }
+  TCALC_INLINE void path(std::string path) noexcept { _path = std::move(path); }
 };
 
 }

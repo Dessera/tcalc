@@ -69,7 +69,7 @@ private:
    *
    * @return std::string Indent string.
    */
-  [[nodiscard]] constexpr auto _gen_indent() const
+  [[nodiscard]] TCALC_INLINE auto _gen_indent() const
   {
     return std::string(_indent, ' ');
   }
@@ -78,13 +78,13 @@ private:
    * @brief Step indent.
    *
    */
-  constexpr void _step_indent() { _indent += _step; }
+  TCALC_INLINE void _step_indent() { _indent += _step; }
 
   /**
    * @brief Unstep indent.
    *
    */
-  constexpr void _unstep_indent() { _indent -= _step; }
+  TCALC_INLINE void _unstep_indent() { _indent -= _step; }
 };
 
 }

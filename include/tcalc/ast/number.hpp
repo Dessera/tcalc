@@ -12,6 +12,7 @@
 #pragma once
 
 #include "tcalc/ast/node.hpp"
+#include "tcalc/common.hpp"
 
 namespace tcalc::ast {
 
@@ -39,14 +40,14 @@ public:
    *
    * @return double Number value.
    */
-  [[nodiscard]] constexpr auto value() const noexcept { return _value; }
+  [[nodiscard]] TCALC_INLINE auto value() const noexcept { return _value; }
 
   /**
    * @brief Set the number value.
    *
    * @param value Number value.
    */
-  constexpr void value(double value) noexcept { _value = value; }
+  TCALC_INLINE void value(double value) noexcept { _value = value; }
 };
 
 }

@@ -49,21 +49,21 @@ public:
    *
    * @return const NodePtr<>& Operand node.
    */
-  [[nodiscard]] constexpr auto& operand() const noexcept { return _operand; }
+  [[nodiscard]] TCALC_INLINE auto& operand() const noexcept { return _operand; }
 
   /**
    * @brief Get operand.
    *
    * @return NodePtr<>& Operand node.
    */
-  [[nodiscard]] constexpr auto& operand() noexcept { return _operand; }
+  TCALC_INLINE auto& operand() noexcept { return _operand; }
 
   /**
    * @brief Set operand.
    *
    * @param operand Operand node.
    */
-  constexpr void operand(NodePtr<> operand) noexcept
+  TCALC_INLINE void operand(NodePtr<> operand) noexcept
   {
     _operand = std::move(operand);
   }

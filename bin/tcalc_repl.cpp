@@ -1,5 +1,4 @@
 #include <iostream>
-#include <print>
 
 #include "tcalc/eval.hpp"
 int
@@ -9,7 +8,7 @@ main()
 
   while (true) {
     std::string line;
-    std::print("tcalc> ");
+    std::cout << "tcalc> ";
     std::getline(std::cin, line);
     if (line.empty()) {
       break;
@@ -27,7 +26,7 @@ main()
 
     auto res_value = res.value();
     for (auto v : res_value) {
-      std::println("{}", v);
+      std::cout << v << '\n';
     }
   }
 }

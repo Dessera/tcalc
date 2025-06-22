@@ -43,14 +43,14 @@ public:
    *
    * @return const std::string& Variable name.
    */
-  [[nodiscard]] constexpr auto& name() const noexcept { return _name; }
+  [[nodiscard]] TCALC_INLINE auto& name() const noexcept { return _name; }
 
   /**
    * @brief Set variable name.
    *
    * @param name Variable name.
    */
-  constexpr void name(std::string name) noexcept { _name = std::move(name); }
+  TCALC_INLINE void name(std::string name) noexcept { _name = std::move(name); }
 };
 
 /**
@@ -86,35 +86,35 @@ public:
    *
    * @return const std::string& Variable name.
    */
-  [[nodiscard]] constexpr auto& name() const noexcept { return _name; }
+  [[nodiscard]] TCALC_INLINE auto& name() const noexcept { return _name; }
 
   /**
    * @brief Set variable name.
    *
    * @param name Variable name.
    */
-  constexpr void name(std::string name) noexcept { _name = std::move(name); }
+  TCALC_INLINE void name(std::string name) noexcept { _name = std::move(name); }
 
   /**
    * @brief Get variable body.
    *
    * @return const NodePtr<>& Variable body.
    */
-  [[nodiscard]] constexpr auto& body() const noexcept { return _body; }
+  [[nodiscard]] TCALC_INLINE auto& body() const noexcept { return _body; }
 
   /**
    * @brief Get variable body.
    *
    * @return NodePtr<>& Variable body.
    */
-  [[nodiscard]] constexpr auto& body() noexcept { return _body; }
+  TCALC_INLINE auto& body() noexcept { return _body; }
 
   /**
    * @brief Set variable body.
    *
    * @param body Variable body.
    */
-  constexpr void body(NodePtr<> body) noexcept { _body = std::move(body); }
+  TCALC_INLINE void body(NodePtr<> body) noexcept { _body = std::move(body); }
 };
 
 }

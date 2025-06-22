@@ -12,7 +12,7 @@
 #pragma once
 
 #include <cstdint>
-#include <format>
+#include <string>
 #include <string_view>
 
 #include "tcalc/common.hpp"
@@ -75,28 +75,14 @@ struct Token
 
 }
 
-constexpr bool
+TCALC_INLINE bool
 operator==(const tcalc::token::Token& lhs, const tcalc::token::Token& rhs)
 {
   return lhs.type == rhs.type && lhs.text == rhs.text;
 }
 
-constexpr bool
+TCALC_INLINE bool
 operator!=(const tcalc::token::Token& lhs, const tcalc::token::Token& rhs)
 {
   return !(lhs == rhs);
 }
-
-template<typename CharT>
-struct std::formatter<tcalc::token::Token, CharT>
-{
-  constexpr auto parse(auto& ctx) { return ctx.begin(); }
-
-  constexpr auto format(const auto& token, auto& ctx) const
-  {
-    return std::format_to(ctx.out(),
-                          "Token({}, {})",
-                          tcalc::token::token_type_to_string(token.type),
-                          token.text);
-  }
-};

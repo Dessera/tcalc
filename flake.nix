@@ -12,27 +12,23 @@
       systems = [ "x86_64-linux" ];
 
       perSystem =
-        {
-          self',
-          pkgs,
-          ...
-        }:
+        { pkgs, ... }:
         let
-          stdenv = pkgs.gcc14Stdenv;
+          mkDevEnv =
+            stdenv:
+            let
+              clang-tools = pkgs.callPackage ./.nix-support/clang-tools.nix {
+                inherit stdenv;
+              };
 
-          clang-tools = pkgs.callPackage ./.nix-support/clang-tools.nix {
-            inherit stdenv;
-          };
-        in
-        {
-          packages.default = pkgs.callPackage ./default.nix { inherit stdenv; };
-          devShells.default =
+              package = pkgs.callPackage ./default.nix { inherit stdenv; };
+            in
             pkgs.mkShell.override
               {
                 inherit stdenv;
               }
               {
-                inputsFrom = [ self'.packages.default ];
+                inputsFrom = [ package ];
                 hardeningDisable = [ "fortify" ];
 
                 packages =
@@ -42,10 +38,19 @@
                     mesonlsp
                     doxygen
                   ])
-                  ++ [
-                    clang-tools
-                  ];
+                  ++ [ clang-tools ];
               };
+        in
+        {
+          packages.default = pkgs.callPackage ./default.nix { stdenv = pkgs.gcc14Stdenv; };
+          devShells = rec {
+            default = gcc-14;
+            gcc-14 = mkDevEnv pkgs.gcc14Stdenv;
+            gcc-13 = mkDevEnv pkgs.gcc13Stdenv;
+            clang-19 = mkDevEnv pkgs.llvmPackages_19.libcxxStdenv;
+            clang-18 = mkDevEnv pkgs.llvmPackages_18.libcxxStdenv;
+            clang-17 = mkDevEnv pkgs.llvmPackages_17.libcxxStdenv;
+          };
         };
     };
 }

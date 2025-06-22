@@ -52,63 +52,66 @@ public:
    *
    * @return const NodePtr<>& Condition node.
    */
-  [[nodiscard]] constexpr auto& cond() const noexcept { return _cond; }
+  [[nodiscard]] TCALC_INLINE auto& cond() const noexcept { return _cond; }
 
   /**
    * @brief Get the condition node.
    *
    * @return NodePtr<>& Condition node.
    */
-  [[nodiscard]] constexpr auto& cond() noexcept { return _cond; }
+  TCALC_INLINE auto& cond() noexcept { return _cond; }
 
   /**
    * @brief Set the condition node.
    *
    * @param cond Condition node.
    */
-  constexpr void cond(NodePtr<> cond) noexcept { _cond = std::move(cond); }
+  TCALC_INLINE void cond(NodePtr<> cond) noexcept { _cond = std::move(cond); }
 
   /**
    * @brief Get the then node.
    *
    * @return const NodePtr<>& Then node.
    */
-  [[nodiscard]] constexpr auto& then() const noexcept { return _then; }
+  [[nodiscard]] TCALC_INLINE auto& then() const noexcept { return _then; }
 
   /**
    * @brief Get the then node.
    *
    * @return NodePtr<>& Then node.
    */
-  [[nodiscard]] constexpr auto& then() noexcept { return _then; }
+  TCALC_INLINE auto& then() noexcept { return _then; }
 
   /**
    * @brief Set the then node.
    *
    * @param then Then node.
    */
-  constexpr void then(NodePtr<> then) noexcept { _then = std::move(then); }
+  TCALC_INLINE void then(NodePtr<> then) noexcept { _then = std::move(then); }
 
   /**
    * @brief Get the else node.
    *
    * @return const NodePtr<>& Else node.
    */
-  [[nodiscard]] constexpr auto& else_() const noexcept { return _else; }
+  [[nodiscard]] TCALC_INLINE auto& else_() const noexcept { return _else; }
 
   /**
    * @brief Get the else node.
    *
    * @return NodePtr<>& Else node.
    */
-  [[nodiscard]] constexpr auto& else_() noexcept { return _else; }
+  TCALC_INLINE auto& else_() noexcept { return _else; }
 
   /**
    * @brief Set the else node.
    *
    * @param else_ Else node.
    */
-  constexpr void else_(NodePtr<> else_) noexcept { _else = std::move(else_); }
+  TCALC_INLINE void else_(NodePtr<> else_) noexcept
+  {
+    _else = std::move(else_);
+  }
 };
 
 }

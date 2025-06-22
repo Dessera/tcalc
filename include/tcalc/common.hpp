@@ -24,3 +24,9 @@
 #define TCALC_PUBLIC
 #endif
 #endif
+
+#if defined _WIN32 || defined __CYGWIN__
+#define TCALC_INLINE inline __forceinline
+#else
+#define TCALC_INLINE inline __attribute__((always_inline))
+#endif
