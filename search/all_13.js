@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['value_0',['value',['../classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1',1,'tcalc::ast::NumberNode::value() const noexcept'],['../classtcalc_1_1ast_1_1NumberNode.html#a74f92464949184a944103e68e35e351e',1,'tcalc::ast::NumberNode::value(double value) noexcept']]],
-  ['var_1',['var',['../classtcalc_1_1EvalContext.html#a2a5c6ad36c8bbcf59b6d3306c0c20e41',1,'tcalc::EvalContext::var(const std::string &amp;name) const'],['../classtcalc_1_1EvalContext.html#a8c03f11e3dc185d6a7d5d0e5518f1714',1,'tcalc::EvalContext::var(const std::string &amp;name, double value) noexcept']]],
+  ['value_0',['value',['../classtcalc_1_1ast_1_1NumberNode.html#a7b3a7280da656dca1e5a3886ac5b7402',1,'tcalc::ast::NumberNode::value() const noexcept'],['../classtcalc_1_1ast_1_1NumberNode.html#a56ccd681e0a4beaedbee815214fe4cdc',1,'tcalc::ast::NumberNode::value(double value) noexcept']]],
+  ['var_1',['var',['../classtcalc_1_1EvalContext.html#a2a5c6ad36c8bbcf59b6d3306c0c20e41',1,'tcalc::EvalContext::var(const std::string &amp;name) const'],['../classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a',1,'tcalc::EvalContext::var(const std::string &amp;name, double value) noexcept']]],
   ['varassign_2',['VARASSIGN',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca6d613bd3ca767a2a6fa90fd92d419a0b',1,'tcalc::ast']]],
   ['varassignnode_3',['varassignnode',['../classtcalc_1_1ast_1_1VarAssignNode.html',1,'tcalc::ast::VarAssignNode'],['../classtcalc_1_1ast_1_1VarAssignNode.html#a519f4b94918ceb273b4d75dcd309090c',1,'tcalc::ast::VarAssignNode::VarAssignNode(std::string name)'],['../classtcalc_1_1ast_1_1VarAssignNode.html#a1d93a8348cb7a60bc03d82b28eae4f2d',1,'tcalc::ast::VarAssignNode::VarAssignNode(std::string name, NodePtr&lt;&gt; body)']]],
   ['variable_20assignment_4',['Variable Assignment',['../md_docs_2SYNTAX.html#autotoc_md1',1,'']]],
   ['variable_2ehpp_5',['variable.hpp',['../variable_8hpp.html',1,'']]],
   ['varref_6',['VARREF',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca58fb127331269a2f919287fab32ac4db',1,'tcalc::ast']]],
   ['varrefnode_7',['varrefnode',['../classtcalc_1_1ast_1_1VarRefNode.html',1,'tcalc::ast::VarRefNode'],['../classtcalc_1_1ast_1_1VarRefNode.html#aea1403b3842d33ca839ae732a8cc1f9c',1,'tcalc::ast::VarRefNode::VarRefNode()']]],
-  ['vars_8',['vars',['../classtcalc_1_1EvalContext.html#ad5f4fa650a9d36740dc67288513d26ee',1,'tcalc::EvalContext']]],
+  ['vars_8',['vars',['../classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312',1,'tcalc::EvalContext']]],
   ['visit_9',['visit',['../classtcalc_1_1ast_1_1BaseVisitor.html#ac00a49caea901ea106fe2712b289b1ba',1,'tcalc::ast::BaseVisitor']]],
   ['visit_5fbin_5fop_10',['visit_bin_op',['../classtcalc_1_1ast_1_1EvalVisitor.html#a253b23852f98033fb1a07c62418057fc',1,'tcalc::ast::EvalVisitor::visit_bin_op()'],['../classtcalc_1_1ast_1_1BaseVisitor.html#ae528e7d3735cd0ecdb17415c373e7fbd',1,'tcalc::ast::BaseVisitor::visit_bin_op()'],['../classtcalc_1_1ast_1_1PrintVisitor.html#aa63a39f54a35044a63e58b1529c1f0c9',1,'tcalc::ast::PrintVisitor::visit_bin_op(NodePtr&lt; BinaryOpNode &gt; &amp;node) override']]],
   ['visit_5ffcall_11',['visit_fcall',['../classtcalc_1_1ast_1_1PrintVisitor.html#a041aaca4e2960817dcb91c6f95ca2cac',1,'tcalc::ast::PrintVisitor::visit_fcall()'],['../classtcalc_1_1ast_1_1BaseVisitor.html#a3366a8816ee2bb307bf83761ea9a0fd3',1,'tcalc::ast::BaseVisitor::visit_fcall()'],['../classtcalc_1_1ast_1_1EvalVisitor.html#ac307c3ea5c0a57a993c1dbef8b658356',1,'tcalc::ast::EvalVisitor::visit_fcall()']]],

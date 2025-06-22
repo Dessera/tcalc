@@ -122,12 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a89034eec1b45a01049d4a248b44a8ad8" id="r_a89034eec1b45a01049d4a248b44a8ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; <a class="el" href="structtcalc_1_1token_1_1Token.html">Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a89034eec1b45a01049d4a248b44a8ad8">next</a> ()</td></tr>
 <tr class="memdesc:a89034eec1b45a01049d4a248b44a8ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next token.  <br /></td></tr>
 <tr class="separator:a89034eec1b45a01049d4a248b44a8ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e3304d5dcf639f0b78a26cdcdd941f5" id="r_a5e3304d5dcf639f0b78a26cdcdd941f5"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a5e3304d5dcf639f0b78a26cdcdd941f5">pos</a> () const noexcept</td></tr>
-<tr class="memdesc:a5e3304d5dcf639f0b78a26cdcdd941f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the tokenizer.  <br /></td></tr>
-<tr class="separator:a5e3304d5dcf639f0b78a26cdcdd941f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b59b0c76dc6d1fbbcf2457cf7fa576b" id="r_a4b59b0c76dc6d1fbbcf2457cf7fa576b"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a4b59b0c76dc6d1fbbcf2457cf7fa576b">spos</a> () const noexcept</td></tr>
-<tr class="memdesc:a4b59b0c76dc6d1fbbcf2457cf7fa576b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the tokenizer as an index.  <br /></td></tr>
-<tr class="separator:a4b59b0c76dc6d1fbbcf2457cf7fa576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb2088372263d09fa8872a844698650" id="r_a6bb2088372263d09fa8872a844698650"><td class="memItemLeft" align="right" valign="top">TCALC_INLINE auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">pos</a> () const noexcept</td></tr>
+<tr class="memdesc:a6bb2088372263d09fa8872a844698650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the tokenizer.  <br /></td></tr>
+<tr class="separator:a6bb2088372263d09fa8872a844698650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6258bea1a171ccc3406abb337641970a" id="r_a6258bea1a171ccc3406abb337641970a"><td class="memItemLeft" align="right" valign="top">TCALC_INLINE auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">spos</a> () const noexcept</td></tr>
+<tr class="memdesc:a6258bea1a171ccc3406abb337641970a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current position of the tokenizer as an index.  <br /></td></tr>
+<tr class="separator:a6258bea1a171ccc3406abb337641970a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -210,8 +210,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5e3304d5dcf639f0b78a26cdcdd941f5" name="a5e3304d5dcf639f0b78a26cdcdd941f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e3304d5dcf639f0b78a26cdcdd941f5">&#9670;&#160;</a></span>pos()</h2>
+<a id="a6bb2088372263d09fa8872a844698650" name="a6bb2088372263d09fa8872a844698650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb2088372263d09fa8872a844698650">&#9670;&#160;</a></span>pos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +220,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto tcalc::token::Tokenizer::pos </td>
+          <td class="memname">TCALC_INLINE auto tcalc::token::Tokenizer::pos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -228,7 +228,7 @@ Static Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -238,8 +238,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b59b0c76dc6d1fbbcf2457cf7fa576b" name="a4b59b0c76dc6d1fbbcf2457cf7fa576b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b59b0c76dc6d1fbbcf2457cf7fa576b">&#9670;&#160;</a></span>spos()</h2>
+<a id="a6258bea1a171ccc3406abb337641970a" name="a6258bea1a171ccc3406abb337641970a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6258bea1a171ccc3406abb337641970a">&#9670;&#160;</a></span>spos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +248,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto tcalc::token::Tokenizer::spos </td>
+          <td class="memname">TCALC_INLINE auto tcalc::token::Tokenizer::spos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -256,7 +256,7 @@ Static Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

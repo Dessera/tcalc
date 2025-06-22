@@ -102,31 +102,33 @@ $(document).ready(function(){initNavTree('number_8hpp_source.html',''); initResi
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="node_8hpp.html">tcalc/ast/node.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>tcalc::ast {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1NumberNode.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">Node</a></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">double</span> _value;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1">value</a>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1NumberNode.html">~NumberNode</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1">   42</a></span>  [[nodiscard]] <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1">value</a>() const noexcept { <span class="keywordflow">return</span> _value; }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1NumberNode.html#a74f92464949184a944103e68e35e351e">   49</a></span>  <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a74f92464949184a944103e68e35e351e">value</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1">value</a>) <span class="keyword">noexcept</span> { _value = <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a74f92464949184a944103e68e35e351e">value</a>; }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>tcalc::ast {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1NumberNode.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtcalc_1_1ast_1_1Node.html">Node</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">double</span> _value;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1NumberNode.html">NumberNode</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a7b3a7280da656dca1e5a3886ac5b7402">value</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1NumberNode.html">~NumberNode</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1NumberNode.html#a7b3a7280da656dca1e5a3886ac5b7402">   43</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a7b3a7280da656dca1e5a3886ac5b7402">value</a>() const noexcept { <span class="keywordflow">return</span> _value; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classtcalc_1_1ast_1_1NumberNode.html#a56ccd681e0a4beaedbee815214fe4cdc">   50</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a56ccd681e0a4beaedbee815214fe4cdc">value</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a7b3a7280da656dca1e5a3886ac5b7402">value</a>) <span class="keyword">noexcept</span> { _value = <a class="code hl_function" href="classtcalc_1_1ast_1_1NumberNode.html#a56ccd681e0a4beaedbee815214fe4cdc">value</a>; }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aclasstcalc_1_1ast_1_1Node_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1Node.html">tcalc::ast::Node</a></div><div class="ttdoc">Base class for AST nodes.</div><div class="ttdef"><b>Definition</b> node.hpp:58</div></div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1NumberNode_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1NumberNode.html">tcalc::ast::NumberNode</a></div><div class="ttdoc">Number AST node.</div><div class="ttdef"><b>Definition</b> number.hpp:23</div></div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1NumberNode_html_a0e51202411069a5f46b215cccc0627d1"><div class="ttname"><a href="classtcalc_1_1ast_1_1NumberNode.html#a0e51202411069a5f46b215cccc0627d1">tcalc::ast::NumberNode::value</a></div><div class="ttdeci">constexpr auto value() const noexcept</div><div class="ttdoc">Get the number value.</div><div class="ttdef"><b>Definition</b> number.hpp:42</div></div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1NumberNode_html_a74f92464949184a944103e68e35e351e"><div class="ttname"><a href="classtcalc_1_1ast_1_1NumberNode.html#a74f92464949184a944103e68e35e351e">tcalc::ast::NumberNode::value</a></div><div class="ttdeci">constexpr void value(double value) noexcept</div><div class="ttdoc">Set the number value.</div><div class="ttdef"><b>Definition</b> number.hpp:49</div></div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1NumberNode_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1NumberNode.html">tcalc::ast::NumberNode</a></div><div class="ttdoc">Number AST node.</div><div class="ttdef"><b>Definition</b> number.hpp:24</div></div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1NumberNode_html_a56ccd681e0a4beaedbee815214fe4cdc"><div class="ttname"><a href="classtcalc_1_1ast_1_1NumberNode.html#a56ccd681e0a4beaedbee815214fe4cdc">tcalc::ast::NumberNode::value</a></div><div class="ttdeci">TCALC_INLINE void value(double value) noexcept</div><div class="ttdoc">Set the number value.</div><div class="ttdef"><b>Definition</b> number.hpp:50</div></div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1NumberNode_html_a7b3a7280da656dca1e5a3886ac5b7402"><div class="ttname"><a href="classtcalc_1_1ast_1_1NumberNode.html#a7b3a7280da656dca1e5a3886ac5b7402">tcalc::ast::NumberNode::value</a></div><div class="ttdeci">TCALC_INLINE auto value() const noexcept</div><div class="ttdoc">Get the number value.</div><div class="ttdef"><b>Definition</b> number.hpp:43</div></div>
+<div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="anode_8hpp_html"><div class="ttname"><a href="node_8hpp.html">node.hpp</a></div><div class="ttdoc">Base class for AST nodes.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

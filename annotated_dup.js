@@ -1,8 +1,5 @@
 var annotated_dup =
 [
-    [ "std", null, [
-      [ "formatter< tcalc::token::Token, CharT >", "structstd_1_1formatter_3_01tcalc_1_1token_1_1Token_00_01CharT_01_4.html", null ]
-    ] ],
     [ "tcalc", null, [
       [ "ast", null, [
         [ "BaseVisitor", "classtcalc_1_1ast_1_1BaseVisitor.html", "classtcalc_1_1ast_1_1BaseVisitor" ],

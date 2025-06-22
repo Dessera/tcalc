@@ -15,7 +15,6 @@ var hierarchy =
     [ "std::exception", null, [
       [ "tcalc::error::Error", "classtcalc_1_1error_1_1Error.html", null ]
     ] ],
-    [ "std::formatter< tcalc::token::Token, CharT >", "structstd_1_1formatter_3_01tcalc_1_1token_1_1Token_00_01CharT_01_4.html", null ],
     [ "tcalc::builtins::FunctionWrapper", "classtcalc_1_1builtins_1_1FunctionWrapper.html", null ],
     [ "tcalc::builtins::ImportWrapper", "classtcalc_1_1builtins_1_1ImportWrapper.html", null ],
     [ "tcalc::ast::Node", "classtcalc_1_1ast_1_1Node.html", [

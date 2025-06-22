@@ -1,7 +1,6 @@
 var token_8hpp =
 [
     [ "tcalc::token::Token", "structtcalc_1_1token_1_1Token.html", null ],
-    [ "std::formatter< tcalc::token::Token, CharT >", "structstd_1_1formatter_3_01tcalc_1_1token_1_1Token_00_01CharT_01_4.html", null ],
     [ "TokenType", "token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126", [
       [ "PLUS", "token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a883acd43c77567e1c3baced84ccf6ed7", null ],
       [ "MINUS", "token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126affc0d9b54a1fe677c4c9e6b050e67c81", null ],

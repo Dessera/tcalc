@@ -11,10 +11,10 @@ var error_8hpp =
       [ "RECURSION_LIMIT", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2a31ab2cf82154702877dd87cc7a49b610", null ],
       [ "FILE_NOT_FOUND", "error_8hpp.html#a962518b30ba32968a1c1726465276ca2acd54d99c8efb3c2db794197045f5b83c", null ]
     ] ],
-    [ "err", "error_8hpp.html#a59bd6bf2d198c2fca9b915d1eb3e26ea", null ],
-    [ "err", "error_8hpp.html#afd178be891a24c841a34ad40c8863e12", null ],
-    [ "err", "error_8hpp.html#a35c9b8f81bc20fa860f73c85a9adda3c", null ],
-    [ "ok", "error_8hpp.html#a74673f4c4937e6f53259c5f177f3e163", null ],
-    [ "ok< void >", "error_8hpp.html#ae87d6e9446252e0b9f61760b145465f9", null ],
-    [ "raw_err", "error_8hpp.html#a66825274e6ccda54b442318e8d00089f", null ]
+    [ "err", "error_8hpp.html#a7ee210260b29dc22c049bb7f62699f18", null ],
+    [ "err", "error_8hpp.html#a33ee05d3d456159047f962f9f23e93c5", null ],
+    [ "err", "error_8hpp.html#a0f8ce29a954e0917ab03d9e124c315fd", null ],
+    [ "ok", "error_8hpp.html#ab0d417f3c463718d4314859df38b7839", null ],
+    [ "ok< void >", "error_8hpp.html#a7bffa5eb165a850b7ed5990e22f2522d", null ],
+    [ "raw_err", "error_8hpp.html#ab35f37c0ba67168280feed6f95826733", null ]
 ];
