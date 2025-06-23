@@ -100,19 +100,22 @@ $(document).ready(function(){initNavTree('error_8hpp.html',''); initResizable();
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">error.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>tcalc error definition.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &lt;cerrno&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;exception&gt;</code><br />
 <code>#include &lt;expected&gt;</code><br />
-<code>#include &lt;format&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 </div>
 <p><a href="error_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -168,10 +171,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7ee210260b29dc22c049bb7f62699f18" id="r_a7ee210260b29dc22c049bb7f62699f18"><td class="memItemLeft" align="right" valign="top">TCALC_INLINE <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8hpp.html#a7ee210260b29dc22c049bb7f62699f18">tcalc::error::err</a> (<a class="el" href="error_8hpp.html#a962518b30ba32968a1c1726465276ca2">Code</a> code) <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">noexcept</a></td></tr>
 <tr class="memdesc:a7ee210260b29dc22c049bb7f62699f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an error with errno.  <br /></td></tr>
 <tr class="separator:a7ee210260b29dc22c049bb7f62699f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f8ce29a954e0917ab03d9e124c315fd" id="r_a0f8ce29a954e0917ab03d9e124c315fd"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a0f8ce29a954e0917ab03d9e124c315fd"><td class="memTemplItemLeft" align="right" valign="top">TCALC_INLINE <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">auto</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="error_8hpp.html#a0f8ce29a954e0917ab03d9e124c315fd">tcalc::error::err</a> (<a class="el" href="error_8hpp.html#a962518b30ba32968a1c1726465276ca2">Code</a> code, std::format_string&lt; Args... &gt; <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">fmt</a>, <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">Args</a> &amp;&amp;... args) <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">noexcept</a></td></tr>
-<tr class="memdesc:a0f8ce29a954e0917ab03d9e124c315fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an error with format string.  <br /></td></tr>
-<tr class="separator:a0f8ce29a954e0917ab03d9e124c315fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ddd7601680ef7ce519a8a69e2205f6" id="r_a69ddd7601680ef7ce519a8a69e2205f6"><td class="memItemLeft" align="right" valign="top">std::unexpected&lt; <a class="el" href="classtcalc_1_1error_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8hpp.html#a69ddd7601680ef7ce519a8a69e2205f6">tcalc::error::err</a> (<a class="el" href="error_8hpp.html#a962518b30ba32968a1c1726465276ca2">Code</a> code, <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">const</a> <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">char</a> *<a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">fmt</a>,...) <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">noexcept</a></td></tr>
+<tr class="memdesc:a69ddd7601680ef7ce519a8a69e2205f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an error with format.  <br /></td></tr>
+<tr class="separator:a69ddd7601680ef7ce519a8a69e2205f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0d417f3c463718d4314859df38b7839" id="r_ab0d417f3c463718d4314859df38b7839"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">typename</a> <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">T</a> , typename... Args&gt; </td></tr>
 <tr class="memitem:ab0d417f3c463718d4314859df38b7839"><td class="memTemplItemLeft" align="right" valign="top">TCALC_INLINE <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">auto</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="error_8hpp.html#ab0d417f3c463718d4314859df38b7839">tcalc::error::ok</a> (<a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">Args</a> &amp;&amp;... args) <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">noexcept</a></td></tr>
 <tr class="memdesc:ab0d417f3c463718d4314859df38b7839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a result with value.  <br /></td></tr>
@@ -180,6 +182,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a7bffa5eb165a850b7ed5990e22f2522d"><td class="memTemplItemLeft" align="right" valign="top">TCALC_INLINE <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">auto</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="error_8hpp.html#a7bffa5eb165a850b7ed5990e22f2522d">tcalc::error::ok&lt; void &gt;</a> () <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">noexcept</a></td></tr>
 <tr class="memdesc:a7bffa5eb165a850b7ed5990e22f2522d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a result with void value.  <br /></td></tr>
 <tr class="separator:a7bffa5eb165a850b7ed5990e22f2522d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a75e2addc352f27d8a5239dbe8a9456d7" id="r_a75e2addc352f27d8a5239dbe8a9456d7"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">const</a> std::unordered_map&lt; <a class="el" href="error_8hpp.html#a962518b30ba32968a1c1726465276ca2">Code</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8hpp.html#a75e2addc352f27d8a5239dbe8a9456d7">tcalc::error::CODE_NAMES</a></td></tr>
+<tr class="separator:a75e2addc352f27d8a5239dbe8a9456d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>tcalc error definition. </p>
@@ -385,8 +392,62 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a69ddd7601680ef7ce519a8a69e2205f6" name="a69ddd7601680ef7ce519a8a69e2205f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ddd7601680ef7ce519a8a69e2205f6">&#9670;&#160;</a></span>err() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unexpected&lt; Error &gt; tcalc::error::err </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="error_8hpp.html#a962518b30ba32968a1c1726465276ca2">Code</a>&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">const</a> <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">char</a> *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create an error with format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Error code. </td></tr>
+    <tr><td class="paramname">fmt</td><td>Format string. </td></tr>
+    <tr><td class="paramname">args</td><td>Arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result&lt;T&gt; Error. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>To prevent using &lt;format&gt; or &lt;print&gt; headers, this function uses std::vsnprintf. </dd></dl>
+
+</div>
+</div>
 <a id="a33ee05d3d456159047f962f9f23e93c5" name="a33ee05d3d456159047f962f9f23e93c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33ee05d3d456159047f962f9f23e93c5">&#9670;&#160;</a></span>err() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ee05d3d456159047f962f9f23e93c5">&#9670;&#160;</a></span>err() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,67 +485,6 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">code</td><td>Error code. </td></tr>
     <tr><td class="paramname">message</td><td>Error message. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Result&lt;T&gt; Error. </dd></dl>
-
-</div>
-</div>
-<a id="a0f8ce29a954e0917ab03d9e124c315fd" name="a0f8ce29a954e0917ab03d9e124c315fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f8ce29a954e0917ab03d9e124c315fd">&#9670;&#160;</a></span>err() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TCALC_INLINE auto tcalc::error::err </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="error_8hpp.html#a962518b30ba32968a1c1726465276ca2">Code</a>&#160;</td>
-          <td class="paramname"><em>code</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::format_string&lt; Args... &gt;&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">Args</a> &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Create an error with format string. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>Format string arguments. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">code</td><td>Error code. </td></tr>
-    <tr><td class="paramname">fmt</td><td>Format string. </td></tr>
-    <tr><td class="paramname">args</td><td>Format string arguments. </td></tr>
   </table>
   </dd>
 </dl>
@@ -598,6 +598,31 @@ template&lt;&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error Raw error. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a75e2addc352f27d8a5239dbe8a9456d7" name="a75e2addc352f27d8a5239dbe8a9456d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e2addc352f27d8a5239dbe8a9456d7">&#9670;&#160;</a></span>CODE_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; Code, std::string &gt; tcalc::error::CODE_NAMES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  { Code::SYNTAX_ERROR, <span class="stringliteral">&quot;SYNAX_ERROR&quot;</span> },</div>
+<div class="line">  { Code::UNDEFINED_VAR, <span class="stringliteral">&quot;UNDEFINED_VAR&quot;</span> },</div>
+<div class="line">  { Code::UNDEFINED_FUNC, <span class="stringliteral">&quot;UNDEFINED_FUNC&quot;</span> },</div>
+<div class="line">  { Code::MISMATCHED_ARGS, <span class="stringliteral">&quot;MISMATCHED_ARGS&quot;</span> },</div>
+<div class="line">  { Code::ZERO_DIVISION, <span class="stringliteral">&quot;ZERO_DIVISION&quot;</span> },</div>
+<div class="line">  { Code::RECURSION_LIMIT, <span class="stringliteral">&quot;RECURSION_LIMIT&quot;</span> },</div>
+<div class="line">  { Code::FILE_NOT_FOUND, <span class="stringliteral">&quot;FILE_NOT_FOUND&quot;</span> },</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Error code names. </p>
 
 </div>
 </div>

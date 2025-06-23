@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('node_8hpp.html',''); initResizable(); 
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">node.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,6 +109,8 @@ $(document).ready(function(){initNavTree('node_8hpp.html',''); initResizable(); 
 <div class="textblock"><code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 </div>
 <p><a href="node_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -160,6 +163,11 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ae1437712c0ca34c0a70c4226cfafcddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">AST node type.  <a href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">More...</a><br /></td></tr>
 <tr class="separator:ae1437712c0ca34c0a70c4226cfafcddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4201c5dd8e5e6fed1c5a9e2418d76f2b" id="r_a4201c5dd8e5e6fed1c5a9e2418d76f2b"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="node_8hpp.html#a4201c5dd8e5e6fed1c5a9e2418d76f2b">tcalc::ast::NODE_TYPE_NAMES</a></td></tr>
+<tr class="separator:a4201c5dd8e5e6fed1c5a9e2418d76f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for AST nodes. </p>
@@ -262,6 +270,47 @@ template&lt;typename NT  = Node&gt; </div>
 <tr><td class="fieldname"><a id="ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919" name="ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919"></a>IMPORT&#160;</td><td class="fielddoc"><p>Import statement. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a4201c5dd8e5e6fed1c5a9e2418d76f2b" name="a4201c5dd8e5e6fed1c5a9e2418d76f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4201c5dd8e5e6fed1c5a9e2418d76f2b">&#9670;&#160;</a></span>NODE_TYPE_NAMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; NodeType, std::string &gt; tcalc::ast::NODE_TYPE_NAMES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  { NodeType::BINARY_PLUS, <span class="stringliteral">&quot;BINARY_PLUS&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_MINUS, <span class="stringliteral">&quot;BINARY_MINUS&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_MULTIPLY, <span class="stringliteral">&quot;BINARY_MULTIPLY&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_DIVIDE, <span class="stringliteral">&quot;BINARY_DIVIDE&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_EQUAL, <span class="stringliteral">&quot;BINARY_EQUAL&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_NOT_EQUAL, <span class="stringliteral">&quot;BINARY_NOT_EQUAL&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_GREATER, <span class="stringliteral">&quot;BINARY_GREATER&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_GREATER_EQUAL, <span class="stringliteral">&quot;BINARY_GREATER_EQUAL&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_LESS, <span class="stringliteral">&quot;BINARY_LESS&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_LESS_EQUAL, <span class="stringliteral">&quot;BINARY_LESS_EQUAL&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_AND, <span class="stringliteral">&quot;BINARY_AND&quot;</span> },</div>
+<div class="line">  { NodeType::BINARY_OR, <span class="stringliteral">&quot;BINARY_OR&quot;</span> },</div>
+<div class="line">  { NodeType::UNARY_PLUS, <span class="stringliteral">&quot;UNARY_PLUS&quot;</span> },</div>
+<div class="line">  { NodeType::UNARY_MINUS, <span class="stringliteral">&quot;UNARY_MINUS&quot;</span> },</div>
+<div class="line">  { NodeType::UNARY_NOT, <span class="stringliteral">&quot;UNARY_NOT&quot;</span> },</div>
+<div class="line">  { NodeType::NUMBER, <span class="stringliteral">&quot;NUMBER&quot;</span> },</div>
+<div class="line">  { NodeType::VARREF, <span class="stringliteral">&quot;VARREF&quot;</span> },</div>
+<div class="line">  { NodeType::VARASSIGN, <span class="stringliteral">&quot;VARASSIGN&quot;</span> },</div>
+<div class="line">  { NodeType::FCALL, <span class="stringliteral">&quot;FCALL&quot;</span> },</div>
+<div class="line">  { NodeType::FDEF, <span class="stringliteral">&quot;FDEF&quot;</span> },</div>
+<div class="line">  { NodeType::IF, <span class="stringliteral">&quot;IF&quot;</span> },</div>
+<div class="line">  { NodeType::PROGRAM, <span class="stringliteral">&quot;PROGRAM&quot;</span> },</div>
+<div class="line">  { NodeType::IMPORT, <span class="stringliteral">&quot;IMPORT&quot;</span> },</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Node type names. </p>
 
 </div>
 </div>

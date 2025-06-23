@@ -116,83 +116,69 @@ $(document).ready(function(){initNavTree('tokenizer_8hpp_source.html',''); initR
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html">   29</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1token_1_1Tokenizer.html">Tokenizer</a></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">   32</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">KeywordComparator</a> =</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#ad66f81842a92a2e24d83edff458ac758">   32</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtcalc_1_1token_1_1Tokenizer.html#ad66f81842a92a2e24d83edff458ac758">KeywordComp</a> =</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::greater&lt;std::string_view&gt;; </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;std::string_view, TokenType, KeywordComparator&gt;</div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a3294ab3fe22292228cdcc36d29779140">   36</a></span>    KEYWORDS = {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      { <span class="stringliteral">&quot;def&quot;</span>, TokenType::DEF },         { <span class="stringliteral">&quot;let&quot;</span>, TokenType::LET },</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      { <span class="stringliteral">&quot;if&quot;</span>, TokenType::IF },           { <span class="stringliteral">&quot;then&quot;</span>, TokenType::THEN },</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      { <span class="stringliteral">&quot;else&quot;</span>, TokenType::ELSE },       { <span class="stringliteral">&quot;import&quot;</span>, TokenType::IMPORT },</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      { <span class="stringliteral">&quot;==&quot;</span>, TokenType::EQUAL },        { <span class="stringliteral">&quot;!=&quot;</span>, TokenType::NOTEQUAL },</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      { <span class="stringliteral">&quot;&gt;=&quot;</span>, TokenType::GREATEREQUAL }, { <span class="stringliteral">&quot;&lt;=&quot;</span>, TokenType::LESSEQUAL },</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      { <span class="stringliteral">&quot;&amp;&amp;&quot;</span>, TokenType::AND },          { <span class="stringliteral">&quot;||&quot;</span>, TokenType::OR },</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      { <span class="stringliteral">&quot;+&quot;</span>, TokenType::PLUS },          { <span class="stringliteral">&quot;-&quot;</span>, TokenType::MINUS },</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      { <span class="stringliteral">&quot;*&quot;</span>, TokenType::MULTIPLY },      { <span class="stringliteral">&quot;/&quot;</span>, TokenType::DIVIDE },</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      { <span class="stringliteral">&quot;(&quot;</span>, TokenType::LPAREN },        { <span class="stringliteral">&quot;)&quot;</span>, TokenType::RPAREN },</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      { <span class="stringliteral">&quot;,&quot;</span>, TokenType::COMMA },         { <span class="stringliteral">&quot;;&quot;</span>, TokenType::SEMICOLON },</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      { <span class="stringliteral">&quot;=&quot;</span>, TokenType::ASSIGN },        { <span class="stringliteral">&quot;&gt;&quot;</span>, TokenType::GREATER },</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      { <span class="stringliteral">&quot;&lt;&quot;</span>, TokenType::LESS },          { <span class="stringliteral">&quot;!&quot;</span>, TokenType::NOT },</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }; </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a9ca231b069ebddaf99c82be03e274565">   51</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">char</span> QUOTE = <span class="charliteral">&#39;\&#39;&#39;</span>; </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  std::string_view _input;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  std::string_view::const_iterator _pos;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classtcalc_1_1token_1_1Tokenizer.html">Tokenizer</a>(std::string_view input);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;Token&gt;</a> next();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">   77</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">pos</a>() const noexcept { <span class="keywordflow">return</span> _pos; }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">   84</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">spos</a>() const noexcept</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> std::distance(_input.begin(), _pos);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;std::string_view, TokenType, KeywordComp&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a4dfd27454b403ff654b1a41d270fbcf8">   36</a></span>    <a class="code hl_variable" href="classtcalc_1_1token_1_1Tokenizer.html#a4dfd27454b403ff654b1a41d270fbcf8">KEYWORDS</a>; </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a9ca231b069ebddaf99c82be03e274565">   38</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">char</span> QUOTE = <span class="charliteral">&#39;\&#39;&#39;</span>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  std::string_view _input;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  std::string_view::const_iterator _pos;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classtcalc_1_1token_1_1Tokenizer.html">Tokenizer</a>(std::string_view input);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;Token&gt;</a> next();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">   64</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">pos</a>() const noexcept { <span class="keywordflow">return</span> _pos; }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">   71</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">spos</a>() const noexcept</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> std::distance(_input.begin(), _pos);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">auto</span> _next_with(<a class="code hl_enumeration" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a> type, <span class="keyword">auto</span>&amp;&amp; pred)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">const</span> <span class="keyword">auto</span>* start = _pos;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">auto</span> _next_with(<a class="code hl_enumeration" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a> type, <span class="keyword">auto</span>&amp;&amp; pred)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">const</span> <span class="keyword">auto</span>* start = _pos;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">while</span> (_pos != _input.end() &amp;&amp; pred(*_pos)) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      ++_pos;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> Token{ .type = type, .text = std::string{ start, _pos } };</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordtype">void</span> _skip_with(<span class="keyword">auto</span>&amp;&amp; pred)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  {</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">while</span> (_pos != _input.end() &amp;&amp; pred(*_pos)) {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      ++_pos;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> Token{ .type = type, .text = std::string{ start, _pos } };</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> _skip_with(<span class="keyword">auto</span>&amp;&amp; pred)</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">while</span> (_pos != _input.end() &amp;&amp; pred(*_pos)) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      ++_pos;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  error::Result&lt;Token&gt; _parse_number();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  error::Result&lt;Token&gt; _parse_quoted_identifier();</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  error::Result&lt;Token&gt; _parse_number();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  error::Result&lt;Token&gt; _parse_quoted_identifier();</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">bool</span> _is_keyword(std::string_view keyword);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_identifier_char(<span class="keywordtype">char</span> c);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_first_identifier_char(<span class="keywordtype">char</span> c);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_skippable_char(<span class="keywordtype">char</span> c);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>};</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordtype">bool</span> _is_keyword(std::string_view keyword);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_identifier_char(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_first_identifier_char(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> _is_skippable_char(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>};</div>
 </div>
-</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
 <div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html">tcalc::token::Tokenizer</a></div><div class="ttdoc">Tokenize the input string into tokens.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:30</div></div>
-<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a364a13c8994fd6cf3159328a05c1ddb1"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a364a13c8994fd6cf3159328a05c1ddb1">tcalc::token::Tokenizer::KeywordComparator</a></div><div class="ttdeci">std::greater&lt; std::string_view &gt; KeywordComparator</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:33</div></div>
-<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a6258bea1a171ccc3406abb337641970a"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">tcalc::token::Tokenizer::spos</a></div><div class="ttdeci">TCALC_INLINE auto spos() const noexcept</div><div class="ttdoc">Get the current position of the tokenizer as an index.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:84</div></div>
-<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a6bb2088372263d09fa8872a844698650"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">tcalc::token::Tokenizer::pos</a></div><div class="ttdeci">TCALC_INLINE auto pos() const noexcept</div><div class="ttdoc">Get the current position of the tokenizer.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:77</div></div>
+<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a4dfd27454b403ff654b1a41d270fbcf8"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a4dfd27454b403ff654b1a41d270fbcf8">tcalc::token::Tokenizer::KEYWORDS</a></div><div class="ttdeci">static const std::map&lt; std::string_view, TokenType, KeywordComp &gt; KEYWORDS</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:36</div></div>
+<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a6258bea1a171ccc3406abb337641970a"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a">tcalc::token::Tokenizer::spos</a></div><div class="ttdeci">TCALC_INLINE auto spos() const noexcept</div><div class="ttdoc">Get the current position of the tokenizer as an index.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:71</div></div>
+<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_a6bb2088372263d09fa8872a844698650"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#a6bb2088372263d09fa8872a844698650">tcalc::token::Tokenizer::pos</a></div><div class="ttdeci">TCALC_INLINE auto pos() const noexcept</div><div class="ttdoc">Get the current position of the tokenizer.</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:64</div></div>
+<div class="ttc" id="aclasstcalc_1_1token_1_1Tokenizer_html_ad66f81842a92a2e24d83edff458ac758"><div class="ttname"><a href="classtcalc_1_1token_1_1Tokenizer.html#ad66f81842a92a2e24d83edff458ac758">tcalc::token::Tokenizer::KeywordComp</a></div><div class="ttdeci">std::greater&lt; std::string_view &gt; KeywordComp</div><div class="ttdef"><b>Definition</b> tokenizer.hpp:33</div></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div><div class="ttdoc">tcalc error definition.</div></div>
-<div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:127</div></div>
+<div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:135</div></div>
 <div class="ttc" id="atoken_8hpp_html"><div class="ttname"><a href="token_8hpp.html">token.hpp</a></div><div class="ttdoc">Input token definition.</div></div>
 <div class="ttc" id="atoken_8hpp_html_aa1a2d536ad975a4b3baae9803aae2126"><div class="ttname"><a href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">tcalc::token::TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">Token type, some values are ASCII code of the corresponding character.</div><div class="ttdef"><b>Definition</b> token.hpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -159,10 +159,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:adcdf361a34694425b129f43d1df4b92a" id="r_adcdf361a34694425b129f43d1df4b92a"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt; double(double, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#adcdf361a34694425b129f43d1df4b92a">BINOP_MAP</a></td></tr>
-<tr class="separator:adcdf361a34694425b129f43d1df4b92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83a27feedf72da552c7b34656c9653ba" id="r_a83a27feedf72da552c7b34656c9653ba"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt; double(double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#a83a27feedf72da552c7b34656c9653ba">UNARYOP_MAP</a></td></tr>
-<tr class="separator:a83a27feedf72da552c7b34656c9653ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4972b6d7fc992cd1c4e50f7ef2d144f" id="r_ae4972b6d7fc992cd1c4e50f7ef2d144f"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt; double(double, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#ae4972b6d7fc992cd1c4e50f7ef2d144f">BINOP_MAP</a></td></tr>
+<tr class="separator:ae4972b6d7fc992cd1c4e50f7ef2d144f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a1a3af650cdd3ec9439b08e94b3af89" id="r_a4a1a3af650cdd3ec9439b08e94b3af89"><td class="memItemLeft" align="right" valign="top">static const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt; double(double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#a4a1a3af650cdd3ec9439b08e94b3af89">UNARYOP_MAP</a></td></tr>
+<tr class="separator:a4a1a3af650cdd3ec9439b08e94b3af89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Visitor for evaluating AST. </p>
@@ -528,8 +528,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="adcdf361a34694425b129f43d1df4b92a" name="adcdf361a34694425b129f43d1df4b92a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcdf361a34694425b129f43d1df4b92a">&#9670;&#160;</a></span>BINOP_MAP</h2>
+<a id="ae4972b6d7fc992cd1c4e50f7ef2d144f" name="ae4972b6d7fc992cd1c4e50f7ef2d144f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4972b6d7fc992cd1c4e50f7ef2d144f">&#9670;&#160;</a></span>BINOP_MAP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -538,35 +538,35 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::unordered_map&lt;<a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt;double(double, double)&gt; &gt; tcalc::ast::EvalVisitor::BINOP_MAP</td>
+          <td class="memname">const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt; double(double, double)&gt; &gt; tcalc::ast::EvalVisitor::BINOP_MAP</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">      { NodeType::BINARY_PLUS, std::plus&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_MINUS, std::minus&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_MULTIPLY, std::multiplies&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_DIVIDE, std::divides&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_EQUAL, _double_eq },</div>
-<div class="line">      { NodeType::BINARY_NOT_EQUAL, _double_noeq },</div>
-<div class="line">      { NodeType::BINARY_GREATER, std::greater&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_GREATER_EQUAL, std::greater_equal&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_LESS, std::less&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_LESS_EQUAL, std::less_equal&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_AND, std::logical_and&lt;&gt;() },</div>
-<div class="line">      { NodeType::BINARY_OR, std::logical_or&lt;&gt;() }</div>
-<div class="line">    }</div>
+<div class="line">    { NodeType::BINARY_PLUS, std::plus&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_MINUS, std::minus&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_MULTIPLY, std::multiplies&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_DIVIDE, std::divides&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_EQUAL, _double_eq },</div>
+<div class="line">    { NodeType::BINARY_NOT_EQUAL, _double_noeq },</div>
+<div class="line">    { NodeType::BINARY_GREATER, std::greater&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_GREATER_EQUAL, std::greater_equal&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_LESS, std::less&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_LESS_EQUAL, std::less_equal&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_AND, std::logical_and&lt;&gt;() },</div>
+<div class="line">    { NodeType::BINARY_OR, std::logical_or&lt;&gt;() }</div>
+<div class="line">  }</div>
 </div><!-- fragment --><p>Map of binary operator to function. </p>
 
 </div>
 </div>
-<a id="a83a27feedf72da552c7b34656c9653ba" name="a83a27feedf72da552c7b34656c9653ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83a27feedf72da552c7b34656c9653ba">&#9670;&#160;</a></span>UNARYOP_MAP</h2>
+<a id="a4a1a3af650cdd3ec9439b08e94b3af89" name="a4a1a3af650cdd3ec9439b08e94b3af89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1a3af650cdd3ec9439b08e94b3af89">&#9670;&#160;</a></span>UNARYOP_MAP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,20 +575,18 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::unordered_map&lt;<a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt;double(double)&gt; &gt; tcalc::ast::EvalVisitor::UNARYOP_MAP</td>
+          <td class="memname">const std::unordered_map&lt; <a class="el" href="node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc">NodeType</a>, std::function&lt; double(double)&gt; &gt; tcalc::ast::EvalVisitor::UNARYOP_MAP</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">      { NodeType::UNARY_PLUS, _double_forward },</div>
-<div class="line">      { NodeType::UNARY_MINUS, std::negate&lt;&gt;() },</div>
-<div class="line">      { NodeType::UNARY_NOT, std::logical_not&lt;&gt;() }</div>
-<div class="line">    }</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= { { NodeType::UNARY_PLUS, _double_forward },</div>
+<div class="line">                               { NodeType::UNARY_MINUS, std::negate&lt;&gt;() },</div>
+<div class="line">                               { NodeType::UNARY_NOT, std::logical_not&lt;&gt;() } }</div>
 </div><!-- fragment --><p>Map of unary operator to function. </p>
 
 </div>

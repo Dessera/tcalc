@@ -5,8 +5,8 @@ var searchData=
   ['then_2',['then',['../classtcalc_1_1ast_1_1IfNode.html#a210d8b6f664942fc2903414549c91510',1,'tcalc::ast::IfNode::then() const noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a7b7c266cbe4064b06ad525c426ff476b',1,'tcalc::ast::IfNode::then() noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a4c789e1aca1419bbd71d575082a62e84',1,'tcalc::ast::IfNode::then(NodePtr&lt;&gt; then) noexcept'],['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a907ec71a28d71811a0e37f08b15c2109',1,'THENtcalc::token']]],
   ['token_3',['Token',['../structtcalc_1_1token_1_1Token.html',1,'tcalc::token']]],
   ['token_2ehpp_4',['token.hpp',['../token_8hpp.html',1,'']]],
-  ['token_5ftype_5fto_5fstring_5',['token_type_to_string',['../token_8hpp.html#a4d0e84ea2537b7f5f14f74716dcb9f88',1,'tcalc::token']]],
-  ['tokenizer_6',['tokenizer',['../classtcalc_1_1token_1_1Tokenizer.html',1,'tcalc::token::Tokenizer'],['../classtcalc_1_1ast_1_1ParserContext.html#af2e9b189d2eb351666f1c55178284007',1,'tcalc::ast::ParserContext::tokenizer()'],['../classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14',1,'tcalc::token::Tokenizer::Tokenizer()']]],
+  ['token_5ftype_5fnames_5',['TOKEN_TYPE_NAMES',['../token_8hpp.html#a538979d8f7d82fc653702663a184ff9e',1,'tcalc::token']]],
+  ['tokenizer_6',['tokenizer',['../classtcalc_1_1token_1_1Tokenizer.html',1,'tcalc::token::Tokenizer'],['../classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14',1,'tcalc::token::Tokenizer::Tokenizer()'],['../classtcalc_1_1ast_1_1ParserContext.html#af2e9b189d2eb351666f1c55178284007',1,'tcalc::ast::ParserContext::tokenizer()']]],
   ['tokenizer_2ehpp_7',['tokenizer.hpp',['../tokenizer_8hpp.html',1,'']]],
   ['tokentype_8',['TokenType',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126',1,'tcalc::token']]],
   ['type_9',['type',['../classtcalc_1_1ast_1_1Node.html#a61c43ce378cdf93a31f09d0ff00f38dd',1,'tcalc::ast::Node']]]

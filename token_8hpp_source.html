@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('token_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
@@ -142,32 +142,32 @@ $(document).ready(function(){initNavTree('token_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
 </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>TCALC_PUBLIC std::string_view</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>token_type_to_string(TokenType type);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structtcalc_1_1token_1_1Token.html">   70</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">Token</a></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_enumeration" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a> type;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  std::string text;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structtcalc_1_1token_1_1Token.html">   61</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">Token</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_enumeration" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a> type;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  std::string text;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
 </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>TCALC_INLINE <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>operator==(<span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; rhs)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">return</span> lhs.type == rhs.type &amp;&amp; lhs.text == rhs.text;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>TCALC_INLINE <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>operator!=(<span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; rhs)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> !(lhs == rhs);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> std::unordered_map&lt;TokenType, std::string&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_variable" href="token_8hpp.html#a538979d8f7d82fc653702663a184ff9e">TOKEN_TYPE_NAMES</a>; </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>TCALC_INLINE <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>operator==(<span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; rhs)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">return</span> lhs.type == rhs.type &amp;&amp; lhs.text == rhs.text;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>TCALC_INLINE <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>operator!=(<span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_struct" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a>&amp; rhs)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">return</span> !(lhs == rhs);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
-<div class="ttc" id="astructtcalc_1_1token_1_1Token_html"><div class="ttname"><a href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a></div><div class="ttdoc">Token structure.</div><div class="ttdef"><b>Definition</b> token.hpp:71</div></div>
+<div class="ttc" id="astructtcalc_1_1token_1_1Token_html"><div class="ttname"><a href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a></div><div class="ttdoc">Token structure.</div><div class="ttdef"><b>Definition</b> token.hpp:62</div></div>
+<div class="ttc" id="atoken_8hpp_html_a538979d8f7d82fc653702663a184ff9e"><div class="ttname"><a href="token_8hpp.html#a538979d8f7d82fc653702663a184ff9e">tcalc::token::TOKEN_TYPE_NAMES</a></div><div class="ttdeci">TCALC_PUBLIC const std::unordered_map&lt; TokenType, std::string &gt; TOKEN_TYPE_NAMES</div><div class="ttdef"><b>Definition</b> token.cpp:5</div></div>
 <div class="ttc" id="atoken_8hpp_html_aa1a2d536ad975a4b3baae9803aae2126"><div class="ttname"><a href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">tcalc::token::TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">Token type, some values are ASCII code of the corresponding character.</div><div class="ttdef"><b>Definition</b> token.hpp:27</div></div>
 <div class="ttc" id="atoken_8hpp_html_aa1a2d536ad975a4b3baae9803aae2126a080aaf8d817ada96fca7096b7b55bd30"><div class="ttname"><a href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a080aaf8d817ada96fca7096b7b55bd30">tcalc::token::TokenType::MULTIPLY</a></div><div class="ttdeci">@ MULTIPLY</div></div>
 <div class="ttc" id="atoken_8hpp_html_aa1a2d536ad975a4b3baae9803aae2126a0ebd26208a4f97a2cab0b8ebda1c897e"><div class="ttname"><a href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a0ebd26208a4f97a2cab0b8ebda1c897e">tcalc::token::TokenType::LESSEQUAL</a></div><div class="ttdeci">@ LESSEQUAL</div></div>

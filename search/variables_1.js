@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['indent_5fstep_0',['INDENT_STEP',['../classtcalc_1_1ast_1_1PrintVisitor.html#a479de25d313fba8830c2b76263b85591',1,'tcalc::ast::PrintVisitor']]]
+  ['code_5fnames_0',['CODE_NAMES',['../error_8hpp.html#a75e2addc352f27d8a5239dbe8a9456d7',1,'tcalc::error']]]
 ];

@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('token_8hpp.html',''); initResizable();
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">token.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,7 +108,7 @@ $(document).ready(function(){initNavTree('token_8hpp.html',''); initResizable();
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 </div>
 <p><a href="token_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -161,15 +162,17 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4d0e84ea2537b7f5f14f74716dcb9f88" id="r_a4d0e84ea2537b7f5f14f74716dcb9f88"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="token_8hpp.html#a4d0e84ea2537b7f5f14f74716dcb9f88">tcalc::token::token_type_to_string</a> (<a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a> type)</td></tr>
-<tr class="memdesc:a4d0e84ea2537b7f5f14f74716dcb9f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert token type to readable string (wrapper of magic_enum).  <br /></td></tr>
-<tr class="separator:a4d0e84ea2537b7f5f14f74716dcb9f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40138dfed6e20f1bb777c9ecce215878" id="r_a40138dfed6e20f1bb777c9ecce215878"><td class="memItemLeft" align="right" valign="top"><a id="a40138dfed6e20f1bb777c9ecce215878" name="a40138dfed6e20f1bb777c9ecce215878"></a>
 TCALC_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a> &amp;lhs, const <a class="el" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a> &amp;rhs)</td></tr>
 <tr class="separator:a40138dfed6e20f1bb777c9ecce215878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b4bcb7ef636270636e5fde78a3a5f8d" id="r_a6b4bcb7ef636270636e5fde78a3a5f8d"><td class="memItemLeft" align="right" valign="top"><a id="a6b4bcb7ef636270636e5fde78a3a5f8d" name="a6b4bcb7ef636270636e5fde78a3a5f8d"></a>
 TCALC_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a> &amp;lhs, const <a class="el" href="structtcalc_1_1token_1_1Token.html">tcalc::token::Token</a> &amp;rhs)</td></tr>
 <tr class="separator:a6b4bcb7ef636270636e5fde78a3a5f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a538979d8f7d82fc653702663a184ff9e" id="r_a538979d8f7d82fc653702663a184ff9e"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC const std::unordered_map&lt; <a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="token_8hpp.html#a538979d8f7d82fc653702663a184ff9e">tcalc::token::TOKEN_TYPE_NAMES</a></td></tr>
+<tr class="separator:a538979d8f7d82fc653702663a184ff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Input token definition. </p>
@@ -266,31 +269,48 @@ TCALC_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a4d0e84ea2537b7f5f14f74716dcb9f88" name="a4d0e84ea2537b7f5f14f74716dcb9f88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d0e84ea2537b7f5f14f74716dcb9f88">&#9670;&#160;</a></span>token_type_to_string()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a538979d8f7d82fc653702663a184ff9e" name="a538979d8f7d82fc653702663a184ff9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a538979d8f7d82fc653702663a184ff9e">&#9670;&#160;</a></span>TOKEN_TYPE_NAMES</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string_view tcalc::token::token_type_to_string </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126">TokenType</a>&#160;</td>
-          <td class="paramname"><em>type</em></td><td>)</td>
-          <td></td>
+          <td class="memname">const std::unordered_map&lt; TokenType, std::string &gt; tcalc::token::TOKEN_TYPE_NAMES</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Convert token type to readable string (wrapper of magic_enum). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">type</td><td>Token type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string Readable string. </dd></dl>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  { TokenType::PLUS, <span class="stringliteral">&quot;PLUS&quot;</span> },</div>
+<div class="line">  { TokenType::MINUS, <span class="stringliteral">&quot;MINUS&quot;</span> },</div>
+<div class="line">  { TokenType::MULTIPLY, <span class="stringliteral">&quot;MULTIPLY&quot;</span> },</div>
+<div class="line">  { TokenType::DIVIDE, <span class="stringliteral">&quot;DIVIDE&quot;</span> },</div>
+<div class="line">  { TokenType::LPAREN, <span class="stringliteral">&quot;LPAREN&quot;</span> },</div>
+<div class="line">  { TokenType::RPAREN, <span class="stringliteral">&quot;RPAREN&quot;</span> },</div>
+<div class="line">  { TokenType::COMMA, <span class="stringliteral">&quot;COMMA&quot;</span> },</div>
+<div class="line">  { TokenType::SEMICOLON, <span class="stringliteral">&quot;SEMICOLON&quot;</span> },</div>
+<div class="line">  { TokenType::ASSIGN, <span class="stringliteral">&quot;ASSIGN&quot;</span> },</div>
+<div class="line">  { TokenType::GREATER, <span class="stringliteral">&quot;GREATER&quot;</span> },</div>
+<div class="line">  { TokenType::LESS, <span class="stringliteral">&quot;LESS&quot;</span> },</div>
+<div class="line">  { TokenType::NOT, <span class="stringliteral">&quot;NOT&quot;</span> },</div>
+<div class="line">  { TokenType::NUMBER, <span class="stringliteral">&quot;NUMBER&quot;</span> },</div>
+<div class="line">  { TokenType::IDENTIFIER, <span class="stringliteral">&quot;IDENTIFIER&quot;</span> },</div>
+<div class="line">  { TokenType::DEF, <span class="stringliteral">&quot;DEF&quot;</span> },</div>
+<div class="line">  { TokenType::LET, <span class="stringliteral">&quot;LET&quot;</span> },</div>
+<div class="line">  { TokenType::IF, <span class="stringliteral">&quot;IF&quot;</span> },</div>
+<div class="line">  { TokenType::THEN, <span class="stringliteral">&quot;THEN&quot;</span> },</div>
+<div class="line">  { TokenType::ELSE, <span class="stringliteral">&quot;ELSE&quot;</span> },</div>
+<div class="line">  { TokenType::IMPORT, <span class="stringliteral">&quot;IMPORT&quot;</span> },</div>
+<div class="line">  { TokenType::EQUAL, <span class="stringliteral">&quot;EQUAL&quot;</span> },</div>
+<div class="line">  { TokenType::NOTEQUAL, <span class="stringliteral">&quot;NOTEQUAL&quot;</span> },</div>
+<div class="line">  { TokenType::GREATEREQUAL, <span class="stringliteral">&quot;GREATEREQUAL&quot;</span> },</div>
+<div class="line">  { TokenType::LESSEQUAL, <span class="stringliteral">&quot;LESSEQUAL&quot;</span> },</div>
+<div class="line">  { TokenType::AND, <span class="stringliteral">&quot;AND&quot;</span> },</div>
+<div class="line">  { TokenType::OR, <span class="stringliteral">&quot;OR&quot;</span> },</div>
+<div class="line">  { TokenType::EOI, <span class="stringliteral">&quot;EOI&quot;</span> },</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Token type names. </p>
 
 </div>
 </div>

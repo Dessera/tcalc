@@ -26,5 +26,6 @@ var node_8hpp =
       [ "IF", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcade6ee2b5d856295add4d5e3631fbfb93", null ],
       [ "PROGRAM", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31", null ],
       [ "IMPORT", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919", null ]
-    ] ]
+    ] ],
+    [ "NODE_TYPE_NAMES", "node_8hpp.html#a4201c5dd8e5e6fed1c5a9e2418d76f2b", null ]
 ];

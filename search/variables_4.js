@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unaryop_5fmap_0',['UNARYOP_MAP',['../classtcalc_1_1ast_1_1EvalVisitor.html#a83a27feedf72da552c7b34656c9653ba',1,'tcalc::ast::EvalVisitor']]],
-  ['unaryop_5fpriority_1',['UNARYOP_PRIORITY',['../priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e',1,'tcalc::ast']]]
+  ['max_5fmsg_5flen_0',['MAX_MSG_LEN',['../classtcalc_1_1error_1_1Error.html#a9967ee33ccdbe98f210e8584af52752a',1,'tcalc::error::Error']]]
 ];

@@ -14,11 +14,12 @@ var searchData=
   ['next_5fstatement_11',['next_statement',['../classtcalc_1_1ast_1_1Parser.html#ae6107f18f356c4ca1085be22a1d0536d',1,'tcalc::ast::Parser']]],
   ['node_12',['node',['../classtcalc_1_1ast_1_1Node.html#a5e7be8f762686ab392ec4352d390c3e1',1,'tcalc::ast::Node::Node()'],['../classtcalc_1_1ast_1_1Node.html',1,'tcalc::ast::Node']]],
   ['node_2ehpp_13',['node.hpp',['../node_8hpp.html',1,'']]],
-  ['nodeptr_14',['NodePtr',['../node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3',1,'tcalc::ast']]],
-  ['nodetype_15',['NodeType',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc',1,'tcalc::ast']]],
-  ['not_16',['NOT',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a10df3d67626099df882920ba6552f16d',1,'tcalc::token']]],
-  ['notequal_17',['NOTEQUAL',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a94fbd04a26dff1689ee02634be6aaf1f',1,'tcalc::token']]],
-  ['number_18',['number',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::ast'],['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::token']]],
-  ['number_2ehpp_19',['number.hpp',['../number_8hpp.html',1,'']]],
-  ['numbernode_20',['numbernode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode::NumberNode()'],['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast::NumberNode']]]
+  ['node_5ftype_5fnames_14',['NODE_TYPE_NAMES',['../node_8hpp.html#a4201c5dd8e5e6fed1c5a9e2418d76f2b',1,'tcalc::ast']]],
+  ['nodeptr_15',['NodePtr',['../node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3',1,'tcalc::ast']]],
+  ['nodetype_16',['NodeType',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc',1,'tcalc::ast']]],
+  ['not_17',['NOT',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a10df3d67626099df882920ba6552f16d',1,'tcalc::token']]],
+  ['notequal_18',['NOTEQUAL',['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a94fbd04a26dff1689ee02634be6aaf1f',1,'tcalc::token']]],
+  ['number_19',['number',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::ast'],['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a34f55eca38e0605a84f169ff61a2a396',1,'NUMBERtcalc::token']]],
+  ['number_2ehpp_20',['number.hpp',['../number_8hpp.html',1,'']]],
+  ['numbernode_21',['numbernode',['../classtcalc_1_1ast_1_1NumberNode.html#a930acbcdb157765afe45cf28aca4ead3',1,'tcalc::ast::NumberNode::NumberNode()'],['../classtcalc_1_1ast_1_1NumberNode.html',1,'tcalc::ast::NumberNode']]]
 ];

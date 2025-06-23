@@ -30,5 +30,5 @@ var token_8hpp =
       [ "OR", "token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a1d00e7dce692e8dc3f6877f035e3a616", null ],
       [ "EOI", "token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126acf4b2d0f78964523b93231a1c8d93c39", null ]
     ] ],
-    [ "token_type_to_string", "token_8hpp.html#a4d0e84ea2537b7f5f14f74716dcb9f88", null ]
+    [ "TOKEN_TYPE_NAMES", "token_8hpp.html#a538979d8f7d82fc653702663a184ff9e", null ]
 ];
