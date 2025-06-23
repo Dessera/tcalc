@@ -60,6 +60,7 @@ public:
   error::Result<double> visit_fdef(NodePtr<FdefNode>& node) override;
   error::Result<double> visit_if(NodePtr<IfNode>& node) override;
   error::Result<double> visit_import(NodePtr<ProgramImportNode>& node) override;
+  error::Result<double> visit_program(NodePtr<ProgramNode>& node) override;
 
 private:
   /**

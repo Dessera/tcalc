@@ -66,16 +66,5 @@ struct Token
 
 extern TCALC_PUBLIC const std::unordered_map<TokenType, std::string>
   TOKEN_TYPE_NAMES; /**< Token type names. */
-}
 
-TCALC_INLINE bool
-operator==(const tcalc::token::Token& lhs, const tcalc::token::Token& rhs)
-{
-  return lhs.type == rhs.type && lhs.text == rhs.text;
-}
-
-TCALC_INLINE bool
-operator!=(const tcalc::token::Token& lhs, const tcalc::token::Token& rhs)
-{
-  return !(lhs == rhs);
 }

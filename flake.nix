@@ -37,6 +37,7 @@
                     nixfmt-rfc-style
                     mesonlsp
                     doxygen
+                    gtest
                   ])
                   ++ [ clang-tools ];
               };
@@ -44,7 +45,7 @@
         {
           packages.default = pkgs.callPackage ./default.nix { stdenv = pkgs.gcc14Stdenv; };
           devShells = rec {
-            default = clang-20;
+            default = gcc-14;
             gcc-14 = mkDevEnv pkgs.gcc14Stdenv;
             gcc-13 = mkDevEnv pkgs.gcc13Stdenv;
             gcc-12 = mkDevEnv pkgs.gcc12Stdenv;

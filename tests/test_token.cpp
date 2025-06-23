@@ -1,80 +1,72 @@
-#include <cassert>
-#include <catch2/catch_test_macros.hpp>
-#include <cstddef>
+#include <gtest/gtest.h>
+#include <tcalc/tokenizer.hpp>
 #include <vector>
-
-#include "tcalc/token.hpp"
-#include "tcalc/tokenizer.hpp"
 
 namespace {
 
-std::vector<tcalc::token::Token>
-tokenize(std::string_view input)
+TEST(TokenizerTest, Success)
 {
-  using tcalc::token::Token;
-  using tcalc::token::Tokenizer;
-  using tcalc::token::TokenType;
-
-  auto tokenizer = Tokenizer{ input };
-
-  auto tokens = std::vector<Token>{};
+  auto tokens = tcalc::token::Tokenizer{
+    "+ - * / ( ) , ; = > < ! 123.456 'A10\\'.BC' def let if "
+    "then else import == != >= <= && ||"
+  };
+  auto parsed_tokens = std::vector<tcalc::token::Token>{};
   while (true) {
-    auto res = tokenizer.next();
-    REQUIRE(res.has_value());
+    auto res = tokens.next();
+    EXPECT_TRUE(res.has_value());
 
-    const auto& token = res.value();
-    if (token.type == TokenType::EOI) {
+    if (res.value().type == tcalc::token::TokenType::EOI) {
       break;
     }
 
-    tokens.push_back(token);
+    parsed_tokens.push_back(res.value());
   }
 
-  return tokens;
-}
-
-}
-
-TEST_CASE("Test Tokenizer", "[tokenizer][success]")
-{
-  using tcalc::token::Token;
-  using tcalc::token::TokenType;
-
-  auto expected_tokens = std::vector<Token>{
-    { .type = TokenType::NUMBER, .text = "1" },
-    { .type = TokenType::PLUS, .text = "+" },
-    { .type = TokenType::NUMBER, .text = "2" },
-    { .type = TokenType::MULTIPLY, .text = "*" },
-    { .type = TokenType::NUMBER, .text = "3" },
-    { .type = TokenType::MINUS, .text = "-" },
-    { .type = TokenType::IDENTIFIER, .text = "sqrt" },
-    { .type = TokenType::LPAREN, .text = "(" },
-    { .type = TokenType::NUMBER, .text = "9" },
-    { .type = TokenType::RPAREN, .text = ")" },
-    { .type = TokenType::DIVIDE, .text = "/" },
-    { .type = TokenType::IDENTIFIER, .text = "pi" },
+  auto expected_tokens = std::vector<tcalc::token::Token>{
+    { .type = tcalc::token::TokenType::PLUS, .text = "+" },
+    { .type = tcalc::token::TokenType::MINUS, .text = "-" },
+    { .type = tcalc::token::TokenType::MULTIPLY, .text = "*" },
+    { .type = tcalc::token::TokenType::DIVIDE, .text = "/" },
+    { .type = tcalc::token::TokenType::LPAREN, .text = "(" },
+    { .type = tcalc::token::TokenType::RPAREN, .text = ")" },
+    { .type = tcalc::token::TokenType::COMMA, .text = "," },
+    { .type = tcalc::token::TokenType::SEMICOLON, .text = ";" },
+    { .type = tcalc::token::TokenType::ASSIGN, .text = "=" },
+    { .type = tcalc::token::TokenType::GREATER, .text = ">" },
+    { .type = tcalc::token::TokenType::LESS, .text = "<" },
+    { .type = tcalc::token::TokenType::NOT, .text = "!" },
+    { .type = tcalc::token::TokenType::NUMBER, .text = "123.456" },
+    { .type = tcalc::token::TokenType::IDENTIFIER, .text = "A10'.BC" },
+    { .type = tcalc::token::TokenType::DEF, .text = "def" },
+    { .type = tcalc::token::TokenType::LET, .text = "let" },
+    { .type = tcalc::token::TokenType::IF, .text = "if" },
+    { .type = tcalc::token::TokenType::THEN, .text = "then" },
+    { .type = tcalc::token::TokenType::ELSE, .text = "else" },
+    { .type = tcalc::token::TokenType::IMPORT, .text = "import" },
+    { .type = tcalc::token::TokenType::EQUAL, .text = "==" },
+    { .type = tcalc::token::TokenType::NOTEQUAL, .text = "!=" },
+    { .type = tcalc::token::TokenType::GREATEREQUAL, .text = ">=" },
+    { .type = tcalc::token::TokenType::LESSEQUAL, .text = "<=" },
+    { .type = tcalc::token::TokenType::AND, .text = "&&" },
+    { .type = tcalc::token::TokenType::OR, .text = "||" },
   };
 
-  auto real_tokens = tokenize("1 + 2 * 3 - sqrt(9) / pi");
-
-  REQUIRE(real_tokens.size() == expected_tokens.size());
-
-  for (std::size_t i = 0; i < real_tokens.size(); ++i) {
-    REQUIRE((real_tokens[i] == expected_tokens[i]));
+  EXPECT_EQ(parsed_tokens.size(), expected_tokens.size());
+  for (size_t i = 0; i < parsed_tokens.size(); ++i) {
+    EXPECT_EQ(parsed_tokens[i].text, expected_tokens[i].text);
+    EXPECT_EQ(parsed_tokens[i].type, expected_tokens[i].type);
   }
 }
 
-TEST_CASE("Test Tokenizer Error", "[tokenizer][error]")
+TEST(TokenizerTest, Failure)
 {
-  using tcalc::token::Tokenizer;
+  auto tokens = tcalc::token::Tokenizer{ "." };
+  auto res = tokens.next();
+  EXPECT_FALSE(res.has_value());
 
-  // cntrl
-  auto tk1 = Tokenizer{ "\b" };
-  auto res = tk1.next();
-  REQUIRE_FALSE(res.has_value());
+  auto tokens2 = tcalc::token::Tokenizer{ "\b" };
+  auto res2 = tokens2.next();
+  EXPECT_FALSE(res2.has_value());
+}
 
-  // printable
-  auto tk2 = Tokenizer{ ";" };
-  res = tk2.next();
-  REQUIRE_FALSE(res.has_value());
 }

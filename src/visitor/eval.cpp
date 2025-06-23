@@ -113,6 +113,16 @@ EvalVisitor::visit_import(NodePtr<ProgramImportNode>& node)
   return error::ok<double>(0);
 }
 
+error::Result<double>
+EvalVisitor::visit_program(NodePtr<ProgramNode>& node)
+{
+  if (node->statements().empty()) {
+    return error::ok<double>(0);
+  }
+
+  return visit(node->statements().back());
+}
+
 double
 EvalVisitor::_double_eq(double a, double b)
 {

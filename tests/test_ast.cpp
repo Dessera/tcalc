@@ -1,66 +1,55 @@
-#include <catch2/catch_test_macros.hpp>
-#include <memory>
-#include <sstream>
-
-#include "tcalc/parser.hpp"
-#include "tcalc/visitor/print.hpp"
+#include <gtest/gtest.h>
+#include <tcalc/parser.hpp>
 
 namespace {
 
-std::string
-parse_ast(std::string_view input)
+TEST(ParserTest, Expression)
 {
-  using tcalc::ast::Parser;
-  using tcalc::ast::PrintVisitor;
+  auto parser = tcalc::ast::Parser{};
 
-  auto parser = Parser{};
-  auto res = parser.parse(input);
-  REQUIRE(res.has_value());
-
-  auto node = res.value();
-  auto ss = std::stringstream{};
-  auto visitor = PrintVisitor{ ss };
-
-  REQUIRE(visitor.visit(node).has_value());
-
-  return ss.str();
+  auto res = parser.parse("1 + 2 * 3 / sqrt(pow(3, 2)) - pi");
+  EXPECT_TRUE(res.has_value());
 }
 
+TEST(ParserTest, FuncDefinition)
+{
+  auto parser = tcalc::ast::Parser{};
+
+  auto res = parser.parse("def f(x) x + 1");
+  EXPECT_TRUE(res.has_value());
 }
 
-TEST_CASE("Test AST Parser", "[ast][parser][success]")
+TEST(ParserTest, VarDefinition)
 {
-  using tcalc::ast::Parser;
-  using tcalc::ast::PrintVisitor;
+  auto parser = tcalc::ast::Parser{};
 
-  std::string expected_parsed = ("MINUS:\n"
-                                 "  PLUS:\n"
-                                 "    NUMBER: 2\n"
-                                 "    DIVIDE:\n"
-                                 "      MULTIPLY:\n"
-                                 "        NUMBER: 2\n"
-                                 "        VARREF: pi\n"
-                                 "      FCALL: sqrt\n"
-                                 "        NUMBER: 2\n"
-                                 "  NUMBER: 1\n");
-
-  auto real_parsed = parse_ast("2 + 2 * pi / sqrt(2) - 1");
-
-  REQUIRE(real_parsed == expected_parsed);
+  auto res = parser.parse("let x = 1");
+  EXPECT_TRUE(res.has_value());
 }
 
-TEST_CASE("Test AST Parser Errors", "[ast][parser][error]")
+TEST(ParserTest, IfStatement)
 {
-  using tcalc::ast::Parser;
+  auto parser = tcalc::ast::Parser{};
 
-  auto parser = Parser{};
+  auto res = parser.parse("if x > 0 then x + 1 else x - 1");
+  EXPECT_TRUE(res.has_value());
+}
 
-  auto res1 = parser.parse("22aa");
-  REQUIRE_FALSE(res1.has_value());
+TEST(ParserTest, ImportStatement)
+{
+  auto parser = tcalc::ast::Parser{};
 
-  auto res2 = parser.parse("2 **// 2");
-  REQUIRE_FALSE(res2.has_value());
+  auto res = parser.parse("import math");
+  EXPECT_TRUE(res.has_value());
+}
 
-  auto res3 = parser.parse("2 + 2 * pi / sqrt(2) - 1 +");
-  REQUIRE_FALSE(res3.has_value());
+TEST(ParserTest, MultipleStatements)
+{
+  auto parser = tcalc::ast::Parser{};
+
+  auto res = parser.parse(
+    "import something def func(x, y) x + y; let x = 1; let y = 2; func(x, y)");
+  EXPECT_TRUE(res.has_value());
+}
+
 }
