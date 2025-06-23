@@ -27,13 +27,13 @@ FunctionWrapper::operator()(const std::vector<double>& args,
 
   if (local_ctx.call_depth() >= EvalContext::MAX_CALL_DEPTH) {
     return error::err(error::Code::RECURSION_LIMIT,
-                      "Function call `{}' exceeded maximum recursion depth",
-                      _node->name());
+                      "Function call `%s' exceeded maximum recursion depth",
+                      _node->name().c_str());
   }
 
   if (args.size() != _node->args().size()) {
     return error::err(error::Code::MISMATCHED_ARGS,
-                      "Wrong number of arguments, expected {}, got {}",
+                      "Wrong number of arguments, expected %zu, got %zu",
                       _node->args().size(),
                       args.size());
   }
@@ -55,8 +55,9 @@ ImportWrapper::import(EvalContext& ctx) const
 {
   auto file = std::ifstream{ _node->path() };
   if (!file.is_open()) {
-    return error::err(
-      error::Code::FILE_NOT_FOUND, "File `{}` not found", _node->path());
+    return error::err(error::Code::FILE_NOT_FOUND,
+                      "File `%s` not found",
+                      _node->path().c_str());
   }
 
   auto iss = std::stringstream{};
@@ -75,7 +76,7 @@ sqrt(const std::vector<double>& args, const EvalContext& /*ctx*/)
 {
   if (args.size() != 1) {
     return error::err(error::Code::MISMATCHED_ARGS,
-                      "Mismatched arguments in sqrt, expected 1, got {}",
+                      "Mismatched arguments in sqrt, expected 1, got %zu",
                       args.size());
   }
 
@@ -87,7 +88,7 @@ pow(const std::vector<double>& args, const EvalContext& /*ctx*/)
 {
   if (args.size() != 2) {
     return error::err(error::Code::MISMATCHED_ARGS,
-                      "Mismatched arguments in pow, expected 2, got {}",
+                      "Mismatched arguments in pow, expected 2, got %zu",
                       args.size());
   }
 
@@ -99,7 +100,7 @@ log(const std::vector<double>& args, const EvalContext& /*ctx*/)
 {
   if (args.size() != 2) {
     return error::err(error::Code::MISMATCHED_ARGS,
-                      "Mismatched arguments in log, expected 2, got {}",
+                      "Mismatched arguments in log, expected 2, got %zu",
                       args.size());
   }
 

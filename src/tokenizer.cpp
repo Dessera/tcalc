@@ -1,11 +1,26 @@
 #include <cctype>
-#include <magic_enum/magic_enum.hpp>
 
 #include "tcalc/error.hpp"
 #include "tcalc/token.hpp"
 #include "tcalc/tokenizer.hpp"
 
 namespace tcalc::token {
+
+const std::map<std::string_view, TokenType, Tokenizer::KeywordComp>
+  Tokenizer::KEYWORDS = {
+    { "def", TokenType::DEF },         { "let", TokenType::LET },
+    { "if", TokenType::IF },           { "then", TokenType::THEN },
+    { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
+    { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
+    { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
+    { "&&", TokenType::AND },          { "||", TokenType::OR },
+    { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
+    { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
+    { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
+    { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
+    { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
+    { "<", TokenType::LESS },          { "!", TokenType::NOT },
+  };
 
 Tokenizer::Tokenizer(std::string_view input)
   : _input{ input }
@@ -24,7 +39,7 @@ Tokenizer::next()
 
   if (std::iscntrl(*_pos)) {
     return error::err(error::Code::SYNTAX_ERROR,
-                      "Unexpected control character '{}', index: {}",
+                      "Unexpected control character '%c', index: %zu",
                       *_pos,
                       std::distance(_input.cbegin(), _pos));
   }
@@ -49,7 +64,7 @@ Tokenizer::next()
   }
 
   return error::err(error::Code::SYNTAX_ERROR,
-                    "Unexpected character '{}', index: {}",
+                    "Unexpected character '%c', index: %zu",
                     *_pos,
                     std::distance(_input.cbegin(), _pos));
 }
@@ -67,7 +82,7 @@ Tokenizer::_parse_number()
       _skip_with(isdigit);
     } else {
       return error::err(error::Code::SYNTAX_ERROR,
-                        "Unexpected character '{}', index: {}",
+                        "Unexpected character '%c', index: %zu",
                         *_pos,
                         std::distance(_input.cbegin(), _pos));
     }
@@ -88,7 +103,7 @@ Tokenizer::_parse_quoted_identifier()
       ++_pos;
       if (_pos == _input.end()) {
         return error::err(error::Code::SYNTAX_ERROR,
-                          "Unexpected end of input, index: {}",
+                          "Unexpected end of input, index: %zu",
                           std::distance(_input.cbegin(), _pos));
       }
     }
@@ -98,7 +113,7 @@ Tokenizer::_parse_quoted_identifier()
   }
   if (_pos == _input.end()) {
     return error::err(error::Code::SYNTAX_ERROR,
-                      "Unexpected end of input, index: {}",
+                      "Unexpected end of input, index: %zu",
                       std::distance(_input.cbegin(), _pos));
   }
 
@@ -138,4 +153,5 @@ Tokenizer::_is_skippable_char(char c)
 {
   return std::isspace(c) || c == '\n' || c == '\t';
 }
+
 }

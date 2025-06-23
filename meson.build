@@ -5,15 +5,6 @@ project(
   default_options: ['warning_level=3', 'cpp_std=gnu++23'],
 )
 
-magic_enum_proj = subproject(
-  'magic_enum',
-  default_options: ['test=false', 'hash=true'],
-)
-magic_enum_dep = magic_enum_proj.get_variable('magic_enum_dep')
-
-catch2_proj = subproject('catch2')
-catch2_with_main_dep = catch2_proj.get_variable('catch2_with_main_dep')
-
 subdir('include')
 subdir('src')
 
@@ -21,7 +12,7 @@ lib = library(
   'tcalc',
   lib_src,
   include_directories: lib_inc,
-  dependencies: [magic_enum_dep],
+  dependencies: [],
   gnu_symbol_visibility: 'hidden',
   cpp_args: [
     '-DBUILDING_TCALC',
@@ -31,7 +22,7 @@ lib = library(
   install: true,
 )
 
-dep_tcalc = declare_dependency(include_directories: lib_inc, link_with: lib)
+tcalc_dep = declare_dependency(include_directories: lib_inc, link_with: lib)
 
 subdir('bin')
 subdir('tests')

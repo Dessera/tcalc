@@ -22,7 +22,8 @@ EvalContext::var(const std::string& name) const
     return _vars.at(name);
   }
 
-  return error::err(error::Code::UNDEFINED_VAR, "Undefined variable: {}", name);
+  return error::err(
+    error::Code::UNDEFINED_VAR, "Undefined variable: %s", name.c_str());
 }
 
 error::Result<builtins::Function>
@@ -33,7 +34,7 @@ EvalContext::func(const std::string& name) const
   }
 
   return error::err(
-    error::Code::UNDEFINED_FUNC, "Undefined function: {}", name);
+    error::Code::UNDEFINED_FUNC, "Undefined function: %s", name.c_str());
 }
 
 void

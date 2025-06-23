@@ -29,24 +29,11 @@ namespace tcalc::token {
 class TCALC_PUBLIC Tokenizer
 {
 public:
-  using KeywordComparator =
+  using KeywordComp =
     std::greater<std::string_view>; /**< Comparator for keywords. */
 
-  inline static const std::map<std::string_view, TokenType, KeywordComparator>
-    KEYWORDS = {
-      { "def", TokenType::DEF },         { "let", TokenType::LET },
-      { "if", TokenType::IF },           { "then", TokenType::THEN },
-      { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
-      { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
-      { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
-      { "&&", TokenType::AND },          { "||", TokenType::OR },
-      { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
-      { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
-      { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
-      { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
-      { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
-      { "<", TokenType::LESS },          { "!", TokenType::NOT },
-    }; /**< Tcalc keywords, must be ordered by length. */
+  static const std::map<std::string_view, TokenType, KeywordComp>
+    KEYWORDS; /**< Tcalc keywords, must be ordered by length. */
 
   constexpr static char QUOTE = '\''; /**< The quote character. */
 

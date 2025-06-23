@@ -1,7 +1,7 @@
-#include <magic_enum/magic_enum.hpp>
 #include <ostream>
 
 #include "tcalc/ast/binaryop.hpp"
+#include "tcalc/ast/node.hpp"
 #include "tcalc/ast/program.hpp"
 #include "tcalc/visitor/print.hpp"
 
@@ -16,7 +16,7 @@ PrintVisitor::PrintVisitor(std::ostream& os, std::size_t step)
 error::Result<void>
 PrintVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 {
-  *_os << _gen_indent() << magic_enum::enum_name(node->type()) << ":\n";
+  *_os << _gen_indent() << NODE_TYPE_NAMES.at(node->type()) << ":\n";
 
   _step_indent();
   ret_err(visit(node->left()));
@@ -29,7 +29,7 @@ PrintVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 error::Result<void>
 PrintVisitor::visit_unary_op(NodePtr<UnaryOpNode>& node)
 {
-  *_os << _gen_indent() << magic_enum::enum_name(node->type()) << ":\n";
+  *_os << _gen_indent() << NODE_TYPE_NAMES.at(node->type()) << ":\n";
 
   _step_indent();
   ret_err(visit(node->operand()));

@@ -14,6 +14,8 @@
 #include <cctype>
 #include <cstdint>
 #include <memory>
+#include <string>
+#include <unordered_map>
 
 #include "tcalc/common.hpp"
 
@@ -49,6 +51,9 @@ enum class NodeType : uint8_t
   PROGRAM,              /**< Program. */
   IMPORT,               /**< Import statement. */
 };
+
+extern const std::unordered_map<NodeType, std::string>
+  NODE_TYPE_NAMES; /**< Node type names. */
 
 /**
  * @brief Base class for AST nodes.

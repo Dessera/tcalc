@@ -13,7 +13,7 @@
 
 #include <cstdint>
 #include <string>
-#include <string_view>
+#include <unordered_map>
 
 #include "tcalc/common.hpp"
 
@@ -55,15 +55,6 @@ enum class TokenType : uint8_t
 };
 
 /**
- * @brief Convert token type to readable string (wrapper of magic_enum).
- *
- * @param type Token type.
- * @return std::string Readable string.
- */
-TCALC_PUBLIC std::string_view
-token_type_to_string(TokenType type);
-
-/**
  * @brief Token structure.
  *
  */
@@ -73,6 +64,8 @@ struct Token
   std::string text;
 };
 
+extern TCALC_PUBLIC const std::unordered_map<TokenType, std::string>
+  TOKEN_TYPE_NAMES; /**< Token type names. */
 }
 
 TCALC_INLINE bool

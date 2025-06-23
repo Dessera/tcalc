@@ -30,3 +30,10 @@
 #else
 #define TCALC_INLINE inline __attribute__((always_inline))
 #endif
+
+#if defined _WIN32 || defined __CYGWIN__
+#define TCALC_PRINTF_FORMAT(fmt_idx, arg_idx)
+#else
+#define TCALC_PRINTF_FORMAT(fmt_idx, arg_idx)                                  \
+  __attribute__((format(printf, fmt_idx, arg_idx)))
+#endif

@@ -9,6 +9,27 @@
 
 namespace tcalc::ast {
 
+const std::unordered_map<NodeType, std::function<double(double, double)>>
+  EvalVisitor::BINOP_MAP = {
+    { NodeType::BINARY_PLUS, std::plus<>() },
+    { NodeType::BINARY_MINUS, std::minus<>() },
+    { NodeType::BINARY_MULTIPLY, std::multiplies<>() },
+    { NodeType::BINARY_DIVIDE, std::divides<>() },
+    { NodeType::BINARY_EQUAL, _double_eq },
+    { NodeType::BINARY_NOT_EQUAL, _double_noeq },
+    { NodeType::BINARY_GREATER, std::greater<>() },
+    { NodeType::BINARY_GREATER_EQUAL, std::greater_equal<>() },
+    { NodeType::BINARY_LESS, std::less<>() },
+    { NodeType::BINARY_LESS_EQUAL, std::less_equal<>() },
+    { NodeType::BINARY_AND, std::logical_and<>() },
+    { NodeType::BINARY_OR, std::logical_or<>() }
+  };
+
+const std::unordered_map<NodeType, std::function<double(double)>>
+  EvalVisitor::UNARYOP_MAP = { { NodeType::UNARY_PLUS, _double_forward },
+                               { NodeType::UNARY_MINUS, std::negate<>() },
+                               { NodeType::UNARY_NOT, std::logical_not<>() } };
+
 EvalVisitor::EvalVisitor(EvalContext& ctx)
   : _ctx{ &ctx }
 {

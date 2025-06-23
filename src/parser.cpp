@@ -1,6 +1,5 @@
 #include <cassert>
 #include <cstddef>
-#include <magic_enum/magic_enum.hpp>
 #include <memory>
 
 #include "tcalc/ast/binaryop.hpp"
@@ -33,10 +32,10 @@ ParserContext::eat(token::TokenType type)
 {
   if (_current.type != type) {
     return error::err(error::Code::SYNTAX_ERROR,
-                      "Unexpected token {} at position {}, expected {}",
-                      magic_enum::enum_name(_current.type),
+                      "Unexpected token %s at position %zu, expected %s",
+                      token::TOKEN_TYPE_NAMES.at(_current.type).c_str(),
                       _tokenizer.spos() - 1,
-                      magic_enum::enum_name(type));
+                      token::TOKEN_TYPE_NAMES.at(type).c_str());
   }
 
   _current = unwrap_err(_tokenizer.next());
@@ -207,8 +206,8 @@ Parser::next_factor(ParserContext& ctx) // NOLINT
   } else {
     // syntax error
     return error::err(error::Code::SYNTAX_ERROR,
-                      "Unexpected token {} at position {}",
-                      magic_enum::enum_name(current.type),
+                      "Unexpected token %s at position %zu",
+                      token::TOKEN_TYPE_NAMES.at(current.type).c_str(),
                       ctx.tokenizer().spos() - 1);
   }
 

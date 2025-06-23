@@ -27,16 +27,10 @@ namespace tcalc::ast {
 using PriorityTable =
   std::vector<std::unordered_map<token::TokenType, NodeType>>;
 
-/**
- * @brief Binary operator priority table.
- *
- */
-extern TCALC_PUBLIC const PriorityTable BINOP_PRIORITY;
+extern TCALC_PUBLIC const PriorityTable
+  BINOP_PRIORITY; /**< Binary operator priority table. */
 
-/**
- * @brief Unary operator priority table.
- *
- */
-extern TCALC_PUBLIC const PriorityTable UNARYOP_PRIORITY;
+extern TCALC_PUBLIC const PriorityTable
+  UNARYOP_PRIORITY; /**< Unary operator priority table. */
 
 }

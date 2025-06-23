@@ -11,12 +11,14 @@
 
 #pragma once
 
+#include <cerrno>
 #include <cstdint>
+#include <cstdio>
 #include <cstring>
 #include <exception>
 #include <expected>
-#include <format>
 #include <string>
+#include <unordered_map>
 
 #include "tcalc/common.hpp"
 
@@ -68,12 +70,18 @@ enum class Code : uint8_t
   FILE_NOT_FOUND,  /**< File not found. */
 };
 
+extern TCALC_PUBLIC const std::unordered_map<Code, std::string>
+  CODE_NAMES; /**< Error code names. */
+
 /**
  * @brief Error class.
  *
  */
 class TCALC_PUBLIC Error : public std::exception
 {
+public:
+  constexpr static std::size_t MAX_MSG_LEN = 256; /**< Max message length. */
+
 private:
   Code _code;
   std::string _msg;
@@ -166,21 +174,18 @@ err(Code code) noexcept
 }
 
 /**
- * @brief Create an error with format string.
+ * @brief Create an error with format.
  *
- * @tparam Args Format string arguments.
  * @param code Error code.
  * @param fmt Format string.
- * @param args Format string arguments.
+ * @param args Arguments.
  * @return Result<T> Error.
+ * @note To prevent using <format> or <print> headers, this function uses
+ * std::vsnprintf.
  */
-template<typename... Args>
-TCALC_INLINE auto
-err(Code code, std::format_string<Args...> fmt, Args&&... args) noexcept
-{
-  return std::unexpected(
-    Error(code, std::format(fmt, std::forward<Args>(args)...)));
-}
+TCALC_PRINTF_FORMAT(2, 3)
+std::unexpected<Error>
+err(Code code, const char* fmt, ...) noexcept;
 
 /**
  * @brief Create a result with value.

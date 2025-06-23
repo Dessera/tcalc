@@ -30,7 +30,37 @@ namespace tcalc::ast {
  */
 class TCALC_PUBLIC EvalVisitor : public BaseVisitor<double>
 {
-  // avoid undefined reference
+public:
+  static const std::unordered_map<NodeType,
+                                  std::function<double(double, double)>>
+    BINOP_MAP; /**< Map of binary operator to function. */
+
+  static const std::unordered_map<NodeType, std::function<double(double)>>
+    UNARYOP_MAP; /**< Map of unary operator to function. */
+
+private:
+  EvalContext* _ctx;
+
+public:
+  /**
+   * @brief Construct a new Eval Visitor object.
+   *
+   * @param ctx Evaluation context.
+   */
+  EvalVisitor(EvalContext& ctx);
+
+  ~EvalVisitor() override = default;
+
+  error::Result<double> visit_bin_op(NodePtr<BinaryOpNode>& node) override;
+  error::Result<double> visit_unary_op(NodePtr<UnaryOpNode>& node) override;
+  error::Result<double> visit_number(NodePtr<NumberNode>& node) override;
+  error::Result<double> visit_varref(NodePtr<VarRefNode>& node) override;
+  error::Result<double> visit_varassign(NodePtr<VarAssignNode>& node) override;
+  error::Result<double> visit_fcall(NodePtr<FcallNode>& node) override;
+  error::Result<double> visit_fdef(NodePtr<FdefNode>& node) override;
+  error::Result<double> visit_if(NodePtr<IfNode>& node) override;
+  error::Result<double> visit_import(NodePtr<ProgramImportNode>& node) override;
+
 private:
   /**
    * @brief Evaluate equality between two double.
@@ -77,55 +107,6 @@ private:
    * @return double Forwarded double.
    */
   static double _double_forward(double a);
-
-public:
-  inline static const std::unordered_map<NodeType,
-                                         std::function<double(double, double)>>
-    BINOP_MAP = {
-      { NodeType::BINARY_PLUS, std::plus<>() },
-      { NodeType::BINARY_MINUS, std::minus<>() },
-      { NodeType::BINARY_MULTIPLY, std::multiplies<>() },
-      { NodeType::BINARY_DIVIDE, std::divides<>() },
-      { NodeType::BINARY_EQUAL, _double_eq },
-      { NodeType::BINARY_NOT_EQUAL, _double_noeq },
-      { NodeType::BINARY_GREATER, std::greater<>() },
-      { NodeType::BINARY_GREATER_EQUAL, std::greater_equal<>() },
-      { NodeType::BINARY_LESS, std::less<>() },
-      { NodeType::BINARY_LESS_EQUAL, std::less_equal<>() },
-      { NodeType::BINARY_AND, std::logical_and<>() },
-      { NodeType::BINARY_OR, std::logical_or<>() }
-    }; /**< Map of binary operator to function. */
-
-  inline static const std::unordered_map<NodeType,
-                                         std::function<double(double)>>
-    UNARYOP_MAP = {
-      { NodeType::UNARY_PLUS, _double_forward },
-      { NodeType::UNARY_MINUS, std::negate<>() },
-      { NodeType::UNARY_NOT, std::logical_not<>() }
-    }; /**< Map of unary operator to function. */
-
-private:
-  EvalContext* _ctx;
-
-public:
-  /**
-   * @brief Construct a new Eval Visitor object.
-   *
-   * @param ctx Evaluation context.
-   */
-  EvalVisitor(EvalContext& ctx);
-
-  ~EvalVisitor() override = default;
-
-  error::Result<double> visit_bin_op(NodePtr<BinaryOpNode>& node) override;
-  error::Result<double> visit_unary_op(NodePtr<UnaryOpNode>& node) override;
-  error::Result<double> visit_number(NodePtr<NumberNode>& node) override;
-  error::Result<double> visit_varref(NodePtr<VarRefNode>& node) override;
-  error::Result<double> visit_varassign(NodePtr<VarAssignNode>& node) override;
-  error::Result<double> visit_fcall(NodePtr<FcallNode>& node) override;
-  error::Result<double> visit_fdef(NodePtr<FdefNode>& node) override;
-  error::Result<double> visit_if(NodePtr<IfNode>& node) override;
-  error::Result<double> visit_import(NodePtr<ProgramImportNode>& node) override;
 };
 
 /**

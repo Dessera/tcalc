@@ -59,7 +59,7 @@ Tcalc is a simple computational programming language, which supports basic arith
 
 ## Getting Started
 
-Tcalc requires GCC 13+ or Clang 17+ with GNU++23 support to build.
+Tcalc requires GCC 12+ or Clang 16+ with GNU++23 support to build.
 
 ### Prerequisites
 

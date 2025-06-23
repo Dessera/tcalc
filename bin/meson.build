@@ -1,6 +1,6 @@
 executable(
   'tcalc_repl',
   files('tcalc_repl.cpp'),
-  dependencies: [dep_tcalc],
+  dependencies: [tcalc_dep],
   install: true,
 )
