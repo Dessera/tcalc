@@ -149,13 +149,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8db4d1eb934a1e9ab6a03e164b85e81" id="r_ae8db4d1eb934a1e9ab6a03e164b85e81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#ae8db4d1eb934a1e9ab6a03e164b85e81">visit_import</a> (<a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1ProgramImportNode.html">ProgramImportNode</a> &gt; &amp;node) override</td></tr>
 <tr class="memdesc:ae8db4d1eb934a1e9ab6a03e164b85e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a program import node.  <br /></td></tr>
 <tr class="separator:ae8db4d1eb934a1e9ab6a03e164b85e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad667b16b0cef96a304be128dcc1a413" id="r_aad667b16b0cef96a304be128dcc1a413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1EvalVisitor.html#aad667b16b0cef96a304be128dcc1a413">visit_program</a> (<a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1ProgramNode.html">ProgramNode</a> &gt; &amp;node) override</td></tr>
+<tr class="memdesc:aad667b16b0cef96a304be128dcc1a413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a program node.  <br /></td></tr>
+<tr class="separator:aad667b16b0cef96a304be128dcc1a413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtcalc_1_1ast_1_1BaseVisitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html">tcalc::ast::BaseVisitor&lt; double &gt;</a></td></tr>
 <tr class="memitem:ac00a49caea901ea106fe2712b289b1ba inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor" id="r_ac00a49caea901ea106fe2712b289b1ba"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#ac00a49caea901ea106fe2712b289b1ba">visit</a> (<a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt;&gt; &amp;node)</td></tr>
 <tr class="memdesc:ac00a49caea901ea106fe2712b289b1ba inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a number node.  <br /></td></tr>
 <tr class="separator:ac00a49caea901ea106fe2712b289b1ba inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dad7c50fa5dd2fbe3e99e37fee6a8a1 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor" id="r_a7dad7c50fa5dd2fbe3e99e37fee6a8a1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a7dad7c50fa5dd2fbe3e99e37fee6a8a1">visit_program</a> (<a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1ProgramNode.html">ProgramNode</a> &gt; &amp;node) VISIT_DEFAULT(node)</td></tr>
-<tr class="memdesc:a7dad7c50fa5dd2fbe3e99e37fee6a8a1 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit a program node.  <br /></td></tr>
-<tr class="separator:a7dad7c50fa5dd2fbe3e99e37fee6a8a1 inherit pub_methods_classtcalc_1_1ast_1_1BaseVisitor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -413,6 +413,43 @@ Static Public Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a38538b7414b64ad1d54fc2e882181ecc">tcalc::ast::BaseVisitor&lt; double &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aad667b16b0cef96a304be128dcc1a413" name="aad667b16b0cef96a304be128dcc1a413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad667b16b0cef96a304be128dcc1a413">&#9670;&#160;</a></span>visit_program()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt; tcalc::ast::EvalVisitor::visit_program </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3">NodePtr</a>&lt; <a class="el" href="classtcalc_1_1ast_1_1ProgramNode.html">ProgramNode</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Visit a program node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Program node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9" title="Result type.">error::Result&lt;RT&gt;</a> Result of the visit. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classtcalc_1_1ast_1_1BaseVisitor.html#a7dad7c50fa5dd2fbe3e99e37fee6a8a1">tcalc::ast::BaseVisitor&lt; double &gt;</a>.</p>
 
 </div>
 </div>
