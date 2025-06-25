@@ -122,21 +122,63 @@ pow(const std::vector<double>& args, const EvalContext& ctx);
 TCALC_PUBLIC error::Result<double>
 log(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in sin function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
 TCALC_PUBLIC error::Result<double>
 sin(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in cos function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
 TCALC_PUBLIC error::Result<double>
 cos(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in tan function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
 TCALC_PUBLIC error::Result<double>
 tan(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in acos function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
 TCALC_PUBLIC error::Result<double>
 acos(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in asin function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
 TCALC_PUBLIC error::Result<double>
 asin(const std::vector<double>& args, const EvalContext& ctx);
 
+/**
+ * @brief Built-in atan function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
 TCALC_PUBLIC error::Result<double>
 atan(const std::vector<double>& args, const EvalContext& ctx);
 
