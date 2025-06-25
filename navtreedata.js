@@ -25,19 +25,19 @@
 var NAVTREE =
 [
   [ "tcalc", "index.html", [
-    [ "Tcalc Syntax Reference", "md_docs_2SYNTAX.html", [
-      [ "Variable Assignment", "md_docs_2SYNTAX.html#autotoc_md1", null ],
-      [ "Function Declaration", "md_docs_2SYNTAX.html#autotoc_md2", null ],
-      [ "Function Call", "md_docs_2SYNTAX.html#autotoc_md3", null ],
-      [ "Import", "md_docs_2SYNTAX.html#autotoc_md4", null ],
-      [ "Control Flow", "md_docs_2SYNTAX.html#autotoc_md5", [
-        [ "If", "md_docs_2SYNTAX.html#autotoc_md6", null ]
+    [ "Tcalc Syntax Reference", "md_docs_2syntax__reference.html", [
+      [ "Expression", "md_docs_2syntax__reference.html#autotoc_md1", [
+        [ "Binary operators", "md_docs_2syntax__reference.html#autotoc_md2", null ],
+        [ "Unary operators", "md_docs_2syntax__reference.html#autotoc_md3", null ]
       ] ],
-      [ "Operator", "md_docs_2SYNTAX.html#autotoc_md7", [
-        [ "Arithmetic", "md_docs_2SYNTAX.html#autotoc_md8", null ],
-        [ "Comparison", "md_docs_2SYNTAX.html#autotoc_md9", null ],
-        [ "Unary", "md_docs_2SYNTAX.html#autotoc_md10", null ]
-      ] ]
+      [ "Identifier", "md_docs_2syntax__reference.html#autotoc_md4", null ],
+      [ "Function", "md_docs_2syntax__reference.html#autotoc_md5", [
+        [ "Built-in functions", "md_docs_2syntax__reference.html#autotoc_md6", null ]
+      ] ],
+      [ "Variable Assignment", "md_docs_2syntax__reference.html#autotoc_md7", [
+        [ "Built-in variables", "md_docs_2syntax__reference.html#autotoc_md8", null ]
+      ] ],
+      [ "Import", "md_docs_2syntax__reference.html#autotoc_md9", null ]
     ] ],
     [ "README", "md_README.html", null ],
     [ "Classes", "annotated.html", [
@@ -60,7 +60,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa9023c7f015d5ba70a0a4db6c664734d"
+"node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcab22a9660430231f2c2ccad804b0ef615"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

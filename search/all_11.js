@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['tcalc_20syntax_20reference_0',['Tcalc Syntax Reference',['../md_docs_2SYNTAX.html',1,'']]],
-  ['the_20project_1',['About The Project',['../md_README.html#autotoc_md11',1,'']]],
+  ['tcalc_20syntax_20reference_0',['Tcalc Syntax Reference',['../md_docs_2syntax__reference.html',1,'']]],
+  ['the_20project_1',['About The Project',['../md_README.html#autotoc_md10',1,'']]],
   ['then_2',['then',['../classtcalc_1_1ast_1_1IfNode.html#a210d8b6f664942fc2903414549c91510',1,'tcalc::ast::IfNode::then() const noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a7b7c266cbe4064b06ad525c426ff476b',1,'tcalc::ast::IfNode::then() noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a4c789e1aca1419bbd71d575082a62e84',1,'tcalc::ast::IfNode::then(NodePtr&lt;&gt; then) noexcept'],['../token_8hpp.html#aa1a2d536ad975a4b3baae9803aae2126a907ec71a28d71811a0e37f08b15c2109',1,'THENtcalc::token']]],
   ['token_3',['Token',['../structtcalc_1_1token_1_1Token.html',1,'tcalc::token']]],
   ['token_2ehpp_4',['token.hpp',['../token_8hpp.html',1,'']]],
