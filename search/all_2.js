@@ -9,7 +9,8 @@ var searchData=
   ['contact_6',['Contact',['../md_README.html#autotoc_md19',1,'']]],
   ['contributing_7',['Contributing',['../md_README.html#autotoc_md17',1,'']]],
   ['control_5fflow_2ehpp_8',['control_flow.hpp',['../control__flow_8hpp.html',1,'']]],
-  ['create_9',['create',['../classtcalc_1_1ast_1_1ParserContext.html#aba266b0d7fee259aedaf48f46793057c',1,'tcalc::ast::ParserContext']]],
-  ['ctx_10',['ctx',['../classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c',1,'tcalc::Evaluator']]],
-  ['current_11',['current',['../classtcalc_1_1ast_1_1ParserContext.html#a8b56fbbf9cffb0238576fa93de41fb5a',1,'tcalc::ast::ParserContext']]]
+  ['cos_9',['cos',['../builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9',1,'tcalc::builtins']]],
+  ['create_10',['create',['../classtcalc_1_1ast_1_1ParserContext.html#aba266b0d7fee259aedaf48f46793057c',1,'tcalc::ast::ParserContext']]],
+  ['ctx_11',['ctx',['../classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c',1,'tcalc::Evaluator']]],
+  ['current_12',['current',['../classtcalc_1_1ast_1_1ParserContext.html#a8b56fbbf9cffb0238576fa93de41fb5a',1,'tcalc::ast::ParserContext']]]
 ];
