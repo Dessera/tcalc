@@ -107,15 +107,87 @@ log(const std::vector<double>& args, const EvalContext& /*ctx*/)
   return error::ok<double>(std::log(args[1]) / std::log(args[0]));
 }
 
+error::Result<double>
+sin(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in sin, expected 1, got %zu",
+                      args.size());
+  }
+
+  return error::ok<double>(std::sin(args[0]));
+}
+
+error::Result<double>
+cos(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in cos, expected 1, got %zu",
+                      args.size());
+  }
+
+  return error::ok<double>(std::cos(args[0]));
+}
+
+error::Result<double>
+tan(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in tan, expected 1, got %zu",
+                      args.size());
+  }
+
+  return error::ok<double>(std::tan(args[0]));
+}
+
+error::Result<double>
+acos(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in acos, expected 1, got %zu",
+                      args.size());
+  }
+
+  return error::ok<double>(std::acos(args[0]));
+}
+
+error::Result<double>
+asin(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in asin, expected 1, got %zu",
+                      args.size());
+  }
+
+  return error::ok<double>(std::asin(args[0]));
+}
+
+error::Result<double>
+atan(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in atan, expected 1, got %zu",
+                      args.size());
+  }
+
+  return error::ok<double>(std::atan(args[0]));
+}
+
 const std::unordered_map<std::string, double> BUILTIN_VARIABLES = {
   { "pi", M_PI },
   { "e", M_E },
 };
 
 const std::unordered_map<std::string, Function> BUILTIN_FUNCTIONS = {
-  { "sqrt", sqrt },
-  { "pow", pow },
-  { "log", log },
+  { "sqrt", sqrt }, { "pow", pow },   { "log", log },
+  { "sin", sin },   { "cos", cos },   { "tan", tan },
+  { "acos", acos }, { "asin", asin }, { "atan", atan },
 };
 
 }
