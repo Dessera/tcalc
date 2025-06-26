@@ -33,5 +33,11 @@ var annotated_dup =
       ] ],
       [ "EvalContext", "classtcalc_1_1EvalContext.html", "classtcalc_1_1EvalContext" ],
       [ "Evaluator", "classtcalc_1_1Evaluator.html", "classtcalc_1_1Evaluator" ]
+    ] ],
+    [ "tcalc_gui", null, [
+      [ "Application", "classtcalc__gui_1_1Application.html", "classtcalc__gui_1_1Application" ],
+      [ "Calculator", "classtcalc__gui_1_1Calculator.html", "classtcalc__gui_1_1Calculator" ],
+      [ "Key", "classtcalc__gui_1_1Key.html", "classtcalc__gui_1_1Key" ],
+      [ "Keyboard", "classtcalc__gui_1_1Keyboard.html", "classtcalc__gui_1_1Keyboard" ]
     ] ]
 ];

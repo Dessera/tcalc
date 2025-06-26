@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">tcalc<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">tcalc<span id="projectnumber">&#160;0.2.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -146,10 +146,16 @@ Built With</h3>
 </ul>
 <h2><a class="anchor" id="autotoc_md12"></a>
 Getting Started</h2>
-<p>Tcalc requires GCC 12+ or Clang 16+ with GNU++23 support to build.</p>
+<p>Tested on Linux, with following environment:</p>
+<ul>
+<li>Without <code>tl-expected</code>: GCC 12+ or Clang 16+ with GNU++23 support</li>
+<li>With <code>tl-expected</code>: GCC 9+ or Clang 12+ with GNU++17 support</li>
+</ul>
 <h3><a class="anchor" id="autotoc_md13"></a>
 Prerequisites</h3>
 <p>The project is based on <code>meson</code> and <code>ninja</code>, so you need to install them first.</p>
+<p>If you want to build the project with <code>tl-expected</code>, you need to install it: <a href="https://github.com/TartanLlama/expected">tl-expected</a>.</p>
+<p>If you want to build <code>tcalc_gui</code>, you need to install <code>Qt6</code>.</p>
 <h3><a class="anchor" id="autotoc_md14"></a>
 Installation</h3>
 <ol type="1">
@@ -162,6 +168,15 @@ Installation</h3>
 <div class="line">cd builddir</div>
 <div class="line">meson compile</div>
 </div><!-- fragment --></li>
+</ol>
+<blockquote class="doxtable">
+<p>&zwj;Available options:</p>
+<ul>
+<li><code>-Dbuild_gui=enabled</code>: Build <code>tcalc_gui</code></li>
+<li><code>-Duse_tl_expected=enabled</code>: Build with <code>tl-expected</code> rather than <code>std::expected</code> </li>
+</ul>
+</blockquote>
+<ol type="1">
 <li><p class="startli">Install the product:</p>
 <div class="fragment"><div class="line">meson install --skip-subprojects</div>
 </div><!-- fragment --></li>
@@ -169,12 +184,13 @@ Installation</h3>
 <h2><a class="anchor" id="autotoc_md15"></a>
 Usage</h2>
 <p>Temporarily REPL is available as a command line tool <code>tcalc_repl</code>.</p>
+<p>Qt6-based GUI application <code>tcalc_gui</code> is also available.</p>
 <p>For APIs, read the <a href="https://dessera.github.io/tcalc">docs</a> for more information.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Roadmap</h2>
 <ul>
-<li>[ ] More built-in functions</li>
-<li>[ ] GUI application</li>
+<li>[x] More built-in functions</li>
+<li>[x] GUI application</li>
 <li>[x] <code>import</code> statements</li>
 <li>[x] Logic operations</li>
 <li>[x] User-defined functions (don't support recursion because no control flow statements)</li>

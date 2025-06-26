@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">tcalc<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">tcalc<span id="projectnumber">&#160;0.2.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -127,90 +127,105 @@ $(document).ready(function(){initNavTree('eval_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  std::size_t _call_depth{ 0 };</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>(std::unordered_map&lt;std::string, double&gt; vars,</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a24fb1d41e555fc0067595fc18ffe9806">   49</a></span>  <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a24fb1d41e555fc0067595fc18ffe9806">EvalContext</a>(std::unordered_map&lt;std::string, double&gt; vars,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>              std::unordered_map&lt;std::string, builtins::Function&gt; funcs,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>              std::size_t call_depth = 0);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">~EvalContext</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312">   61</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312">vars</a>() noexcept { <span class="keywordflow">return</span> _vars; }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a67cdd8b3793a50516ab4708cbdb2f7c2">   69</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a67cdd8b3793a50516ab4708cbdb2f7c2">funcs</a>() noexcept { <span class="keywordflow">return</span> _funcs; }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> var(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a">   85</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a">var</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">double</span> value) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    _vars[name] = value;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>              std::size_t call_depth = 0)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    : _vars{ std::move(vars) }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    , _funcs{ std::move(funcs) }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    , _call_depth{ call_depth }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;builtins::Function&gt;</a> func(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#ac8d0f62edf1cc8cb65305a8f8d6ec011">  104</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#ac8d0f62edf1cc8cb65305a8f8d6ec011">func</a>(<span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                         <a class="code hl_typedef" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">builtins::Function</a> func) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    _funcs[name] = std::move(func);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">~EvalContext</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312">   66</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312">vars</a>() noexcept { <span class="keywordflow">return</span> _vars; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a67cdd8b3793a50516ab4708cbdb2f7c2">   74</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a67cdd8b3793a50516ab4708cbdb2f7c2">funcs</a>() noexcept { <span class="keywordflow">return</span> _funcs; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_typedef" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result&lt;double&gt;</a> var(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a">   90</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a">var</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">double</span> value) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    _vars[name] = value;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
 </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a84755f871a9d37732b15a449328f231c">  115</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a84755f871a9d37732b15a449328f231c">call_depth</a>() const noexcept</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> _call_depth;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_typedef" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result&lt;builtins::Function&gt;</a> func(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#ac8d0f62edf1cc8cb65305a8f8d6ec011">  109</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#ac8d0f62edf1cc8cb65305a8f8d6ec011">func</a>(<span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                         <a class="code hl_typedef" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">builtins::Function</a> func) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    _funcs[name] = std::move(func);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
 </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#aa2f3507f374e077f2176f2e6acb59b9f">  125</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#aa2f3507f374e077f2176f2e6acb59b9f">call_depth</a>(std::size_t depth) { _call_depth = depth; }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a75830fa98f8a6b81b86accb631bb025f">  131</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a75830fa98f8a6b81b86accb631bb025f">increment_call_depth</a>() noexcept { ++_call_depth; }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">void</span> update_with(<span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a84755f871a9d37732b15a449328f231c">  120</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a84755f871a9d37732b15a449328f231c">call_depth</a>() const noexcept</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">return</span> _call_depth;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  }</div>
 </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="foldopen" id="foldopen00145" data-start="{" data-end="};">
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classtcalc_1_1Evaluator.html">  145</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1Evaluator.html">Evaluator</a></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a> _ctx;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1Parser.html">ast::Parser</a> _parser{};</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <a class="code hl_class" href="classtcalc_1_1Evaluator.html">Evaluator</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <a class="code hl_class" href="classtcalc_1_1Evaluator.html">Evaluator</a>();</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <a class="code hl_class" href="classtcalc_1_1Evaluator.html">~Evaluator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c">  172</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c">ctx</a>() const noexcept { <span class="keywordflow">return</span> _ctx; }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#aa2f3507f374e077f2176f2e6acb59b9f">  130</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#aa2f3507f374e077f2176f2e6acb59b9f">call_depth</a>(std::size_t depth) { _call_depth = depth; }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classtcalc_1_1EvalContext.html#a75830fa98f8a6b81b86accb631bb025f">  136</a></span>  TCALC_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="classtcalc_1_1EvalContext.html#a75830fa98f8a6b81b86accb631bb025f">increment_call_depth</a>() noexcept { ++_call_depth; }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keywordtype">void</span> update_with(<span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>};</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="};">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classtcalc_1_1Evaluator.html">  150</a></span><span class="keyword">class </span>TCALC_PUBLIC <a class="code hl_class" href="classtcalc_1_1Evaluator.html">Evaluator</a></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a> _ctx;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <a class="code hl_class" href="classtcalc_1_1ast_1_1Parser.html">ast::Parser</a> _parser{};</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classtcalc_1_1Evaluator.html">Evaluator</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>&amp; ctx);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classtcalc_1_1Evaluator.html#a82e5f94b52a441986b5efa794a4010a9">  168</a></span>  <a class="code hl_function" href="classtcalc_1_1Evaluator.html#a82e5f94b52a441986b5efa794a4010a9">Evaluator</a>()</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    : <a class="code hl_class" href="classtcalc_1_1Evaluator.html">Evaluator</a>{ <a class="code hl_class" href="classtcalc_1_1EvalContext.html">EvalContext</a>{ builtins::BUILTIN_VARIABLES,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                              builtins::BUILTIN_FUNCTIONS } }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  }</div>
+</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;double&gt;</a> eval(std::string_view input);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <a class="code hl_typedef" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result&lt;std::vector&lt;double&gt;</a>&gt; eval_prog(std::string_view input);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
-</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <a class="code hl_class" href="classtcalc_1_1Evaluator.html">~Evaluator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c">  181</a></span>  [[nodiscard]] TCALC_INLINE <span class="keyword">auto</span>&amp; <a class="code hl_function" href="classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c">ctx</a>() const noexcept { <span class="keywordflow">return</span> _ctx; }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <a class="code hl_typedef" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result&lt;double&gt;</a> eval(std::string_view input);</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <a class="code hl_typedef" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result&lt;std::vector&lt;double&gt;</a>&gt; eval_prog(std::string_view input);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>};</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
 <div class="ttc" id="abuiltins_8hpp_html"><div class="ttname"><a href="builtins_8hpp.html">builtins.hpp</a></div><div class="ttdoc">Built-in functions and variables.</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_aa1b2c5686275ca0d11d287b02fa0665b"><div class="ttname"><a href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">tcalc::builtins::Function</a></div><div class="ttdeci">std::function&lt; error::Result&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const EvalContext &amp;)&gt; Function</div><div class="ttdoc">Built-in function type.</div><div class="ttdef"><b>Definition</b> builtins.hpp:37</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_aa1b2c5686275ca0d11d287b02fa0665b"><div class="ttname"><a href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">tcalc::builtins::Function</a></div><div class="ttdeci">std::function&lt; error::Result&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const EvalContext &amp;)&gt; Function</div><div class="ttdoc">Built-in function type.</div><div class="ttdef"><b>Definition</b> builtins.hpp:38</div></div>
 <div class="ttc" id="aclasstcalc_1_1EvalContext_html"><div class="ttname"><a href="classtcalc_1_1EvalContext.html">tcalc::EvalContext</a></div><div class="ttdoc">Evaluation context which stores variables and built-in functions.</div><div class="ttdef"><b>Definition</b> eval.hpp:32</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a67cdd8b3793a50516ab4708cbdb2f7c2"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a67cdd8b3793a50516ab4708cbdb2f7c2">tcalc::EvalContext::funcs</a></div><div class="ttdeci">TCALC_INLINE auto &amp; funcs() noexcept</div><div class="ttdoc">Get built-in functions.</div><div class="ttdef"><b>Definition</b> eval.hpp:69</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a75830fa98f8a6b81b86accb631bb025f"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a75830fa98f8a6b81b86accb631bb025f">tcalc::EvalContext::increment_call_depth</a></div><div class="ttdeci">TCALC_INLINE void increment_call_depth() noexcept</div><div class="ttdoc">Increment the call depth.</div><div class="ttdef"><b>Definition</b> eval.hpp:131</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a79934eed2a4d7e8789ba33f32ef9964a"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a">tcalc::EvalContext::var</a></div><div class="ttdeci">TCALC_INLINE void var(const std::string &amp;name, double value) noexcept</div><div class="ttdoc">Set a variable.</div><div class="ttdef"><b>Definition</b> eval.hpp:85</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a84755f871a9d37732b15a449328f231c"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a84755f871a9d37732b15a449328f231c">tcalc::EvalContext::call_depth</a></div><div class="ttdeci">TCALC_INLINE auto call_depth() const noexcept</div><div class="ttdoc">Get the call depth.</div><div class="ttdef"><b>Definition</b> eval.hpp:115</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_aa2f3507f374e077f2176f2e6acb59b9f"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#aa2f3507f374e077f2176f2e6acb59b9f">tcalc::EvalContext::call_depth</a></div><div class="ttdeci">TCALC_INLINE void call_depth(std::size_t depth)</div><div class="ttdoc">Set the call depth.</div><div class="ttdef"><b>Definition</b> eval.hpp:125</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_ac8d0f62edf1cc8cb65305a8f8d6ec011"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#ac8d0f62edf1cc8cb65305a8f8d6ec011">tcalc::EvalContext::func</a></div><div class="ttdeci">TCALC_INLINE void func(const std::string &amp;name, builtins::Function func) noexcept</div><div class="ttdoc">Set a built-in function.</div><div class="ttdef"><b>Definition</b> eval.hpp:104</div></div>
-<div class="ttc" id="aclasstcalc_1_1EvalContext_html_ac9c1d8e9d195fd7e0427aca0df978312"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312">tcalc::EvalContext::vars</a></div><div class="ttdeci">TCALC_INLINE auto &amp; vars() noexcept</div><div class="ttdoc">Get variables.</div><div class="ttdef"><b>Definition</b> eval.hpp:61</div></div>
-<div class="ttc" id="aclasstcalc_1_1Evaluator_html"><div class="ttname"><a href="classtcalc_1_1Evaluator.html">tcalc::Evaluator</a></div><div class="ttdoc">Evaluator for tcalc.</div><div class="ttdef"><b>Definition</b> eval.hpp:146</div></div>
-<div class="ttc" id="aclasstcalc_1_1Evaluator_html_a2d81762c22e23f124706e511a9141e9c"><div class="ttname"><a href="classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c">tcalc::Evaluator::ctx</a></div><div class="ttdeci">TCALC_INLINE auto &amp; ctx() const noexcept</div><div class="ttdoc">Get the evaluation context.</div><div class="ttdef"><b>Definition</b> eval.hpp:172</div></div>
-<div class="ttc" id="aclasstcalc_1_1ast_1_1Parser_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1Parser.html">tcalc::ast::Parser</a></div><div class="ttdoc">AST parser.</div><div class="ttdef"><b>Definition</b> parser.hpp:93</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a24fb1d41e555fc0067595fc18ffe9806"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a24fb1d41e555fc0067595fc18ffe9806">tcalc::EvalContext::EvalContext</a></div><div class="ttdeci">EvalContext(std::unordered_map&lt; std::string, double &gt; vars, std::unordered_map&lt; std::string, builtins::Function &gt; funcs, std::size_t call_depth=0)</div><div class="ttdoc">Construct a new Eval Context object.</div><div class="ttdef"><b>Definition</b> eval.hpp:49</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a67cdd8b3793a50516ab4708cbdb2f7c2"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a67cdd8b3793a50516ab4708cbdb2f7c2">tcalc::EvalContext::funcs</a></div><div class="ttdeci">TCALC_INLINE auto &amp; funcs() noexcept</div><div class="ttdoc">Get built-in functions.</div><div class="ttdef"><b>Definition</b> eval.hpp:74</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a75830fa98f8a6b81b86accb631bb025f"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a75830fa98f8a6b81b86accb631bb025f">tcalc::EvalContext::increment_call_depth</a></div><div class="ttdeci">TCALC_INLINE void increment_call_depth() noexcept</div><div class="ttdoc">Increment the call depth.</div><div class="ttdef"><b>Definition</b> eval.hpp:136</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a79934eed2a4d7e8789ba33f32ef9964a"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a79934eed2a4d7e8789ba33f32ef9964a">tcalc::EvalContext::var</a></div><div class="ttdeci">TCALC_INLINE void var(const std::string &amp;name, double value) noexcept</div><div class="ttdoc">Set a variable.</div><div class="ttdef"><b>Definition</b> eval.hpp:90</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_a84755f871a9d37732b15a449328f231c"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#a84755f871a9d37732b15a449328f231c">tcalc::EvalContext::call_depth</a></div><div class="ttdeci">TCALC_INLINE auto call_depth() const noexcept</div><div class="ttdoc">Get the call depth.</div><div class="ttdef"><b>Definition</b> eval.hpp:120</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_aa2f3507f374e077f2176f2e6acb59b9f"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#aa2f3507f374e077f2176f2e6acb59b9f">tcalc::EvalContext::call_depth</a></div><div class="ttdeci">TCALC_INLINE void call_depth(std::size_t depth)</div><div class="ttdoc">Set the call depth.</div><div class="ttdef"><b>Definition</b> eval.hpp:130</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_ac8d0f62edf1cc8cb65305a8f8d6ec011"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#ac8d0f62edf1cc8cb65305a8f8d6ec011">tcalc::EvalContext::func</a></div><div class="ttdeci">TCALC_INLINE void func(const std::string &amp;name, builtins::Function func) noexcept</div><div class="ttdoc">Set a built-in function.</div><div class="ttdef"><b>Definition</b> eval.hpp:109</div></div>
+<div class="ttc" id="aclasstcalc_1_1EvalContext_html_ac9c1d8e9d195fd7e0427aca0df978312"><div class="ttname"><a href="classtcalc_1_1EvalContext.html#ac9c1d8e9d195fd7e0427aca0df978312">tcalc::EvalContext::vars</a></div><div class="ttdeci">TCALC_INLINE auto &amp; vars() noexcept</div><div class="ttdoc">Get variables.</div><div class="ttdef"><b>Definition</b> eval.hpp:66</div></div>
+<div class="ttc" id="aclasstcalc_1_1Evaluator_html"><div class="ttname"><a href="classtcalc_1_1Evaluator.html">tcalc::Evaluator</a></div><div class="ttdoc">Evaluator for tcalc.</div><div class="ttdef"><b>Definition</b> eval.hpp:151</div></div>
+<div class="ttc" id="aclasstcalc_1_1Evaluator_html_a2d81762c22e23f124706e511a9141e9c"><div class="ttname"><a href="classtcalc_1_1Evaluator.html#a2d81762c22e23f124706e511a9141e9c">tcalc::Evaluator::ctx</a></div><div class="ttdeci">TCALC_INLINE auto &amp; ctx() const noexcept</div><div class="ttdoc">Get the evaluation context.</div><div class="ttdef"><b>Definition</b> eval.hpp:181</div></div>
+<div class="ttc" id="aclasstcalc_1_1Evaluator_html_a82e5f94b52a441986b5efa794a4010a9"><div class="ttname"><a href="classtcalc_1_1Evaluator.html#a82e5f94b52a441986b5efa794a4010a9">tcalc::Evaluator::Evaluator</a></div><div class="ttdeci">Evaluator()</div><div class="ttdoc">Construct a default Evaluator object with default context.</div><div class="ttdef"><b>Definition</b> eval.hpp:168</div></div>
+<div class="ttc" id="aclasstcalc_1_1ast_1_1Parser_html"><div class="ttname"><a href="classtcalc_1_1ast_1_1Parser.html">tcalc::ast::Parser</a></div><div class="ttdoc">AST parser.</div><div class="ttdef"><b>Definition</b> parser.hpp:97</div></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div><div class="ttdoc">tcalc error definition.</div></div>
-<div class="ttc" id="aerror_8hpp_html_adb0b235bb191198bb372cb9c0a591ae9"><div class="ttname"><a href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">tcalc::error::Result</a></div><div class="ttdeci">std::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:135</div></div>
+<div class="ttc" id="aerror_8hpp_html_a95226116f907382d8752274861b42b7f"><div class="ttname"><a href="error_8hpp.html#a95226116f907382d8752274861b42b7f">tcalc::error::Result</a></div><div class="ttdeci">_TCALC_EXPECTED_NS::expected&lt; T, Error &gt; Result</div><div class="ttdoc">Result type.</div><div class="ttdef"><b>Definition</b> error.hpp:153</div></div>
 <div class="ttc" id="aparser_8hpp_html"><div class="ttname"><a href="parser_8hpp.html">parser.hpp</a></div><div class="ttdoc">AST parser.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

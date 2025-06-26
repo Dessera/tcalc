@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['sin_0',['sin',['../builtins_8hpp.html#abcb7997dea478a5fa0b6588993877120',1,'tcalc::builtins']]],
-  ['spos_1',['spos',['../classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a',1,'tcalc::token::Tokenizer']]],
-  ['sqrt_2',['sqrt',['../builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f',1,'tcalc::builtins']]],
-  ['statements_3',['statements',['../classtcalc_1_1ast_1_1ProgramNode.html#a1434790fdac35b3512f1def1dca5920a',1,'tcalc::ast::ProgramNode::statements() const noexcept'],['../classtcalc_1_1ast_1_1ProgramNode.html#a4adfc20eaaa97862f216d4c92ba445ff',1,'tcalc::ast::ProgramNode::statements() noexcept']]]
+  ['raw_5ferr_0',['raw_err',['../error_8hpp.html#ab35f37c0ba67168280feed6f95826733',1,'tcalc::error']]],
+  ['right_1',['right',['../classtcalc_1_1ast_1_1BinaryOpNode.html#abb8d2b8333cec09332911faf8c9ce436',1,'tcalc::ast::BinaryOpNode::right() const noexcept'],['../classtcalc_1_1ast_1_1BinaryOpNode.html#a9ada474bee68091695cf8b31f74497a3',1,'tcalc::ast::BinaryOpNode::right() noexcept'],['../classtcalc_1_1ast_1_1BinaryOpNode.html#a063f0f8fa92e7b92359ed7154d974637',1,'tcalc::ast::BinaryOpNode::right(NodePtr&lt;&gt; right) noexcept']]]
 ];

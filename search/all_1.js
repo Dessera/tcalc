@@ -20,13 +20,13 @@ var searchData=
   ['binary_5fplus_17',['BINARY_PLUS',['../node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca50e6d47e3a606d31b3bb4792afdd1560',1,'tcalc::ast']]],
   ['binaryop_2ehpp_18',['binaryop.hpp',['../binaryop_8hpp.html',1,'']]],
   ['binaryopnode_19',['binaryopnode',['../classtcalc_1_1ast_1_1BinaryOpNode.html#aa93c438bf3d8292252ad79758f8483ed',1,'tcalc::ast::BinaryOpNode::BinaryOpNode()'],['../classtcalc_1_1ast_1_1BinaryOpNode.html',1,'tcalc::ast::BinaryOpNode'],['../classtcalc_1_1ast_1_1BinaryOpNode.html#a38ccad8592375281c063484abda52cce',1,'tcalc::ast::BinaryOpNode::BinaryOpNode()']]],
-  ['binop_5fmap_20',['BINOP_MAP',['../classtcalc_1_1ast_1_1EvalVisitor.html#ae4972b6d7fc992cd1c4e50f7ef2d144f',1,'tcalc::ast::EvalVisitor']]],
+  ['binop_5fmap_20',['BINOP_MAP',['../classtcalc_1_1ast_1_1EvalVisitor.html#adcdf361a34694425b129f43d1df4b92a',1,'tcalc::ast::EvalVisitor']]],
   ['binop_5fpriority_21',['BINOP_PRIORITY',['../priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f',1,'tcalc::ast']]],
   ['body_22',['body',['../classtcalc_1_1ast_1_1VarAssignNode.html#ac52e39ac2e92b66ab2a4fac2b095553d',1,'tcalc::ast::VarAssignNode::body(NodePtr&lt;&gt; body) noexcept'],['../classtcalc_1_1ast_1_1VarAssignNode.html#ace44ae5d15d57af83601128a7f645a75',1,'tcalc::ast::VarAssignNode::body() noexcept'],['../classtcalc_1_1ast_1_1VarAssignNode.html#a968fa1ea991313d222d91a420fff5fc7',1,'tcalc::ast::VarAssignNode::body() const noexcept'],['../classtcalc_1_1ast_1_1FdefNode.html#a75e974ad01254bbc16ac91b0fe535c54',1,'tcalc::ast::FdefNode::body(NodePtr&lt;&gt; body)'],['../classtcalc_1_1ast_1_1FdefNode.html#a86bf9508e72a4e9961f95431591535ea',1,'tcalc::ast::FdefNode::body() noexcept'],['../classtcalc_1_1ast_1_1FdefNode.html#a0fe6c85db63b8dc1d080fa349afc6d72',1,'tcalc::ast::FdefNode::body() const noexcept']]],
   ['built_20in_20functions_23',['Built-in functions',['../md_docs_2syntax__reference.html#autotoc_md6',1,'']]],
   ['built_20in_20variables_24',['Built-in variables',['../md_docs_2syntax__reference.html#autotoc_md8',1,'']]],
   ['built_20with_25',['Built With',['../md_README.html#autotoc_md11',1,'']]],
-  ['builtin_5ffunctions_26',['BUILTIN_FUNCTIONS',['../builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07',1,'tcalc::builtins']]],
-  ['builtin_5fvariables_27',['BUILTIN_VARIABLES',['../builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28',1,'tcalc::builtins']]],
+  ['builtin_5ffunctions_26',['BUILTIN_FUNCTIONS',['../builtins_8hpp.html#a9bd86c6ca10b860815e5de4741677f9c',1,'tcalc::builtins']]],
+  ['builtin_5fvariables_27',['BUILTIN_VARIABLES',['../builtins_8hpp.html#a15228eabc3cdf33d687e0ee2423c248d',1,'tcalc::builtins']]],
   ['builtins_2ehpp_28',['builtins.hpp',['../builtins_8hpp.html',1,'']]]
 ];

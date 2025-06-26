@@ -31,6 +31,16 @@ var hierarchy =
     ] ],
     [ "tcalc::ast::Parser", "classtcalc_1_1ast_1_1Parser.html", null ],
     [ "tcalc::ast::ParserContext", "classtcalc_1_1ast_1_1ParserContext.html", null ],
+    [ "QApplication", null, [
+      [ "tcalc_gui::Application", "classtcalc__gui_1_1Application.html", null ]
+    ] ],
+    [ "QPushButton", null, [
+      [ "tcalc_gui::Key", "classtcalc__gui_1_1Key.html", null ]
+    ] ],
+    [ "QWidget", null, [
+      [ "tcalc_gui::Calculator", "classtcalc__gui_1_1Calculator.html", null ],
+      [ "tcalc_gui::Keyboard", "classtcalc__gui_1_1Keyboard.html", null ]
+    ] ],
     [ "tcalc::token::Token", "structtcalc_1_1token_1_1Token.html", null ],
     [ "tcalc::token::Tokenizer", "classtcalc_1_1token_1_1Tokenizer.html", null ]
 ];

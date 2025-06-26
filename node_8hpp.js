@@ -1,7 +1,7 @@
 var node_8hpp =
 [
     [ "tcalc::ast::Node", "classtcalc_1_1ast_1_1Node.html", "classtcalc_1_1ast_1_1Node" ],
-    [ "NodePtr", "node_8hpp.html#a0d7f8261033c3234d8eb74efc10f5ca3", null ],
+    [ "NodePtr", "node_8hpp.html#a9286b36dd149441ae065454c25c370f1", null ],
     [ "NodeType", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddc", [
       [ "BINARY_PLUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddca50e6d47e3a606d31b3bb4792afdd1560", null ],
       [ "BINARY_MINUS", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcaa9023c7f015d5ba70a0a4db6c664734d", null ],
@@ -27,5 +27,5 @@ var node_8hpp =
       [ "PROGRAM", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcac9c31422636176fa93724df8b6e3ef31", null ],
       [ "IMPORT", "node_8hpp.html#ae1437712c0ca34c0a70c4226cfafcddcad9c89e6459f4fbd0b03b5bc093e87919", null ]
     ] ],
-    [ "NODE_TYPE_NAMES", "node_8hpp.html#a4201c5dd8e5e6fed1c5a9e2418d76f2b", null ]
+    [ "NODE_TYPE_NAMES", "node_8hpp.html#a257b83aae21a9932cbff946f1db43d72", null ]
 ];

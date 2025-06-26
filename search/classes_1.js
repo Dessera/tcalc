@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['error_0',['Error',['../classtcalc_1_1error_1_1Error.html',1,'tcalc::error']]],
-  ['evalcontext_1',['EvalContext',['../classtcalc_1_1EvalContext.html',1,'tcalc']]],
-  ['evaluator_2',['Evaluator',['../classtcalc_1_1Evaluator.html',1,'tcalc']]],
-  ['evalvisitor_3',['EvalVisitor',['../classtcalc_1_1ast_1_1EvalVisitor.html',1,'tcalc::ast']]]
+  ['basevisitor_0',['BaseVisitor',['../classtcalc_1_1ast_1_1BaseVisitor.html',1,'tcalc::ast']]],
+  ['basevisitor_3c_20double_20_3e_1',['BaseVisitor&lt; double &gt;',['../classtcalc_1_1ast_1_1BaseVisitor.html',1,'tcalc::ast']]],
+  ['basevisitor_3c_20std_3a_3avector_3c_20double_20_3e_20_3e_2',['BaseVisitor&lt; std::vector&lt; double &gt; &gt;',['../classtcalc_1_1ast_1_1BaseVisitor.html',1,'tcalc::ast']]],
+  ['basevisitor_3c_20void_20_3e_3',['BaseVisitor&lt; void &gt;',['../classtcalc_1_1ast_1_1BaseVisitor.html',1,'tcalc::ast']]],
+  ['binaryopnode_4',['BinaryOpNode',['../classtcalc_1_1ast_1_1BinaryOpNode.html',1,'tcalc::ast']]]
 ];

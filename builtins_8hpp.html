@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">tcalc<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">tcalc<span id="projectnumber">&#160;0.2.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -106,7 +106,8 @@ $(document).ready(function(){initNavTree('builtins_8hpp.html',''); initResizable
 
 <p>Built-in functions and variables.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="function_8hpp_source.html">tcalc/ast/function.hpp</a>&quot;</code><br />
@@ -129,51 +130,54 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:aa1b2c5686275ca0d11d287b02fa0665b" id="r_aa1b2c5686275ca0d11d287b02fa0665b"><td class="memItemLeft" align="right" valign="top"><a id="aa1b2c5686275ca0d11d287b02fa0665b" name="aa1b2c5686275ca0d11d287b02fa0665b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>tcalc::builtins::Function</b> = std::function&lt; <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;)&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>tcalc::builtins::Function</b> = std::function&lt; <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;(const std::vector&lt; double &gt; &amp;, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;)&gt;</td></tr>
 <tr class="memdesc:aa1b2c5686275ca0d11d287b02fa0665b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in function type. <br /></td></tr>
 <tr class="separator:aa1b2c5686275ca0d11d287b02fa0665b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3ebd1fbf684f64e852470902cfa45c8f" id="r_a3ebd1fbf684f64e852470902cfa45c8f"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:a3ebd1fbf684f64e852470902cfa45c8f" id="r_a3ebd1fbf684f64e852470902cfa45c8f"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:a3ebd1fbf684f64e852470902cfa45c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in sqrt function.  <br /></td></tr>
 <tr class="separator:a3ebd1fbf684f64e852470902cfa45c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad97b087dc968e1c27e89be438d84e4f7" id="r_ad97b087dc968e1c27e89be438d84e4f7"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:ad97b087dc968e1c27e89be438d84e4f7" id="r_ad97b087dc968e1c27e89be438d84e4f7"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:ad97b087dc968e1c27e89be438d84e4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in pow function.  <br /></td></tr>
 <tr class="separator:ad97b087dc968e1c27e89be438d84e4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36733716fee02f3084bcd6175177d9e3" id="r_a36733716fee02f3084bcd6175177d9e3"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a36733716fee02f3084bcd6175177d9e3">tcalc::builtins::log</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:a36733716fee02f3084bcd6175177d9e3" id="r_a36733716fee02f3084bcd6175177d9e3"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a36733716fee02f3084bcd6175177d9e3">tcalc::builtins::log</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:a36733716fee02f3084bcd6175177d9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in log function.  <br /></td></tr>
 <tr class="separator:a36733716fee02f3084bcd6175177d9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb7997dea478a5fa0b6588993877120" id="r_abcb7997dea478a5fa0b6588993877120"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#abcb7997dea478a5fa0b6588993877120">tcalc::builtins::sin</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:abcb7997dea478a5fa0b6588993877120" id="r_abcb7997dea478a5fa0b6588993877120"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#abcb7997dea478a5fa0b6588993877120">tcalc::builtins::sin</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:abcb7997dea478a5fa0b6588993877120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in sin function.  <br /></td></tr>
 <tr class="separator:abcb7997dea478a5fa0b6588993877120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1335ecf1444e70ae750a5e311412da9" id="r_af1335ecf1444e70ae750a5e311412da9"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9">tcalc::builtins::cos</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:af1335ecf1444e70ae750a5e311412da9" id="r_af1335ecf1444e70ae750a5e311412da9"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9">tcalc::builtins::cos</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:af1335ecf1444e70ae750a5e311412da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in cos function.  <br /></td></tr>
 <tr class="separator:af1335ecf1444e70ae750a5e311412da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a493a3146e36d4bbbfffad0e43d9f6a8d" id="r_a493a3146e36d4bbbfffad0e43d9f6a8d"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d">tcalc::builtins::tan</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:a493a3146e36d4bbbfffad0e43d9f6a8d" id="r_a493a3146e36d4bbbfffad0e43d9f6a8d"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d">tcalc::builtins::tan</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:a493a3146e36d4bbbfffad0e43d9f6a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in tan function.  <br /></td></tr>
 <tr class="separator:a493a3146e36d4bbbfffad0e43d9f6a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b5d6abdb8828da10ac08711e48f0e25" id="r_a6b5d6abdb8828da10ac08711e48f0e25"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a6b5d6abdb8828da10ac08711e48f0e25">tcalc::builtins::acos</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:a6b5d6abdb8828da10ac08711e48f0e25" id="r_a6b5d6abdb8828da10ac08711e48f0e25"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a6b5d6abdb8828da10ac08711e48f0e25">tcalc::builtins::acos</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:a6b5d6abdb8828da10ac08711e48f0e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in acos function.  <br /></td></tr>
 <tr class="separator:a6b5d6abdb8828da10ac08711e48f0e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08cc117d3990e5593317c595585a9590" id="r_a08cc117d3990e5593317c595585a9590"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a08cc117d3990e5593317c595585a9590">tcalc::builtins::asin</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:a08cc117d3990e5593317c595585a9590" id="r_a08cc117d3990e5593317c595585a9590"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a08cc117d3990e5593317c595585a9590">tcalc::builtins::asin</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:a08cc117d3990e5593317c595585a9590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in asin function.  <br /></td></tr>
 <tr class="separator:a08cc117d3990e5593317c595585a9590"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af13958532b48391ecd05d836349786bc" id="r_af13958532b48391ecd05d836349786bc"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#adb0b235bb191198bb372cb9c0a591ae9">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#af13958532b48391ecd05d836349786bc">tcalc::builtins::atan</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memitem:af13958532b48391ecd05d836349786bc" id="r_af13958532b48391ecd05d836349786bc"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#af13958532b48391ecd05d836349786bc">tcalc::builtins::atan</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
 <tr class="memdesc:af13958532b48391ecd05d836349786bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in atan function.  <br /></td></tr>
 <tr class="separator:af13958532b48391ecd05d836349786bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f841ba94ccbe22f1126745901e27b39" id="r_a0f841ba94ccbe22f1126745901e27b39"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC <a class="el" href="error_8hpp.html#a95226116f907382d8752274861b42b7f">error::Result</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a0f841ba94ccbe22f1126745901e27b39">tcalc::builtins::exp</a> (const std::vector&lt; double &gt; &amp;args, const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;ctx)</td></tr>
+<tr class="memdesc:a0f841ba94ccbe22f1126745901e27b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Built-in exp function.  <br /></td></tr>
+<tr class="separator:a0f841ba94ccbe22f1126745901e27b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a97464587d9c2abacdb1a7e8a7fe00e28" id="r_a97464587d9c2abacdb1a7e8a7fe00e28"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC const std::unordered_map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a97464587d9c2abacdb1a7e8a7fe00e28">tcalc::builtins::BUILTIN_VARIABLES</a></td></tr>
-<tr class="separator:a97464587d9c2abacdb1a7e8a7fe00e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac37ed0215d5ade84cd52c0157a7dbb07" id="r_ac37ed0215d5ade84cd52c0157a7dbb07"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC const std::unordered_map&lt; std::string, <a class="el" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">Function</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#ac37ed0215d5ade84cd52c0157a7dbb07">tcalc::builtins::BUILTIN_FUNCTIONS</a></td></tr>
-<tr class="separator:ac37ed0215d5ade84cd52c0157a7dbb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15228eabc3cdf33d687e0ee2423c248d" id="r_a15228eabc3cdf33d687e0ee2423c248d"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a15228eabc3cdf33d687e0ee2423c248d">tcalc::builtins::BUILTIN_VARIABLES</a></td></tr>
+<tr class="separator:a15228eabc3cdf33d687e0ee2423c248d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd86c6ca10b860815e5de4741677f9c" id="r_a9bd86c6ca10b860815e5de4741677f9c"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, <a class="el" href="builtins_8hpp.html#aa1b2c5686275ca0d11d287b02fa0665b">Function</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="builtins_8hpp.html#a9bd86c6ca10b860815e5de4741677f9c">tcalc::builtins::BUILTIN_FUNCTIONS</a></td></tr>
+<tr class="separator:a9bd86c6ca10b860815e5de4741677f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Built-in functions and variables. </p>
 <dl class="section author"><dt>Author</dt><dd>Dessera (<a href="#" onclick="location.href='mai'+'lto:'+'des'+'se'+'ra@'+'qq'+'.co'+'m'; return false;">desse<span class="obfuscator">.nosp@m.</span>ra@q<span class="obfuscator">.nosp@m.</span>q.com</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-06-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Dessera </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -318,6 +322,44 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Built-in cos function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Function arguments. </td></tr>
+    <tr><td class="paramname">ctx</td><td>Evaluation context. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>error::Result&lt;double&gt; Result. </dd></dl>
+
+</div>
+</div>
+<a id="a0f841ba94ccbe22f1126745901e27b39" name="a0f841ba94ccbe22f1126745901e27b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f841ba94ccbe22f1126745901e27b39">&#9670;&#160;</a></span>exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">error::Result&lt; double &gt; tcalc::builtins::exp </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtcalc_1_1EvalContext.html">EvalContext</a> &amp;&#160;</td>
+          <td class="paramname"><em>ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Built-in exp function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">args</td><td>Function arguments. </td></tr>
@@ -518,43 +560,60 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ac37ed0215d5ade84cd52c0157a7dbb07" name="ac37ed0215d5ade84cd52c0157a7dbb07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac37ed0215d5ade84cd52c0157a7dbb07">&#9670;&#160;</a></span>BUILTIN_FUNCTIONS</h2>
+<a id="a9bd86c6ca10b860815e5de4741677f9c" name="a9bd86c6ca10b860815e5de4741677f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd86c6ca10b860815e5de4741677f9c">&#9670;&#160;</a></span>BUILTIN_FUNCTIONS</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::unordered_map&lt; std::string, Function &gt; tcalc::builtins::BUILTIN_FUNCTIONS</td>
+          <td class="memname">const std::unordered_map&lt;std::string, Function&gt; tcalc::builtins::BUILTIN_FUNCTIONS</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">  { <span class="stringliteral">&quot;sqrt&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">sqrt</a> }, { <span class="stringliteral">&quot;pow&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">pow</a> },   { <span class="stringliteral">&quot;log&quot;</span>, log },</div>
-<div class="line">  { <span class="stringliteral">&quot;sin&quot;</span>, sin },   { <span class="stringliteral">&quot;cos&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9">cos</a> },   { <span class="stringliteral">&quot;tan&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d">tan</a> },</div>
-<div class="line">  { <span class="stringliteral">&quot;acos&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a6b5d6abdb8828da10ac08711e48f0e25">acos</a> }, { <span class="stringliteral">&quot;asin&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a08cc117d3990e5593317c595585a9590">asin</a> }, { <span class="stringliteral">&quot;atan&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#af13958532b48391ecd05d836349786bc">atan</a> },</div>
+<div class="line">  { <span class="stringliteral">&quot;sqrt&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">sqrt</a> }, { <span class="stringliteral">&quot;pow&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">pow</a> }, { <span class="stringliteral">&quot;log&quot;</span>, log },   { <span class="stringliteral">&quot;sin&quot;</span>, sin },</div>
+<div class="line">  { <span class="stringliteral">&quot;cos&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9">cos</a> },   { <span class="stringliteral">&quot;tan&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d">tan</a> }, { <span class="stringliteral">&quot;acos&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a6b5d6abdb8828da10ac08711e48f0e25">acos</a> }, { <span class="stringliteral">&quot;asin&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a08cc117d3990e5593317c595585a9590">asin</a> },</div>
+<div class="line">  { <span class="stringliteral">&quot;atan&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#af13958532b48391ecd05d836349786bc">atan</a> }, { <span class="stringliteral">&quot;exp&quot;</span>, <a class="code hl_function" href="builtins_8hpp.html#a0f841ba94ccbe22f1126745901e27b39">exp</a> }</div>
 <div class="line">}</div>
-<div class="ttc" id="abuiltins_8hpp_html_a08cc117d3990e5593317c595585a9590"><div class="ttname"><a href="builtins_8hpp.html#a08cc117d3990e5593317c595585a9590">tcalc::builtins::asin</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; asin(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in asin function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:159</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:75</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_a493a3146e36d4bbbfffad0e43d9f6a8d"><div class="ttname"><a href="builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d">tcalc::builtins::tan</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; tan(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in tan function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:135</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_a6b5d6abdb8828da10ac08711e48f0e25"><div class="ttname"><a href="builtins_8hpp.html#a6b5d6abdb8828da10ac08711e48f0e25">tcalc::builtins::acos</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; acos(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in acos function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:147</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:87</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_af1335ecf1444e70ae750a5e311412da9"><div class="ttname"><a href="builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9">tcalc::builtins::cos</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; cos(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in cos function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:123</div></div>
-<div class="ttc" id="abuiltins_8hpp_html_af13958532b48391ecd05d836349786bc"><div class="ttname"><a href="builtins_8hpp.html#af13958532b48391ecd05d836349786bc">tcalc::builtins::atan</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; atan(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in atan function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:171</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a08cc117d3990e5593317c595585a9590"><div class="ttname"><a href="builtins_8hpp.html#a08cc117d3990e5593317c595585a9590">tcalc::builtins::asin</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; asin(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in asin function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:146</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a0f841ba94ccbe22f1126745901e27b39"><div class="ttname"><a href="builtins_8hpp.html#a0f841ba94ccbe22f1126745901e27b39">tcalc::builtins::exp</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; exp(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in exp function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:170</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a3ebd1fbf684f64e852470902cfa45c8f"><div class="ttname"><a href="builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f">tcalc::builtins::sqrt</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; sqrt(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in sqrt function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:62</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a493a3146e36d4bbbfffad0e43d9f6a8d"><div class="ttname"><a href="builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d">tcalc::builtins::tan</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; tan(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in tan function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:122</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_a6b5d6abdb8828da10ac08711e48f0e25"><div class="ttname"><a href="builtins_8hpp.html#a6b5d6abdb8828da10ac08711e48f0e25">tcalc::builtins::acos</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; acos(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in acos function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:134</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_ad97b087dc968e1c27e89be438d84e4f7"><div class="ttname"><a href="builtins_8hpp.html#ad97b087dc968e1c27e89be438d84e4f7">tcalc::builtins::pow</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; pow(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in pow function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:74</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_af1335ecf1444e70ae750a5e311412da9"><div class="ttname"><a href="builtins_8hpp.html#af1335ecf1444e70ae750a5e311412da9">tcalc::builtins::cos</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; cos(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in cos function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:110</div></div>
+<div class="ttc" id="abuiltins_8hpp_html_af13958532b48391ecd05d836349786bc"><div class="ttname"><a href="builtins_8hpp.html#af13958532b48391ecd05d836349786bc">tcalc::builtins::atan</a></div><div class="ttdeci">TCALC_PUBLIC error::Result&lt; double &gt; atan(const std::vector&lt; double &gt; &amp;args, const EvalContext &amp;ctx)</div><div class="ttdoc">Built-in atan function.</div><div class="ttdef"><b>Definition</b> builtins.cpp:158</div></div>
 </div><!-- fragment --><p>Built-in functions. </p>
 
 </div>
 </div>
-<a id="a97464587d9c2abacdb1a7e8a7fe00e28" name="a97464587d9c2abacdb1a7e8a7fe00e28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97464587d9c2abacdb1a7e8a7fe00e28">&#9670;&#160;</a></span>BUILTIN_VARIABLES</h2>
+<a id="a15228eabc3cdf33d687e0ee2423c248d" name="a15228eabc3cdf33d687e0ee2423c248d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15228eabc3cdf33d687e0ee2423c248d">&#9670;&#160;</a></span>BUILTIN_VARIABLES</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::unordered_map&lt; std::string, double &gt; tcalc::builtins::BUILTIN_VARIABLES</td>
+          <td class="memname">const std::unordered_map&lt;std::string, double&gt; tcalc::builtins::BUILTIN_VARIABLES</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">  { <span class="stringliteral">&quot;pi&quot;</span>, M_PI },</div>

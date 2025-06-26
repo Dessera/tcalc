@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">tcalc<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">tcalc<span id="projectnumber">&#160;0.2.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,24 +105,49 @@ $(document).ready(function(){initNavTree('priority_8hpp_source.html',''); initRe
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="node_8hpp.html">tcalc/ast/node.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">tcalc/common.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="token_8hpp.html">tcalc/token.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>tcalc::ast {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">   27</a></span><span class="keyword">using </span><a class="code hl_typedef" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a> =</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::vector&lt;std::unordered_map&lt;token::TokenType, NodeType&gt;&gt;;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> <a class="code hl_typedef" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_variable" href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">BINOP_PRIORITY</a>; </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">extern</span> TCALC_PUBLIC <span class="keyword">const</span> <a class="code hl_typedef" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_variable" href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">UNARYOP_PRIORITY</a>; </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
-<div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div><div class="ttdoc">tcalc common header.</div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="token_8hpp.html">tcalc/token.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>tcalc::ast {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">   26</a></span><span class="keyword">using </span><a class="code hl_typedef" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a> =</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  std::vector&lt;std::unordered_map&lt;token::TokenType, NodeType&gt;&gt;;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">   29</a></span><span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a> <a class="code hl_variable" href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">BINOP_PRIORITY</a> = {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    { token::TokenType::AND, NodeType::BINARY_AND },</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    { token::TokenType::OR, NodeType::BINARY_OR },</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  },</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    { token::TokenType::EQUAL, NodeType::BINARY_EQUAL },</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    { token::TokenType::NOTEQUAL, NodeType::BINARY_NOT_EQUAL },</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    { token::TokenType::GREATER, NodeType::BINARY_GREATER },</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    { token::TokenType::GREATEREQUAL, NodeType::BINARY_GREATER_EQUAL },</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    { token::TokenType::LESS, NodeType::BINARY_LESS },</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    { token::TokenType::LESSEQUAL, NodeType::BINARY_LESS_EQUAL },</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  },</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    { token::TokenType::PLUS, NodeType::BINARY_PLUS },</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    { token::TokenType::MINUS, NodeType::BINARY_MINUS },</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  },</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    { token::TokenType::MULTIPLY, NodeType::BINARY_MULTIPLY },</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    { token::TokenType::DIVIDE, NodeType::BINARY_DIVIDE },</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}; </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">   52</a></span><span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a> <a class="code hl_variable" href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">UNARYOP_PRIORITY</a> = { {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  { token::TokenType::PLUS, NodeType::UNARY_PLUS },</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  { token::TokenType::MINUS, NodeType::UNARY_MINUS },</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  { token::TokenType::NOT, NodeType::UNARY_NOT },</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>} }; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+</div>
+</div>
 <div class="ttc" id="anode_8hpp_html"><div class="ttname"><a href="node_8hpp.html">node.hpp</a></div><div class="ttdoc">Base class for AST nodes.</div></div>
-<div class="ttc" id="apriority_8hpp_html_a14f28993aec5ddbf15e96cfd5168ee03"><div class="ttname"><a href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">tcalc::ast::PriorityTable</a></div><div class="ttdeci">std::vector&lt; std::unordered_map&lt; token::TokenType, NodeType &gt; &gt; PriorityTable</div><div class="ttdoc">Operator priority table type.</div><div class="ttdef"><b>Definition</b> priority.hpp:28</div></div>
-<div class="ttc" id="apriority_8hpp_html_a48400522f93ed9d753b9784e42e0c94e"><div class="ttname"><a href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">tcalc::ast::UNARYOP_PRIORITY</a></div><div class="ttdeci">TCALC_PUBLIC const PriorityTable UNARYOP_PRIORITY</div><div class="ttdef"><b>Definition</b> priority.cpp:37</div></div>
-<div class="ttc" id="apriority_8hpp_html_aa3d0c4d9d531c83624677749096dc39f"><div class="ttname"><a href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">tcalc::ast::BINOP_PRIORITY</a></div><div class="ttdeci">TCALC_PUBLIC const PriorityTable BINOP_PRIORITY</div><div class="ttdef"><b>Definition</b> priority.cpp:14</div></div>
+<div class="ttc" id="apriority_8hpp_html_a14f28993aec5ddbf15e96cfd5168ee03"><div class="ttname"><a href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">tcalc::ast::PriorityTable</a></div><div class="ttdeci">std::vector&lt; std::unordered_map&lt; token::TokenType, NodeType &gt; &gt; PriorityTable</div><div class="ttdoc">Operator priority table type.</div><div class="ttdef"><b>Definition</b> priority.hpp:27</div></div>
+<div class="ttc" id="apriority_8hpp_html_a48400522f93ed9d753b9784e42e0c94e"><div class="ttname"><a href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">tcalc::ast::UNARYOP_PRIORITY</a></div><div class="ttdeci">const PriorityTable UNARYOP_PRIORITY</div><div class="ttdef"><b>Definition</b> priority.hpp:52</div></div>
+<div class="ttc" id="apriority_8hpp_html_aa3d0c4d9d531c83624677749096dc39f"><div class="ttname"><a href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">tcalc::ast::BINOP_PRIORITY</a></div><div class="ttdeci">const PriorityTable BINOP_PRIORITY</div><div class="ttdef"><b>Definition</b> priority.hpp:29</div></div>
 <div class="ttc" id="atoken_8hpp_html"><div class="ttname"><a href="token_8hpp.html">token.hpp</a></div><div class="ttdoc">Input token definition.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

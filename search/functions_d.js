@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['tan_0',['tan',['../builtins_8hpp.html#a493a3146e36d4bbbfffad0e43d9f6a8d',1,'tcalc::builtins']]],
-  ['then_1',['then',['../classtcalc_1_1ast_1_1IfNode.html#a210d8b6f664942fc2903414549c91510',1,'tcalc::ast::IfNode::then() const noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a7b7c266cbe4064b06ad525c426ff476b',1,'tcalc::ast::IfNode::then() noexcept'],['../classtcalc_1_1ast_1_1IfNode.html#a4c789e1aca1419bbd71d575082a62e84',1,'tcalc::ast::IfNode::then(NodePtr&lt;&gt; then) noexcept']]],
-  ['tokenizer_2',['tokenizer',['../classtcalc_1_1token_1_1Tokenizer.html#ac296bbcbb6f53f88ff9f0970c5cdae14',1,'tcalc::token::Tokenizer::Tokenizer()'],['../classtcalc_1_1ast_1_1ParserContext.html#af2e9b189d2eb351666f1c55178284007',1,'tcalc::ast::ParserContext::tokenizer()']]],
-  ['type_3',['type',['../classtcalc_1_1ast_1_1Node.html#a61c43ce378cdf93a31f09d0ff00f38dd',1,'tcalc::ast::Node']]]
+  ['sin_0',['sin',['../builtins_8hpp.html#abcb7997dea478a5fa0b6588993877120',1,'tcalc::builtins']]],
+  ['spos_1',['spos',['../classtcalc_1_1token_1_1Tokenizer.html#a6258bea1a171ccc3406abb337641970a',1,'tcalc::token::Tokenizer']]],
+  ['sqrt_2',['sqrt',['../builtins_8hpp.html#a3ebd1fbf684f64e852470902cfa45c8f',1,'tcalc::builtins']]],
+  ['statements_3',['statements',['../classtcalc_1_1ast_1_1ProgramNode.html#a1434790fdac35b3512f1def1dca5920a',1,'tcalc::ast::ProgramNode::statements() const noexcept'],['../classtcalc_1_1ast_1_1ProgramNode.html#a4adfc20eaaa97862f216d4c92ba445ff',1,'tcalc::ast::ProgramNode::statements() noexcept']]]
 ];

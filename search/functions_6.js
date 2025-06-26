@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['left_0',['left',['../classtcalc_1_1ast_1_1BinaryOpNode.html#af5f38737a4a1d15c9b5dc3155bcade60',1,'tcalc::ast::BinaryOpNode::left() const noexcept'],['../classtcalc_1_1ast_1_1BinaryOpNode.html#a5ba92036f20e3d315fda8bde8b2f0b5b',1,'tcalc::ast::BinaryOpNode::left() noexcept'],['../classtcalc_1_1ast_1_1BinaryOpNode.html#a2b656554514cc423dbef5b32daf02121',1,'tcalc::ast::BinaryOpNode::left(NodePtr&lt;&gt; left) noexcept']]],
-  ['log_1',['log',['../classtcalc_1_1error_1_1Error.html#a90c606997cef16e76d5a896d025df8b2',1,'tcalc::error::Error::log()'],['../builtins_8hpp.html#a36733716fee02f3084bcd6175177d9e3',1,'tcalc::builtins::log()']]]
+  ['key_0',['Key',['../classtcalc__gui_1_1Key.html#af60647f2958bfd711086b0cca15240fb',1,'tcalc_gui::Key']]],
+  ['key_5fclicked_1',['key_clicked',['../classtcalc__gui_1_1Key.html#a39830094bf7ed1e0b1401e7cf4f4e215',1,'tcalc_gui::Key::key_clicked()'],['../classtcalc__gui_1_1Keyboard.html#aedeb273d6309371a80915efbcbce38d6',1,'tcalc_gui::Keyboard::key_clicked(const QString &amp;key)']]],
+  ['keyboard_2',['Keyboard',['../classtcalc__gui_1_1Keyboard.html#acd1bc14daad43183ec294da3c1e93e85',1,'tcalc_gui::Keyboard']]]
 ];

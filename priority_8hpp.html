@@ -30,7 +30,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">tcalc<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">tcalc<span id="projectnumber">&#160;0.2.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -107,7 +107,6 @@ $(document).ready(function(){initNavTree('priority_8hpp.html',''); initResizable
 <div class="textblock"><code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="node_8hpp_source.html">tcalc/ast/node.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common_8hpp_source.html">tcalc/common.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="token_8hpp_source.html">tcalc/token.hpp</a>&quot;</code><br />
 </div>
 <p><a href="priority_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -121,15 +120,15 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>tcalc::ast::Priority
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa3d0c4d9d531c83624677749096dc39f" id="r_aa3d0c4d9d531c83624677749096dc39f"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC const <a class="el" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">tcalc::ast::BINOP_PRIORITY</a></td></tr>
+<tr class="memitem:aa3d0c4d9d531c83624677749096dc39f" id="r_aa3d0c4d9d531c83624677749096dc39f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority_8hpp.html#aa3d0c4d9d531c83624677749096dc39f">tcalc::ast::BINOP_PRIORITY</a></td></tr>
 <tr class="separator:aa3d0c4d9d531c83624677749096dc39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48400522f93ed9d753b9784e42e0c94e" id="r_a48400522f93ed9d753b9784e42e0c94e"><td class="memItemLeft" align="right" valign="top">TCALC_PUBLIC const <a class="el" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">tcalc::ast::UNARYOP_PRIORITY</a></td></tr>
+<tr class="memitem:a48400522f93ed9d753b9784e42e0c94e" id="r_a48400522f93ed9d753b9784e42e0c94e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="priority_8hpp.html#a14f28993aec5ddbf15e96cfd5168ee03">PriorityTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="priority_8hpp.html#a48400522f93ed9d753b9784e42e0c94e">tcalc::ast::UNARYOP_PRIORITY</a></td></tr>
 <tr class="separator:a48400522f93ed9d753b9784e42e0c94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Operator priority table. </p>
 <dl class="section author"><dt>Author</dt><dd>Dessera (<a href="#" onclick="location.href='mai'+'lto:'+'des'+'se'+'ra@'+'qq'+'.co'+'m'; return false;">desse<span class="obfuscator">.nosp@m.</span>ra@q<span class="obfuscator">.nosp@m.</span>q.com</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-06-17</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Dessera </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
@@ -138,32 +137,40 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const PriorityTable tcalc::ast::BINOP_PRIORITY</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">  {</div>
-<div class="line">    { TokenType::AND, NodeType::BINARY_AND },</div>
-<div class="line">    { TokenType::OR, NodeType::BINARY_OR },</div>
+<div class="line">    { token::TokenType::AND, NodeType::BINARY_AND },</div>
+<div class="line">    { token::TokenType::OR, NodeType::BINARY_OR },</div>
 <div class="line">  },</div>
 <div class="line">  {</div>
-<div class="line">    { TokenType::EQUAL, NodeType::BINARY_EQUAL },</div>
-<div class="line">    { TokenType::NOTEQUAL, NodeType::BINARY_NOT_EQUAL },</div>
-<div class="line">    { TokenType::GREATER, NodeType::BINARY_GREATER },</div>
-<div class="line">    { TokenType::GREATEREQUAL, NodeType::BINARY_GREATER_EQUAL },</div>
-<div class="line">    { TokenType::LESS, NodeType::BINARY_LESS },</div>
-<div class="line">    { TokenType::LESSEQUAL, NodeType::BINARY_LESS_EQUAL },</div>
+<div class="line">    { token::TokenType::EQUAL, NodeType::BINARY_EQUAL },</div>
+<div class="line">    { token::TokenType::NOTEQUAL, NodeType::BINARY_NOT_EQUAL },</div>
+<div class="line">    { token::TokenType::GREATER, NodeType::BINARY_GREATER },</div>
+<div class="line">    { token::TokenType::GREATEREQUAL, NodeType::BINARY_GREATER_EQUAL },</div>
+<div class="line">    { token::TokenType::LESS, NodeType::BINARY_LESS },</div>
+<div class="line">    { token::TokenType::LESSEQUAL, NodeType::BINARY_LESS_EQUAL },</div>
 <div class="line">  },</div>
 <div class="line">  {</div>
-<div class="line">    { TokenType::PLUS, NodeType::BINARY_PLUS },</div>
-<div class="line">    { TokenType::MINUS, NodeType::BINARY_MINUS },</div>
+<div class="line">    { token::TokenType::PLUS, NodeType::BINARY_PLUS },</div>
+<div class="line">    { token::TokenType::MINUS, NodeType::BINARY_MINUS },</div>
 <div class="line">  },</div>
 <div class="line">  {</div>
-<div class="line">    { TokenType::MULTIPLY, NodeType::BINARY_MULTIPLY },</div>
-<div class="line">    { TokenType::DIVIDE, NodeType::BINARY_DIVIDE },</div>
+<div class="line">    { token::TokenType::MULTIPLY, NodeType::BINARY_MULTIPLY },</div>
+<div class="line">    { token::TokenType::DIVIDE, NodeType::BINARY_DIVIDE },</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Binary operator priority table. </p>
@@ -175,16 +182,24 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const PriorityTable tcalc::ast::UNARYOP_PRIORITY</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= { {</div>
-<div class="line">  { TokenType::PLUS, NodeType::UNARY_PLUS },</div>
-<div class="line">  { TokenType::MINUS, NodeType::UNARY_MINUS },</div>
-<div class="line">  { TokenType::NOT, NodeType::UNARY_NOT },</div>
+<div class="line">  { token::TokenType::PLUS, NodeType::UNARY_PLUS },</div>
+<div class="line">  { token::TokenType::MINUS, NodeType::UNARY_MINUS },</div>
+<div class="line">  { token::TokenType::NOT, NodeType::UNARY_NOT },</div>
 <div class="line">} }</div>
 </div><!-- fragment --><p>Unary operator priority table. </p>
 
