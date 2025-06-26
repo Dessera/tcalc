@@ -59,11 +59,18 @@ Tcalc is a simple computational programming language, which supports basic arith
 
 ## Getting Started
 
-Tcalc requires GCC 12+ or Clang 16+ with GNU++23 support to build.
+Tested on Linux, with following environment:
+
+- Without `tl-expected`: GCC 12+ or Clang 16+ with GNU++23 support
+- With `tl-expected`: GCC 9+ or Clang 12+ with GNU++17 support
 
 ### Prerequisites
 
 The project is based on `meson` and `ninja`, so you need to install them first.
+
+If you want to build the project with `tl-expected`, you need to install it: [tl-expected](https://github.com/TartanLlama/expected).
+
+If you want to build `tcalc_gui`, you need to install `Qt6`.
 
 ### Installation
 
@@ -82,6 +89,11 @@ The project is based on `meson` and `ninja`, so you need to install them first.
   meson compile
   ```
 
+> Available options:
+>
+> - `-Dbuild_gui=enabled`: Build `tcalc_gui`
+> - `-Duse_tl_expected=enabled`: Build with `tl-expected` rather than `std::expected`
+
 3. Install the product:
 
   ```bash
@@ -92,12 +104,14 @@ The project is based on `meson` and `ninja`, so you need to install them first.
 
 Temporarily REPL is available as a command line tool `tcalc_repl`.
 
+Qt6-based GUI application `tcalc_gui` is also available.
+
 For APIs, read the [docs](https://dessera.github.io/tcalc) for more information.
 
 ## Roadmap
 
-- [ ] More built-in functions
-- [ ] GUI application
+- [x] More built-in functions
+- [x] GUI application
 - [x] `import` statements
 - [x] Logic operations
 - [x] User-defined functions (don't support recursion because no control flow statements)

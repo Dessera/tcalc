@@ -2,7 +2,7 @@
  * @file tokenizer.hpp
  * @author Dessera (dessera@qq.com)
  * @brief Tokenize the input string into tokens.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-14
  *
  * @copyright Copyright (c) 2025 Dessera
@@ -98,13 +98,14 @@ private:
    * @param pred The predicate to check if the current character is valid.
    * @return Token The token.
    */
-  auto _next_with(TokenType type, auto&& pred)
+  template<typename Pred>
+  auto _next_with(TokenType type, const Pred& pred)
   {
     const auto* start = _pos;
     while (_pos != _input.end() && pred(*_pos)) {
       ++_pos;
     }
-    return Token{ .type = type, .text = std::string{ start, _pos } };
+    return Token{ type, std::string{ start, _pos } };
   }
 
   /**
@@ -112,7 +113,8 @@ private:
    *
    * @param pred The predicate to check if the current character is valid.
    */
-  void _skip_with(auto&& pred)
+  template<typename Pred>
+  void _skip_with(const Pred& pred)
   {
     while (_pos != _input.end() && pred(*_pos)) {
       ++_pos;

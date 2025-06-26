@@ -2,7 +2,7 @@
  * @file builtins.hpp
  * @author Dessera (dessera@qq.com)
  * @brief Built-in functions and variables.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-16
  *
  * @copyright Copyright (c) 2025 Dessera
@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include <cmath>
+#include <cmath> // IWYU pragma: keep
 #include <functional>
 #include <unordered_map>
 #include <vector>

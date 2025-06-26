@@ -8,7 +8,7 @@ namespace tcalc {
 error::Result<double>
 EvalContext::var(const std::string& name) const
 {
-  if (_vars.contains(name)) {
+  if (_vars.find(name) != _vars.end()) {
     return _vars.at(name);
   }
 
@@ -19,7 +19,7 @@ EvalContext::var(const std::string& name) const
 error::Result<builtins::Function>
 EvalContext::func(const std::string& name) const
 {
-  if (_funcs.contains(name)) {
+  if (_funcs.find(name) != _funcs.end()) {
     return _funcs.at(name);
   }
 

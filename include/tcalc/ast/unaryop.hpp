@@ -2,7 +2,7 @@
  * @file unaryop.hpp
  * @author Dessera (dessera@qq.com)
  * @brief Unary operation node.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-16
  *
  * @copyright Copyright (c) 2025 Dessera

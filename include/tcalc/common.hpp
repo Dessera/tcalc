@@ -2,7 +2,7 @@
  * @file common.hpp
  * @author Dessera (dessera@qq.com)
  * @brief tcalc common header.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-15
  *
  * @copyright Copyright (c) 2025 Dessera

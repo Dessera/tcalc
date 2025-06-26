@@ -13,7 +13,7 @@ Error::log() const noexcept
             << "]\n";
 }
 
-std::unexpected<Error>
+_TCALC_EXPECTED_NS::unexpected<Error>
 err(Code code, const char* fmt, ...) noexcept
 {
   auto buffer = std::string{};
@@ -28,7 +28,7 @@ err(Code code, const char* fmt, ...) noexcept
 
   buffer.resize(strlen(buffer.data()));
 
-  return std::unexpected(Error(code, std::move(buffer)));
+  return _TCALC_EXPECTED_NS::unexpected(Error(code, std::move(buffer)));
 }
 
 }

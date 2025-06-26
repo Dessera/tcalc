@@ -2,7 +2,7 @@
  * @file error.hpp
  * @author Dessera (dessera@qq.com)
  * @brief tcalc error definition.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-15
  *
  * @copyright Copyright (c) 2025 Dessera
@@ -16,22 +16,29 @@
 #include <cstdio>
 #include <cstring>
 #include <exception>
-#include <expected>
 #include <string>
 #include <unordered_map>
+
+#ifdef TCALC_USE_TL_EXPECTED
+#include <tl/expected.hpp>
+#define _TCALC_EXPECTED_NS tl
+#else
+#include <expected>
+#define _TCALC_EXPECTED_NS std
+#endif
 
 #include "tcalc/common.hpp"
 
 #define ret_err(expr)                                                          \
   if (auto res = (expr); !res.has_value()) {                                   \
-    return std::unexpected(res.error());                                       \
+    return _TCALC_EXPECTED_NS::unexpected(res.error());                        \
   }
 
 #define unwrap_err(expr)                                                       \
   ({                                                                           \
     auto _ret = (expr);                                                        \
     if (!_ret.has_value()) {                                                   \
-      return std::unexpected(_ret.error());                                    \
+      return _TCALC_EXPECTED_NS::unexpected(_ret.error());                     \
     }                                                                          \
     _ret.value();                                                              \
   })
@@ -143,7 +150,7 @@ public:
  * @tparam T Return type.
  */
 template<typename T>
-using Result = std::expected<T, Error>;
+using Result = _TCALC_EXPECTED_NS::expected<T, Error>;
 
 /**
  * @brief Create an error.
@@ -155,7 +162,7 @@ using Result = std::expected<T, Error>;
 TCALC_INLINE auto
 err(Code code, const std::string& message) noexcept
 {
-  return std::unexpected(Error(code, message));
+  return _TCALC_EXPECTED_NS::unexpected(Error(code, message));
 }
 
 /**
@@ -181,7 +188,7 @@ raw_err(Code code) noexcept
 TCALC_INLINE auto
 err(Code code) noexcept
 {
-  return std::unexpected(raw_err(code));
+  return _TCALC_EXPECTED_NS::unexpected(raw_err(code));
 }
 
 /**
@@ -195,7 +202,7 @@ err(Code code) noexcept
  * std::vsnprintf.
  */
 TCALC_PRINTF_FORMAT(2, 3)
-std::unexpected<Error>
+_TCALC_EXPECTED_NS::unexpected<Error>
 err(Code code, const char* fmt, ...) noexcept;
 
 /**
@@ -210,7 +217,7 @@ template<typename T, typename... Args>
 TCALC_INLINE auto
 ok(Args&&... args) noexcept
 {
-  return std::expected<T, Error>(T(std::forward<Args>(args)...));
+  return _TCALC_EXPECTED_NS::expected<T, Error>(T(std::forward<Args>(args)...));
 }
 
 /**
@@ -222,7 +229,7 @@ template<>
 TCALC_INLINE auto
 ok<void>() noexcept
 {
-  return std::expected<void, Error>();
+  return _TCALC_EXPECTED_NS::expected<void, Error>();
 }
 
 }

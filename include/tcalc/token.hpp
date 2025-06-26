@@ -2,7 +2,7 @@
  * @file token.hpp
  * @author Dessera (dessera@qq.com)
  * @brief Input token definition.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-14
  *
  * @copyright Copyright (c) 2025 Dessera

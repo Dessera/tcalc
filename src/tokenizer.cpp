@@ -12,7 +12,7 @@ Tokenizer::next()
   _skip_with(_is_skippable_char);
 
   if (_pos >= _input.end()) {
-    return Token{ .type = TokenType::EOI, .text = "" };
+    return Token{ TokenType::EOI, "" };
   }
 
   if (std::iscntrl(*_pos)) {
@@ -25,7 +25,7 @@ Tokenizer::next()
   for (const auto& [key, value] : KEYWORDS) {
     if (_is_keyword(key)) {
       _pos += key.size();
-      return Token{ .type = value, .text = std::string{ key } };
+      return Token{ value, std::string{ key } };
     }
   }
 
@@ -66,7 +66,7 @@ Tokenizer::_parse_number()
     }
   }
 
-  return Token{ .type = TokenType::NUMBER, .text = std::string{ start, _pos } };
+  return Token{ TokenType::NUMBER, std::string{ start, _pos } };
 }
 
 error::Result<Token>
@@ -97,7 +97,7 @@ Tokenizer::_parse_quoted_identifier()
 
   ++_pos;
 
-  return Token{ .type = TokenType::IDENTIFIER, .text = text };
+  return Token{ TokenType::IDENTIFIER, text };
 }
 
 bool

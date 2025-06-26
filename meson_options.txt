@@ -4,3 +4,10 @@ option(
   value: 'enabled',
   description: 'Build tcalc_gui with Qt',
 )
+
+option(
+  'use_tl_expected',
+  type: 'feature',
+  value: 'disabled',
+  description: 'Use tl::expected instead of std::expected',
+)

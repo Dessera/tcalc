@@ -111,7 +111,8 @@ Parser::next_prio_term(ParserContext& ctx, std::size_t prio)
 
   auto node = unwrap_err(next_prio_term(ctx, prio + 1));
 
-  while (BINOP_PRIORITY[prio].contains(ctx.current().type)) {
+  while (BINOP_PRIORITY[prio].find(ctx.current().type) !=
+         BINOP_PRIORITY[prio].end()) {
     auto type = ctx.current().type;
     ret_err(ctx.eat());
 
@@ -192,7 +193,8 @@ Parser::next_factor(ParserContext& ctx) // NOLINT
     ret_err(ctx.eat(token::TokenType::LPAREN));
     node = unwrap_err(next_expr(ctx));
     ret_err(ctx.eat(token::TokenType::RPAREN));
-  } else if (UNARYOP_PRIORITY[0].contains(current.type)) {
+  } else if (UNARYOP_PRIORITY[0].find(current.type) !=
+             UNARYOP_PRIORITY[0].end()) {
     auto type = current.type;
     ret_err(ctx.eat(type));
     node = std::make_shared<UnaryOpNode>(UNARYOP_PRIORITY[0].at(type),

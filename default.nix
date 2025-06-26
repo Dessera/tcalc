@@ -4,18 +4,33 @@
 
   # Build tools
   meson,
+  cmake,
   ninja,
   pkg-config,
 
-  # deps
+  # Deps
   qtbase,
+  tl-expected,
   wrapQtAppsHook,
+
+  # Config
+  useTlExpected ? false,
 }:
 stdenv.mkDerivation {
   name = "tcalc";
   src = lib.cleanSource ./.;
 
-  buildInputs = [ qtbase ];
+  buildInputs =
+    [ qtbase ]
+    ++ (
+      if useTlExpected then
+        [
+          tl-expected
+          cmake
+        ]
+      else
+        [ ]
+    );
 
   nativeBuildInputs = [
     meson

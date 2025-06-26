@@ -2,7 +2,7 @@
  * @file node.hpp
  * @author Dessera (dessera@qq.com)
  * @brief Base class for AST nodes.
- * @version 0.1.0
+ * @version 0.2.0
  * @date 2025-06-15
  *
  * @copyright Copyright (c) 2025 Dessera
@@ -15,6 +15,7 @@
 #include <cstdint>
 #include <memory>
 #include <string>
+#include <type_traits>
 #include <unordered_map>
 
 #include "tcalc/common.hpp"
@@ -113,8 +114,8 @@ public:
  *
  * @tparam NT Node type.
  */
-template<typename NT = Node>
-  requires std::derived_from<NT, Node>
+template<typename NT = Node,
+         typename = std::enable_if_t<std::is_base_of_v<Node, NT>>>
 using NodePtr = std::shared_ptr<NT>;
 
 }
