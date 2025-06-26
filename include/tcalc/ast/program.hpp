@@ -22,7 +22,7 @@ namespace tcalc::ast {
  * @brief Program node.
  *
  */
-class TCALC_PUBLIC ProgramNode : public Node
+class ProgramNode : public Node
 {
 private:
   std::vector<NodePtr<>> _statements;
@@ -32,14 +32,21 @@ public:
    * @brief Construct a new Program Node object without statements.
    *
    */
-  ProgramNode();
+  ProgramNode()
+    : ProgramNode{ {} }
+  {
+  }
 
   /**
    * @brief Construct a new Program Node object with statements.
    *
    * @param statements Statements.
    */
-  ProgramNode(std::vector<NodePtr<>> statements);
+  explicit ProgramNode(std::vector<NodePtr<>> statements)
+    : Node{ NodeType::PROGRAM }
+    , _statements{ std::move(statements) }
+  {
+  }
 
   ~ProgramNode() override = default;
 
@@ -75,7 +82,7 @@ public:
  * @brief Program import node.
  *
  */
-class TCALC_PUBLIC ProgramImportNode : public Node
+class ProgramImportNode : public Node
 {
 private:
   std::string _path;
@@ -86,7 +93,11 @@ public:
    *
    * @param path Path.
    */
-  ProgramImportNode(std::string path);
+  explicit ProgramImportNode(std::string path)
+    : Node{ NodeType::IMPORT }
+    , _path{ std::move(path) }
+  {
+  }
 
   ~ProgramImportNode() override = default;
 

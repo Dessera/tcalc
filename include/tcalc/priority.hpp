@@ -15,7 +15,6 @@
 #include <vector>
 
 #include "tcalc/ast/node.hpp"
-#include "tcalc/common.hpp"
 #include "tcalc/token.hpp"
 
 namespace tcalc::ast {
@@ -27,10 +26,33 @@ namespace tcalc::ast {
 using PriorityTable =
   std::vector<std::unordered_map<token::TokenType, NodeType>>;
 
-extern TCALC_PUBLIC const PriorityTable
-  BINOP_PRIORITY; /**< Binary operator priority table. */
+inline const PriorityTable BINOP_PRIORITY = {
+  {
+    { token::TokenType::AND, NodeType::BINARY_AND },
+    { token::TokenType::OR, NodeType::BINARY_OR },
+  },
+  {
+    { token::TokenType::EQUAL, NodeType::BINARY_EQUAL },
+    { token::TokenType::NOTEQUAL, NodeType::BINARY_NOT_EQUAL },
+    { token::TokenType::GREATER, NodeType::BINARY_GREATER },
+    { token::TokenType::GREATEREQUAL, NodeType::BINARY_GREATER_EQUAL },
+    { token::TokenType::LESS, NodeType::BINARY_LESS },
+    { token::TokenType::LESSEQUAL, NodeType::BINARY_LESS_EQUAL },
+  },
+  {
+    { token::TokenType::PLUS, NodeType::BINARY_PLUS },
+    { token::TokenType::MINUS, NodeType::BINARY_MINUS },
+  },
+  {
+    { token::TokenType::MULTIPLY, NodeType::BINARY_MULTIPLY },
+    { token::TokenType::DIVIDE, NodeType::BINARY_DIVIDE },
+  }
+}; /**< Binary operator priority table. */
 
-extern TCALC_PUBLIC const PriorityTable
-  UNARYOP_PRIORITY; /**< Unary operator priority table. */
+inline const PriorityTable UNARYOP_PRIORITY = { {
+  { token::TokenType::PLUS, NodeType::UNARY_PLUS },
+  { token::TokenType::MINUS, NodeType::UNARY_MINUS },
+  { token::TokenType::NOT, NodeType::UNARY_NOT },
+} }; /**< Unary operator priority table. */
 
 }

@@ -7,12 +7,6 @@
 
 namespace tcalc::ast {
 
-PrintVisitor::PrintVisitor(std::ostream& os, std::size_t step)
-  : _os{ &os }
-  , _step{ step }
-{
-}
-
 error::Result<void>
 PrintVisitor::visit_bin_op(NodePtr<BinaryOpNode>& node)
 {

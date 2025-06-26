@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <cmath>
 #include <functional>
 #include <unordered_map>
 #include <vector>
@@ -51,7 +52,10 @@ public:
    *
    * @param node Function definition node.
    */
-  FunctionWrapper(ast::NodePtr<ast::FdefNode> node);
+  explicit FunctionWrapper(ast::NodePtr<ast::FdefNode> node)
+    : _node{ std::move(node) }
+  {
+  }
 
   ~FunctionWrapper() = default;
 
@@ -81,7 +85,10 @@ public:
    *
    * @param node ProgramImportNode.
    */
-  ImportWrapper(ast::NodePtr<ast::ProgramImportNode> node);
+  explicit ImportWrapper(ast::NodePtr<ast::ProgramImportNode> node)
+    : _node{ std::move(node) }
+  {
+  }
 
   ~ImportWrapper() = default;
 
@@ -182,10 +189,25 @@ asin(const std::vector<double>& args, const EvalContext& ctx);
 TCALC_PUBLIC error::Result<double>
 atan(const std::vector<double>& args, const EvalContext& ctx);
 
-extern TCALC_PUBLIC const std::unordered_map<std::string, double>
-  BUILTIN_VARIABLES; /**< Built-in variables. */
+/**
+ * @brief Built-in exp function.
+ *
+ * @param args Function arguments.
+ * @param ctx Evaluation context.
+ * @return error::Result<double> Result.
+ */
+TCALC_PUBLIC error::Result<double>
+exp(const std::vector<double>& args, const EvalContext& ctx);
 
-extern TCALC_PUBLIC const std::unordered_map<std::string, Function>
-  BUILTIN_FUNCTIONS; /**< Built-in functions. */
+inline const std::unordered_map<std::string, double> BUILTIN_VARIABLES = {
+  { "pi", M_PI },
+  { "e", M_E },
+}; /**< Built-in variables. */
+
+inline const std::unordered_map<std::string, Function> BUILTIN_FUNCTIONS = {
+  { "sqrt", sqrt }, { "pow", pow }, { "log", log },   { "sin", sin },
+  { "cos", cos },   { "tan", tan }, { "acos", acos }, { "asin", asin },
+  { "atan", atan }, { "exp", exp }
+}; /**< Built-in functions. */
 
 }

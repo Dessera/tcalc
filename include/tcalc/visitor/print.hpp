@@ -48,7 +48,11 @@ public:
    * @param os Output stream.
    * @param step Indent step.
    */
-  PrintVisitor(std::ostream& os = std::cout, std::size_t step = INDENT_STEP);
+  PrintVisitor(std::ostream& os = std::cout, std::size_t step = INDENT_STEP)
+    : _os{ &os }
+    , _step{ step }
+  {
+  }
 
   ~PrintVisitor() override = default;
 

@@ -5,12 +5,17 @@ project(
   default_options: ['warning_level=3', 'cpp_std=gnu++23'],
 )
 
+opt_build_gui = get_option('build_gui')
+
 gtest_dep = dependency(
   'gtest',
   main: true,
   required: false,
   fallback: ['gtest', 'gtest_main_dep'],
 )
+
+qt = import('qt6', required: opt_build_gui)
+qt_dep = dependency('qt6', modules: ['Core', 'Gui', 'Widgets'], required: opt_build_gui)
 
 subdir('include')
 subdir('src')

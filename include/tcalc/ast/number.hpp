@@ -31,7 +31,11 @@ public:
    *
    * @param value Number value.
    */
-  NumberNode(double value);
+  explicit NumberNode(double value)
+    : Node{ NodeType::NUMBER }
+    , _value{ value }
+  {
+  }
 
   ~NumberNode() override = default;
 

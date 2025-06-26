@@ -5,16 +5,6 @@
 
 namespace tcalc {
 
-EvalContext::EvalContext(
-  std::unordered_map<std::string, double> vars,
-  std::unordered_map<std::string, builtins::Function> funcs,
-  std::size_t call_depth)
-  : _vars{ std::move(vars) }
-  , _funcs{ std::move(funcs) }
-  , _call_depth{ call_depth }
-{
-}
-
 error::Result<double>
 EvalContext::var(const std::string& name) const
 {
@@ -48,12 +38,6 @@ Evaluator::Evaluator(const EvalContext& ctx)
   : _ctx{ ctx }
 {
   _ctx.var("ans", 1);
-}
-
-Evaluator::Evaluator()
-  : Evaluator{ EvalContext{ builtins::BUILTIN_VARIABLES,
-                            builtins::BUILTIN_FUNCTIONS } }
-{
 }
 
 error::Result<double>

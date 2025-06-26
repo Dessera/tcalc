@@ -48,7 +48,12 @@ public:
    */
   EvalContext(std::unordered_map<std::string, double> vars,
               std::unordered_map<std::string, builtins::Function> funcs,
-              std::size_t call_depth = 0);
+              std::size_t call_depth = 0)
+    : _vars{ std::move(vars) }
+    , _funcs{ std::move(funcs) }
+    , _call_depth{ call_depth }
+  {
+  }
 
   EvalContext() = default;
   ~EvalContext() = default;
@@ -154,13 +159,17 @@ public:
    *
    * @param ctx Evaluation context.
    */
-  Evaluator(const EvalContext& ctx);
+  explicit Evaluator(const EvalContext& ctx);
 
   /**
    * @brief Construct a default Evaluator object with default context.
    *
    */
-  Evaluator();
+  Evaluator()
+    : Evaluator{ EvalContext{ builtins::BUILTIN_VARIABLES,
+                              builtins::BUILTIN_FUNCTIONS } }
+  {
+  }
 
   ~Evaluator() = default;
 

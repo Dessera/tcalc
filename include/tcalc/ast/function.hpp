@@ -24,7 +24,7 @@ namespace tcalc::ast {
  * @brief Function node.
  *
  */
-class TCALC_PUBLIC FcallNode : public Node
+class FcallNode : public Node
 {
 private:
   std::string _name;
@@ -36,7 +36,10 @@ public:
    *
    * @param name Function name.
    */
-  explicit FcallNode(std::string name);
+  explicit FcallNode(std::string name)
+    : FcallNode{ std::move(name), {} }
+  {
+  }
 
   /**
    * @brief Construct a new Function Node object.
@@ -44,7 +47,12 @@ public:
    * @param name Function name.
    * @param args Function arguments.
    */
-  FcallNode(std::string name, std::vector<NodePtr<>> args);
+  FcallNode(std::string name, std::vector<NodePtr<>> args)
+    : Node{ NodeType::FCALL }
+    , _name{ std::move(name) }
+    , _args{ std::move(args) }
+  {
+  }
 
   ~FcallNode() override = default;
 
@@ -88,7 +96,7 @@ public:
  * @brief Function definition node.
  *
  */
-class TCALC_PUBLIC FdefNode : public Node
+class FdefNode : public Node
 {
 private:
   std::string _name;
@@ -101,7 +109,10 @@ public:
    *
    * @param name Function name.
    */
-  explicit FdefNode(std::string name);
+  explicit FdefNode(std::string name)
+    : FdefNode{ std::move(name), {}, {} }
+  {
+  }
 
   /**
    * @brief Construct a new Fdef Node object with arguments and body.
@@ -110,7 +121,13 @@ public:
    * @param args Function arguments.
    * @param body Function body.
    */
-  FdefNode(std::string name, std::vector<std::string> args, NodePtr<> body);
+  FdefNode(std::string name, std::vector<std::string> args, NodePtr<> body)
+    : Node{ NodeType::FDEF }
+    , _name{ std::move(name) }
+    , _args{ std::move(args) }
+    , _body{ std::move(body) }
+  {
+  }
 
   ~FdefNode() override = default;
 

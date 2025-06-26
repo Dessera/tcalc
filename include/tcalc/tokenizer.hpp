@@ -32,8 +32,21 @@ public:
   using KeywordComp =
     std::greater<std::string_view>; /**< Comparator for keywords. */
 
-  static const std::map<std::string_view, TokenType, KeywordComp>
-    KEYWORDS; /**< Tcalc keywords, must be ordered by length. */
+  inline static const std::map<std::string_view, TokenType, KeywordComp>
+    KEYWORDS = {
+      { "def", TokenType::DEF },         { "let", TokenType::LET },
+      { "if", TokenType::IF },           { "then", TokenType::THEN },
+      { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
+      { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
+      { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
+      { "&&", TokenType::AND },          { "||", TokenType::OR },
+      { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
+      { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
+      { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
+      { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
+      { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
+      { "<", TokenType::LESS },          { "!", TokenType::NOT },
+    }; /**< Tcalc keywords, must be ordered by length. */
 
   constexpr static char QUOTE = '\''; /**< The quote character. */
 
@@ -47,7 +60,11 @@ public:
    *
    * @param input The input string.
    */
-  explicit Tokenizer(std::string_view input);
+  explicit Tokenizer(std::string_view input)
+    : _input{ input }
+    , _pos{ _input.begin() }
+  {
+  }
 
   /**
    * @brief Get the next token.

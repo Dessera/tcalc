@@ -22,7 +22,7 @@ namespace tcalc::ast {
  * @brief Binary operation base class.
  *
  */
-class TCALC_PUBLIC BinaryOpNode : public Node
+class BinaryOpNode : public Node
 {
 private:
   NodePtr<> _left;
@@ -34,7 +34,10 @@ public:
    *
    * @param type Node type.
    */
-  BinaryOpNode(NodeType type);
+  explicit BinaryOpNode(NodeType type)
+    : BinaryOpNode{ type, nullptr, nullptr }
+  {
+  }
 
   /**
    * @brief Construct a new Binary Op Node object with subnodes.
@@ -43,7 +46,12 @@ public:
    * @param left Left subnode.
    * @param right Right subnode.
    */
-  BinaryOpNode(NodeType type, NodePtr<> left, NodePtr<> right);
+  BinaryOpNode(NodeType type, NodePtr<> left, NodePtr<> right)
+    : Node{ type }
+    , _left{ std::move(left) }
+    , _right{ std::move(right) }
+  {
+  }
 
   ~BinaryOpNode() override = default;
 

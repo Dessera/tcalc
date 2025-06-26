@@ -51,12 +51,6 @@ ParserContext::eat()
   return error::ok<void>();
 }
 
-ParserContext::ParserContext(token::Tokenizer tokenizer, token::Token current)
-  : _tokenizer{ tokenizer }
-  , _current{ std::move(current) }
-{
-}
-
 error::Result<NodePtr<>>
 Parser::parse(std::string_view input)
 {

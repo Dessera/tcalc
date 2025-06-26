@@ -1,0 +1,6 @@
+option(
+  'build_gui',
+  type: 'feature',
+  value: 'enabled',
+  description: 'Build tcalc_gui with Qt',
+)

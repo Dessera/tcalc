@@ -1,22 +1,14 @@
 #include <cmath>
 #include <fstream>
 #include <sstream>
-#include <utility>
 #include <vector>
 
-#include "tcalc/ast/function.hpp"
-#include "tcalc/ast/program.hpp"
 #include "tcalc/builtins.hpp"
 #include "tcalc/error.hpp"
 #include "tcalc/eval.hpp"
 #include "tcalc/visitor/eval.hpp"
 
 namespace tcalc::builtins {
-
-FunctionWrapper::FunctionWrapper(ast::NodePtr<ast::FdefNode> node)
-  : _node{ std::move(node) }
-{
-}
 
 error::Result<double>
 FunctionWrapper::operator()(const std::vector<double>& args,
@@ -43,11 +35,6 @@ FunctionWrapper::operator()(const std::vector<double>& args,
 
   auto local_visitor = ast::EvalVisitor{ local_ctx };
   return local_visitor.visit(_node->body());
-}
-
-ImportWrapper::ImportWrapper(ast::NodePtr<ast::ProgramImportNode> node)
-  : _node{ std::move(node) }
-{
 }
 
 error::Result<void>
@@ -179,15 +166,16 @@ atan(const std::vector<double>& args, const EvalContext& /*ctx*/)
   return error::ok<double>(std::atan(args[0]));
 }
 
-const std::unordered_map<std::string, double> BUILTIN_VARIABLES = {
-  { "pi", M_PI },
-  { "e", M_E },
-};
+error::Result<double>
+exp(const std::vector<double>& args, const EvalContext& /*ctx*/)
+{
+  if (args.size() != 1) {
+    return error::err(error::Code::MISMATCHED_ARGS,
+                      "Mismatched arguments in exp, expected 1, got %zu",
+                      args.size());
+  }
 
-const std::unordered_map<std::string, Function> BUILTIN_FUNCTIONS = {
-  { "sqrt", sqrt }, { "pow", pow },   { "log", log },
-  { "sin", sin },   { "cos", cos },   { "tan", tan },
-  { "acos", acos }, { "asin", asin }, { "atan", atan },
-};
+  return error::ok<double>(std::exp(args[0]));
+}
 
 }

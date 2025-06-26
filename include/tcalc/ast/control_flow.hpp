@@ -22,7 +22,7 @@ namespace tcalc::ast {
  * @brief If node.
  *
  */
-class TCALC_PUBLIC IfNode : public Node
+class IfNode : public Node
 {
 private:
   NodePtr<> _cond;
@@ -34,7 +34,10 @@ public:
    * @brief Construct a new If Node object without nodes.
    *
    */
-  IfNode();
+  IfNode()
+    : IfNode{ nullptr, nullptr, nullptr }
+  {
+  }
 
   /**
    * @brief Construct a new If Node object with nodes.
@@ -43,7 +46,13 @@ public:
    * @param then Then node.
    * @param else_ Else node.
    */
-  IfNode(NodePtr<> cond, NodePtr<> then, NodePtr<> else_);
+  IfNode(NodePtr<> cond, NodePtr<> then, NodePtr<> else_)
+    : Node{ NodeType::IF }
+    , _cond{ std::move(cond) }
+    , _then{ std::move(then) }
+    , _else{ std::move(else_) }
+  {
+  }
 
   ~IfNode() override = default;
 

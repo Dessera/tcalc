@@ -23,7 +23,7 @@ namespace tcalc::ast {
  * @brief Variable node.
  *
  */
-class TCALC_PUBLIC VarRefNode : public Node
+class VarRefNode : public Node
 {
 private:
   std::string _name;
@@ -34,7 +34,11 @@ public:
    *
    * @param name Variable name.
    */
-  explicit VarRefNode(std::string name);
+  explicit VarRefNode(std::string name)
+    : Node{ NodeType::VARREF }
+    , _name{ std::move(name) }
+  {
+  }
 
   ~VarRefNode() override = default;
 
@@ -57,7 +61,7 @@ public:
  * @brief Variable assign node.
  *
  */
-class TCALC_PUBLIC VarAssignNode : public Node
+class VarAssignNode : public Node
 {
 private:
   std::string _name;
@@ -69,7 +73,10 @@ public:
    *
    * @param name Variable name.
    */
-  VarAssignNode(std::string name);
+  explicit VarAssignNode(std::string name)
+    : VarAssignNode{ std::move(name), nullptr }
+  {
+  }
 
   /**
    * @brief Construct a new Var Assign Node object with body.
@@ -77,7 +84,12 @@ public:
    * @param name Variable name.
    * @param body Variable body.
    */
-  VarAssignNode(std::string name, NodePtr<> body);
+  VarAssignNode(std::string name, NodePtr<> body)
+    : Node{ NodeType::VARASSIGN }
+    , _name{ std::move(name) }
+    , _body{ std::move(body) }
+  {
+  }
 
   ~VarAssignNode() override = default;
 

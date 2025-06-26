@@ -70,8 +70,15 @@ enum class Code : uint8_t
   FILE_NOT_FOUND,  /**< File not found. */
 };
 
-extern TCALC_PUBLIC const std::unordered_map<Code, std::string>
-  CODE_NAMES; /**< Error code names. */
+inline const std::unordered_map<Code, std::string> CODE_NAMES = {
+  { Code::SYNTAX_ERROR, "SYNAX_ERROR" },
+  { Code::UNDEFINED_VAR, "UNDEFINED_VAR" },
+  { Code::UNDEFINED_FUNC, "UNDEFINED_FUNC" },
+  { Code::MISMATCHED_ARGS, "MISMATCHED_ARGS" },
+  { Code::ZERO_DIVISION, "ZERO_DIVISION" },
+  { Code::RECURSION_LIMIT, "RECURSION_LIMIT" },
+  { Code::FILE_NOT_FOUND, "FILE_NOT_FOUND" },
+}; /**< Error code names. */
 
 /**
  * @brief Error class.
@@ -93,7 +100,11 @@ public:
    * @param code Error code.
    * @param msg  Error message.
    */
-  Error(Code code, std::string msg) noexcept;
+  Error(Code code, std::string msg) noexcept
+    : _code{ code }
+    , _msg{ std::move(msg) }
+  {
+  }
 
   /**
    * @brief Get error code.

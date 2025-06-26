@@ -21,7 +21,7 @@
                 inherit stdenv;
               };
 
-              package = pkgs.callPackage ./default.nix { inherit stdenv; };
+              package = pkgs.qt6Packages.callPackage ./default.nix { inherit stdenv; };
             in
             pkgs.mkShell.override
               {

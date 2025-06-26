@@ -32,7 +32,10 @@ public:
    *
    * @param type Node type.
    */
-  UnaryOpNode(NodeType type);
+  explicit UnaryOpNode(NodeType type)
+    : UnaryOpNode{ type, nullptr }
+  {
+  }
 
   /**
    * @brief Construct a new Unary Op Node object with operand.
@@ -40,7 +43,11 @@ public:
    * @param type Node type.
    * @param operand Operand node.
    */
-  UnaryOpNode(NodeType type, NodePtr<> operand);
+  UnaryOpNode(NodeType type, NodePtr<> operand)
+    : Node{ type }
+    , _operand{ std::move(operand) }
+  {
+  }
 
   ~UnaryOpNode() override = default;
 

@@ -82,7 +82,11 @@ private:
    * @param tokenizer The tokenizer to use.
    * @param current First token.
    */
-  ParserContext(token::Tokenizer tokenizer, token::Token current);
+  ParserContext(token::Tokenizer tokenizer, token::Token current)
+    : _tokenizer{ tokenizer }
+    , _current{ std::move(current) }
+  {
+  }
 };
 
 /**

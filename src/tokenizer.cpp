@@ -6,28 +6,6 @@
 
 namespace tcalc::token {
 
-const std::map<std::string_view, TokenType, Tokenizer::KeywordComp>
-  Tokenizer::KEYWORDS = {
-    { "def", TokenType::DEF },         { "let", TokenType::LET },
-    { "if", TokenType::IF },           { "then", TokenType::THEN },
-    { "else", TokenType::ELSE },       { "import", TokenType::IMPORT },
-    { "==", TokenType::EQUAL },        { "!=", TokenType::NOTEQUAL },
-    { ">=", TokenType::GREATEREQUAL }, { "<=", TokenType::LESSEQUAL },
-    { "&&", TokenType::AND },          { "||", TokenType::OR },
-    { "+", TokenType::PLUS },          { "-", TokenType::MINUS },
-    { "*", TokenType::MULTIPLY },      { "/", TokenType::DIVIDE },
-    { "(", TokenType::LPAREN },        { ")", TokenType::RPAREN },
-    { ",", TokenType::COMMA },         { ";", TokenType::SEMICOLON },
-    { "=", TokenType::ASSIGN },        { ">", TokenType::GREATER },
-    { "<", TokenType::LESS },          { "!", TokenType::NOT },
-  };
-
-Tokenizer::Tokenizer(std::string_view input)
-  : _input{ input }
-  , _pos{ _input.begin() }
-{
-}
-
 error::Result<Token>
 Tokenizer::next()
 {
